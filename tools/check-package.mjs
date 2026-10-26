@@ -7,7 +7,7 @@ import {
   rmSync, symlinkSync, writeFileSync,
 } from 'node:fs';
 import { tmpdir } from 'node:os';
-import { join } from 'node:path';
+import { join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
@@ -26,14 +26,28 @@ function run(command, args, cwd) {
 }
 
 try {
-  const npmCli = process.env.npm_execpath;
-  assert.ok(npmCli, 'Run through npm run test:package.');
-  const [packed] = JSON.parse(run(
-    process.execPath,
-    [npmCli, 'pack', '--json', '--pack-destination', temporary],
-    root,
-  ));
-  assert.ok(packed, 'npm pack did not report an archive.');
+  const args = process.argv.slice(2);
+  let archive;
+  if (args.length) {
+    assert.ok(args.length === 2 && args[0] === '--archive', 'Usage: check-package.mjs [--archive FILE]');
+    archive = resolve(args[1]);
+  } else {
+    const npmCli = process.env.npm_execpath;
+    assert.ok(npmCli, 'Run through npm run test:package.');
+    const [packed] = JSON.parse(run(
+      process.execPath,
+      [npmCli, 'pack', '--json', '--pack-destination', temporary],
+      root,
+    ));
+    assert.ok(packed, 'npm pack did not report an archive.');
+    archive = join(temporary, packed.filename);
+  }
+  const entries = run('tar', ['-tzf', archive], root).replace(/\n$/, '').split('\n');
+  const details = run('tar', ['-tvzf', archive], root).replace(/\n$/, '').split('\n');
+  assert.ok(details.every((line) => line.startsWith('-') || line.startsWith('d')), 'Archive contains a link or special file.');
+  assert.ok(entries.every((path) => path.startsWith('package/') && !path.split('/').includes('..')), 'Unsafe archive path.');
+  assert.equal(new Set(entries).size, entries.length, 'Archive contains duplicate paths.');
+  const packed = { files: entries.filter((path) => !path.endsWith('/')).map((path) => ({ path: path.slice(8) })) };
   for (const { path } of packed.files) {
     assert.ok(
       /^(package\.json|README(?:\.[^/]+)?|LICEN[CS]E(?:\.[^/]+)?|dist\/[^\s]+|schema\/[^/]+\.json|schema\/tooling\.Gemfile\.lock|tools\/generator\.json|src\/generated\/\.haveapi-generated\.json)$/.test(path),
@@ -63,7 +77,7 @@ try {
     }
   }
 
-  run('tar', ['-xzf', join(temporary, packed.filename), '-C', temporary], root);
+  run('tar', ['-xzf', archive, '-C', temporary], root);
   const consumer = join(temporary, 'consumer');
   const modules = join(consumer, 'node_modules');
   mkdirSync(modules, { recursive: true });

@@ -186,3 +186,6 @@ The npm archive includes built output, schema, provenance, exporter lock, and
 generator identity and coverage records. Regeneration commands and the pinned
 development environment remain in this source repository. Publication requires
 a separately authorized release and removal of the package's private flag.
+
+See [release preparation](docs/releasing.md) for build-only workflow checks,
+trusted-publisher setup prerequisites and the retained-archive publication path.

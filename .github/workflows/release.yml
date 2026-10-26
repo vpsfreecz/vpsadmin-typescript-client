@@ -1,0 +1,104 @@
+name: Package validation and release
+
+on:
+  push:
+    branches: ['**']
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: package-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    outputs:
+      artifact-id: ${{ steps.upload.outputs.artifact-id }}
+    steps:
+      - name: Refuse repeated tag builds
+        run: |
+          if [ "$GITHUB_REF_TYPE" = tag ] && [ "$GITHUB_RUN_ATTEMPT" -gt 1 ]; then
+            echo '::error::Tag builds cannot be repeated. Retry only the failed publish job with the original artifact.'
+            exit 1
+          fi
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Read the exact generator revision
+        id: producer
+        run: |
+          node --input-type=module <<'JS'
+          import {readFileSync, appendFileSync} from 'node:fs';
+          const {haveapi_revision: revision} = JSON.parse(readFileSync('tools/generator.json'));
+          if (!/^[0-9a-f]{40}$/.test(revision)) throw new Error('Invalid generator revision');
+          appendFileSync(process.env.GITHUB_OUTPUT, `revision=${revision}\n`);
+          JS
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: vpsfreecz/haveapi
+          ref: ${{ steps.producer.outputs.revision }}
+          path: haveapi-source
+          persist-credentials: false
+      - uses: cachix/install-nix-action@75c75c31ebece974e48ebc36b4ad125bd97bd97b # 31.11.3
+      - name: Check tag release prerequisites
+        if: github.ref_type == 'tag'
+        env:
+          NPM_RELEASE_ENABLED: ${{ vars.NPM_RELEASE_ENABLED }}
+        run: nix develop --command node tools/release.mjs preflight
+      - name: Build and validate
+        run: |
+          nix develop --command sh -eu -c '
+            npm ci --ignore-scripts --no-audit --no-fund
+            ./tools/regenerate --haveapi-source ./haveapi-source --check
+            npm run build
+            npm run typecheck
+            npm run typecheck:consumer
+            node --test test/client.test.mjs test/release.test.mjs
+            mkdir release
+            npm pack --ignore-scripts --pack-destination release
+            node tools/check-package.mjs --archive release/*.tgz
+            node tools/release.mjs receipt --archive release/*.tgz --output release/receipt.json
+          '
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        id: upload
+        with:
+          name: npm-package-${{ github.sha }}
+          path: release/
+          if-no-files-found: error
+          retention-days: 30
+          overwrite: false
+
+  publish:
+    if: github.event_name == 'push' && github.ref_type == 'tag' && github.repository == 'vpsfreecz/vpsadmin-typescript-client'
+    needs: build
+    runs-on: ubuntu-24.04
+    environment: release
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: cachix/install-nix-action@75c75c31ebece974e48ebc36b4ad125bd97bd97b # 31.11.3
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          artifact-ids: ${{ needs.build.outputs.artifact-id }}
+          path: release
+          merge-multiple: true
+      - name: Verify and publish the approved archive
+        env:
+          NPM_RELEASE_ENABLED: ${{ vars.NPM_RELEASE_ENABLED }}
+        run: |
+          nix develop --command sh -eu -c '
+            node tools/release.mjs preflight
+            node tools/release.mjs verify --archive release/*.tgz --receipt release/receipt.json
+            npm publish release/*.tgz --ignore-scripts --access public --registry https://registry.npmjs.org
+          '
