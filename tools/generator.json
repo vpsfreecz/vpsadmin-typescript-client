@@ -1,0 +1,23 @@
+{
+  "haveapi_revision": "18b45aeddd0c28c8ddf6c5ea81f9611d6e3a7875",
+  "generator_source_sha256": "f7d79703fbe744cbcc56e57cf256b68c5bd819cf90bfa264aae9b3229c44049c",
+  "haveapi_version_sha256": "42659901f3c792eb230cf32b2c844ae738cd6d53dd84c1b7eb434e969b472ec2",
+  "api_version": "7.0",
+  "schema_file": "schema/schema.json",
+  "schema_sha256": "476f0086726a443a6ef8ad9a9d499bd3feff6eb6c5b0b652dcc999192d638794",
+  "provenance_file": "schema/provenance.json",
+  "provenance_sha256": "6f53633219ee1c2c743eeab841a0d0ee2a549924cbd4ea92f312f903ba4acc74",
+  "tooling_sha256": {
+    "package-lock.json": "d1220587bf1958c0a4cff542e147e3aa39e07abd0ae479f6581e21c24b18d229",
+    "flake.lock": "187d63f65b46f5cfa3ac830a5d0c182693cd0ca7ab8e486c3876fcf4b4f6d4f4",
+    "tools/toolchain.json": "160980d1d89d08f2b4e3c78368b434e2059c413d02954b06c5ae6ec9c1dbbfcf",
+    "schema/tooling.Gemfile.lock": "223136cd93ebb408cab7ffa12e0a8f573ea4be01bee28211fe58eaa82c94308a",
+    "tools/regenerate": "dd401e3f79efdd5f2bba8a83b4fbdf91a045c8d4e6db8b38bde49c254180c3fa",
+    "tools/generator-source.rb": "737f261eb3818e82bda62c654bfb8b365168131679a0d9abfe378d6b854d3925"
+  },
+  "shared_source_identity": {
+    "package_name": "haveapi-client",
+    "version": "0.30.0",
+    "source_sha256": "caf98b1e2e9a17f26eaae012fbb56808429f47083aac02d08305cd264aee5cc6"
+  }
+}

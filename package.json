@@ -1,0 +1,44 @@
+{
+  "name": "vpsadmin-typescript-client",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Generated TypeScript operations for a recorded vpsAdmin API schema",
+  "type": "module",
+  "packageManager": "npm@11.19.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist/",
+    "schema/*.json",
+    "schema/tooling.Gemfile.lock",
+    "src/generated/.haveapi-generated.json",
+    "tools/generator.json"
+  ],
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vpsfreecz/vpsadmin-typescript-client.git"
+  },
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "typecheck:consumer": "tsc -p test/consumer/tsconfig.json",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "test:package": "node tools/check-package.mjs",
+    "regenerate": "node tools/regenerate",
+    "prepack": "npm run build"
+  },
+  "peerDependencies": {
+    "haveapi-client": "0.30.2"
+  },
+  "devDependencies": {
+    "haveapi-client": "0.30.2",
+    "typescript": "6.0.3"
+  }
+}
