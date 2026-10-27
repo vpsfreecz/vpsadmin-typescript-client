@@ -10,7 +10,7 @@ and write recovery policy.
 Install the package from npm:
 
 ```sh
-npm install vpsadmin-typescript-client@0.1.0
+npm install vpsadmin-typescript-client@0.1.1
 ```
 
 To build a local tarball from a source checkout of this SDK:

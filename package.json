@@ -1,6 +1,6 @@
 {
   "name": "vpsadmin-typescript-client",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "license": "MIT",
   "description": "Generated TypeScript operations for a recorded vpsAdmin API schema",
