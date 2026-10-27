@@ -1,17 +1,36 @@
 # vpsAdmin TypeScript client
 
-This package provides generated operations and types for the recorded vpsAdmin
-API 7.0 schema. It uses an injected request executor. HaveAPI handles HTTP,
-authentication and response envelopes; the application keeps its authentication,
-permission checks and write recovery policy.
+Generated operations and types for vpsAdmin API 7.0, provided as an ESM package
+with ES2022 JavaScript and TypeScript declarations. HaveAPI handles HTTP,
+authentication and response envelopes; applications keep their permission checks
+and write recovery policy.
 
-The package is ESM, with ES2022 JavaScript and TypeScript declarations. It requires
-`haveapi-client` exactly `0.30.2`. Development version `0.0.0` is private and has
-not been published.
+## Installation
 
-## Using the client
+Build a local tarball from a source checkout of this SDK:
 
-Configure the existing HaveAPI runtime with the complete, versioned API URL:
+```sh
+nix develop
+npm ci --ignore-scripts --no-audit --no-fund
+npm run build
+npm pack --ignore-scripts
+```
+
+Then install the resulting tarball in your application:
+
+```sh
+npm install /path/to/vpsadmin-typescript-client-*.tgz
+```
+
+npm installs the declared `haveapi-client` peer dependency normally. Use an ESM
+application, with `"type": "module"` in its `package.json`. The examples below use
+TypeScript in Node.js.
+
+## Usage
+
+Set `VPSADMIN_TOKEN` in your environment to an existing HaveAPI token. This
+complete program reads the first page of up to 50 VPSes visible to that token
+and prints their ID, hostname and running state:
 
 ```ts
 import { AsyncClient } from 'haveapi-client';
@@ -20,172 +39,253 @@ import {
   createVpsAdminClient,
 } from 'vpsadmin-typescript-client';
 
-const runtime = new AsyncClient('https://api.example.test/v7.0');
+const token = process.env.VPSADMIN_TOKEN?.trim();
+if (!token) {
+  throw new Error('Set VPSADMIN_TOKEN to an existing API token.');
+}
+
+const runtime = new AsyncClient('https://api.vpsfree.cz/v7.0');
+await runtime.authenticate('token', { token });
 const api = createVpsAdminClient({ execute: createHaveApiExecutor(runtime) });
 
-const result = await api.network.index({
-  params: { limit: 50, enabled: true },
-  meta: { count: true },
+const page = await api.vps.index({
+  params: { limit: 50 },
+  timeoutMs: 30_000,
 });
 
-for (const network of result.data) {
-  console.log(network.id, network.address);
+for (const vps of page.data) {
+  const running = vps.is_running == null
+    ? 'unknown'
+    : vps.is_running ? 'running' : 'stopped';
+  console.log(vps.id ?? 'unknown', vps.hostname ?? '(unknown hostname)', running);
 }
 ```
 
-For a deployment below a mount prefix, use a URL such as
-`https://api.example.test/api/v7.0`. The executor receives paths such as
-`/networks`; the version prefix belongs in the runtime's base URL. Setting
-`{ version: '7.0' }` on an unversioned runtime does not version its raw `request`
-calls. The adapter preserves the runtime's receiver and calls only `request`.
+The runtime's base URL must include the API version and any mount prefix. For a
+mounted deployment, use a URL such as `https://api.example.test/api/v7.0`.
+Generated paths such as `/vpses` are relative to that versioned base. The adapter
+preserves the runtime's receiver and calls its `request` method.
 
-Applications with an established transport adapter can supply it as `execute`.
-The executor accepts HaveAPI's `RequestSpec` and returns
-`Promise<RequestResult<unknown>>`. Generated methods preserve metadata, the full
-envelope and HTTP status while assigning the action-specific type to `data`.
-Request headers, `AbortSignal` and `timeoutMs` pass through to the executor.
+## Working with VPSes
 
-Writes use named path parameters and action-specific input:
+The following snippets use the authenticated `api` from the usage example.
+Choose a location and OS template, create a VPS, then use its returned ID to
+inspect and manage it. Choose one creation example and only the power action
+you need.
+
+### Choose a location and OS template
+
+List locations where you can create a VPS:
 
 ```ts
-await api.network.update({
-  path: { network_id: 123 },
-  params: { label: 'Private network', enabled: false },
+const locations = await api.location.index({
+  params: { has_hypervisor: true },
+  timeoutMs: 30_000,
+});
+for (const location of locations.data) {
+  console.log(location.id ?? 'unknown', location.label ?? '(unknown location)',
+    location.has_ipv6 ?? 'unknown');
+}
+```
+
+Choose a location from those results. The following snippets use `locationId`,
+a numeric ID supplied by your application after that choice. Use a location with
+a returned ID. List templates available at the chosen location:
+
+```ts
+const templates = await api.os_template.index({
+  params: { location: locationId },
+  timeoutMs: 30_000,
+});
+for (const template of templates.data) {
+  console.log(template.id ?? 'unknown', template.label ?? '(unknown template)');
+}
+```
+
+Choose a compatible template from those results and supply its numeric ID as
+`templateId`. The creation examples below assume your application has selected
+both `locationId` and `templateId`.
+
+### Create a VPS
+
+To create a VPS, choose a hostname, location and OS template. The minimal
+request creates `my-vps`:
+
+```ts
+const created = await api.vps.create({
+  params: {
+    hostname: 'my-vps',
+    location: locationId,
+    os_template: templateId,
+  },
+  timeoutMs: 30_000,
 });
 ```
 
-Valid calls perform one executor request. Generated methods do not retry writes, discover
-permissions, initialize authentication, wait for blocking actions or fetch
-associations. Keep those decisions in the application. Raw request receipts do
-not satisfy `AsyncClient.waitForCompletion`'s invocation contract.
+The VPS starts by default. Omitted resource sizes use the API's defaults. By
+default it receives one IPv4 and one IPv6 allocation where IPv6 is available.
 
-## Type and runtime limits
+To choose resource sizes and public IP allocation counts, use this alternative
+creation request:
 
-Method names and input fields come from the saved schema. Output fields are
-optional and nullable because authorization can filter them and the API can
-return null. Associations contain partial references; Custom output remains
-`unknown`. Validate application data before relying on it. Generated types do
-not validate server responses or grant access to an operation.
+```ts
+const created = await api.vps.create({
+  params: {
+    hostname: 'my-vps',
+    location: locationId,
+    os_template: templateId,
+    cpu: 2,
+    memory: 2048,
+    diskspace: 10240,
+    ipv4: 1,
+    ipv6: 1,
+  },
+  timeoutMs: 30_000,
+});
+```
 
-Omitted and `undefined` inputs are omitted from requests. Explicit supported
+Memory and disk space use MiB: `2048` is 2 GiB and `10240` is 10 GiB. `cpu` sets
+CPU capacity. Requested resources must fit your quota and be available at the
+chosen location.
+
+The `ipv4` and `ipv6` values are allocation counts, not addresses. An allocation
+can be an individual address or a routed prefix. IPv6 requires support at the
+chosen location.
+
+After either creation call, check that its output contains a VPS ID before
+using it in the following examples:
+
+```ts
+const vpsId = created.data.id;
+if (vpsId == null) {
+  throw new Error('Create response did not include a VPS ID.');
+}
+```
+
+Creating a VPS starts background work. Before continuing, check that creation
+has completed successfully. A returned VPS ID or an unfinished operation does
+not establish completion. Check completion again before each dependent action;
+the same rule applies to power controls and deletion. The generated facade does
+not wait automatically; use your application's action-state handling. Raw
+receipts cannot be passed to `AsyncClient.waitForCompletion`.
+
+### Inspect and rename the VPS
+
+Once creation has completed successfully, inspect the returned `vpsId`:
+
+```ts
+const inspected = await api.vps.show({
+  path: { vps_id: vpsId },
+  timeoutMs: 30_000,
+});
+console.log(inspected.data.hostname ?? '(unknown hostname)');
+```
+
+To rename that VPS to `new-hostname`, send only the hostname input:
+
+```ts
+await api.vps.update({
+  path: { vps_id: vpsId },
+  params: { hostname: 'new-hostname' },
+  timeoutMs: 30_000,
+});
+```
+
+### Start, stop or restart
+
+Each action uses the same `vpsId`. Run the operation you need as a separate
+request, then check its completion before depending on the resulting state.
+
+Start a stopped VPS. Creation already starts the VPS by default:
+
+```ts
+await api.vps.start({
+  path: { vps_id: vpsId },
+  timeoutMs: 30_000,
+});
+```
+
+Request a graceful stop:
+
+```ts
+await api.vps.stop({
+  path: { vps_id: vpsId },
+  timeoutMs: 30_000,
+});
+```
+
+Or request a graceful restart:
+
+```ts
+await api.vps.restart({
+  path: { vps_id: vpsId },
+  timeoutMs: 30_000,
+});
+```
+
+### Delete the VPS
+
+When you no longer need the VPS, request deletion using its returned ID:
+
+```ts
+await api.vps.delete({
+  path: { vps_id: vpsId },
+  timeoutMs: 30_000,
+});
+```
+
+Deletion schedules the VPS to stop and its IP allocations to be released.
+Disk data is removed later.
+
+## Authentication
+
+Authenticate the HaveAPI runtime before calling generated operations. The usage
+example supplies an existing token. For Basic authentication and token login, see
+[HaveAPI async client documentation](https://github.com/vpsfreecz/haveapi/blob/master/clients/js/doc-async-client.md).
+The generated facade does not initialize authentication or discover permissions.
+An operation's presence in the generated API does not grant access to it.
+
+Applications with an established transport adapter can supply it as `execute`.
+It accepts HaveAPI's `RequestSpec` and returns
+`Promise<RequestResult<unknown>>`.
+
+## Responses, errors and timeouts
+
+Read `data` for the action-specific output. Responses also retain `meta`, the
+full `envelope` and `httpStatus`.
+
+Use `params.limit` and `params.from_id` for VPS pagination. `from_id` selects
+VPS IDs greater than the supplied ID. Metadata can include `total_count` when
+`meta: { count: true }` is requested. The SDK does not paginate automatically.
+
+Output fields can be absent or null because authorization filters them and the
+API can return null. Keep the fallbacks shown above to distinguish a missing
+running state from a stopped VPS. Associations are partial references, Custom
+output remains `unknown`, and datetimes remain wire-format strings. Generated
+types do not validate server responses.
+
+Handle request and validation failures with `try`/`catch` around awaited calls.
+Request headers, `AbortSignal` and `timeoutMs` pass through to the executor. Some
+actions start background work. A successful response does not mean that work
+has finished; generated methods do not wait for completion. Raw request receipts
+do not satisfy `AsyncClient.waitForCompletion`'s invocation contract. A timeout
+or cancellation does not prove a write failed. Inspect the server's state before
+retrying an uncertain write. Generated methods do not retry writes automatically.
+
+Omitted and `undefined` inputs are omitted from requests. Supported explicit
 nulls, `false`, zero and empty strings are preserved. Integer inputs and numeric
-path IDs must be safe JavaScript integers. String path IDs are encoded as path
-segments. The client cannot recover integer precision already lost while parsing
-a server response. Datetimes remain wire-format strings.
+path IDs must be safe JavaScript integers; string path IDs are encoded as path
+segments. The client cannot recover integer precision already lost when parsing
+a response. Custom JSON body input supports recursive JSON values, while Custom
+query input, including `meta.includes`, accepts scalar values. Use the API's
+supported string form for association includes.
 
-Custom JSON body input supports recursive JSON values. Custom query input,
-including `meta.includes`, accepts scalar values because HaveAPI 0.30.2 cannot
-encode structured query values safely. Use the API's supported string form for
-association includes.
+## Development and regeneration
 
-Authentication descriptions are retained and validated in the snapshot. Their
-API-root operations remain with the HaveAPI runtime. The generated client covers
-151 application resources and 519 actions; one authentication resource and five
-authentication actions are counted separately and excluded from generation. It
-targets this schema and API version; check compatibility before using it with
-another API release. Older browser bundles can remain active during a rollout.
-
-## Development and verification
-
-Enter the pinned development shell and install the locked dependencies:
-
-```sh
-nix develop
-npm ci --ignore-scripts --no-audit --no-fund
-```
-
-`flake.lock` pins the Nix tools. `tools/toolchain.json` records Node.js 24.21.0,
-npm 11.19.0, Ruby 3.4.11 and TypeScript 6.0.3. `package-lock.json` records the npm
-dependency graph. Ruby runs the source generator using its standard library;
-applications using the built package do not need Ruby. The pinned developer
-Node version does not impose a Node 24 requirement on consumers.
-
-Build and check the package:
-
-```sh
-npm run build
-npm run typecheck
-npm run typecheck:consumer
-npm test
-npm run test:package
-```
-
-The build writes JavaScript and declarations to ignored `dist/`. The package
-check creates an npm archive, checks its contents, extracts it into a disposable
-consumer and checks ESM imports, strict TypeScript declarations and Network
-read and write executor behavior. Its invalid-call cases must continue to fail
-type checking. These checks use local executors and do not call a running API.
-
-## Schema and regeneration
-
-Generated source has separate modules for resources and actions. For example,
-`src/generated/resources/network/resource.ts` composes the Network resource, and
-`src/generated/resources/network/actions/index.ts` contains its Index action.
-Child resources have nested `resources/` directories. The root `api.ts` composes
-the client, and `types.ts` re-exports public types. Browse these modules for an
-operation's implementation and declarations.
-
-Applications import from `vpsadmin-typescript-client`. Individual generated
-module paths are internal and are not package subpath exports.
-
-The committed inputs are:
-
-- `schema/schema.json`: canonical API 7.0/protocol 2.0 mounted-source snapshot,
-  profile `vpsadmin-full-fixture`, with the declared six plugins.
-- `schema/provenance.json`: source, fixture, plugin, schema and tooling identity.
-- `schema/tooling.Gemfile.lock`: the exporter dependency graph bound by provenance.
-- `tools/generator.json`: the exact HaveAPI generator revision, source digest,
-  schema and provenance hashes, and package tooling hashes.
-
-The snapshot's `https://schema.invalid/v7.0/` URL identifies its source context.
-Regeneration does not contact that URL or a running API. To regenerate, supply a
-local HaveAPI checkout at the exact revision recorded in `tools/generator.json`:
-
-```sh
-nix develop
-./tools/regenerate --haveapi-source /path/to/haveapi
-./tools/regenerate --haveapi-source /path/to/haveapi --check
-```
-
-The command verifies the source revision, generator source digest, root `VERSION`,
-saved inputs and tooling hashes. It refuses dirty or untracked generator source.
-Offline regeneration explicitly loads both `clients/ruby/lib` and
-`clients/typescript/lib` from that checkout. It verifies the shared schema library
-and Ruby-client version came from that checkout and match the recorded source
-identity. Regeneration runs offline without installing HTTP dependencies.
-`--check` compares the generated tree without writing it. Regeneration owns only
-`src/generated/`; keep handwritten package code outside that directory. Its
-`.haveapi-generated.json` manifest records owned file hashes and separate
-application and authentication coverage. Commit generated source and input records;
-keep build output untracked.
-
-The shared-source refusal checks use a disposable local clone of that exact
-checkout and leave the generated tree unchanged:
-
-```sh
-HAVEAPI_SOURCE=/path/to/haveapi node --test test/regeneration/sources.test.mjs
-```
-
-To update the API schema, use vpsAdmin's controlled exporter. It captures the full
-declared API and plugin profile; a permission-filtered live description is
-insufficient for this package. From a clean, committed vpsAdmin checkout:
-
-```sh
-nix develop .#vpsadmin
-tools/export-api-schema --prepare
-tools/export-api-schema --api-version 7.0 --output /tmp/vpsadmin-schema-review
-```
-
-Choose a fresh output directory. Review its `schema.json`, `provenance.json` and
-`tooling.Gemfile.lock`, including plugin coverage and source and tooling identity,
-before updating this repository's saved inputs and generator pins and regenerating.
-The exporter writes review candidates to the chosen directory. See vpsAdmin's
-`docs/api-schema-export.md` for its environment and cleanup requirements.
-
-The npm archive includes built output, schema, provenance, exporter lock, and
-generator identity and coverage records. Regeneration commands and the pinned
-development environment remain in this source repository. Publication requires
-a separately authorized release and removal of the package's private flag.
+See the [development guide](docs/development.md) for pinned tools, verification,
+the saved schema and provenance, VPS resource modules, and offline regeneration.
+Applications import from `vpsadmin-typescript-client`; individual generated module
+paths are internal and are not package subpath exports.
 
 See [release preparation](docs/releasing.md) for build-only workflow checks,
 trusted-publisher setup prerequisites and the retained-archive publication path.
