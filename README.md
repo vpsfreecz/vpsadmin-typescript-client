@@ -7,7 +7,13 @@ and write recovery policy.
 
 ## Installation
 
-Build a local tarball from a source checkout of this SDK:
+Install the package from npm:
+
+```sh
+npm install vpsadmin-typescript-client@0.1.0
+```
+
+To build a local tarball from a source checkout of this SDK:
 
 ```sh
 nix develop
@@ -25,6 +31,8 @@ npm install /path/to/vpsadmin-typescript-client-*.tgz
 npm installs the declared `haveapi-client` peer dependency normally. Use an ESM
 application, with `"type": "module"` in its `package.json`. The examples below use
 TypeScript in Node.js.
+
+The package is licensed under the [MIT License](LICENSE).
 
 ## Usage
 
