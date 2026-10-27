@@ -100,5 +100,6 @@ jobs:
           nix develop --command sh -eu -c '
             node tools/release.mjs preflight
             node tools/release.mjs verify --archive release/*.tgz --receipt release/receipt.json
-            npm publish release/*.tgz --ignore-scripts --access public --registry https://registry.npmjs.org
+            # npm treats an unprefixed relative archive path as a GitHub shorthand.
+            npm publish ./release/*.tgz --ignore-scripts --access public --registry https://registry.npmjs.org
           '
