@@ -8,7 +8,7 @@
   "provenance_file": "schema/provenance.json",
   "provenance_sha256": "7b477c6156c82ab483d686e1e0305ea2a40b82e0e24d50dc7653228b19556927",
   "tooling_sha256": {
-    "package-lock.json": "d33e9e695ad11dd2cfce38d0058d9f64becdbce48dbb53b49ceb15cb58c7c09b",
+    "package-lock.json": "da67cb3a5430a26f86b9df6b912d14e66214f1d8239fd1a35446bb6c61e62e15",
     "flake.lock": "187d63f65b46f5cfa3ac830a5d0c182693cd0ca7ab8e486c3876fcf4b4f6d4f4",
     "tools/toolchain.json": "dc28c254a633e5d19fc079b573082507f104089a8c826075d50a850688310d93",
     "schema/tooling.Gemfile.lock": "b1d32a5ff5fb7e922c56ac6efadfa765ac4b2043cae90a54f0a71124b9b90019",

@@ -1,9 +1,7 @@
 # Package validation and npm releases
 
-Version `0.1.0` is prepared for public npm distribution under the MIT license.
-The maintainer publishes the first release manually from a validated archive.
-The release workflow remains available for build-only validation;
-automated publication requires the separate setup and approval described below.
+The package is published on npm under the MIT license. The release workflow
+validates candidate archives before a separately authorized publication.
 
 ## Build-only validation
 
