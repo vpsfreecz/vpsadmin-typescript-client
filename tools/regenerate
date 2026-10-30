@@ -90,7 +90,11 @@ try {
     ...rubySource, 'generate', source,
     'generate', '--schema', schema, '--api-version', pin.api_version,
     '--output', join(root, 'src/generated'), ...(check ? ['--check'] : []),
-  ], { cwd: root, stdio: 'inherit' });
+  ], {
+    cwd: root,
+    stdio: 'inherit',
+    env: { ...process.env, PRETTIER: join(root, 'node_modules/.bin/prettier') },
+  });
   if (result.error) throw result.error;
   process.exitCode = result.status ?? 1;
   if (result.status === 0) {

@@ -13,10 +13,11 @@ npm ci --ignore-scripts --no-audit --no-fund
 ```
 
 `flake.lock` pins the Nix tools. `tools/toolchain.json` records Node.js 24.21.0,
-npm 11.19.0, Ruby 3.4.11 and TypeScript 6.0.3. `package-lock.json` records the npm
-dependency graph. Ruby runs the source generator using its standard library;
-applications using the built package do not need Ruby. The pinned developer
-Node version does not impose a Node 24 requirement on consumers.
+npm 11.19.0, Ruby 3.4.11, TypeScript 6.0.3 and Prettier 3.9.10.
+`package-lock.json` records the npm dependency graph. Ruby runs the source
+generator using its standard library; applications using the built package do
+not need Ruby or Prettier. The pinned developer Node version does not impose a
+Node 24 requirement on consumers.
 
 Build and check the package:
 
@@ -83,6 +84,13 @@ identity. Regeneration runs offline without installing HTTP dependencies.
 `.haveapi-generated.json` manifest records owned file hashes and separate
 application and authentication coverage. Commit generated source and input records;
 keep build output untracked.
+
+`tools/regenerate` selects Prettier 3.9.10 from this repository's installed npm
+dependencies and ignores an inherited `PRETTIER` value. It uses the configuration
+packaged with the pinned HaveAPI generator, without reading application
+formatting configuration. Regeneration installs no tools. The ownership manifest
+records the formatter version, configuration SHA256 and hashes of the formatted
+output files.
 
 The shared-source refusal checks use a disposable local clone of that exact
 checkout and leave the generated tree unchanged:

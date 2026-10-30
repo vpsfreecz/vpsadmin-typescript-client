@@ -25,6 +25,13 @@ test('offline source selection binds shared identity and rejects changed shared 
   const marker = join(root, 'src/generated/.haveapi-generated.json');
   const before = readFileSync(marker);
   try {
+    const localFormatter = spawnSync(process.execPath, [join(root, 'tools/regenerate'), '--haveapi-source', source, '--check'], {
+      cwd: root, encoding: 'utf8',
+      env: { ...process.env, PRETTIER: join(temporary, 'unavailable-prettier') },
+    });
+    assert.equal(localFormatter.status, 0, localFormatter.stderr);
+    assert.deepEqual(readFileSync(marker), before);
+
     command('git', ['clone', '--shared', '--quiet', source, checkout], root);
     assert.equal(command('git', ['rev-parse', 'HEAD'], checkout), pin.haveapi_revision);
     const identity = JSON.parse(command('ruby', [
