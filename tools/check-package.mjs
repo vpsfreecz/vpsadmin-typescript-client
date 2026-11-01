@@ -12,7 +12,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const fixtures = join(root, 'test/consumer');
-for (const file of ['runtime.mjs', 'types.ts', 'modules.ts']) {
+for (const file of ['runtime.mjs', 'haveapi.mjs', 'types.ts', 'modules.ts']) {
   assert.ok(existsSync(join(fixtures, file)), `Missing real-client consumer: ${file}`);
 }
 
@@ -98,10 +98,15 @@ try {
 
   const manifest = JSON.parse(readFileSync(join(modules, 'vpsadmin-typescript-client/package.json')));
   assert.equal(manifest.type, 'module');
-  assert.equal(manifest.peerDependencies['haveapi-client'], '0.30.2');
+  assert.equal(manifest.peerDependencies['haveapi-client'], '0.32.0');
   run(process.execPath, [join(root, 'node_modules/typescript/bin/tsc'), '-p', 'tsconfig.json'], consumer);
+  run(process.execPath, [
+    join(root, 'node_modules/typescript-webui/bin/tsc'), '-p', 'tsconfig.json',
+    '--module', 'ESNext', '--moduleResolution', 'Bundler',
+  ], consumer);
   run(process.execPath, ['runtime.mjs'], consumer);
-  console.log('Packed ESM, strict types and executor consumer passed.');
+  run(process.execPath, ['haveapi.mjs'], consumer);
+  console.log('Packed ESM, strict types, executor and HaveAPI transport consumers passed.');
 } finally {
   rmSync(temporary, { recursive: true, force: true });
 }

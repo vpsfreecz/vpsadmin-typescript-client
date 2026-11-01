@@ -1,6 +1,6 @@
 {
   "name": "vpsadmin-typescript-client",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": false,
   "license": "MIT",
   "description": "Generated TypeScript operations for a recorded vpsAdmin API schema",
@@ -28,19 +28,21 @@
   },
   "scripts": {
     "build": "node tools/build.mjs",
-    "typecheck": "tsc --noEmit",
-    "typecheck:consumer": "tsc -p test/consumer/tsconfig.json",
+    "typecheck": "node node_modules/typescript/bin/tsc --noEmit",
+    "typecheck:consumer": "node node_modules/typescript/bin/tsc -p test/consumer/tsconfig.json",
+    "typecheck:consumer:webui": "node node_modules/typescript-webui/bin/tsc -p test/consumer/tsconfig.json --module ESNext --moduleResolution Bundler",
     "test": "npm run build && node --test test/*.test.mjs",
     "test:package": "node tools/check-package.mjs",
     "regenerate": "node tools/regenerate",
     "prepack": "npm run build"
   },
   "peerDependencies": {
-    "haveapi-client": "0.30.2"
+    "haveapi-client": "0.32.0"
   },
   "devDependencies": {
-    "haveapi-client": "0.30.2",
+    "haveapi-client": "0.32.0",
     "prettier": "3.9.10",
-    "typescript": "6.0.3"
+    "typescript": "6.0.3",
+    "typescript-webui": "npm:typescript@5.9.3"
   }
 }

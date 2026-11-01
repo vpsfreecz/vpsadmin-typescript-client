@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import {
-  API_VERSION, SCHEMA_SHA256, createHaveApiExecutor, createVpsAdminClient,
+  API_VERSION, SCHEMA_SHA256, ClientInputError, createHaveApiExecutor, createVpsAdminClient,
 } from 'vpsadmin-typescript-client';
 
 test('generated modules compose behind the unchanged public package surface', async () => {
@@ -84,4 +84,73 @@ test('HaveAPI adapter preserves the request receiver and does not initialize the
     authenticate() { assert.fail('adapter must not change authentication'); },
   };
   assert.equal(await createHaveApiExecutor(runtime)(spec), receipt);
+});
+
+test('live descriptions use version-relative OPTIONS routes and preserve receipts', async () => {
+  const calls = [];
+  const signal = new AbortController().signal;
+  const headers = { 'X-Request-Id': 'description-consumer' };
+  const receipt = {
+    data: { input: { parameters: { label: { type: 'String' } } } },
+    meta: { extension: false }, envelope: { status: true }, httpStatus: 200,
+  };
+  const client = createVpsAdminClient({ execute: async (spec) => { calls.push(spec); return receipt; } });
+  for (const result of [
+    await client.describe({ headers, signal, timeoutMs: 50 }),
+    await client.network.update.describe({ path: { network_id: 'a/b' }, headers, signal, timeoutMs: 50 }),
+  ]) {
+    for (const key of ['data', 'meta', 'envelope', 'httpStatus']) assert.equal(result[key], receipt[key]);
+  }
+  assert.deepEqual(calls.map(({ method, path }) => ({ method, path })), [
+    { method: 'OPTIONS', path: '/' },
+    { method: 'OPTIONS', path: '/networks/a%2Fb?method=PUT' },
+  ]);
+  for (const spec of calls) {
+    assert.equal(spec.signal, signal);
+    assert.equal(spec.headers, headers);
+    assert.equal(spec.timeoutMs, 50);
+  }
+});
+
+test('local input failures are distinguishable from uncertain executor failures', async () => {
+  const failure = new TypeError('executor failure');
+  let calls = 0;
+  const client = createVpsAdminClient({ execute: async () => { calls += 1; throw failure; } });
+  await assert.rejects(
+    client.network.update.describe({ path: { network_id: Number.MAX_SAFE_INTEGER + 1 } }),
+    (error) => error instanceof ClientInputError && error instanceof TypeError
+      && error.code === 'HAVEAPI_CLIENT_INPUT_ERROR' && error.phase === 'pre-dispatch',
+  );
+  assert.equal(calls, 0);
+  for (const operation of [
+    () => client.describe(),
+    () => client.network.update({ path: { network_id: 1 }, params: { label: '' } }),
+  ]) {
+    await assert.rejects(operation(), (error) => error === failure && !(error instanceof ClientInputError));
+  }
+  assert.equal(calls, 2);
+});
+
+test('a configured metadata namespace preserves raw receipts and canonical object metadata', async () => {
+  const calls = [];
+  const nested = { id: 2, _wire: { extension: true } };
+  const objectMeta = { resolved: false, path_params: [7] };
+  const row = { id: 7, _wire: objectMeta, primary_location: nested };
+  const envelope = { status: true, response: { networks: [row], _wire: { total_count: 1 } } };
+  const client = createVpsAdminClient({
+    metaNamespace: '_wire',
+    execute: async (spec) => {
+      calls.push(spec);
+      return { data: [row], meta: envelope.response._wire, envelope, httpStatus: 200 };
+    },
+  });
+  const result = await client.network.index({ meta: { count: true } });
+  assert.equal(calls[0].metaNamespace, '_wire');
+  assert.equal(result.envelope, envelope);
+  assert.equal(result.envelope.response.networks[0], row);
+  assert.equal(row._wire, objectMeta);
+  assert.deepEqual(result.data[0]._meta, objectMeta);
+  assert.equal(result.data[0].primary_location, nested, 'nested association contents remain untouched');
+  await client.network.update.describe({ path: { network_id: 7 } });
+  assert.equal(calls[1].metaNamespace, '_wire');
 });

@@ -14,10 +14,11 @@ npm ci --ignore-scripts --no-audit --no-fund
 
 `flake.lock` pins the Nix tools. `tools/toolchain.json` records Node.js 24.21.0,
 npm 11.19.0, Ruby 3.4.11, TypeScript 6.0.3 and Prettier 3.9.10.
-`package-lock.json` records the npm dependency graph. Ruby runs the source
-generator using its standard library; applications using the built package do
-not need Ruby or Prettier. The pinned developer Node version does not impose a
-Node 24 requirement on consumers.
+`package-lock.json` records the npm dependency graph, including TypeScript 5.9.3
+under the `typescript-webui` alias for consumer compatibility checks. Ruby runs
+the source generator using its standard library; applications using the built
+package do not need Ruby or Prettier. The pinned developer Node version does not
+impose a Node 24 requirement on consumers.
 
 Build and check the package:
 
@@ -25,6 +26,7 @@ Build and check the package:
 npm run build
 npm run typecheck
 npm run typecheck:consumer
+npm run typecheck:consumer:webui
 npm test
 npm run test:package
 ```
@@ -32,8 +34,13 @@ npm run test:package
 The build writes JavaScript and declarations to ignored `dist/`. The package
 check creates an npm archive, checks its contents, extracts it into a disposable
 consumer and checks ESM imports, strict TypeScript declarations and local
-executor reads and writes. Its invalid-call cases must continue to fail
-type checking. These checks use local executors and do not call a running API.
+executor reads and writes. Its loopback HTTP fixture runs the actual HaveAPI
+0.32.0 runtime against the extracted package to check mounted URLs, request
+namespaces, descriptions, receipts and errors. It checks declarations with
+TypeScript 6 in NodeNext mode and TypeScript 5.9 in Bundler mode, as used by
+vpsAdmin WebUI. Its invalid-call cases must continue to fail type checking.
+These checks use local executors and an isolated HTTP fixture;
+they do not contact a deployed API.
 
 ## Schema and regeneration
 
@@ -119,7 +126,9 @@ The npm archive includes built output, schema, provenance, exporter lock, and
 generator identity and coverage records. Regeneration commands and the pinned
 development environment remain in this source repository. Publication requires
 a separately authorized release. The package uses the MIT license and retains
-the exact `haveapi-client` 0.30.2 peer dependency.
+the exact `haveapi-client` 0.32.0 peer dependency. The package consumer checks
+compile the runtime adapter against that release; a Ruby generator version alone
+does not establish JavaScript runtime compatibility.
 
 See [release preparation](releasing.md) for build-only workflow checks,
 trusted-publisher setup prerequisites and the retained-archive publication path.

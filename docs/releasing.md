@@ -12,7 +12,9 @@ regeneration. It builds JavaScript and declarations once, runs the existing stri
 consumer and unit checks, and packs with package scripts disabled.
 
 The checker extracts that archive and checks every manifest-owned module's
-JavaScript and declarations in a separate consumer. The workflow retains
+JavaScript and declarations in a separate consumer with TypeScript 6 and 5.9.
+It also runs the extracted client with the pinned HaveAPI runtime against a
+loopback HTTP fixture. The workflow retains
 the tarball and `receipt.json` as one immutable Actions artifact. The receipt
 records package name, version, source commit, tag when present, filename, SHA256
 and SHA512 integrity. Build-only validation also accepts private development

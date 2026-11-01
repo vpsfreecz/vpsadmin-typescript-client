@@ -10,7 +10,7 @@ and write recovery policy.
 Install the package from npm:
 
 ```sh
-npm install vpsadmin-typescript-client@0.2.0
+npm install vpsadmin-typescript-client
 ```
 
 To build a local tarball from a source checkout of this SDK:
@@ -266,13 +266,27 @@ Use `params.limit` and `params.from_id` for VPS pagination. `from_id` selects
 VPS IDs greater than the supplied ID. Metadata can include `total_count` when
 `meta: { count: true }` is requested. The SDK does not paginate automatically.
 
-Output fields can be absent or null because authorization filters them and the
-API can return null. Keep the fallbacks shown above to distinguish a missing
-running state from a stopped VPS. Associations are partial references, Custom
-output remains `unknown`, and datetimes remain wire-format strings. Generated
-types do not validate server responses.
+Global response metadata has action-specific types and allows unknown extension
+keys. For example, `page.meta.total_count` is an optional nullable number for
+index actions that declare a count. Output fields can be absent or null because
+authorization filters them and the API can return null. Keep the fallbacks shown
+above to distinguish a missing running state from a stopped VPS. Associations
+are partial references, Custom output remains `unknown`, and datetimes remain
+wire-format strings. Generated types do not validate server responses.
+
+The default metadata namespace comes from the saved schema. For a deployment
+that configures another namespace, pass `metaNamespace` when creating the
+client, for example `createVpsAdminClient({ execute, metaNamespace: '_wire' })`.
+Global metadata and descriptions use that wire namespace. Declared immediate
+object metadata in returned lists is available under the canonical `_meta` key
+in `data`; the raw `envelope` retains the server's original keys. Custom payloads
+and nested association contents retain their original shape.
 
 Handle request and validation failures with `try`/`catch` around awaited calls.
+`ClientInputError` extends `TypeError` and identifies generated validation that
+failed before dispatch. It has `code: 'HAVEAPI_CLIENT_INPUT_ERROR'` and
+`phase: 'pre-dispatch'`. Executor and transport errors retain their original
+identity; they can represent an uncertain write outcome.
 Request headers, `AbortSignal` and `timeoutMs` pass through to the executor. Some
 actions start background work. A successful response does not mean that work
 has finished; generated methods do not wait for completion. Raw request receipts
@@ -287,6 +301,25 @@ segments. The client cannot recover integer precision already lost when parsing
 a response. Custom JSON body input supports recursive JSON values, while Custom
 query input, including `meta.includes`, accepts scalar values. Use the API's
 supported string form for association includes.
+
+## Live descriptions
+
+Read the current authorized description through the same executor:
+
+```ts
+const description = await api.describe({ timeoutMs: 30_000 });
+const updateDescription = await api.vps.update.describe({
+  path: { vps_id: vpsId },
+  timeoutMs: 30_000,
+});
+```
+
+These calls send OPTIONS to the version root or the concrete action's help
+route. They preserve headers, cancellation, timeouts and the full receipt. The
+server can omit resources, actions or parameters according to authorization.
+Keep capability caches scoped to the authenticated identity and refresh them
+when permissions change. The SDK does not infer permissions from the saved
+schema or cache live descriptions. Description types do not validate payloads.
 
 ## Development and regeneration
 

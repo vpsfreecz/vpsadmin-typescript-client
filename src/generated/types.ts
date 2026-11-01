@@ -8,6 +8,8 @@ export type {
   ActionState__CancelObjectOutput,
   ActionState__CancelPath,
   ActionState__CancelOptions,
+  ActionState__CancelDescribeOptions,
+  ActionState__CancelAction,
 } from "./resources/action_state/actions/cancel.js";
 export type {
   ActionState__IndexInput,
@@ -18,6 +20,8 @@ export type {
   ActionState__IndexObjectOutput,
   ActionState__IndexPath,
   ActionState__IndexOptions,
+  ActionState__IndexDescribeOptions,
+  ActionState__IndexAction,
 } from "./resources/action_state/actions/index.js";
 export type {
   ActionState__PollInput,
@@ -28,6 +32,8 @@ export type {
   ActionState__PollObjectOutput,
   ActionState__PollPath,
   ActionState__PollOptions,
+  ActionState__PollDescribeOptions,
+  ActionState__PollAction,
 } from "./resources/action_state/actions/poll.js";
 export type {
   ActionState__ShowInput,
@@ -38,6 +44,8 @@ export type {
   ActionState__ShowObjectOutput,
   ActionState__ShowPath,
   ActionState__ShowOptions,
+  ActionState__ShowDescribeOptions,
+  ActionState__ShowAction,
 } from "./resources/action_state/actions/show.js";
 export type { ActionStateResource } from "./resources/action_state/resource.js";
 export type {
@@ -49,6 +57,8 @@ export type {
   ApiServer__UnlockTransactionSigningKeyObjectOutput,
   ApiServer__UnlockTransactionSigningKeyPath,
   ApiServer__UnlockTransactionSigningKeyOptions,
+  ApiServer__UnlockTransactionSigningKeyDescribeOptions,
+  ApiServer__UnlockTransactionSigningKeyAction,
 } from "./resources/api_server/actions/unlock_transaction_signing_key.js";
 export type { ApiServerResource } from "./resources/api_server/resource.js";
 export type {
@@ -60,6 +70,8 @@ export type {
   Cluster__FullStatsObjectOutput,
   Cluster__FullStatsPath,
   Cluster__FullStatsOptions,
+  Cluster__FullStatsDescribeOptions,
+  Cluster__FullStatsAction,
 } from "./resources/cluster/actions/full_stats.js";
 export type {
   Cluster__GenerateMigrationKeysInput,
@@ -70,6 +82,8 @@ export type {
   Cluster__GenerateMigrationKeysObjectOutput,
   Cluster__GenerateMigrationKeysPath,
   Cluster__GenerateMigrationKeysOptions,
+  Cluster__GenerateMigrationKeysDescribeOptions,
+  Cluster__GenerateMigrationKeysAction,
 } from "./resources/cluster/actions/generate_migration_keys.js";
 export type {
   Cluster__PublicStatsInput,
@@ -80,6 +94,8 @@ export type {
   Cluster__PublicStatsObjectOutput,
   Cluster__PublicStatsPath,
   Cluster__PublicStatsOptions,
+  Cluster__PublicStatsDescribeOptions,
+  Cluster__PublicStatsAction,
 } from "./resources/cluster/actions/public_stats.js";
 export type {
   Cluster__SearchInput,
@@ -90,6 +106,8 @@ export type {
   Cluster__SearchObjectOutput,
   Cluster__SearchPath,
   Cluster__SearchOptions,
+  Cluster__SearchDescribeOptions,
+  Cluster__SearchAction,
 } from "./resources/cluster/actions/search.js";
 export type {
   Cluster__SetMaintenanceInput,
@@ -100,6 +118,8 @@ export type {
   Cluster__SetMaintenanceObjectOutput,
   Cluster__SetMaintenancePath,
   Cluster__SetMaintenanceOptions,
+  Cluster__SetMaintenanceDescribeOptions,
+  Cluster__SetMaintenanceAction,
 } from "./resources/cluster/actions/set_maintenance.js";
 export type {
   Cluster__ShowInput,
@@ -110,6 +130,8 @@ export type {
   Cluster__ShowObjectOutput,
   Cluster__ShowPath,
   Cluster__ShowOptions,
+  Cluster__ShowDescribeOptions,
+  Cluster__ShowAction,
 } from "./resources/cluster/actions/show.js";
 export type { ClusterResource } from "./resources/cluster/resource.js";
 export type {
@@ -121,6 +143,8 @@ export type {
   ClusterResource__CreateObjectOutput,
   ClusterResource__CreatePath,
   ClusterResource__CreateOptions,
+  ClusterResource__CreateDescribeOptions,
+  ClusterResource__CreateAction,
 } from "./resources/cluster_resource/actions/create.js";
 export type {
   ClusterResource__IndexInput,
@@ -131,6 +155,8 @@ export type {
   ClusterResource__IndexObjectOutput,
   ClusterResource__IndexPath,
   ClusterResource__IndexOptions,
+  ClusterResource__IndexDescribeOptions,
+  ClusterResource__IndexAction,
 } from "./resources/cluster_resource/actions/index.js";
 export type {
   ClusterResource__ShowInput,
@@ -141,6 +167,8 @@ export type {
   ClusterResource__ShowObjectOutput,
   ClusterResource__ShowPath,
   ClusterResource__ShowOptions,
+  ClusterResource__ShowDescribeOptions,
+  ClusterResource__ShowAction,
 } from "./resources/cluster_resource/actions/show.js";
 export type {
   ClusterResource__UpdateInput,
@@ -151,6 +179,8 @@ export type {
   ClusterResource__UpdateObjectOutput,
   ClusterResource__UpdatePath,
   ClusterResource__UpdateOptions,
+  ClusterResource__UpdateDescribeOptions,
+  ClusterResource__UpdateAction,
 } from "./resources/cluster_resource/actions/update.js";
 export type { ClusterResourceResource } from "./resources/cluster_resource/resource.js";
 export type {
@@ -162,6 +192,8 @@ export type {
   ClusterResourcePackage__CreateObjectOutput,
   ClusterResourcePackage__CreatePath,
   ClusterResourcePackage__CreateOptions,
+  ClusterResourcePackage__CreateDescribeOptions,
+  ClusterResourcePackage__CreateAction,
 } from "./resources/cluster_resource_package/actions/create.js";
 export type {
   ClusterResourcePackage__DeleteInput,
@@ -172,6 +204,8 @@ export type {
   ClusterResourcePackage__DeleteObjectOutput,
   ClusterResourcePackage__DeletePath,
   ClusterResourcePackage__DeleteOptions,
+  ClusterResourcePackage__DeleteDescribeOptions,
+  ClusterResourcePackage__DeleteAction,
 } from "./resources/cluster_resource_package/actions/delete.js";
 export type {
   ClusterResourcePackage__IndexInput,
@@ -182,6 +216,8 @@ export type {
   ClusterResourcePackage__IndexObjectOutput,
   ClusterResourcePackage__IndexPath,
   ClusterResourcePackage__IndexOptions,
+  ClusterResourcePackage__IndexDescribeOptions,
+  ClusterResourcePackage__IndexAction,
 } from "./resources/cluster_resource_package/actions/index.js";
 export type {
   ClusterResourcePackage__ShowInput,
@@ -192,6 +228,8 @@ export type {
   ClusterResourcePackage__ShowObjectOutput,
   ClusterResourcePackage__ShowPath,
   ClusterResourcePackage__ShowOptions,
+  ClusterResourcePackage__ShowDescribeOptions,
+  ClusterResourcePackage__ShowAction,
 } from "./resources/cluster_resource_package/actions/show.js";
 export type {
   ClusterResourcePackage__UpdateInput,
@@ -202,6 +240,8 @@ export type {
   ClusterResourcePackage__UpdateObjectOutput,
   ClusterResourcePackage__UpdatePath,
   ClusterResourcePackage__UpdateOptions,
+  ClusterResourcePackage__UpdateDescribeOptions,
+  ClusterResourcePackage__UpdateAction,
 } from "./resources/cluster_resource_package/actions/update.js";
 export type { ClusterResourcePackageResource } from "./resources/cluster_resource_package/resource.js";
 export type {
@@ -213,6 +253,8 @@ export type {
   ClusterResourcePackage__Item__CreateObjectOutput,
   ClusterResourcePackage__Item__CreatePath,
   ClusterResourcePackage__Item__CreateOptions,
+  ClusterResourcePackage__Item__CreateDescribeOptions,
+  ClusterResourcePackage__Item__CreateAction,
 } from "./resources/cluster_resource_package/resources/item/actions/create.js";
 export type {
   ClusterResourcePackage__Item__DeleteInput,
@@ -223,6 +265,8 @@ export type {
   ClusterResourcePackage__Item__DeleteObjectOutput,
   ClusterResourcePackage__Item__DeletePath,
   ClusterResourcePackage__Item__DeleteOptions,
+  ClusterResourcePackage__Item__DeleteDescribeOptions,
+  ClusterResourcePackage__Item__DeleteAction,
 } from "./resources/cluster_resource_package/resources/item/actions/delete.js";
 export type {
   ClusterResourcePackage__Item__IndexInput,
@@ -233,6 +277,8 @@ export type {
   ClusterResourcePackage__Item__IndexObjectOutput,
   ClusterResourcePackage__Item__IndexPath,
   ClusterResourcePackage__Item__IndexOptions,
+  ClusterResourcePackage__Item__IndexDescribeOptions,
+  ClusterResourcePackage__Item__IndexAction,
 } from "./resources/cluster_resource_package/resources/item/actions/index.js";
 export type {
   ClusterResourcePackage__Item__ShowInput,
@@ -243,6 +289,8 @@ export type {
   ClusterResourcePackage__Item__ShowObjectOutput,
   ClusterResourcePackage__Item__ShowPath,
   ClusterResourcePackage__Item__ShowOptions,
+  ClusterResourcePackage__Item__ShowDescribeOptions,
+  ClusterResourcePackage__Item__ShowAction,
 } from "./resources/cluster_resource_package/resources/item/actions/show.js";
 export type {
   ClusterResourcePackage__Item__UpdateInput,
@@ -253,6 +301,8 @@ export type {
   ClusterResourcePackage__Item__UpdateObjectOutput,
   ClusterResourcePackage__Item__UpdatePath,
   ClusterResourcePackage__Item__UpdateOptions,
+  ClusterResourcePackage__Item__UpdateDescribeOptions,
+  ClusterResourcePackage__Item__UpdateAction,
 } from "./resources/cluster_resource_package/resources/item/actions/update.js";
 export type { ClusterResourcePackage__ItemResource } from "./resources/cluster_resource_package/resources/item/resource.js";
 export type {
@@ -264,6 +314,8 @@ export type {
   Component__IndexObjectOutput,
   Component__IndexPath,
   Component__IndexOptions,
+  Component__IndexDescribeOptions,
+  Component__IndexAction,
 } from "./resources/component/actions/index.js";
 export type {
   Component__ShowInput,
@@ -274,6 +326,8 @@ export type {
   Component__ShowObjectOutput,
   Component__ShowPath,
   Component__ShowOptions,
+  Component__ShowDescribeOptions,
+  Component__ShowAction,
 } from "./resources/component/actions/show.js";
 export type { ComponentResource } from "./resources/component/resource.js";
 export type {
@@ -285,6 +339,8 @@ export type {
   Dataset__CreateObjectOutput,
   Dataset__CreatePath,
   Dataset__CreateOptions,
+  Dataset__CreateDescribeOptions,
+  Dataset__CreateAction,
 } from "./resources/dataset/actions/create.js";
 export type {
   Dataset__DeleteInput,
@@ -295,6 +351,8 @@ export type {
   Dataset__DeleteObjectOutput,
   Dataset__DeletePath,
   Dataset__DeleteOptions,
+  Dataset__DeleteDescribeOptions,
+  Dataset__DeleteAction,
 } from "./resources/dataset/actions/delete.js";
 export type {
   Dataset__FindByNameInput,
@@ -305,6 +363,8 @@ export type {
   Dataset__FindByNameObjectOutput,
   Dataset__FindByNamePath,
   Dataset__FindByNameOptions,
+  Dataset__FindByNameDescribeOptions,
+  Dataset__FindByNameAction,
 } from "./resources/dataset/actions/find_by_name.js";
 export type {
   Dataset__IndexInput,
@@ -315,6 +375,8 @@ export type {
   Dataset__IndexObjectOutput,
   Dataset__IndexPath,
   Dataset__IndexOptions,
+  Dataset__IndexDescribeOptions,
+  Dataset__IndexAction,
 } from "./resources/dataset/actions/index.js";
 export type {
   Dataset__InheritInput,
@@ -325,6 +387,8 @@ export type {
   Dataset__InheritObjectOutput,
   Dataset__InheritPath,
   Dataset__InheritOptions,
+  Dataset__InheritDescribeOptions,
+  Dataset__InheritAction,
 } from "./resources/dataset/actions/inherit.js";
 export type {
   Dataset__MigrateInput,
@@ -335,6 +399,8 @@ export type {
   Dataset__MigrateObjectOutput,
   Dataset__MigratePath,
   Dataset__MigrateOptions,
+  Dataset__MigrateDescribeOptions,
+  Dataset__MigrateAction,
 } from "./resources/dataset/actions/migrate.js";
 export type {
   Dataset__ShowInput,
@@ -345,6 +411,8 @@ export type {
   Dataset__ShowObjectOutput,
   Dataset__ShowPath,
   Dataset__ShowOptions,
+  Dataset__ShowDescribeOptions,
+  Dataset__ShowAction,
 } from "./resources/dataset/actions/show.js";
 export type {
   Dataset__UpdateInput,
@@ -355,6 +423,8 @@ export type {
   Dataset__UpdateObjectOutput,
   Dataset__UpdatePath,
   Dataset__UpdateOptions,
+  Dataset__UpdateDescribeOptions,
+  Dataset__UpdateAction,
 } from "./resources/dataset/actions/update.js";
 export type { DatasetResource } from "./resources/dataset/resource.js";
 export type {
@@ -366,6 +436,8 @@ export type {
   Dataset__Plan__CreateObjectOutput,
   Dataset__Plan__CreatePath,
   Dataset__Plan__CreateOptions,
+  Dataset__Plan__CreateDescribeOptions,
+  Dataset__Plan__CreateAction,
 } from "./resources/dataset/resources/plan/actions/create.js";
 export type {
   Dataset__Plan__DeleteInput,
@@ -376,6 +448,8 @@ export type {
   Dataset__Plan__DeleteObjectOutput,
   Dataset__Plan__DeletePath,
   Dataset__Plan__DeleteOptions,
+  Dataset__Plan__DeleteDescribeOptions,
+  Dataset__Plan__DeleteAction,
 } from "./resources/dataset/resources/plan/actions/delete.js";
 export type {
   Dataset__Plan__IndexInput,
@@ -386,6 +460,8 @@ export type {
   Dataset__Plan__IndexObjectOutput,
   Dataset__Plan__IndexPath,
   Dataset__Plan__IndexOptions,
+  Dataset__Plan__IndexDescribeOptions,
+  Dataset__Plan__IndexAction,
 } from "./resources/dataset/resources/plan/actions/index.js";
 export type {
   Dataset__Plan__ShowInput,
@@ -396,6 +472,8 @@ export type {
   Dataset__Plan__ShowObjectOutput,
   Dataset__Plan__ShowPath,
   Dataset__Plan__ShowOptions,
+  Dataset__Plan__ShowDescribeOptions,
+  Dataset__Plan__ShowAction,
 } from "./resources/dataset/resources/plan/actions/show.js";
 export type { Dataset__PlanResource } from "./resources/dataset/resources/plan/resource.js";
 export type {
@@ -407,6 +485,8 @@ export type {
   Dataset__PropertyHistory__IndexObjectOutput,
   Dataset__PropertyHistory__IndexPath,
   Dataset__PropertyHistory__IndexOptions,
+  Dataset__PropertyHistory__IndexDescribeOptions,
+  Dataset__PropertyHistory__IndexAction,
 } from "./resources/dataset/resources/property_history/actions/index.js";
 export type {
   Dataset__PropertyHistory__ShowInput,
@@ -417,6 +497,8 @@ export type {
   Dataset__PropertyHistory__ShowObjectOutput,
   Dataset__PropertyHistory__ShowPath,
   Dataset__PropertyHistory__ShowOptions,
+  Dataset__PropertyHistory__ShowDescribeOptions,
+  Dataset__PropertyHistory__ShowAction,
 } from "./resources/dataset/resources/property_history/actions/show.js";
 export type { Dataset__PropertyHistoryResource } from "./resources/dataset/resources/property_history/resource.js";
 export type {
@@ -428,6 +510,8 @@ export type {
   Dataset__Snapshot__CreateObjectOutput,
   Dataset__Snapshot__CreatePath,
   Dataset__Snapshot__CreateOptions,
+  Dataset__Snapshot__CreateDescribeOptions,
+  Dataset__Snapshot__CreateAction,
 } from "./resources/dataset/resources/snapshot/actions/create.js";
 export type {
   Dataset__Snapshot__DeleteInput,
@@ -438,6 +522,8 @@ export type {
   Dataset__Snapshot__DeleteObjectOutput,
   Dataset__Snapshot__DeletePath,
   Dataset__Snapshot__DeleteOptions,
+  Dataset__Snapshot__DeleteDescribeOptions,
+  Dataset__Snapshot__DeleteAction,
 } from "./resources/dataset/resources/snapshot/actions/delete.js";
 export type {
   Dataset__Snapshot__IndexInput,
@@ -448,6 +534,8 @@ export type {
   Dataset__Snapshot__IndexObjectOutput,
   Dataset__Snapshot__IndexPath,
   Dataset__Snapshot__IndexOptions,
+  Dataset__Snapshot__IndexDescribeOptions,
+  Dataset__Snapshot__IndexAction,
 } from "./resources/dataset/resources/snapshot/actions/index.js";
 export type {
   Dataset__Snapshot__RollbackInput,
@@ -458,6 +546,8 @@ export type {
   Dataset__Snapshot__RollbackObjectOutput,
   Dataset__Snapshot__RollbackPath,
   Dataset__Snapshot__RollbackOptions,
+  Dataset__Snapshot__RollbackDescribeOptions,
+  Dataset__Snapshot__RollbackAction,
 } from "./resources/dataset/resources/snapshot/actions/rollback.js";
 export type {
   Dataset__Snapshot__ShowInput,
@@ -468,6 +558,8 @@ export type {
   Dataset__Snapshot__ShowObjectOutput,
   Dataset__Snapshot__ShowPath,
   Dataset__Snapshot__ShowOptions,
+  Dataset__Snapshot__ShowDescribeOptions,
+  Dataset__Snapshot__ShowAction,
 } from "./resources/dataset/resources/snapshot/actions/show.js";
 export type { Dataset__SnapshotResource } from "./resources/dataset/resources/snapshot/resource.js";
 export type {
@@ -479,6 +571,8 @@ export type {
   DatasetExpansion__CreateObjectOutput,
   DatasetExpansion__CreatePath,
   DatasetExpansion__CreateOptions,
+  DatasetExpansion__CreateDescribeOptions,
+  DatasetExpansion__CreateAction,
 } from "./resources/dataset_expansion/actions/create.js";
 export type {
   DatasetExpansion__IndexInput,
@@ -489,6 +583,8 @@ export type {
   DatasetExpansion__IndexObjectOutput,
   DatasetExpansion__IndexPath,
   DatasetExpansion__IndexOptions,
+  DatasetExpansion__IndexDescribeOptions,
+  DatasetExpansion__IndexAction,
 } from "./resources/dataset_expansion/actions/index.js";
 export type {
   DatasetExpansion__RegisterExpandedInput,
@@ -499,6 +595,8 @@ export type {
   DatasetExpansion__RegisterExpandedObjectOutput,
   DatasetExpansion__RegisterExpandedPath,
   DatasetExpansion__RegisterExpandedOptions,
+  DatasetExpansion__RegisterExpandedDescribeOptions,
+  DatasetExpansion__RegisterExpandedAction,
 } from "./resources/dataset_expansion/actions/register_expanded.js";
 export type {
   DatasetExpansion__ShowInput,
@@ -509,6 +607,8 @@ export type {
   DatasetExpansion__ShowObjectOutput,
   DatasetExpansion__ShowPath,
   DatasetExpansion__ShowOptions,
+  DatasetExpansion__ShowDescribeOptions,
+  DatasetExpansion__ShowAction,
 } from "./resources/dataset_expansion/actions/show.js";
 export type {
   DatasetExpansion__UpdateInput,
@@ -519,6 +619,8 @@ export type {
   DatasetExpansion__UpdateObjectOutput,
   DatasetExpansion__UpdatePath,
   DatasetExpansion__UpdateOptions,
+  DatasetExpansion__UpdateDescribeOptions,
+  DatasetExpansion__UpdateAction,
 } from "./resources/dataset_expansion/actions/update.js";
 export type { DatasetExpansionResource } from "./resources/dataset_expansion/resource.js";
 export type {
@@ -530,6 +632,8 @@ export type {
   DatasetExpansion__History__CreateObjectOutput,
   DatasetExpansion__History__CreatePath,
   DatasetExpansion__History__CreateOptions,
+  DatasetExpansion__History__CreateDescribeOptions,
+  DatasetExpansion__History__CreateAction,
 } from "./resources/dataset_expansion/resources/history/actions/create.js";
 export type {
   DatasetExpansion__History__IndexInput,
@@ -540,6 +644,8 @@ export type {
   DatasetExpansion__History__IndexObjectOutput,
   DatasetExpansion__History__IndexPath,
   DatasetExpansion__History__IndexOptions,
+  DatasetExpansion__History__IndexDescribeOptions,
+  DatasetExpansion__History__IndexAction,
 } from "./resources/dataset_expansion/resources/history/actions/index.js";
 export type {
   DatasetExpansion__History__ShowInput,
@@ -550,6 +656,8 @@ export type {
   DatasetExpansion__History__ShowObjectOutput,
   DatasetExpansion__History__ShowPath,
   DatasetExpansion__History__ShowOptions,
+  DatasetExpansion__History__ShowDescribeOptions,
+  DatasetExpansion__History__ShowAction,
 } from "./resources/dataset_expansion/resources/history/actions/show.js";
 export type { DatasetExpansion__HistoryResource } from "./resources/dataset_expansion/resources/history/resource.js";
 export type {
@@ -561,6 +669,8 @@ export type {
   DatasetPlan__IndexObjectOutput,
   DatasetPlan__IndexPath,
   DatasetPlan__IndexOptions,
+  DatasetPlan__IndexDescribeOptions,
+  DatasetPlan__IndexAction,
 } from "./resources/dataset_plan/actions/index.js";
 export type {
   DatasetPlan__ShowInput,
@@ -571,6 +681,8 @@ export type {
   DatasetPlan__ShowObjectOutput,
   DatasetPlan__ShowPath,
   DatasetPlan__ShowOptions,
+  DatasetPlan__ShowDescribeOptions,
+  DatasetPlan__ShowAction,
 } from "./resources/dataset_plan/actions/show.js";
 export type { DatasetPlanResource } from "./resources/dataset_plan/resource.js";
 export type {
@@ -582,6 +694,8 @@ export type {
   Debug__ArrayTopObjectOutput,
   Debug__ArrayTopPath,
   Debug__ArrayTopOptions,
+  Debug__ArrayTopDescribeOptions,
+  Debug__ArrayTopAction,
 } from "./resources/debug/actions/array_top.js";
 export type {
   Debug__HashTopInput,
@@ -592,6 +706,8 @@ export type {
   Debug__HashTopObjectOutput,
   Debug__HashTopPath,
   Debug__HashTopOptions,
+  Debug__HashTopDescribeOptions,
+  Debug__HashTopAction,
 } from "./resources/debug/actions/hash_top.js";
 export type {
   Debug__ListObjectCountsInput,
@@ -602,6 +718,8 @@ export type {
   Debug__ListObjectCountsObjectOutput,
   Debug__ListObjectCountsPath,
   Debug__ListObjectCountsOptions,
+  Debug__ListObjectCountsDescribeOptions,
+  Debug__ListObjectCountsAction,
 } from "./resources/debug/actions/list_object_counts.js";
 export type { DebugResource } from "./resources/debug/resource.js";
 export type {
@@ -613,6 +731,8 @@ export type {
   DefaultObjectClusterResource__CreateObjectOutput,
   DefaultObjectClusterResource__CreatePath,
   DefaultObjectClusterResource__CreateOptions,
+  DefaultObjectClusterResource__CreateDescribeOptions,
+  DefaultObjectClusterResource__CreateAction,
 } from "./resources/default_object_cluster_resource/actions/create.js";
 export type {
   DefaultObjectClusterResource__DeleteInput,
@@ -623,6 +743,8 @@ export type {
   DefaultObjectClusterResource__DeleteObjectOutput,
   DefaultObjectClusterResource__DeletePath,
   DefaultObjectClusterResource__DeleteOptions,
+  DefaultObjectClusterResource__DeleteDescribeOptions,
+  DefaultObjectClusterResource__DeleteAction,
 } from "./resources/default_object_cluster_resource/actions/delete.js";
 export type {
   DefaultObjectClusterResource__IndexInput,
@@ -633,6 +755,8 @@ export type {
   DefaultObjectClusterResource__IndexObjectOutput,
   DefaultObjectClusterResource__IndexPath,
   DefaultObjectClusterResource__IndexOptions,
+  DefaultObjectClusterResource__IndexDescribeOptions,
+  DefaultObjectClusterResource__IndexAction,
 } from "./resources/default_object_cluster_resource/actions/index.js";
 export type {
   DefaultObjectClusterResource__ShowInput,
@@ -643,6 +767,8 @@ export type {
   DefaultObjectClusterResource__ShowObjectOutput,
   DefaultObjectClusterResource__ShowPath,
   DefaultObjectClusterResource__ShowOptions,
+  DefaultObjectClusterResource__ShowDescribeOptions,
+  DefaultObjectClusterResource__ShowAction,
 } from "./resources/default_object_cluster_resource/actions/show.js";
 export type {
   DefaultObjectClusterResource__UpdateInput,
@@ -653,6 +779,8 @@ export type {
   DefaultObjectClusterResource__UpdateObjectOutput,
   DefaultObjectClusterResource__UpdatePath,
   DefaultObjectClusterResource__UpdateOptions,
+  DefaultObjectClusterResource__UpdateDescribeOptions,
+  DefaultObjectClusterResource__UpdateAction,
 } from "./resources/default_object_cluster_resource/actions/update.js";
 export type { DefaultObjectClusterResourceResource } from "./resources/default_object_cluster_resource/resource.js";
 export type {
@@ -664,6 +792,8 @@ export type {
   DnsRecord__CreateObjectOutput,
   DnsRecord__CreatePath,
   DnsRecord__CreateOptions,
+  DnsRecord__CreateDescribeOptions,
+  DnsRecord__CreateAction,
 } from "./resources/dns_record/actions/create.js";
 export type {
   DnsRecord__DeleteInput,
@@ -674,6 +804,8 @@ export type {
   DnsRecord__DeleteObjectOutput,
   DnsRecord__DeletePath,
   DnsRecord__DeleteOptions,
+  DnsRecord__DeleteDescribeOptions,
+  DnsRecord__DeleteAction,
 } from "./resources/dns_record/actions/delete.js";
 export type {
   DnsRecord__DynamicUpdateInput,
@@ -684,6 +816,8 @@ export type {
   DnsRecord__DynamicUpdateObjectOutput,
   DnsRecord__DynamicUpdatePath,
   DnsRecord__DynamicUpdateOptions,
+  DnsRecord__DynamicUpdateDescribeOptions,
+  DnsRecord__DynamicUpdateAction,
 } from "./resources/dns_record/actions/dynamic_update.js";
 export type {
   DnsRecord__IndexInput,
@@ -694,6 +828,8 @@ export type {
   DnsRecord__IndexObjectOutput,
   DnsRecord__IndexPath,
   DnsRecord__IndexOptions,
+  DnsRecord__IndexDescribeOptions,
+  DnsRecord__IndexAction,
 } from "./resources/dns_record/actions/index.js";
 export type {
   DnsRecord__ShowInput,
@@ -704,6 +840,8 @@ export type {
   DnsRecord__ShowObjectOutput,
   DnsRecord__ShowPath,
   DnsRecord__ShowOptions,
+  DnsRecord__ShowDescribeOptions,
+  DnsRecord__ShowAction,
 } from "./resources/dns_record/actions/show.js";
 export type {
   DnsRecord__UpdateInput,
@@ -714,6 +852,8 @@ export type {
   DnsRecord__UpdateObjectOutput,
   DnsRecord__UpdatePath,
   DnsRecord__UpdateOptions,
+  DnsRecord__UpdateDescribeOptions,
+  DnsRecord__UpdateAction,
 } from "./resources/dns_record/actions/update.js";
 export type { DnsRecordResource } from "./resources/dns_record/resource.js";
 export type {
@@ -725,6 +865,8 @@ export type {
   DnsRecordLog__IndexObjectOutput,
   DnsRecordLog__IndexPath,
   DnsRecordLog__IndexOptions,
+  DnsRecordLog__IndexDescribeOptions,
+  DnsRecordLog__IndexAction,
 } from "./resources/dns_record_log/actions/index.js";
 export type {
   DnsRecordLog__ShowInput,
@@ -735,6 +877,8 @@ export type {
   DnsRecordLog__ShowObjectOutput,
   DnsRecordLog__ShowPath,
   DnsRecordLog__ShowOptions,
+  DnsRecordLog__ShowDescribeOptions,
+  DnsRecordLog__ShowAction,
 } from "./resources/dns_record_log/actions/show.js";
 export type { DnsRecordLogResource } from "./resources/dns_record_log/resource.js";
 export type {
@@ -746,6 +890,8 @@ export type {
   DnsResolver__CreateObjectOutput,
   DnsResolver__CreatePath,
   DnsResolver__CreateOptions,
+  DnsResolver__CreateDescribeOptions,
+  DnsResolver__CreateAction,
 } from "./resources/dns_resolver/actions/create.js";
 export type {
   DnsResolver__DeleteInput,
@@ -756,6 +902,8 @@ export type {
   DnsResolver__DeleteObjectOutput,
   DnsResolver__DeletePath,
   DnsResolver__DeleteOptions,
+  DnsResolver__DeleteDescribeOptions,
+  DnsResolver__DeleteAction,
 } from "./resources/dns_resolver/actions/delete.js";
 export type {
   DnsResolver__IndexInput,
@@ -766,6 +914,8 @@ export type {
   DnsResolver__IndexObjectOutput,
   DnsResolver__IndexPath,
   DnsResolver__IndexOptions,
+  DnsResolver__IndexDescribeOptions,
+  DnsResolver__IndexAction,
 } from "./resources/dns_resolver/actions/index.js";
 export type {
   DnsResolver__ShowInput,
@@ -776,6 +926,8 @@ export type {
   DnsResolver__ShowObjectOutput,
   DnsResolver__ShowPath,
   DnsResolver__ShowOptions,
+  DnsResolver__ShowDescribeOptions,
+  DnsResolver__ShowAction,
 } from "./resources/dns_resolver/actions/show.js";
 export type {
   DnsResolver__UpdateInput,
@@ -786,6 +938,8 @@ export type {
   DnsResolver__UpdateObjectOutput,
   DnsResolver__UpdatePath,
   DnsResolver__UpdateOptions,
+  DnsResolver__UpdateDescribeOptions,
+  DnsResolver__UpdateAction,
 } from "./resources/dns_resolver/actions/update.js";
 export type { DnsResolverResource } from "./resources/dns_resolver/resource.js";
 export type {
@@ -797,6 +951,8 @@ export type {
   DnsServer__CreateObjectOutput,
   DnsServer__CreatePath,
   DnsServer__CreateOptions,
+  DnsServer__CreateDescribeOptions,
+  DnsServer__CreateAction,
 } from "./resources/dns_server/actions/create.js";
 export type {
   DnsServer__DeleteInput,
@@ -807,6 +963,8 @@ export type {
   DnsServer__DeleteObjectOutput,
   DnsServer__DeletePath,
   DnsServer__DeleteOptions,
+  DnsServer__DeleteDescribeOptions,
+  DnsServer__DeleteAction,
 } from "./resources/dns_server/actions/delete.js";
 export type {
   DnsServer__IndexInput,
@@ -817,6 +975,8 @@ export type {
   DnsServer__IndexObjectOutput,
   DnsServer__IndexPath,
   DnsServer__IndexOptions,
+  DnsServer__IndexDescribeOptions,
+  DnsServer__IndexAction,
 } from "./resources/dns_server/actions/index.js";
 export type {
   DnsServer__ShowInput,
@@ -827,6 +987,8 @@ export type {
   DnsServer__ShowObjectOutput,
   DnsServer__ShowPath,
   DnsServer__ShowOptions,
+  DnsServer__ShowDescribeOptions,
+  DnsServer__ShowAction,
 } from "./resources/dns_server/actions/show.js";
 export type {
   DnsServer__UpdateInput,
@@ -837,6 +999,8 @@ export type {
   DnsServer__UpdateObjectOutput,
   DnsServer__UpdatePath,
   DnsServer__UpdateOptions,
+  DnsServer__UpdateDescribeOptions,
+  DnsServer__UpdateAction,
 } from "./resources/dns_server/actions/update.js";
 export type { DnsServerResource } from "./resources/dns_server/resource.js";
 export type {
@@ -848,6 +1012,8 @@ export type {
   DnsServerZone__CreateObjectOutput,
   DnsServerZone__CreatePath,
   DnsServerZone__CreateOptions,
+  DnsServerZone__CreateDescribeOptions,
+  DnsServerZone__CreateAction,
 } from "./resources/dns_server_zone/actions/create.js";
 export type {
   DnsServerZone__DeleteInput,
@@ -858,6 +1024,8 @@ export type {
   DnsServerZone__DeleteObjectOutput,
   DnsServerZone__DeletePath,
   DnsServerZone__DeleteOptions,
+  DnsServerZone__DeleteDescribeOptions,
+  DnsServerZone__DeleteAction,
 } from "./resources/dns_server_zone/actions/delete.js";
 export type {
   DnsServerZone__IndexInput,
@@ -868,6 +1036,8 @@ export type {
   DnsServerZone__IndexObjectOutput,
   DnsServerZone__IndexPath,
   DnsServerZone__IndexOptions,
+  DnsServerZone__IndexDescribeOptions,
+  DnsServerZone__IndexAction,
 } from "./resources/dns_server_zone/actions/index.js";
 export type {
   DnsServerZone__ShowInput,
@@ -878,6 +1048,8 @@ export type {
   DnsServerZone__ShowObjectOutput,
   DnsServerZone__ShowPath,
   DnsServerZone__ShowOptions,
+  DnsServerZone__ShowDescribeOptions,
+  DnsServerZone__ShowAction,
 } from "./resources/dns_server_zone/actions/show.js";
 export type { DnsServerZoneResource } from "./resources/dns_server_zone/resource.js";
 export type {
@@ -889,6 +1061,8 @@ export type {
   DnsServerZoneTransferLog__IndexObjectOutput,
   DnsServerZoneTransferLog__IndexPath,
   DnsServerZoneTransferLog__IndexOptions,
+  DnsServerZoneTransferLog__IndexDescribeOptions,
+  DnsServerZoneTransferLog__IndexAction,
 } from "./resources/dns_server_zone_transfer_log/actions/index.js";
 export type {
   DnsServerZoneTransferLog__ShowInput,
@@ -899,6 +1073,8 @@ export type {
   DnsServerZoneTransferLog__ShowObjectOutput,
   DnsServerZoneTransferLog__ShowPath,
   DnsServerZoneTransferLog__ShowOptions,
+  DnsServerZoneTransferLog__ShowDescribeOptions,
+  DnsServerZoneTransferLog__ShowAction,
 } from "./resources/dns_server_zone_transfer_log/actions/show.js";
 export type { DnsServerZoneTransferLogResource } from "./resources/dns_server_zone_transfer_log/resource.js";
 export type {
@@ -910,6 +1086,8 @@ export type {
   DnsTsigKey__CreateObjectOutput,
   DnsTsigKey__CreatePath,
   DnsTsigKey__CreateOptions,
+  DnsTsigKey__CreateDescribeOptions,
+  DnsTsigKey__CreateAction,
 } from "./resources/dns_tsig_key/actions/create.js";
 export type {
   DnsTsigKey__DeleteInput,
@@ -920,6 +1098,8 @@ export type {
   DnsTsigKey__DeleteObjectOutput,
   DnsTsigKey__DeletePath,
   DnsTsigKey__DeleteOptions,
+  DnsTsigKey__DeleteDescribeOptions,
+  DnsTsigKey__DeleteAction,
 } from "./resources/dns_tsig_key/actions/delete.js";
 export type {
   DnsTsigKey__IndexInput,
@@ -930,6 +1110,8 @@ export type {
   DnsTsigKey__IndexObjectOutput,
   DnsTsigKey__IndexPath,
   DnsTsigKey__IndexOptions,
+  DnsTsigKey__IndexDescribeOptions,
+  DnsTsigKey__IndexAction,
 } from "./resources/dns_tsig_key/actions/index.js";
 export type {
   DnsTsigKey__ShowInput,
@@ -940,6 +1122,8 @@ export type {
   DnsTsigKey__ShowObjectOutput,
   DnsTsigKey__ShowPath,
   DnsTsigKey__ShowOptions,
+  DnsTsigKey__ShowDescribeOptions,
+  DnsTsigKey__ShowAction,
 } from "./resources/dns_tsig_key/actions/show.js";
 export type { DnsTsigKeyResource } from "./resources/dns_tsig_key/resource.js";
 export type {
@@ -951,6 +1135,8 @@ export type {
   DnsZone__CreateObjectOutput,
   DnsZone__CreatePath,
   DnsZone__CreateOptions,
+  DnsZone__CreateDescribeOptions,
+  DnsZone__CreateAction,
 } from "./resources/dns_zone/actions/create.js";
 export type {
   DnsZone__DeleteInput,
@@ -961,6 +1147,8 @@ export type {
   DnsZone__DeleteObjectOutput,
   DnsZone__DeletePath,
   DnsZone__DeleteOptions,
+  DnsZone__DeleteDescribeOptions,
+  DnsZone__DeleteAction,
 } from "./resources/dns_zone/actions/delete.js";
 export type {
   DnsZone__IndexInput,
@@ -971,6 +1159,8 @@ export type {
   DnsZone__IndexObjectOutput,
   DnsZone__IndexPath,
   DnsZone__IndexOptions,
+  DnsZone__IndexDescribeOptions,
+  DnsZone__IndexAction,
 } from "./resources/dns_zone/actions/index.js";
 export type {
   DnsZone__ShowInput,
@@ -981,6 +1171,8 @@ export type {
   DnsZone__ShowObjectOutput,
   DnsZone__ShowPath,
   DnsZone__ShowOptions,
+  DnsZone__ShowDescribeOptions,
+  DnsZone__ShowAction,
 } from "./resources/dns_zone/actions/show.js";
 export type {
   DnsZone__UpdateInput,
@@ -991,6 +1183,8 @@ export type {
   DnsZone__UpdateObjectOutput,
   DnsZone__UpdatePath,
   DnsZone__UpdateOptions,
+  DnsZone__UpdateDescribeOptions,
+  DnsZone__UpdateAction,
 } from "./resources/dns_zone/actions/update.js";
 export type { DnsZoneResource } from "./resources/dns_zone/resource.js";
 export type {
@@ -1002,6 +1196,8 @@ export type {
   DnsZoneTransfer__CreateObjectOutput,
   DnsZoneTransfer__CreatePath,
   DnsZoneTransfer__CreateOptions,
+  DnsZoneTransfer__CreateDescribeOptions,
+  DnsZoneTransfer__CreateAction,
 } from "./resources/dns_zone_transfer/actions/create.js";
 export type {
   DnsZoneTransfer__DeleteInput,
@@ -1012,6 +1208,8 @@ export type {
   DnsZoneTransfer__DeleteObjectOutput,
   DnsZoneTransfer__DeletePath,
   DnsZoneTransfer__DeleteOptions,
+  DnsZoneTransfer__DeleteDescribeOptions,
+  DnsZoneTransfer__DeleteAction,
 } from "./resources/dns_zone_transfer/actions/delete.js";
 export type {
   DnsZoneTransfer__IndexInput,
@@ -1022,6 +1220,8 @@ export type {
   DnsZoneTransfer__IndexObjectOutput,
   DnsZoneTransfer__IndexPath,
   DnsZoneTransfer__IndexOptions,
+  DnsZoneTransfer__IndexDescribeOptions,
+  DnsZoneTransfer__IndexAction,
 } from "./resources/dns_zone_transfer/actions/index.js";
 export type {
   DnsZoneTransfer__ShowInput,
@@ -1032,6 +1232,8 @@ export type {
   DnsZoneTransfer__ShowObjectOutput,
   DnsZoneTransfer__ShowPath,
   DnsZoneTransfer__ShowOptions,
+  DnsZoneTransfer__ShowDescribeOptions,
+  DnsZoneTransfer__ShowAction,
 } from "./resources/dns_zone_transfer/actions/show.js";
 export type { DnsZoneTransferResource } from "./resources/dns_zone_transfer/resource.js";
 export type {
@@ -1043,6 +1245,8 @@ export type {
   DnssecRecord__IndexObjectOutput,
   DnssecRecord__IndexPath,
   DnssecRecord__IndexOptions,
+  DnssecRecord__IndexDescribeOptions,
+  DnssecRecord__IndexAction,
 } from "./resources/dnssec_record/actions/index.js";
 export type {
   DnssecRecord__ShowInput,
@@ -1053,6 +1257,8 @@ export type {
   DnssecRecord__ShowObjectOutput,
   DnssecRecord__ShowPath,
   DnssecRecord__ShowOptions,
+  DnssecRecord__ShowDescribeOptions,
+  DnssecRecord__ShowAction,
 } from "./resources/dnssec_record/actions/show.js";
 export type { DnssecRecordResource } from "./resources/dnssec_record/resource.js";
 export type {
@@ -1064,6 +1270,8 @@ export type {
   Environment__CreateObjectOutput,
   Environment__CreatePath,
   Environment__CreateOptions,
+  Environment__CreateDescribeOptions,
+  Environment__CreateAction,
 } from "./resources/environment/actions/create.js";
 export type {
   Environment__IndexInput,
@@ -1074,6 +1282,8 @@ export type {
   Environment__IndexObjectOutput,
   Environment__IndexPath,
   Environment__IndexOptions,
+  Environment__IndexDescribeOptions,
+  Environment__IndexAction,
 } from "./resources/environment/actions/index.js";
 export type {
   Environment__SetMaintenanceInput,
@@ -1084,6 +1294,8 @@ export type {
   Environment__SetMaintenanceObjectOutput,
   Environment__SetMaintenancePath,
   Environment__SetMaintenanceOptions,
+  Environment__SetMaintenanceDescribeOptions,
+  Environment__SetMaintenanceAction,
 } from "./resources/environment/actions/set_maintenance.js";
 export type {
   Environment__ShowInput,
@@ -1094,6 +1306,8 @@ export type {
   Environment__ShowObjectOutput,
   Environment__ShowPath,
   Environment__ShowOptions,
+  Environment__ShowDescribeOptions,
+  Environment__ShowAction,
 } from "./resources/environment/actions/show.js";
 export type {
   Environment__UpdateInput,
@@ -1104,6 +1318,8 @@ export type {
   Environment__UpdateObjectOutput,
   Environment__UpdatePath,
   Environment__UpdateOptions,
+  Environment__UpdateDescribeOptions,
+  Environment__UpdateAction,
 } from "./resources/environment/actions/update.js";
 export type { EnvironmentResource } from "./resources/environment/resource.js";
 export type {
@@ -1115,6 +1331,8 @@ export type {
   Environment__DatasetPlan__IndexObjectOutput,
   Environment__DatasetPlan__IndexPath,
   Environment__DatasetPlan__IndexOptions,
+  Environment__DatasetPlan__IndexDescribeOptions,
+  Environment__DatasetPlan__IndexAction,
 } from "./resources/environment/resources/dataset_plan/actions/index.js";
 export type {
   Environment__DatasetPlan__ShowInput,
@@ -1125,6 +1343,8 @@ export type {
   Environment__DatasetPlan__ShowObjectOutput,
   Environment__DatasetPlan__ShowPath,
   Environment__DatasetPlan__ShowOptions,
+  Environment__DatasetPlan__ShowDescribeOptions,
+  Environment__DatasetPlan__ShowAction,
 } from "./resources/environment/resources/dataset_plan/actions/show.js";
 export type { Environment__DatasetPlanResource } from "./resources/environment/resources/dataset_plan/resource.js";
 export type {
@@ -1136,6 +1356,8 @@ export type {
   Export__CreateObjectOutput,
   Export__CreatePath,
   Export__CreateOptions,
+  Export__CreateDescribeOptions,
+  Export__CreateAction,
 } from "./resources/export/actions/create.js";
 export type {
   Export__DeleteInput,
@@ -1146,6 +1368,8 @@ export type {
   Export__DeleteObjectOutput,
   Export__DeletePath,
   Export__DeleteOptions,
+  Export__DeleteDescribeOptions,
+  Export__DeleteAction,
 } from "./resources/export/actions/delete.js";
 export type {
   Export__IndexInput,
@@ -1156,6 +1380,8 @@ export type {
   Export__IndexObjectOutput,
   Export__IndexPath,
   Export__IndexOptions,
+  Export__IndexDescribeOptions,
+  Export__IndexAction,
 } from "./resources/export/actions/index.js";
 export type {
   Export__ShowInput,
@@ -1166,6 +1392,8 @@ export type {
   Export__ShowObjectOutput,
   Export__ShowPath,
   Export__ShowOptions,
+  Export__ShowDescribeOptions,
+  Export__ShowAction,
 } from "./resources/export/actions/show.js";
 export type {
   Export__UpdateInput,
@@ -1176,6 +1404,8 @@ export type {
   Export__UpdateObjectOutput,
   Export__UpdatePath,
   Export__UpdateOptions,
+  Export__UpdateDescribeOptions,
+  Export__UpdateAction,
 } from "./resources/export/actions/update.js";
 export type { ExportResource } from "./resources/export/resource.js";
 export type {
@@ -1187,6 +1417,8 @@ export type {
   Export__Host__CreateObjectOutput,
   Export__Host__CreatePath,
   Export__Host__CreateOptions,
+  Export__Host__CreateDescribeOptions,
+  Export__Host__CreateAction,
 } from "./resources/export/resources/host/actions/create.js";
 export type {
   Export__Host__DeleteInput,
@@ -1197,6 +1429,8 @@ export type {
   Export__Host__DeleteObjectOutput,
   Export__Host__DeletePath,
   Export__Host__DeleteOptions,
+  Export__Host__DeleteDescribeOptions,
+  Export__Host__DeleteAction,
 } from "./resources/export/resources/host/actions/delete.js";
 export type {
   Export__Host__IndexInput,
@@ -1207,6 +1441,8 @@ export type {
   Export__Host__IndexObjectOutput,
   Export__Host__IndexPath,
   Export__Host__IndexOptions,
+  Export__Host__IndexDescribeOptions,
+  Export__Host__IndexAction,
 } from "./resources/export/resources/host/actions/index.js";
 export type {
   Export__Host__ShowInput,
@@ -1217,6 +1453,8 @@ export type {
   Export__Host__ShowObjectOutput,
   Export__Host__ShowPath,
   Export__Host__ShowOptions,
+  Export__Host__ShowDescribeOptions,
+  Export__Host__ShowAction,
 } from "./resources/export/resources/host/actions/show.js";
 export type {
   Export__Host__UpdateInput,
@@ -1227,6 +1465,8 @@ export type {
   Export__Host__UpdateObjectOutput,
   Export__Host__UpdatePath,
   Export__Host__UpdateOptions,
+  Export__Host__UpdateDescribeOptions,
+  Export__Host__UpdateAction,
 } from "./resources/export/resources/host/actions/update.js";
 export type { Export__HostResource } from "./resources/export/resources/host/resource.js";
 export type {
@@ -1238,6 +1478,8 @@ export type {
   ExportOutage__IndexObjectOutput,
   ExportOutage__IndexPath,
   ExportOutage__IndexOptions,
+  ExportOutage__IndexDescribeOptions,
+  ExportOutage__IndexAction,
 } from "./resources/export_outage/actions/index.js";
 export type {
   ExportOutage__ShowInput,
@@ -1248,6 +1490,8 @@ export type {
   ExportOutage__ShowObjectOutput,
   ExportOutage__ShowPath,
   ExportOutage__ShowOptions,
+  ExportOutage__ShowDescribeOptions,
+  ExportOutage__ShowAction,
 } from "./resources/export_outage/actions/show.js";
 export type { ExportOutageResource } from "./resources/export_outage/resource.js";
 export type {
@@ -1259,6 +1503,8 @@ export type {
   HelpBox__CreateObjectOutput,
   HelpBox__CreatePath,
   HelpBox__CreateOptions,
+  HelpBox__CreateDescribeOptions,
+  HelpBox__CreateAction,
 } from "./resources/help_box/actions/create.js";
 export type {
   HelpBox__DeleteInput,
@@ -1269,6 +1515,8 @@ export type {
   HelpBox__DeleteObjectOutput,
   HelpBox__DeletePath,
   HelpBox__DeleteOptions,
+  HelpBox__DeleteDescribeOptions,
+  HelpBox__DeleteAction,
 } from "./resources/help_box/actions/delete.js";
 export type {
   HelpBox__IndexInput,
@@ -1279,6 +1527,8 @@ export type {
   HelpBox__IndexObjectOutput,
   HelpBox__IndexPath,
   HelpBox__IndexOptions,
+  HelpBox__IndexDescribeOptions,
+  HelpBox__IndexAction,
 } from "./resources/help_box/actions/index.js";
 export type {
   HelpBox__ShowInput,
@@ -1289,6 +1539,8 @@ export type {
   HelpBox__ShowObjectOutput,
   HelpBox__ShowPath,
   HelpBox__ShowOptions,
+  HelpBox__ShowDescribeOptions,
+  HelpBox__ShowAction,
 } from "./resources/help_box/actions/show.js";
 export type {
   HelpBox__UpdateInput,
@@ -1299,6 +1551,8 @@ export type {
   HelpBox__UpdateObjectOutput,
   HelpBox__UpdatePath,
   HelpBox__UpdateOptions,
+  HelpBox__UpdateDescribeOptions,
+  HelpBox__UpdateAction,
 } from "./resources/help_box/actions/update.js";
 export type { HelpBoxResource } from "./resources/help_box/resource.js";
 export type {
@@ -1310,6 +1564,8 @@ export type {
   HostIpAddress__AssignObjectOutput,
   HostIpAddress__AssignPath,
   HostIpAddress__AssignOptions,
+  HostIpAddress__AssignDescribeOptions,
+  HostIpAddress__AssignAction,
 } from "./resources/host_ip_address/actions/assign.js";
 export type {
   HostIpAddress__CreateInput,
@@ -1320,6 +1576,8 @@ export type {
   HostIpAddress__CreateObjectOutput,
   HostIpAddress__CreatePath,
   HostIpAddress__CreateOptions,
+  HostIpAddress__CreateDescribeOptions,
+  HostIpAddress__CreateAction,
 } from "./resources/host_ip_address/actions/create.js";
 export type {
   HostIpAddress__DeleteInput,
@@ -1330,6 +1588,8 @@ export type {
   HostIpAddress__DeleteObjectOutput,
   HostIpAddress__DeletePath,
   HostIpAddress__DeleteOptions,
+  HostIpAddress__DeleteDescribeOptions,
+  HostIpAddress__DeleteAction,
 } from "./resources/host_ip_address/actions/delete.js";
 export type {
   HostIpAddress__FreeInput,
@@ -1340,6 +1600,8 @@ export type {
   HostIpAddress__FreeObjectOutput,
   HostIpAddress__FreePath,
   HostIpAddress__FreeOptions,
+  HostIpAddress__FreeDescribeOptions,
+  HostIpAddress__FreeAction,
 } from "./resources/host_ip_address/actions/free.js";
 export type {
   HostIpAddress__IndexInput,
@@ -1350,6 +1612,8 @@ export type {
   HostIpAddress__IndexObjectOutput,
   HostIpAddress__IndexPath,
   HostIpAddress__IndexOptions,
+  HostIpAddress__IndexDescribeOptions,
+  HostIpAddress__IndexAction,
 } from "./resources/host_ip_address/actions/index.js";
 export type {
   HostIpAddress__ShowInput,
@@ -1360,6 +1624,8 @@ export type {
   HostIpAddress__ShowObjectOutput,
   HostIpAddress__ShowPath,
   HostIpAddress__ShowOptions,
+  HostIpAddress__ShowDescribeOptions,
+  HostIpAddress__ShowAction,
 } from "./resources/host_ip_address/actions/show.js";
 export type {
   HostIpAddress__UpdateInput,
@@ -1370,6 +1636,8 @@ export type {
   HostIpAddress__UpdateObjectOutput,
   HostIpAddress__UpdatePath,
   HostIpAddress__UpdateOptions,
+  HostIpAddress__UpdateDescribeOptions,
+  HostIpAddress__UpdateAction,
 } from "./resources/host_ip_address/actions/update.js";
 export type { HostIpAddressResource } from "./resources/host_ip_address/resource.js";
 export type {
@@ -1381,6 +1649,8 @@ export type {
   IncidentReport__CreateObjectOutput,
   IncidentReport__CreatePath,
   IncidentReport__CreateOptions,
+  IncidentReport__CreateDescribeOptions,
+  IncidentReport__CreateAction,
 } from "./resources/incident_report/actions/create.js";
 export type {
   IncidentReport__IndexInput,
@@ -1391,6 +1661,8 @@ export type {
   IncidentReport__IndexObjectOutput,
   IncidentReport__IndexPath,
   IncidentReport__IndexOptions,
+  IncidentReport__IndexDescribeOptions,
+  IncidentReport__IndexAction,
 } from "./resources/incident_report/actions/index.js";
 export type {
   IncidentReport__ShowInput,
@@ -1401,6 +1673,8 @@ export type {
   IncidentReport__ShowObjectOutput,
   IncidentReport__ShowPath,
   IncidentReport__ShowOptions,
+  IncidentReport__ShowDescribeOptions,
+  IncidentReport__ShowAction,
 } from "./resources/incident_report/actions/show.js";
 export type { IncidentReportResource } from "./resources/incident_report/resource.js";
 export type {
@@ -1412,6 +1686,8 @@ export type {
   IncomingPayment__IndexObjectOutput,
   IncomingPayment__IndexPath,
   IncomingPayment__IndexOptions,
+  IncomingPayment__IndexDescribeOptions,
+  IncomingPayment__IndexAction,
 } from "./resources/incoming_payment/actions/index.js";
 export type {
   IncomingPayment__ShowInput,
@@ -1422,6 +1698,8 @@ export type {
   IncomingPayment__ShowObjectOutput,
   IncomingPayment__ShowPath,
   IncomingPayment__ShowOptions,
+  IncomingPayment__ShowDescribeOptions,
+  IncomingPayment__ShowAction,
 } from "./resources/incoming_payment/actions/show.js";
 export type {
   IncomingPayment__UpdateInput,
@@ -1432,6 +1710,8 @@ export type {
   IncomingPayment__UpdateObjectOutput,
   IncomingPayment__UpdatePath,
   IncomingPayment__UpdateOptions,
+  IncomingPayment__UpdateDescribeOptions,
+  IncomingPayment__UpdateAction,
 } from "./resources/incoming_payment/actions/update.js";
 export type { IncomingPaymentResource } from "./resources/incoming_payment/resource.js";
 export type {
@@ -1443,6 +1723,8 @@ export type {
   IpAddress__AssignObjectOutput,
   IpAddress__AssignPath,
   IpAddress__AssignOptions,
+  IpAddress__AssignDescribeOptions,
+  IpAddress__AssignAction,
 } from "./resources/ip_address/actions/assign.js";
 export type {
   IpAddress__AssignWithHostAddressInput,
@@ -1453,6 +1735,8 @@ export type {
   IpAddress__AssignWithHostAddressObjectOutput,
   IpAddress__AssignWithHostAddressPath,
   IpAddress__AssignWithHostAddressOptions,
+  IpAddress__AssignWithHostAddressDescribeOptions,
+  IpAddress__AssignWithHostAddressAction,
 } from "./resources/ip_address/actions/assign_with_host_address.js";
 export type {
   IpAddress__CreateInput,
@@ -1463,6 +1747,8 @@ export type {
   IpAddress__CreateObjectOutput,
   IpAddress__CreatePath,
   IpAddress__CreateOptions,
+  IpAddress__CreateDescribeOptions,
+  IpAddress__CreateAction,
 } from "./resources/ip_address/actions/create.js";
 export type {
   IpAddress__FreeInput,
@@ -1473,6 +1759,8 @@ export type {
   IpAddress__FreeObjectOutput,
   IpAddress__FreePath,
   IpAddress__FreeOptions,
+  IpAddress__FreeDescribeOptions,
+  IpAddress__FreeAction,
 } from "./resources/ip_address/actions/free.js";
 export type {
   IpAddress__IndexInput,
@@ -1483,6 +1771,8 @@ export type {
   IpAddress__IndexObjectOutput,
   IpAddress__IndexPath,
   IpAddress__IndexOptions,
+  IpAddress__IndexDescribeOptions,
+  IpAddress__IndexAction,
 } from "./resources/ip_address/actions/index.js";
 export type {
   IpAddress__ShowInput,
@@ -1493,6 +1783,8 @@ export type {
   IpAddress__ShowObjectOutput,
   IpAddress__ShowPath,
   IpAddress__ShowOptions,
+  IpAddress__ShowDescribeOptions,
+  IpAddress__ShowAction,
 } from "./resources/ip_address/actions/show.js";
 export type {
   IpAddress__UpdateInput,
@@ -1503,6 +1795,8 @@ export type {
   IpAddress__UpdateObjectOutput,
   IpAddress__UpdatePath,
   IpAddress__UpdateOptions,
+  IpAddress__UpdateDescribeOptions,
+  IpAddress__UpdateAction,
 } from "./resources/ip_address/actions/update.js";
 export type { IpAddressResource } from "./resources/ip_address/resource.js";
 export type {
@@ -1514,6 +1808,8 @@ export type {
   IpAddressAssignment__IndexObjectOutput,
   IpAddressAssignment__IndexPath,
   IpAddressAssignment__IndexOptions,
+  IpAddressAssignment__IndexDescribeOptions,
+  IpAddressAssignment__IndexAction,
 } from "./resources/ip_address_assignment/actions/index.js";
 export type {
   IpAddressAssignment__ShowInput,
@@ -1524,6 +1820,8 @@ export type {
   IpAddressAssignment__ShowObjectOutput,
   IpAddressAssignment__ShowPath,
   IpAddressAssignment__ShowOptions,
+  IpAddressAssignment__ShowDescribeOptions,
+  IpAddressAssignment__ShowAction,
 } from "./resources/ip_address_assignment/actions/show.js";
 export type { IpAddressAssignmentResource } from "./resources/ip_address_assignment/resource.js";
 export type {
@@ -1535,6 +1833,8 @@ export type {
   IpReleaseCampaign__CandidatesObjectOutput,
   IpReleaseCampaign__CandidatesPath,
   IpReleaseCampaign__CandidatesOptions,
+  IpReleaseCampaign__CandidatesDescribeOptions,
+  IpReleaseCampaign__CandidatesAction,
 } from "./resources/ip_release_campaign/actions/candidates.js";
 export type {
   IpReleaseCampaign__CloseInput,
@@ -1545,6 +1845,8 @@ export type {
   IpReleaseCampaign__CloseObjectOutput,
   IpReleaseCampaign__ClosePath,
   IpReleaseCampaign__CloseOptions,
+  IpReleaseCampaign__CloseDescribeOptions,
+  IpReleaseCampaign__CloseAction,
 } from "./resources/ip_release_campaign/actions/close.js";
 export type {
   IpReleaseCampaign__CreateInput,
@@ -1555,6 +1857,8 @@ export type {
   IpReleaseCampaign__CreateObjectOutput,
   IpReleaseCampaign__CreatePath,
   IpReleaseCampaign__CreateOptions,
+  IpReleaseCampaign__CreateDescribeOptions,
+  IpReleaseCampaign__CreateAction,
 } from "./resources/ip_release_campaign/actions/create.js";
 export type {
   IpReleaseCampaign__ExemptInput,
@@ -1565,6 +1869,8 @@ export type {
   IpReleaseCampaign__ExemptObjectOutput,
   IpReleaseCampaign__ExemptPath,
   IpReleaseCampaign__ExemptOptions,
+  IpReleaseCampaign__ExemptDescribeOptions,
+  IpReleaseCampaign__ExemptAction,
 } from "./resources/ip_release_campaign/actions/exempt.js";
 export type {
   IpReleaseCampaign__IndexInput,
@@ -1575,6 +1881,8 @@ export type {
   IpReleaseCampaign__IndexObjectOutput,
   IpReleaseCampaign__IndexPath,
   IpReleaseCampaign__IndexOptions,
+  IpReleaseCampaign__IndexDescribeOptions,
+  IpReleaseCampaign__IndexAction,
 } from "./resources/ip_release_campaign/actions/index.js";
 export type {
   IpReleaseCampaign__NotifyInput,
@@ -1585,6 +1893,8 @@ export type {
   IpReleaseCampaign__NotifyObjectOutput,
   IpReleaseCampaign__NotifyPath,
   IpReleaseCampaign__NotifyOptions,
+  IpReleaseCampaign__NotifyDescribeOptions,
+  IpReleaseCampaign__NotifyAction,
 } from "./resources/ip_release_campaign/actions/notify.js";
 export type {
   IpReleaseCampaign__ReleaseInput,
@@ -1595,6 +1905,8 @@ export type {
   IpReleaseCampaign__ReleaseObjectOutput,
   IpReleaseCampaign__ReleasePath,
   IpReleaseCampaign__ReleaseOptions,
+  IpReleaseCampaign__ReleaseDescribeOptions,
+  IpReleaseCampaign__ReleaseAction,
 } from "./resources/ip_release_campaign/actions/release.js";
 export type {
   IpReleaseCampaign__ShowInput,
@@ -1605,6 +1917,8 @@ export type {
   IpReleaseCampaign__ShowObjectOutput,
   IpReleaseCampaign__ShowPath,
   IpReleaseCampaign__ShowOptions,
+  IpReleaseCampaign__ShowDescribeOptions,
+  IpReleaseCampaign__ShowAction,
 } from "./resources/ip_release_campaign/actions/show.js";
 export type {
   IpReleaseCampaign__UpdateInput,
@@ -1615,6 +1929,8 @@ export type {
   IpReleaseCampaign__UpdateObjectOutput,
   IpReleaseCampaign__UpdatePath,
   IpReleaseCampaign__UpdateOptions,
+  IpReleaseCampaign__UpdateDescribeOptions,
+  IpReleaseCampaign__UpdateAction,
 } from "./resources/ip_release_campaign/actions/update.js";
 export type { IpReleaseCampaignResource } from "./resources/ip_release_campaign/resource.js";
 export type {
@@ -1626,6 +1942,8 @@ export type {
   IpReleaseCampaign__Address__IndexObjectOutput,
   IpReleaseCampaign__Address__IndexPath,
   IpReleaseCampaign__Address__IndexOptions,
+  IpReleaseCampaign__Address__IndexDescribeOptions,
+  IpReleaseCampaign__Address__IndexAction,
 } from "./resources/ip_release_campaign/resources/address/actions/index.js";
 export type { IpReleaseCampaign__AddressResource } from "./resources/ip_release_campaign/resources/address/resource.js";
 export type {
@@ -1637,6 +1955,8 @@ export type {
   IpReleaseCampaign__Attempt__IndexObjectOutput,
   IpReleaseCampaign__Attempt__IndexPath,
   IpReleaseCampaign__Attempt__IndexOptions,
+  IpReleaseCampaign__Attempt__IndexDescribeOptions,
+  IpReleaseCampaign__Attempt__IndexAction,
 } from "./resources/ip_release_campaign/resources/attempt/actions/index.js";
 export type {
   IpReleaseCampaign__Attempt__ShowInput,
@@ -1647,6 +1967,8 @@ export type {
   IpReleaseCampaign__Attempt__ShowObjectOutput,
   IpReleaseCampaign__Attempt__ShowPath,
   IpReleaseCampaign__Attempt__ShowOptions,
+  IpReleaseCampaign__Attempt__ShowDescribeOptions,
+  IpReleaseCampaign__Attempt__ShowAction,
 } from "./resources/ip_release_campaign/resources/attempt/actions/show.js";
 export type { IpReleaseCampaign__AttemptResource } from "./resources/ip_release_campaign/resources/attempt/resource.js";
 export type {
@@ -1658,6 +1980,8 @@ export type {
   IpReleaseCampaign__Notice__IndexObjectOutput,
   IpReleaseCampaign__Notice__IndexPath,
   IpReleaseCampaign__Notice__IndexOptions,
+  IpReleaseCampaign__Notice__IndexDescribeOptions,
+  IpReleaseCampaign__Notice__IndexAction,
 } from "./resources/ip_release_campaign/resources/notice/actions/index.js";
 export type { IpReleaseCampaign__NoticeResource } from "./resources/ip_release_campaign/resources/notice/resource.js";
 export type {
@@ -1669,6 +1993,8 @@ export type {
   IpReleaseRequest__IndexObjectOutput,
   IpReleaseRequest__IndexPath,
   IpReleaseRequest__IndexOptions,
+  IpReleaseRequest__IndexDescribeOptions,
+  IpReleaseRequest__IndexAction,
 } from "./resources/ip_release_request/actions/index.js";
 export type {
   IpReleaseRequest__KeepInput,
@@ -1679,6 +2005,8 @@ export type {
   IpReleaseRequest__KeepObjectOutput,
   IpReleaseRequest__KeepPath,
   IpReleaseRequest__KeepOptions,
+  IpReleaseRequest__KeepDescribeOptions,
+  IpReleaseRequest__KeepAction,
 } from "./resources/ip_release_request/actions/keep.js";
 export type {
   IpReleaseRequest__ShowInput,
@@ -1689,6 +2017,8 @@ export type {
   IpReleaseRequest__ShowObjectOutput,
   IpReleaseRequest__ShowPath,
   IpReleaseRequest__ShowOptions,
+  IpReleaseRequest__ShowDescribeOptions,
+  IpReleaseRequest__ShowAction,
 } from "./resources/ip_release_request/actions/show.js";
 export type { IpReleaseRequestResource } from "./resources/ip_release_request/resource.js";
 export type {
@@ -1700,6 +2030,8 @@ export type {
   IpReleaseRequest__Address__ExemptObjectOutput,
   IpReleaseRequest__Address__ExemptPath,
   IpReleaseRequest__Address__ExemptOptions,
+  IpReleaseRequest__Address__ExemptDescribeOptions,
+  IpReleaseRequest__Address__ExemptAction,
 } from "./resources/ip_release_request/resources/address/actions/exempt.js";
 export type {
   IpReleaseRequest__Address__IndexInput,
@@ -1710,6 +2042,8 @@ export type {
   IpReleaseRequest__Address__IndexObjectOutput,
   IpReleaseRequest__Address__IndexPath,
   IpReleaseRequest__Address__IndexOptions,
+  IpReleaseRequest__Address__IndexDescribeOptions,
+  IpReleaseRequest__Address__IndexAction,
 } from "./resources/ip_release_request/resources/address/actions/index.js";
 export type { IpReleaseRequest__AddressResource } from "./resources/ip_release_request/resources/address/resource.js";
 export type {
@@ -1721,6 +2055,8 @@ export type {
   IpReleaseRequest__Notice__IndexObjectOutput,
   IpReleaseRequest__Notice__IndexPath,
   IpReleaseRequest__Notice__IndexOptions,
+  IpReleaseRequest__Notice__IndexDescribeOptions,
+  IpReleaseRequest__Notice__IndexAction,
 } from "./resources/ip_release_request/resources/notice/actions/index.js";
 export type { IpReleaseRequest__NoticeResource } from "./resources/ip_release_request/resources/notice/resource.js";
 export type {
@@ -1732,6 +2068,8 @@ export type {
   Language__IndexObjectOutput,
   Language__IndexPath,
   Language__IndexOptions,
+  Language__IndexDescribeOptions,
+  Language__IndexAction,
 } from "./resources/language/actions/index.js";
 export type {
   Language__ShowInput,
@@ -1742,6 +2080,8 @@ export type {
   Language__ShowObjectOutput,
   Language__ShowPath,
   Language__ShowOptions,
+  Language__ShowDescribeOptions,
+  Language__ShowAction,
 } from "./resources/language/actions/show.js";
 export type { LanguageResource } from "./resources/language/resource.js";
 export type {
@@ -1753,6 +2093,8 @@ export type {
   Location__CreateObjectOutput,
   Location__CreatePath,
   Location__CreateOptions,
+  Location__CreateDescribeOptions,
+  Location__CreateAction,
 } from "./resources/location/actions/create.js";
 export type {
   Location__IndexInput,
@@ -1763,6 +2105,8 @@ export type {
   Location__IndexObjectOutput,
   Location__IndexPath,
   Location__IndexOptions,
+  Location__IndexDescribeOptions,
+  Location__IndexAction,
 } from "./resources/location/actions/index.js";
 export type {
   Location__SetMaintenanceInput,
@@ -1773,6 +2117,8 @@ export type {
   Location__SetMaintenanceObjectOutput,
   Location__SetMaintenancePath,
   Location__SetMaintenanceOptions,
+  Location__SetMaintenanceDescribeOptions,
+  Location__SetMaintenanceAction,
 } from "./resources/location/actions/set_maintenance.js";
 export type {
   Location__ShowInput,
@@ -1783,6 +2129,8 @@ export type {
   Location__ShowObjectOutput,
   Location__ShowPath,
   Location__ShowOptions,
+  Location__ShowDescribeOptions,
+  Location__ShowAction,
 } from "./resources/location/actions/show.js";
 export type {
   Location__UpdateInput,
@@ -1793,6 +2141,8 @@ export type {
   Location__UpdateObjectOutput,
   Location__UpdatePath,
   Location__UpdateOptions,
+  Location__UpdateDescribeOptions,
+  Location__UpdateAction,
 } from "./resources/location/actions/update.js";
 export type { LocationResource } from "./resources/location/resource.js";
 export type {
@@ -1804,6 +2154,8 @@ export type {
   LocationNetwork__CreateObjectOutput,
   LocationNetwork__CreatePath,
   LocationNetwork__CreateOptions,
+  LocationNetwork__CreateDescribeOptions,
+  LocationNetwork__CreateAction,
 } from "./resources/location_network/actions/create.js";
 export type {
   LocationNetwork__DeleteInput,
@@ -1814,6 +2166,8 @@ export type {
   LocationNetwork__DeleteObjectOutput,
   LocationNetwork__DeletePath,
   LocationNetwork__DeleteOptions,
+  LocationNetwork__DeleteDescribeOptions,
+  LocationNetwork__DeleteAction,
 } from "./resources/location_network/actions/delete.js";
 export type {
   LocationNetwork__IndexInput,
@@ -1824,6 +2178,8 @@ export type {
   LocationNetwork__IndexObjectOutput,
   LocationNetwork__IndexPath,
   LocationNetwork__IndexOptions,
+  LocationNetwork__IndexDescribeOptions,
+  LocationNetwork__IndexAction,
 } from "./resources/location_network/actions/index.js";
 export type {
   LocationNetwork__ShowInput,
@@ -1834,6 +2190,8 @@ export type {
   LocationNetwork__ShowObjectOutput,
   LocationNetwork__ShowPath,
   LocationNetwork__ShowOptions,
+  LocationNetwork__ShowDescribeOptions,
+  LocationNetwork__ShowAction,
 } from "./resources/location_network/actions/show.js";
 export type {
   LocationNetwork__UpdateInput,
@@ -1844,6 +2202,8 @@ export type {
   LocationNetwork__UpdateObjectOutput,
   LocationNetwork__UpdatePath,
   LocationNetwork__UpdateOptions,
+  LocationNetwork__UpdateDescribeOptions,
+  LocationNetwork__UpdateAction,
 } from "./resources/location_network/actions/update.js";
 export type { LocationNetworkResource } from "./resources/location_network/resource.js";
 export type {
@@ -1855,6 +2215,8 @@ export type {
   MailLog__IndexObjectOutput,
   MailLog__IndexPath,
   MailLog__IndexOptions,
+  MailLog__IndexDescribeOptions,
+  MailLog__IndexAction,
 } from "./resources/mail_log/actions/index.js";
 export type {
   MailLog__ShowInput,
@@ -1865,6 +2227,8 @@ export type {
   MailLog__ShowObjectOutput,
   MailLog__ShowPath,
   MailLog__ShowOptions,
+  MailLog__ShowDescribeOptions,
+  MailLog__ShowAction,
 } from "./resources/mail_log/actions/show.js";
 export type { MailLogResource } from "./resources/mail_log/resource.js";
 export type {
@@ -1876,6 +2240,8 @@ export type {
   MailRecipient__CreateObjectOutput,
   MailRecipient__CreatePath,
   MailRecipient__CreateOptions,
+  MailRecipient__CreateDescribeOptions,
+  MailRecipient__CreateAction,
 } from "./resources/mail_recipient/actions/create.js";
 export type {
   MailRecipient__DeleteInput,
@@ -1886,6 +2252,8 @@ export type {
   MailRecipient__DeleteObjectOutput,
   MailRecipient__DeletePath,
   MailRecipient__DeleteOptions,
+  MailRecipient__DeleteDescribeOptions,
+  MailRecipient__DeleteAction,
 } from "./resources/mail_recipient/actions/delete.js";
 export type {
   MailRecipient__IndexInput,
@@ -1896,6 +2264,8 @@ export type {
   MailRecipient__IndexObjectOutput,
   MailRecipient__IndexPath,
   MailRecipient__IndexOptions,
+  MailRecipient__IndexDescribeOptions,
+  MailRecipient__IndexAction,
 } from "./resources/mail_recipient/actions/index.js";
 export type {
   MailRecipient__ShowInput,
@@ -1906,6 +2276,8 @@ export type {
   MailRecipient__ShowObjectOutput,
   MailRecipient__ShowPath,
   MailRecipient__ShowOptions,
+  MailRecipient__ShowDescribeOptions,
+  MailRecipient__ShowAction,
 } from "./resources/mail_recipient/actions/show.js";
 export type {
   MailRecipient__UpdateInput,
@@ -1916,6 +2288,8 @@ export type {
   MailRecipient__UpdateObjectOutput,
   MailRecipient__UpdatePath,
   MailRecipient__UpdateOptions,
+  MailRecipient__UpdateDescribeOptions,
+  MailRecipient__UpdateAction,
 } from "./resources/mail_recipient/actions/update.js";
 export type { MailRecipientResource } from "./resources/mail_recipient/resource.js";
 export type {
@@ -1927,6 +2301,8 @@ export type {
   MailTemplate__CreateObjectOutput,
   MailTemplate__CreatePath,
   MailTemplate__CreateOptions,
+  MailTemplate__CreateDescribeOptions,
+  MailTemplate__CreateAction,
 } from "./resources/mail_template/actions/create.js";
 export type {
   MailTemplate__DeleteInput,
@@ -1937,6 +2313,8 @@ export type {
   MailTemplate__DeleteObjectOutput,
   MailTemplate__DeletePath,
   MailTemplate__DeleteOptions,
+  MailTemplate__DeleteDescribeOptions,
+  MailTemplate__DeleteAction,
 } from "./resources/mail_template/actions/delete.js";
 export type {
   MailTemplate__IndexInput,
@@ -1947,6 +2325,8 @@ export type {
   MailTemplate__IndexObjectOutput,
   MailTemplate__IndexPath,
   MailTemplate__IndexOptions,
+  MailTemplate__IndexDescribeOptions,
+  MailTemplate__IndexAction,
 } from "./resources/mail_template/actions/index.js";
 export type {
   MailTemplate__ShowInput,
@@ -1957,6 +2337,8 @@ export type {
   MailTemplate__ShowObjectOutput,
   MailTemplate__ShowPath,
   MailTemplate__ShowOptions,
+  MailTemplate__ShowDescribeOptions,
+  MailTemplate__ShowAction,
 } from "./resources/mail_template/actions/show.js";
 export type {
   MailTemplate__UpdateInput,
@@ -1967,6 +2349,8 @@ export type {
   MailTemplate__UpdateObjectOutput,
   MailTemplate__UpdatePath,
   MailTemplate__UpdateOptions,
+  MailTemplate__UpdateDescribeOptions,
+  MailTemplate__UpdateAction,
 } from "./resources/mail_template/actions/update.js";
 export type { MailTemplateResource } from "./resources/mail_template/resource.js";
 export type {
@@ -1978,6 +2362,8 @@ export type {
   MailTemplate__Recipient__CreateObjectOutput,
   MailTemplate__Recipient__CreatePath,
   MailTemplate__Recipient__CreateOptions,
+  MailTemplate__Recipient__CreateDescribeOptions,
+  MailTemplate__Recipient__CreateAction,
 } from "./resources/mail_template/resources/recipient/actions/create.js";
 export type {
   MailTemplate__Recipient__DeleteInput,
@@ -1988,6 +2374,8 @@ export type {
   MailTemplate__Recipient__DeleteObjectOutput,
   MailTemplate__Recipient__DeletePath,
   MailTemplate__Recipient__DeleteOptions,
+  MailTemplate__Recipient__DeleteDescribeOptions,
+  MailTemplate__Recipient__DeleteAction,
 } from "./resources/mail_template/resources/recipient/actions/delete.js";
 export type {
   MailTemplate__Recipient__IndexInput,
@@ -1998,6 +2386,8 @@ export type {
   MailTemplate__Recipient__IndexObjectOutput,
   MailTemplate__Recipient__IndexPath,
   MailTemplate__Recipient__IndexOptions,
+  MailTemplate__Recipient__IndexDescribeOptions,
+  MailTemplate__Recipient__IndexAction,
 } from "./resources/mail_template/resources/recipient/actions/index.js";
 export type {
   MailTemplate__Recipient__ShowInput,
@@ -2008,6 +2398,8 @@ export type {
   MailTemplate__Recipient__ShowObjectOutput,
   MailTemplate__Recipient__ShowPath,
   MailTemplate__Recipient__ShowOptions,
+  MailTemplate__Recipient__ShowDescribeOptions,
+  MailTemplate__Recipient__ShowAction,
 } from "./resources/mail_template/resources/recipient/actions/show.js";
 export type { MailTemplate__RecipientResource } from "./resources/mail_template/resources/recipient/resource.js";
 export type {
@@ -2019,6 +2411,8 @@ export type {
   MailTemplate__Translation__CreateObjectOutput,
   MailTemplate__Translation__CreatePath,
   MailTemplate__Translation__CreateOptions,
+  MailTemplate__Translation__CreateDescribeOptions,
+  MailTemplate__Translation__CreateAction,
 } from "./resources/mail_template/resources/translation/actions/create.js";
 export type {
   MailTemplate__Translation__DeleteInput,
@@ -2029,6 +2423,8 @@ export type {
   MailTemplate__Translation__DeleteObjectOutput,
   MailTemplate__Translation__DeletePath,
   MailTemplate__Translation__DeleteOptions,
+  MailTemplate__Translation__DeleteDescribeOptions,
+  MailTemplate__Translation__DeleteAction,
 } from "./resources/mail_template/resources/translation/actions/delete.js";
 export type {
   MailTemplate__Translation__IndexInput,
@@ -2039,6 +2435,8 @@ export type {
   MailTemplate__Translation__IndexObjectOutput,
   MailTemplate__Translation__IndexPath,
   MailTemplate__Translation__IndexOptions,
+  MailTemplate__Translation__IndexDescribeOptions,
+  MailTemplate__Translation__IndexAction,
 } from "./resources/mail_template/resources/translation/actions/index.js";
 export type {
   MailTemplate__Translation__ShowInput,
@@ -2049,6 +2447,8 @@ export type {
   MailTemplate__Translation__ShowObjectOutput,
   MailTemplate__Translation__ShowPath,
   MailTemplate__Translation__ShowOptions,
+  MailTemplate__Translation__ShowDescribeOptions,
+  MailTemplate__Translation__ShowAction,
 } from "./resources/mail_template/resources/translation/actions/show.js";
 export type {
   MailTemplate__Translation__UpdateInput,
@@ -2059,6 +2459,8 @@ export type {
   MailTemplate__Translation__UpdateObjectOutput,
   MailTemplate__Translation__UpdatePath,
   MailTemplate__Translation__UpdateOptions,
+  MailTemplate__Translation__UpdateDescribeOptions,
+  MailTemplate__Translation__UpdateAction,
 } from "./resources/mail_template/resources/translation/actions/update.js";
 export type { MailTemplate__TranslationResource } from "./resources/mail_template/resources/translation/resource.js";
 export type {
@@ -2070,6 +2472,8 @@ export type {
   Mailbox__CreateObjectOutput,
   Mailbox__CreatePath,
   Mailbox__CreateOptions,
+  Mailbox__CreateDescribeOptions,
+  Mailbox__CreateAction,
 } from "./resources/mailbox/actions/create.js";
 export type {
   Mailbox__DeleteInput,
@@ -2080,6 +2484,8 @@ export type {
   Mailbox__DeleteObjectOutput,
   Mailbox__DeletePath,
   Mailbox__DeleteOptions,
+  Mailbox__DeleteDescribeOptions,
+  Mailbox__DeleteAction,
 } from "./resources/mailbox/actions/delete.js";
 export type {
   Mailbox__IndexInput,
@@ -2090,6 +2496,8 @@ export type {
   Mailbox__IndexObjectOutput,
   Mailbox__IndexPath,
   Mailbox__IndexOptions,
+  Mailbox__IndexDescribeOptions,
+  Mailbox__IndexAction,
 } from "./resources/mailbox/actions/index.js";
 export type {
   Mailbox__ShowInput,
@@ -2100,6 +2508,8 @@ export type {
   Mailbox__ShowObjectOutput,
   Mailbox__ShowPath,
   Mailbox__ShowOptions,
+  Mailbox__ShowDescribeOptions,
+  Mailbox__ShowAction,
 } from "./resources/mailbox/actions/show.js";
 export type {
   Mailbox__UpdateInput,
@@ -2110,6 +2520,8 @@ export type {
   Mailbox__UpdateObjectOutput,
   Mailbox__UpdatePath,
   Mailbox__UpdateOptions,
+  Mailbox__UpdateDescribeOptions,
+  Mailbox__UpdateAction,
 } from "./resources/mailbox/actions/update.js";
 export type { MailboxResource } from "./resources/mailbox/resource.js";
 export type {
@@ -2121,6 +2533,8 @@ export type {
   Mailbox__Handler__CreateObjectOutput,
   Mailbox__Handler__CreatePath,
   Mailbox__Handler__CreateOptions,
+  Mailbox__Handler__CreateDescribeOptions,
+  Mailbox__Handler__CreateAction,
 } from "./resources/mailbox/resources/handler/actions/create.js";
 export type {
   Mailbox__Handler__DeleteInput,
@@ -2131,6 +2545,8 @@ export type {
   Mailbox__Handler__DeleteObjectOutput,
   Mailbox__Handler__DeletePath,
   Mailbox__Handler__DeleteOptions,
+  Mailbox__Handler__DeleteDescribeOptions,
+  Mailbox__Handler__DeleteAction,
 } from "./resources/mailbox/resources/handler/actions/delete.js";
 export type {
   Mailbox__Handler__IndexInput,
@@ -2141,6 +2557,8 @@ export type {
   Mailbox__Handler__IndexObjectOutput,
   Mailbox__Handler__IndexPath,
   Mailbox__Handler__IndexOptions,
+  Mailbox__Handler__IndexDescribeOptions,
+  Mailbox__Handler__IndexAction,
 } from "./resources/mailbox/resources/handler/actions/index.js";
 export type {
   Mailbox__Handler__ShowInput,
@@ -2151,6 +2569,8 @@ export type {
   Mailbox__Handler__ShowObjectOutput,
   Mailbox__Handler__ShowPath,
   Mailbox__Handler__ShowOptions,
+  Mailbox__Handler__ShowDescribeOptions,
+  Mailbox__Handler__ShowAction,
 } from "./resources/mailbox/resources/handler/actions/show.js";
 export type {
   Mailbox__Handler__UpdateInput,
@@ -2161,6 +2581,8 @@ export type {
   Mailbox__Handler__UpdateObjectOutput,
   Mailbox__Handler__UpdatePath,
   Mailbox__Handler__UpdateOptions,
+  Mailbox__Handler__UpdateDescribeOptions,
+  Mailbox__Handler__UpdateAction,
 } from "./resources/mailbox/resources/handler/actions/update.js";
 export type { Mailbox__HandlerResource } from "./resources/mailbox/resources/handler/resource.js";
 export type {
@@ -2172,6 +2594,8 @@ export type {
   MetricsAccessToken__CreateObjectOutput,
   MetricsAccessToken__CreatePath,
   MetricsAccessToken__CreateOptions,
+  MetricsAccessToken__CreateDescribeOptions,
+  MetricsAccessToken__CreateAction,
 } from "./resources/metrics_access_token/actions/create.js";
 export type {
   MetricsAccessToken__DeleteInput,
@@ -2182,6 +2606,8 @@ export type {
   MetricsAccessToken__DeleteObjectOutput,
   MetricsAccessToken__DeletePath,
   MetricsAccessToken__DeleteOptions,
+  MetricsAccessToken__DeleteDescribeOptions,
+  MetricsAccessToken__DeleteAction,
 } from "./resources/metrics_access_token/actions/delete.js";
 export type {
   MetricsAccessToken__IndexInput,
@@ -2192,6 +2618,8 @@ export type {
   MetricsAccessToken__IndexObjectOutput,
   MetricsAccessToken__IndexPath,
   MetricsAccessToken__IndexOptions,
+  MetricsAccessToken__IndexDescribeOptions,
+  MetricsAccessToken__IndexAction,
 } from "./resources/metrics_access_token/actions/index.js";
 export type {
   MetricsAccessToken__ShowInput,
@@ -2202,6 +2630,8 @@ export type {
   MetricsAccessToken__ShowObjectOutput,
   MetricsAccessToken__ShowPath,
   MetricsAccessToken__ShowOptions,
+  MetricsAccessToken__ShowDescribeOptions,
+  MetricsAccessToken__ShowAction,
 } from "./resources/metrics_access_token/actions/show.js";
 export type { MetricsAccessTokenResource } from "./resources/metrics_access_token/resource.js";
 export type {
@@ -2213,6 +2643,8 @@ export type {
   MigrationPlan__CancelObjectOutput,
   MigrationPlan__CancelPath,
   MigrationPlan__CancelOptions,
+  MigrationPlan__CancelDescribeOptions,
+  MigrationPlan__CancelAction,
 } from "./resources/migration_plan/actions/cancel.js";
 export type {
   MigrationPlan__CreateInput,
@@ -2223,6 +2655,8 @@ export type {
   MigrationPlan__CreateObjectOutput,
   MigrationPlan__CreatePath,
   MigrationPlan__CreateOptions,
+  MigrationPlan__CreateDescribeOptions,
+  MigrationPlan__CreateAction,
 } from "./resources/migration_plan/actions/create.js";
 export type {
   MigrationPlan__DeleteInput,
@@ -2233,6 +2667,8 @@ export type {
   MigrationPlan__DeleteObjectOutput,
   MigrationPlan__DeletePath,
   MigrationPlan__DeleteOptions,
+  MigrationPlan__DeleteDescribeOptions,
+  MigrationPlan__DeleteAction,
 } from "./resources/migration_plan/actions/delete.js";
 export type {
   MigrationPlan__IndexInput,
@@ -2243,6 +2679,8 @@ export type {
   MigrationPlan__IndexObjectOutput,
   MigrationPlan__IndexPath,
   MigrationPlan__IndexOptions,
+  MigrationPlan__IndexDescribeOptions,
+  MigrationPlan__IndexAction,
 } from "./resources/migration_plan/actions/index.js";
 export type {
   MigrationPlan__ShowInput,
@@ -2253,6 +2691,8 @@ export type {
   MigrationPlan__ShowObjectOutput,
   MigrationPlan__ShowPath,
   MigrationPlan__ShowOptions,
+  MigrationPlan__ShowDescribeOptions,
+  MigrationPlan__ShowAction,
 } from "./resources/migration_plan/actions/show.js";
 export type {
   MigrationPlan__StartInput,
@@ -2263,6 +2703,8 @@ export type {
   MigrationPlan__StartObjectOutput,
   MigrationPlan__StartPath,
   MigrationPlan__StartOptions,
+  MigrationPlan__StartDescribeOptions,
+  MigrationPlan__StartAction,
 } from "./resources/migration_plan/actions/start.js";
 export type { MigrationPlanResource } from "./resources/migration_plan/resource.js";
 export type {
@@ -2274,6 +2716,8 @@ export type {
   MigrationPlan__VpsMigration__CreateObjectOutput,
   MigrationPlan__VpsMigration__CreatePath,
   MigrationPlan__VpsMigration__CreateOptions,
+  MigrationPlan__VpsMigration__CreateDescribeOptions,
+  MigrationPlan__VpsMigration__CreateAction,
 } from "./resources/migration_plan/resources/vps_migration/actions/create.js";
 export type {
   MigrationPlan__VpsMigration__IndexInput,
@@ -2284,6 +2728,8 @@ export type {
   MigrationPlan__VpsMigration__IndexObjectOutput,
   MigrationPlan__VpsMigration__IndexPath,
   MigrationPlan__VpsMigration__IndexOptions,
+  MigrationPlan__VpsMigration__IndexDescribeOptions,
+  MigrationPlan__VpsMigration__IndexAction,
 } from "./resources/migration_plan/resources/vps_migration/actions/index.js";
 export type {
   MigrationPlan__VpsMigration__ShowInput,
@@ -2294,6 +2740,8 @@ export type {
   MigrationPlan__VpsMigration__ShowObjectOutput,
   MigrationPlan__VpsMigration__ShowPath,
   MigrationPlan__VpsMigration__ShowOptions,
+  MigrationPlan__VpsMigration__ShowDescribeOptions,
+  MigrationPlan__VpsMigration__ShowAction,
 } from "./resources/migration_plan/resources/vps_migration/actions/show.js";
 export type { MigrationPlan__VpsMigrationResource } from "./resources/migration_plan/resources/vps_migration/resource.js";
 export type {
@@ -2305,6 +2753,8 @@ export type {
   MonitoredEvent__AcknowledgeObjectOutput,
   MonitoredEvent__AcknowledgePath,
   MonitoredEvent__AcknowledgeOptions,
+  MonitoredEvent__AcknowledgeDescribeOptions,
+  MonitoredEvent__AcknowledgeAction,
 } from "./resources/monitored_event/actions/acknowledge.js";
 export type {
   MonitoredEvent__IgnoreInput,
@@ -2315,6 +2765,8 @@ export type {
   MonitoredEvent__IgnoreObjectOutput,
   MonitoredEvent__IgnorePath,
   MonitoredEvent__IgnoreOptions,
+  MonitoredEvent__IgnoreDescribeOptions,
+  MonitoredEvent__IgnoreAction,
 } from "./resources/monitored_event/actions/ignore.js";
 export type {
   MonitoredEvent__IndexInput,
@@ -2325,6 +2777,8 @@ export type {
   MonitoredEvent__IndexObjectOutput,
   MonitoredEvent__IndexPath,
   MonitoredEvent__IndexOptions,
+  MonitoredEvent__IndexDescribeOptions,
+  MonitoredEvent__IndexAction,
 } from "./resources/monitored_event/actions/index.js";
 export type {
   MonitoredEvent__ShowInput,
@@ -2335,6 +2789,8 @@ export type {
   MonitoredEvent__ShowObjectOutput,
   MonitoredEvent__ShowPath,
   MonitoredEvent__ShowOptions,
+  MonitoredEvent__ShowDescribeOptions,
+  MonitoredEvent__ShowAction,
 } from "./resources/monitored_event/actions/show.js";
 export type { MonitoredEventResource } from "./resources/monitored_event/resource.js";
 export type {
@@ -2346,6 +2802,8 @@ export type {
   MonitoredEvent__Log__IndexObjectOutput,
   MonitoredEvent__Log__IndexPath,
   MonitoredEvent__Log__IndexOptions,
+  MonitoredEvent__Log__IndexDescribeOptions,
+  MonitoredEvent__Log__IndexAction,
 } from "./resources/monitored_event/resources/log/actions/index.js";
 export type {
   MonitoredEvent__Log__ShowInput,
@@ -2356,6 +2814,8 @@ export type {
   MonitoredEvent__Log__ShowObjectOutput,
   MonitoredEvent__Log__ShowPath,
   MonitoredEvent__Log__ShowOptions,
+  MonitoredEvent__Log__ShowDescribeOptions,
+  MonitoredEvent__Log__ShowAction,
 } from "./resources/monitored_event/resources/log/actions/show.js";
 export type { MonitoredEvent__LogResource } from "./resources/monitored_event/resources/log/resource.js";
 export type {
@@ -2367,6 +2827,8 @@ export type {
   Network__AddAddressesObjectOutput,
   Network__AddAddressesPath,
   Network__AddAddressesOptions,
+  Network__AddAddressesDescribeOptions,
+  Network__AddAddressesAction,
 } from "./resources/network/actions/add_addresses.js";
 export type {
   Network__CreateInput,
@@ -2377,6 +2839,8 @@ export type {
   Network__CreateObjectOutput,
   Network__CreatePath,
   Network__CreateOptions,
+  Network__CreateDescribeOptions,
+  Network__CreateAction,
 } from "./resources/network/actions/create.js";
 export type {
   Network__IndexInput,
@@ -2387,6 +2851,8 @@ export type {
   Network__IndexObjectOutput,
   Network__IndexPath,
   Network__IndexOptions,
+  Network__IndexDescribeOptions,
+  Network__IndexAction,
 } from "./resources/network/actions/index.js";
 export type {
   Network__ShowInput,
@@ -2397,6 +2863,8 @@ export type {
   Network__ShowObjectOutput,
   Network__ShowPath,
   Network__ShowOptions,
+  Network__ShowDescribeOptions,
+  Network__ShowAction,
 } from "./resources/network/actions/show.js";
 export type {
   Network__UpdateInput,
@@ -2407,6 +2875,8 @@ export type {
   Network__UpdateObjectOutput,
   Network__UpdatePath,
   Network__UpdateOptions,
+  Network__UpdateDescribeOptions,
+  Network__UpdateAction,
 } from "./resources/network/actions/update.js";
 export type { NetworkResource } from "./resources/network/resource.js";
 export type {
@@ -2418,6 +2888,8 @@ export type {
   NetworkInterface__IndexObjectOutput,
   NetworkInterface__IndexPath,
   NetworkInterface__IndexOptions,
+  NetworkInterface__IndexDescribeOptions,
+  NetworkInterface__IndexAction,
 } from "./resources/network_interface/actions/index.js";
 export type {
   NetworkInterface__ShowInput,
@@ -2428,6 +2900,8 @@ export type {
   NetworkInterface__ShowObjectOutput,
   NetworkInterface__ShowPath,
   NetworkInterface__ShowOptions,
+  NetworkInterface__ShowDescribeOptions,
+  NetworkInterface__ShowAction,
 } from "./resources/network_interface/actions/show.js";
 export type {
   NetworkInterface__UpdateInput,
@@ -2438,6 +2912,8 @@ export type {
   NetworkInterface__UpdateObjectOutput,
   NetworkInterface__UpdatePath,
   NetworkInterface__UpdateOptions,
+  NetworkInterface__UpdateDescribeOptions,
+  NetworkInterface__UpdateAction,
 } from "./resources/network_interface/actions/update.js";
 export type { NetworkInterfaceResource } from "./resources/network_interface/resource.js";
 export type {
@@ -2449,6 +2925,8 @@ export type {
   NetworkInterfaceAccounting__IndexObjectOutput,
   NetworkInterfaceAccounting__IndexPath,
   NetworkInterfaceAccounting__IndexOptions,
+  NetworkInterfaceAccounting__IndexDescribeOptions,
+  NetworkInterfaceAccounting__IndexAction,
 } from "./resources/network_interface_accounting/actions/index.js";
 export type {
   NetworkInterfaceAccounting__UserTopInput,
@@ -2459,6 +2937,8 @@ export type {
   NetworkInterfaceAccounting__UserTopObjectOutput,
   NetworkInterfaceAccounting__UserTopPath,
   NetworkInterfaceAccounting__UserTopOptions,
+  NetworkInterfaceAccounting__UserTopDescribeOptions,
+  NetworkInterfaceAccounting__UserTopAction,
 } from "./resources/network_interface_accounting/actions/user_top.js";
 export type { NetworkInterfaceAccountingResource } from "./resources/network_interface_accounting/resource.js";
 export type {
@@ -2470,6 +2950,8 @@ export type {
   NetworkInterfaceMonitor__IndexObjectOutput,
   NetworkInterfaceMonitor__IndexPath,
   NetworkInterfaceMonitor__IndexOptions,
+  NetworkInterfaceMonitor__IndexDescribeOptions,
+  NetworkInterfaceMonitor__IndexAction,
 } from "./resources/network_interface_monitor/actions/index.js";
 export type {
   NetworkInterfaceMonitor__ShowInput,
@@ -2480,6 +2962,8 @@ export type {
   NetworkInterfaceMonitor__ShowObjectOutput,
   NetworkInterfaceMonitor__ShowPath,
   NetworkInterfaceMonitor__ShowOptions,
+  NetworkInterfaceMonitor__ShowDescribeOptions,
+  NetworkInterfaceMonitor__ShowAction,
 } from "./resources/network_interface_monitor/actions/show.js";
 export type { NetworkInterfaceMonitorResource } from "./resources/network_interface_monitor/resource.js";
 export type {
@@ -2491,6 +2975,8 @@ export type {
   NewsLog__CreateObjectOutput,
   NewsLog__CreatePath,
   NewsLog__CreateOptions,
+  NewsLog__CreateDescribeOptions,
+  NewsLog__CreateAction,
 } from "./resources/news_log/actions/create.js";
 export type {
   NewsLog__DeleteInput,
@@ -2501,6 +2987,8 @@ export type {
   NewsLog__DeleteObjectOutput,
   NewsLog__DeletePath,
   NewsLog__DeleteOptions,
+  NewsLog__DeleteDescribeOptions,
+  NewsLog__DeleteAction,
 } from "./resources/news_log/actions/delete.js";
 export type {
   NewsLog__IndexInput,
@@ -2511,6 +2999,8 @@ export type {
   NewsLog__IndexObjectOutput,
   NewsLog__IndexPath,
   NewsLog__IndexOptions,
+  NewsLog__IndexDescribeOptions,
+  NewsLog__IndexAction,
 } from "./resources/news_log/actions/index.js";
 export type {
   NewsLog__ShowInput,
@@ -2521,6 +3011,8 @@ export type {
   NewsLog__ShowObjectOutput,
   NewsLog__ShowPath,
   NewsLog__ShowOptions,
+  NewsLog__ShowDescribeOptions,
+  NewsLog__ShowAction,
 } from "./resources/news_log/actions/show.js";
 export type {
   NewsLog__UpdateInput,
@@ -2531,6 +3023,8 @@ export type {
   NewsLog__UpdateObjectOutput,
   NewsLog__UpdatePath,
   NewsLog__UpdateOptions,
+  NewsLog__UpdateDescribeOptions,
+  NewsLog__UpdateAction,
 } from "./resources/news_log/actions/update.js";
 export type { NewsLogResource } from "./resources/news_log/resource.js";
 export type {
@@ -2542,6 +3036,8 @@ export type {
   Node__CreateObjectOutput,
   Node__CreatePath,
   Node__CreateOptions,
+  Node__CreateDescribeOptions,
+  Node__CreateAction,
 } from "./resources/node/actions/create.js";
 export type {
   Node__EvacuateInput,
@@ -2552,6 +3048,8 @@ export type {
   Node__EvacuateObjectOutput,
   Node__EvacuatePath,
   Node__EvacuateOptions,
+  Node__EvacuateDescribeOptions,
+  Node__EvacuateAction,
 } from "./resources/node/actions/evacuate.js";
 export type {
   Node__IndexInput,
@@ -2562,6 +3060,8 @@ export type {
   Node__IndexObjectOutput,
   Node__IndexPath,
   Node__IndexOptions,
+  Node__IndexDescribeOptions,
+  Node__IndexAction,
 } from "./resources/node/actions/index.js";
 export type {
   Node__OverviewListInput,
@@ -2572,6 +3072,8 @@ export type {
   Node__OverviewListObjectOutput,
   Node__OverviewListPath,
   Node__OverviewListOptions,
+  Node__OverviewListDescribeOptions,
+  Node__OverviewListAction,
 } from "./resources/node/actions/overview_list.js";
 export type {
   Node__PublicStatusInput,
@@ -2582,6 +3084,8 @@ export type {
   Node__PublicStatusObjectOutput,
   Node__PublicStatusPath,
   Node__PublicStatusOptions,
+  Node__PublicStatusDescribeOptions,
+  Node__PublicStatusAction,
 } from "./resources/node/actions/public_status.js";
 export type {
   Node__SetMaintenanceInput,
@@ -2592,6 +3096,8 @@ export type {
   Node__SetMaintenanceObjectOutput,
   Node__SetMaintenancePath,
   Node__SetMaintenanceOptions,
+  Node__SetMaintenanceDescribeOptions,
+  Node__SetMaintenanceAction,
 } from "./resources/node/actions/set_maintenance.js";
 export type {
   Node__ShowInput,
@@ -2602,6 +3108,8 @@ export type {
   Node__ShowObjectOutput,
   Node__ShowPath,
   Node__ShowOptions,
+  Node__ShowDescribeOptions,
+  Node__ShowAction,
 } from "./resources/node/actions/show.js";
 export type {
   Node__UpdateInput,
@@ -2612,6 +3120,8 @@ export type {
   Node__UpdateObjectOutput,
   Node__UpdatePath,
   Node__UpdateOptions,
+  Node__UpdateDescribeOptions,
+  Node__UpdateAction,
 } from "./resources/node/actions/update.js";
 export type { NodeResource } from "./resources/node/resource.js";
 export type {
@@ -2623,6 +3133,8 @@ export type {
   Node__KernelHistory__IndexObjectOutput,
   Node__KernelHistory__IndexPath,
   Node__KernelHistory__IndexOptions,
+  Node__KernelHistory__IndexDescribeOptions,
+  Node__KernelHistory__IndexAction,
 } from "./resources/node/resources/kernel_history/actions/index.js";
 export type { Node__KernelHistoryResource } from "./resources/node/resources/kernel_history/resource.js";
 export type {
@@ -2634,6 +3146,8 @@ export type {
   Node__Status__IndexObjectOutput,
   Node__Status__IndexPath,
   Node__Status__IndexOptions,
+  Node__Status__IndexDescribeOptions,
+  Node__Status__IndexAction,
 } from "./resources/node/resources/status/actions/index.js";
 export type {
   Node__Status__ShowInput,
@@ -2644,6 +3158,8 @@ export type {
   Node__Status__ShowObjectOutput,
   Node__Status__ShowPath,
   Node__Status__ShowOptions,
+  Node__Status__ShowDescribeOptions,
+  Node__Status__ShowAction,
 } from "./resources/node/resources/status/actions/show.js";
 export type { Node__StatusResource } from "./resources/node/resources/status/resource.js";
 export type {
@@ -2655,6 +3171,8 @@ export type {
   NodeCgroupState__IndexObjectOutput,
   NodeCgroupState__IndexPath,
   NodeCgroupState__IndexOptions,
+  NodeCgroupState__IndexDescribeOptions,
+  NodeCgroupState__IndexAction,
 } from "./resources/node_cgroup_state/actions/index.js";
 export type {
   NodeCgroupState__ShowInput,
@@ -2665,6 +3183,8 @@ export type {
   NodeCgroupState__ShowObjectOutput,
   NodeCgroupState__ShowPath,
   NodeCgroupState__ShowOptions,
+  NodeCgroupState__ShowDescribeOptions,
+  NodeCgroupState__ShowAction,
 } from "./resources/node_cgroup_state/actions/show.js";
 export type { NodeCgroupStateResource } from "./resources/node_cgroup_state/resource.js";
 export type {
@@ -2676,6 +3196,8 @@ export type {
   NodeEbpfProgram__IndexObjectOutput,
   NodeEbpfProgram__IndexPath,
   NodeEbpfProgram__IndexOptions,
+  NodeEbpfProgram__IndexDescribeOptions,
+  NodeEbpfProgram__IndexAction,
 } from "./resources/node_ebpf_program/actions/index.js";
 export type {
   NodeEbpfProgram__ShowInput,
@@ -2686,6 +3208,8 @@ export type {
   NodeEbpfProgram__ShowObjectOutput,
   NodeEbpfProgram__ShowPath,
   NodeEbpfProgram__ShowOptions,
+  NodeEbpfProgram__ShowDescribeOptions,
+  NodeEbpfProgram__ShowAction,
 } from "./resources/node_ebpf_program/actions/show.js";
 export type { NodeEbpfProgramResource } from "./resources/node_ebpf_program/resource.js";
 export type {
@@ -2697,6 +3221,8 @@ export type {
   NodeEbpfProgramLink__IndexObjectOutput,
   NodeEbpfProgramLink__IndexPath,
   NodeEbpfProgramLink__IndexOptions,
+  NodeEbpfProgramLink__IndexDescribeOptions,
+  NodeEbpfProgramLink__IndexAction,
 } from "./resources/node_ebpf_program_link/actions/index.js";
 export type { NodeEbpfProgramLinkResource } from "./resources/node_ebpf_program_link/resource.js";
 export type {
@@ -2708,6 +3234,8 @@ export type {
   NodeEbpfProgramObject__IndexObjectOutput,
   NodeEbpfProgramObject__IndexPath,
   NodeEbpfProgramObject__IndexOptions,
+  NodeEbpfProgramObject__IndexDescribeOptions,
+  NodeEbpfProgramObject__IndexAction,
 } from "./resources/node_ebpf_program_object/actions/index.js";
 export type { NodeEbpfProgramObjectResource } from "./resources/node_ebpf_program_object/resource.js";
 export type {
@@ -2719,6 +3247,8 @@ export type {
   NodeKernelConfigurationOption__IndexObjectOutput,
   NodeKernelConfigurationOption__IndexPath,
   NodeKernelConfigurationOption__IndexOptions,
+  NodeKernelConfigurationOption__IndexDescribeOptions,
+  NodeKernelConfigurationOption__IndexAction,
 } from "./resources/node_kernel_configuration_option/actions/index.js";
 export type { NodeKernelConfigurationOptionResource } from "./resources/node_kernel_configuration_option/resource.js";
 export type {
@@ -2730,6 +3260,8 @@ export type {
   NodeKernelEvent__IndexObjectOutput,
   NodeKernelEvent__IndexPath,
   NodeKernelEvent__IndexOptions,
+  NodeKernelEvent__IndexDescribeOptions,
+  NodeKernelEvent__IndexAction,
 } from "./resources/node_kernel_event/actions/index.js";
 export type {
   NodeKernelEvent__ShowInput,
@@ -2740,6 +3272,8 @@ export type {
   NodeKernelEvent__ShowObjectOutput,
   NodeKernelEvent__ShowPath,
   NodeKernelEvent__ShowOptions,
+  NodeKernelEvent__ShowDescribeOptions,
+  NodeKernelEvent__ShowAction,
 } from "./resources/node_kernel_event/actions/show.js";
 export type { NodeKernelEventResource } from "./resources/node_kernel_event/resource.js";
 export type {
@@ -2751,6 +3285,8 @@ export type {
   NodeKernelEvidence__IndexObjectOutput,
   NodeKernelEvidence__IndexPath,
   NodeKernelEvidence__IndexOptions,
+  NodeKernelEvidence__IndexDescribeOptions,
+  NodeKernelEvidence__IndexAction,
 } from "./resources/node_kernel_evidence/actions/index.js";
 export type {
   NodeKernelEvidence__ShowInput,
@@ -2761,6 +3297,8 @@ export type {
   NodeKernelEvidence__ShowObjectOutput,
   NodeKernelEvidence__ShowPath,
   NodeKernelEvidence__ShowOptions,
+  NodeKernelEvidence__ShowDescribeOptions,
+  NodeKernelEvidence__ShowAction,
 } from "./resources/node_kernel_evidence/actions/show.js";
 export type { NodeKernelEvidenceResource } from "./resources/node_kernel_evidence/resource.js";
 export type {
@@ -2772,6 +3310,8 @@ export type {
   NodeKernelEvidenceError__IndexObjectOutput,
   NodeKernelEvidenceError__IndexPath,
   NodeKernelEvidenceError__IndexOptions,
+  NodeKernelEvidenceError__IndexDescribeOptions,
+  NodeKernelEvidenceError__IndexAction,
 } from "./resources/node_kernel_evidence_error/actions/index.js";
 export type { NodeKernelEvidenceErrorResource } from "./resources/node_kernel_evidence_error/resource.js";
 export type {
@@ -2783,6 +3323,8 @@ export type {
   NodeKernelHistoryGap__IndexObjectOutput,
   NodeKernelHistoryGap__IndexPath,
   NodeKernelHistoryGap__IndexOptions,
+  NodeKernelHistoryGap__IndexDescribeOptions,
+  NodeKernelHistoryGap__IndexAction,
 } from "./resources/node_kernel_history_gap/actions/index.js";
 export type { NodeKernelHistoryGapResource } from "./resources/node_kernel_history_gap/resource.js";
 export type {
@@ -2794,6 +3336,8 @@ export type {
   NodeKernelHistoryState__IndexObjectOutput,
   NodeKernelHistoryState__IndexPath,
   NodeKernelHistoryState__IndexOptions,
+  NodeKernelHistoryState__IndexDescribeOptions,
+  NodeKernelHistoryState__IndexAction,
 } from "./resources/node_kernel_history_state/actions/index.js";
 export type {
   NodeKernelHistoryState__ShowInput,
@@ -2804,6 +3348,8 @@ export type {
   NodeKernelHistoryState__ShowObjectOutput,
   NodeKernelHistoryState__ShowPath,
   NodeKernelHistoryState__ShowOptions,
+  NodeKernelHistoryState__ShowDescribeOptions,
+  NodeKernelHistoryState__ShowAction,
 } from "./resources/node_kernel_history_state/actions/show.js";
 export type { NodeKernelHistoryStateResource } from "./resources/node_kernel_history_state/resource.js";
 export type {
@@ -2815,6 +3361,8 @@ export type {
   NodeKernelLivepatch__IndexObjectOutput,
   NodeKernelLivepatch__IndexPath,
   NodeKernelLivepatch__IndexOptions,
+  NodeKernelLivepatch__IndexDescribeOptions,
+  NodeKernelLivepatch__IndexAction,
 } from "./resources/node_kernel_livepatch/actions/index.js";
 export type {
   NodeKernelLivepatch__ShowInput,
@@ -2825,6 +3373,8 @@ export type {
   NodeKernelLivepatch__ShowObjectOutput,
   NodeKernelLivepatch__ShowPath,
   NodeKernelLivepatch__ShowOptions,
+  NodeKernelLivepatch__ShowDescribeOptions,
+  NodeKernelLivepatch__ShowAction,
 } from "./resources/node_kernel_livepatch/actions/show.js";
 export type { NodeKernelLivepatchResource } from "./resources/node_kernel_livepatch/resource.js";
 export type {
@@ -2836,6 +3386,8 @@ export type {
   NodeKernelLivepatchPatch__IndexObjectOutput,
   NodeKernelLivepatchPatch__IndexPath,
   NodeKernelLivepatchPatch__IndexOptions,
+  NodeKernelLivepatchPatch__IndexDescribeOptions,
+  NodeKernelLivepatchPatch__IndexAction,
 } from "./resources/node_kernel_livepatch_patch/actions/index.js";
 export type { NodeKernelLivepatchPatchResource } from "./resources/node_kernel_livepatch_patch/resource.js";
 export type {
@@ -2847,6 +3399,8 @@ export type {
   NodeKernelModule__IndexObjectOutput,
   NodeKernelModule__IndexPath,
   NodeKernelModule__IndexOptions,
+  NodeKernelModule__IndexDescribeOptions,
+  NodeKernelModule__IndexAction,
 } from "./resources/node_kernel_module/actions/index.js";
 export type { NodeKernelModuleResource } from "./resources/node_kernel_module/resource.js";
 export type {
@@ -2858,6 +3412,8 @@ export type {
   NodeKernelParameter__IndexObjectOutput,
   NodeKernelParameter__IndexPath,
   NodeKernelParameter__IndexOptions,
+  NodeKernelParameter__IndexDescribeOptions,
+  NodeKernelParameter__IndexAction,
 } from "./resources/node_kernel_parameter/actions/index.js";
 export type { NodeKernelParameterResource } from "./resources/node_kernel_parameter/resource.js";
 export type {
@@ -2869,6 +3425,8 @@ export type {
   NodeSoftwareChange__IndexObjectOutput,
   NodeSoftwareChange__IndexPath,
   NodeSoftwareChange__IndexOptions,
+  NodeSoftwareChange__IndexDescribeOptions,
+  NodeSoftwareChange__IndexAction,
 } from "./resources/node_software_change/actions/index.js";
 export type { NodeSoftwareChangeResource } from "./resources/node_software_change/resource.js";
 export type {
@@ -2880,6 +3438,8 @@ export type {
   NodeSoftwareDeployment__IndexObjectOutput,
   NodeSoftwareDeployment__IndexPath,
   NodeSoftwareDeployment__IndexOptions,
+  NodeSoftwareDeployment__IndexDescribeOptions,
+  NodeSoftwareDeployment__IndexAction,
 } from "./resources/node_software_deployment/actions/index.js";
 export type { NodeSoftwareDeploymentResource } from "./resources/node_software_deployment/resource.js";
 export type {
@@ -2891,6 +3451,8 @@ export type {
   NodeSoftwareVersion__IndexObjectOutput,
   NodeSoftwareVersion__IndexPath,
   NodeSoftwareVersion__IndexOptions,
+  NodeSoftwareVersion__IndexDescribeOptions,
+  NodeSoftwareVersion__IndexAction,
 } from "./resources/node_software_version/actions/index.js";
 export type { NodeSoftwareVersionResource } from "./resources/node_software_version/resource.js";
 export type {
@@ -2902,6 +3464,8 @@ export type {
   NodeSysctl__IndexObjectOutput,
   NodeSysctl__IndexPath,
   NodeSysctl__IndexOptions,
+  NodeSysctl__IndexDescribeOptions,
+  NodeSysctl__IndexAction,
 } from "./resources/node_sysctl/actions/index.js";
 export type { NodeSysctlResource } from "./resources/node_sysctl/resource.js";
 export type {
@@ -2913,6 +3477,8 @@ export type {
   NodeSysctlChange__IndexObjectOutput,
   NodeSysctlChange__IndexPath,
   NodeSysctlChange__IndexOptions,
+  NodeSysctlChange__IndexDescribeOptions,
+  NodeSysctlChange__IndexAction,
 } from "./resources/node_sysctl_change/actions/index.js";
 export type { NodeSysctlChangeResource } from "./resources/node_sysctl_change/resource.js";
 export type {
@@ -2924,6 +3490,8 @@ export type {
   NodeSystemState__IndexObjectOutput,
   NodeSystemState__IndexPath,
   NodeSystemState__IndexOptions,
+  NodeSystemState__IndexDescribeOptions,
+  NodeSystemState__IndexAction,
 } from "./resources/node_system_state/actions/index.js";
 export type {
   NodeSystemState__ShowInput,
@@ -2934,6 +3502,8 @@ export type {
   NodeSystemState__ShowObjectOutput,
   NodeSystemState__ShowPath,
   NodeSystemState__ShowOptions,
+  NodeSystemState__ShowDescribeOptions,
+  NodeSystemState__ShowAction,
 } from "./resources/node_system_state/actions/show.js";
 export type { NodeSystemStateResource } from "./resources/node_system_state/resource.js";
 export type {
@@ -2945,6 +3515,8 @@ export type {
   NodeTransferConnection__CreateObjectOutput,
   NodeTransferConnection__CreatePath,
   NodeTransferConnection__CreateOptions,
+  NodeTransferConnection__CreateDescribeOptions,
+  NodeTransferConnection__CreateAction,
 } from "./resources/node_transfer_connection/actions/create.js";
 export type {
   NodeTransferConnection__DeleteInput,
@@ -2955,6 +3527,8 @@ export type {
   NodeTransferConnection__DeleteObjectOutput,
   NodeTransferConnection__DeletePath,
   NodeTransferConnection__DeleteOptions,
+  NodeTransferConnection__DeleteDescribeOptions,
+  NodeTransferConnection__DeleteAction,
 } from "./resources/node_transfer_connection/actions/delete.js";
 export type {
   NodeTransferConnection__IndexInput,
@@ -2965,6 +3539,8 @@ export type {
   NodeTransferConnection__IndexObjectOutput,
   NodeTransferConnection__IndexPath,
   NodeTransferConnection__IndexOptions,
+  NodeTransferConnection__IndexDescribeOptions,
+  NodeTransferConnection__IndexAction,
 } from "./resources/node_transfer_connection/actions/index.js";
 export type {
   NodeTransferConnection__ShowInput,
@@ -2975,6 +3551,8 @@ export type {
   NodeTransferConnection__ShowObjectOutput,
   NodeTransferConnection__ShowPath,
   NodeTransferConnection__ShowOptions,
+  NodeTransferConnection__ShowDescribeOptions,
+  NodeTransferConnection__ShowAction,
 } from "./resources/node_transfer_connection/actions/show.js";
 export type {
   NodeTransferConnection__UpdateInput,
@@ -2985,6 +3563,8 @@ export type {
   NodeTransferConnection__UpdateObjectOutput,
   NodeTransferConnection__UpdatePath,
   NodeTransferConnection__UpdateOptions,
+  NodeTransferConnection__UpdateDescribeOptions,
+  NodeTransferConnection__UpdateAction,
 } from "./resources/node_transfer_connection/actions/update.js";
 export type { NodeTransferConnectionResource } from "./resources/node_transfer_connection/resource.js";
 export type {
@@ -2996,6 +3576,8 @@ export type {
   Oauth2Client__CreateObjectOutput,
   Oauth2Client__CreatePath,
   Oauth2Client__CreateOptions,
+  Oauth2Client__CreateDescribeOptions,
+  Oauth2Client__CreateAction,
 } from "./resources/oauth2_client/actions/create.js";
 export type {
   Oauth2Client__DeleteInput,
@@ -3006,6 +3588,8 @@ export type {
   Oauth2Client__DeleteObjectOutput,
   Oauth2Client__DeletePath,
   Oauth2Client__DeleteOptions,
+  Oauth2Client__DeleteDescribeOptions,
+  Oauth2Client__DeleteAction,
 } from "./resources/oauth2_client/actions/delete.js";
 export type {
   Oauth2Client__IndexInput,
@@ -3016,6 +3600,8 @@ export type {
   Oauth2Client__IndexObjectOutput,
   Oauth2Client__IndexPath,
   Oauth2Client__IndexOptions,
+  Oauth2Client__IndexDescribeOptions,
+  Oauth2Client__IndexAction,
 } from "./resources/oauth2_client/actions/index.js";
 export type {
   Oauth2Client__ShowInput,
@@ -3026,6 +3612,8 @@ export type {
   Oauth2Client__ShowObjectOutput,
   Oauth2Client__ShowPath,
   Oauth2Client__ShowOptions,
+  Oauth2Client__ShowDescribeOptions,
+  Oauth2Client__ShowAction,
 } from "./resources/oauth2_client/actions/show.js";
 export type {
   Oauth2Client__UpdateInput,
@@ -3036,6 +3624,8 @@ export type {
   Oauth2Client__UpdateObjectOutput,
   Oauth2Client__UpdatePath,
   Oauth2Client__UpdateOptions,
+  Oauth2Client__UpdateDescribeOptions,
+  Oauth2Client__UpdateAction,
 } from "./resources/oauth2_client/actions/update.js";
 export type { Oauth2ClientResource } from "./resources/oauth2_client/resource.js";
 export type {
@@ -3047,6 +3637,8 @@ export type {
   ObjectHistory__IndexObjectOutput,
   ObjectHistory__IndexPath,
   ObjectHistory__IndexOptions,
+  ObjectHistory__IndexDescribeOptions,
+  ObjectHistory__IndexAction,
 } from "./resources/object_history/actions/index.js";
 export type {
   ObjectHistory__ShowInput,
@@ -3057,6 +3649,8 @@ export type {
   ObjectHistory__ShowObjectOutput,
   ObjectHistory__ShowPath,
   ObjectHistory__ShowOptions,
+  ObjectHistory__ShowDescribeOptions,
+  ObjectHistory__ShowAction,
 } from "./resources/object_history/actions/show.js";
 export type { ObjectHistoryResource } from "./resources/object_history/resource.js";
 export type {
@@ -3068,6 +3662,8 @@ export type {
   OomReport__IndexObjectOutput,
   OomReport__IndexPath,
   OomReport__IndexOptions,
+  OomReport__IndexDescribeOptions,
+  OomReport__IndexAction,
 } from "./resources/oom_report/actions/index.js";
 export type {
   OomReport__ShowInput,
@@ -3078,6 +3674,8 @@ export type {
   OomReport__ShowObjectOutput,
   OomReport__ShowPath,
   OomReport__ShowOptions,
+  OomReport__ShowDescribeOptions,
+  OomReport__ShowAction,
 } from "./resources/oom_report/actions/show.js";
 export type { OomReportResource } from "./resources/oom_report/resource.js";
 export type {
@@ -3089,6 +3687,8 @@ export type {
   OomReport__Stat__IndexObjectOutput,
   OomReport__Stat__IndexPath,
   OomReport__Stat__IndexOptions,
+  OomReport__Stat__IndexDescribeOptions,
+  OomReport__Stat__IndexAction,
 } from "./resources/oom_report/resources/stat/actions/index.js";
 export type {
   OomReport__Stat__ShowInput,
@@ -3099,6 +3699,8 @@ export type {
   OomReport__Stat__ShowObjectOutput,
   OomReport__Stat__ShowPath,
   OomReport__Stat__ShowOptions,
+  OomReport__Stat__ShowDescribeOptions,
+  OomReport__Stat__ShowAction,
 } from "./resources/oom_report/resources/stat/actions/show.js";
 export type { OomReport__StatResource } from "./resources/oom_report/resources/stat/resource.js";
 export type {
@@ -3110,6 +3712,8 @@ export type {
   OomReport__Task__IndexObjectOutput,
   OomReport__Task__IndexPath,
   OomReport__Task__IndexOptions,
+  OomReport__Task__IndexDescribeOptions,
+  OomReport__Task__IndexAction,
 } from "./resources/oom_report/resources/task/actions/index.js";
 export type {
   OomReport__Task__ShowInput,
@@ -3120,6 +3724,8 @@ export type {
   OomReport__Task__ShowObjectOutput,
   OomReport__Task__ShowPath,
   OomReport__Task__ShowOptions,
+  OomReport__Task__ShowDescribeOptions,
+  OomReport__Task__ShowAction,
 } from "./resources/oom_report/resources/task/actions/show.js";
 export type { OomReport__TaskResource } from "./resources/oom_report/resources/task/resource.js";
 export type {
@@ -3131,6 +3737,8 @@ export type {
   OomReport__Usage__IndexObjectOutput,
   OomReport__Usage__IndexPath,
   OomReport__Usage__IndexOptions,
+  OomReport__Usage__IndexDescribeOptions,
+  OomReport__Usage__IndexAction,
 } from "./resources/oom_report/resources/usage/actions/index.js";
 export type {
   OomReport__Usage__ShowInput,
@@ -3141,6 +3749,8 @@ export type {
   OomReport__Usage__ShowObjectOutput,
   OomReport__Usage__ShowPath,
   OomReport__Usage__ShowOptions,
+  OomReport__Usage__ShowDescribeOptions,
+  OomReport__Usage__ShowAction,
 } from "./resources/oom_report/resources/usage/actions/show.js";
 export type { OomReport__UsageResource } from "./resources/oom_report/resources/usage/resource.js";
 export type {
@@ -3152,6 +3762,8 @@ export type {
   OomReportRule__CreateObjectOutput,
   OomReportRule__CreatePath,
   OomReportRule__CreateOptions,
+  OomReportRule__CreateDescribeOptions,
+  OomReportRule__CreateAction,
 } from "./resources/oom_report_rule/actions/create.js";
 export type {
   OomReportRule__DeleteInput,
@@ -3162,6 +3774,8 @@ export type {
   OomReportRule__DeleteObjectOutput,
   OomReportRule__DeletePath,
   OomReportRule__DeleteOptions,
+  OomReportRule__DeleteDescribeOptions,
+  OomReportRule__DeleteAction,
 } from "./resources/oom_report_rule/actions/delete.js";
 export type {
   OomReportRule__IndexInput,
@@ -3172,6 +3786,8 @@ export type {
   OomReportRule__IndexObjectOutput,
   OomReportRule__IndexPath,
   OomReportRule__IndexOptions,
+  OomReportRule__IndexDescribeOptions,
+  OomReportRule__IndexAction,
 } from "./resources/oom_report_rule/actions/index.js";
 export type {
   OomReportRule__ShowInput,
@@ -3182,6 +3798,8 @@ export type {
   OomReportRule__ShowObjectOutput,
   OomReportRule__ShowPath,
   OomReportRule__ShowOptions,
+  OomReportRule__ShowDescribeOptions,
+  OomReportRule__ShowAction,
 } from "./resources/oom_report_rule/actions/show.js";
 export type {
   OomReportRule__UpdateInput,
@@ -3192,6 +3810,8 @@ export type {
   OomReportRule__UpdateObjectOutput,
   OomReportRule__UpdatePath,
   OomReportRule__UpdateOptions,
+  OomReportRule__UpdateDescribeOptions,
+  OomReportRule__UpdateAction,
 } from "./resources/oom_report_rule/actions/update.js";
 export type { OomReportRuleResource } from "./resources/oom_report_rule/resource.js";
 export type {
@@ -3203,6 +3823,8 @@ export type {
   OsFamily__CreateObjectOutput,
   OsFamily__CreatePath,
   OsFamily__CreateOptions,
+  OsFamily__CreateDescribeOptions,
+  OsFamily__CreateAction,
 } from "./resources/os_family/actions/create.js";
 export type {
   OsFamily__DeleteInput,
@@ -3213,6 +3835,8 @@ export type {
   OsFamily__DeleteObjectOutput,
   OsFamily__DeletePath,
   OsFamily__DeleteOptions,
+  OsFamily__DeleteDescribeOptions,
+  OsFamily__DeleteAction,
 } from "./resources/os_family/actions/delete.js";
 export type {
   OsFamily__IndexInput,
@@ -3223,6 +3847,8 @@ export type {
   OsFamily__IndexObjectOutput,
   OsFamily__IndexPath,
   OsFamily__IndexOptions,
+  OsFamily__IndexDescribeOptions,
+  OsFamily__IndexAction,
 } from "./resources/os_family/actions/index.js";
 export type {
   OsFamily__ShowInput,
@@ -3233,6 +3859,8 @@ export type {
   OsFamily__ShowObjectOutput,
   OsFamily__ShowPath,
   OsFamily__ShowOptions,
+  OsFamily__ShowDescribeOptions,
+  OsFamily__ShowAction,
 } from "./resources/os_family/actions/show.js";
 export type {
   OsFamily__UpdateInput,
@@ -3243,6 +3871,8 @@ export type {
   OsFamily__UpdateObjectOutput,
   OsFamily__UpdatePath,
   OsFamily__UpdateOptions,
+  OsFamily__UpdateDescribeOptions,
+  OsFamily__UpdateAction,
 } from "./resources/os_family/actions/update.js";
 export type { OsFamilyResource } from "./resources/os_family/resource.js";
 export type {
@@ -3254,6 +3884,8 @@ export type {
   OsTemplate__CreateObjectOutput,
   OsTemplate__CreatePath,
   OsTemplate__CreateOptions,
+  OsTemplate__CreateDescribeOptions,
+  OsTemplate__CreateAction,
 } from "./resources/os_template/actions/create.js";
 export type {
   OsTemplate__DeleteInput,
@@ -3264,6 +3896,8 @@ export type {
   OsTemplate__DeleteObjectOutput,
   OsTemplate__DeletePath,
   OsTemplate__DeleteOptions,
+  OsTemplate__DeleteDescribeOptions,
+  OsTemplate__DeleteAction,
 } from "./resources/os_template/actions/delete.js";
 export type {
   OsTemplate__IndexInput,
@@ -3274,6 +3908,8 @@ export type {
   OsTemplate__IndexObjectOutput,
   OsTemplate__IndexPath,
   OsTemplate__IndexOptions,
+  OsTemplate__IndexDescribeOptions,
+  OsTemplate__IndexAction,
 } from "./resources/os_template/actions/index.js";
 export type {
   OsTemplate__ShowInput,
@@ -3284,6 +3920,8 @@ export type {
   OsTemplate__ShowObjectOutput,
   OsTemplate__ShowPath,
   OsTemplate__ShowOptions,
+  OsTemplate__ShowDescribeOptions,
+  OsTemplate__ShowAction,
 } from "./resources/os_template/actions/show.js";
 export type {
   OsTemplate__UpdateInput,
@@ -3294,6 +3932,8 @@ export type {
   OsTemplate__UpdateObjectOutput,
   OsTemplate__UpdatePath,
   OsTemplate__UpdateOptions,
+  OsTemplate__UpdateDescribeOptions,
+  OsTemplate__UpdateAction,
 } from "./resources/os_template/actions/update.js";
 export type { OsTemplateResource } from "./resources/os_template/resource.js";
 export type {
@@ -3305,6 +3945,8 @@ export type {
   Outage__CreateObjectOutput,
   Outage__CreatePath,
   Outage__CreateOptions,
+  Outage__CreateDescribeOptions,
+  Outage__CreateAction,
 } from "./resources/outage/actions/create.js";
 export type {
   Outage__IndexInput,
@@ -3315,6 +3957,8 @@ export type {
   Outage__IndexObjectOutput,
   Outage__IndexPath,
   Outage__IndexOptions,
+  Outage__IndexDescribeOptions,
+  Outage__IndexAction,
 } from "./resources/outage/actions/index.js";
 export type {
   Outage__RebuildAffectedVpsInput,
@@ -3325,6 +3969,8 @@ export type {
   Outage__RebuildAffectedVpsObjectOutput,
   Outage__RebuildAffectedVpsPath,
   Outage__RebuildAffectedVpsOptions,
+  Outage__RebuildAffectedVpsDescribeOptions,
+  Outage__RebuildAffectedVpsAction,
 } from "./resources/outage/actions/rebuild_affected_vps.js";
 export type {
   Outage__ShowInput,
@@ -3335,6 +3981,8 @@ export type {
   Outage__ShowObjectOutput,
   Outage__ShowPath,
   Outage__ShowOptions,
+  Outage__ShowDescribeOptions,
+  Outage__ShowAction,
 } from "./resources/outage/actions/show.js";
 export type {
   Outage__UpdateInput,
@@ -3345,6 +3993,8 @@ export type {
   Outage__UpdateObjectOutput,
   Outage__UpdatePath,
   Outage__UpdateOptions,
+  Outage__UpdateDescribeOptions,
+  Outage__UpdateAction,
 } from "./resources/outage/actions/update.js";
 export type { OutageResource } from "./resources/outage/resource.js";
 export type {
@@ -3356,6 +4006,8 @@ export type {
   Outage__Entity__CreateObjectOutput,
   Outage__Entity__CreatePath,
   Outage__Entity__CreateOptions,
+  Outage__Entity__CreateDescribeOptions,
+  Outage__Entity__CreateAction,
 } from "./resources/outage/resources/entity/actions/create.js";
 export type {
   Outage__Entity__DeleteInput,
@@ -3366,6 +4018,8 @@ export type {
   Outage__Entity__DeleteObjectOutput,
   Outage__Entity__DeletePath,
   Outage__Entity__DeleteOptions,
+  Outage__Entity__DeleteDescribeOptions,
+  Outage__Entity__DeleteAction,
 } from "./resources/outage/resources/entity/actions/delete.js";
 export type {
   Outage__Entity__IndexInput,
@@ -3376,6 +4030,8 @@ export type {
   Outage__Entity__IndexObjectOutput,
   Outage__Entity__IndexPath,
   Outage__Entity__IndexOptions,
+  Outage__Entity__IndexDescribeOptions,
+  Outage__Entity__IndexAction,
 } from "./resources/outage/resources/entity/actions/index.js";
 export type {
   Outage__Entity__ShowInput,
@@ -3386,6 +4042,8 @@ export type {
   Outage__Entity__ShowObjectOutput,
   Outage__Entity__ShowPath,
   Outage__Entity__ShowOptions,
+  Outage__Entity__ShowDescribeOptions,
+  Outage__Entity__ShowAction,
 } from "./resources/outage/resources/entity/actions/show.js";
 export type { Outage__EntityResource } from "./resources/outage/resources/entity/resource.js";
 export type {
@@ -3397,6 +4055,8 @@ export type {
   Outage__Handler__CreateObjectOutput,
   Outage__Handler__CreatePath,
   Outage__Handler__CreateOptions,
+  Outage__Handler__CreateDescribeOptions,
+  Outage__Handler__CreateAction,
 } from "./resources/outage/resources/handler/actions/create.js";
 export type {
   Outage__Handler__DeleteInput,
@@ -3407,6 +4067,8 @@ export type {
   Outage__Handler__DeleteObjectOutput,
   Outage__Handler__DeletePath,
   Outage__Handler__DeleteOptions,
+  Outage__Handler__DeleteDescribeOptions,
+  Outage__Handler__DeleteAction,
 } from "./resources/outage/resources/handler/actions/delete.js";
 export type {
   Outage__Handler__IndexInput,
@@ -3417,6 +4079,8 @@ export type {
   Outage__Handler__IndexObjectOutput,
   Outage__Handler__IndexPath,
   Outage__Handler__IndexOptions,
+  Outage__Handler__IndexDescribeOptions,
+  Outage__Handler__IndexAction,
 } from "./resources/outage/resources/handler/actions/index.js";
 export type {
   Outage__Handler__ShowInput,
@@ -3427,6 +4091,8 @@ export type {
   Outage__Handler__ShowObjectOutput,
   Outage__Handler__ShowPath,
   Outage__Handler__ShowOptions,
+  Outage__Handler__ShowDescribeOptions,
+  Outage__Handler__ShowAction,
 } from "./resources/outage/resources/handler/actions/show.js";
 export type {
   Outage__Handler__UpdateInput,
@@ -3437,6 +4103,8 @@ export type {
   Outage__Handler__UpdateObjectOutput,
   Outage__Handler__UpdatePath,
   Outage__Handler__UpdateOptions,
+  Outage__Handler__UpdateDescribeOptions,
+  Outage__Handler__UpdateAction,
 } from "./resources/outage/resources/handler/actions/update.js";
 export type { Outage__HandlerResource } from "./resources/outage/resources/handler/resource.js";
 export type {
@@ -3448,6 +4116,8 @@ export type {
   OutageSecurityAdvisory__CreateObjectOutput,
   OutageSecurityAdvisory__CreatePath,
   OutageSecurityAdvisory__CreateOptions,
+  OutageSecurityAdvisory__CreateDescribeOptions,
+  OutageSecurityAdvisory__CreateAction,
 } from "./resources/outage_security_advisory/actions/create.js";
 export type {
   OutageSecurityAdvisory__DeleteInput,
@@ -3458,6 +4128,8 @@ export type {
   OutageSecurityAdvisory__DeleteObjectOutput,
   OutageSecurityAdvisory__DeletePath,
   OutageSecurityAdvisory__DeleteOptions,
+  OutageSecurityAdvisory__DeleteDescribeOptions,
+  OutageSecurityAdvisory__DeleteAction,
 } from "./resources/outage_security_advisory/actions/delete.js";
 export type {
   OutageSecurityAdvisory__IndexInput,
@@ -3468,6 +4140,8 @@ export type {
   OutageSecurityAdvisory__IndexObjectOutput,
   OutageSecurityAdvisory__IndexPath,
   OutageSecurityAdvisory__IndexOptions,
+  OutageSecurityAdvisory__IndexDescribeOptions,
+  OutageSecurityAdvisory__IndexAction,
 } from "./resources/outage_security_advisory/actions/index.js";
 export type {
   OutageSecurityAdvisory__ShowInput,
@@ -3478,6 +4152,8 @@ export type {
   OutageSecurityAdvisory__ShowObjectOutput,
   OutageSecurityAdvisory__ShowPath,
   OutageSecurityAdvisory__ShowOptions,
+  OutageSecurityAdvisory__ShowDescribeOptions,
+  OutageSecurityAdvisory__ShowAction,
 } from "./resources/outage_security_advisory/actions/show.js";
 export type { OutageSecurityAdvisoryResource } from "./resources/outage_security_advisory/resource.js";
 export type {
@@ -3489,6 +4165,8 @@ export type {
   OutageUpdate__CreateObjectOutput,
   OutageUpdate__CreatePath,
   OutageUpdate__CreateOptions,
+  OutageUpdate__CreateDescribeOptions,
+  OutageUpdate__CreateAction,
 } from "./resources/outage_update/actions/create.js";
 export type {
   OutageUpdate__IndexInput,
@@ -3499,6 +4177,8 @@ export type {
   OutageUpdate__IndexObjectOutput,
   OutageUpdate__IndexPath,
   OutageUpdate__IndexOptions,
+  OutageUpdate__IndexDescribeOptions,
+  OutageUpdate__IndexAction,
 } from "./resources/outage_update/actions/index.js";
 export type {
   OutageUpdate__ShowInput,
@@ -3509,6 +4189,8 @@ export type {
   OutageUpdate__ShowObjectOutput,
   OutageUpdate__ShowPath,
   OutageUpdate__ShowOptions,
+  OutageUpdate__ShowDescribeOptions,
+  OutageUpdate__ShowAction,
 } from "./resources/outage_update/actions/show.js";
 export type { OutageUpdateResource } from "./resources/outage_update/resource.js";
 export type {
@@ -3520,6 +4202,8 @@ export type {
   PasswordChangeLog__IndexObjectOutput,
   PasswordChangeLog__IndexPath,
   PasswordChangeLog__IndexOptions,
+  PasswordChangeLog__IndexDescribeOptions,
+  PasswordChangeLog__IndexAction,
 } from "./resources/password_change_log/actions/index.js";
 export type {
   PasswordChangeLog__ShowInput,
@@ -3530,6 +4214,8 @@ export type {
   PasswordChangeLog__ShowObjectOutput,
   PasswordChangeLog__ShowPath,
   PasswordChangeLog__ShowOptions,
+  PasswordChangeLog__ShowDescribeOptions,
+  PasswordChangeLog__ShowAction,
 } from "./resources/password_change_log/actions/show.js";
 export type { PasswordChangeLogResource } from "./resources/password_change_log/resource.js";
 export type {
@@ -3541,6 +4227,8 @@ export type {
   PaymentStats__EstimateIncomeObjectOutput,
   PaymentStats__EstimateIncomePath,
   PaymentStats__EstimateIncomeOptions,
+  PaymentStats__EstimateIncomeDescribeOptions,
+  PaymentStats__EstimateIncomeAction,
 } from "./resources/payment_stats/actions/estimate_income.js";
 export type { PaymentStatsResource } from "./resources/payment_stats/resource.js";
 export type {
@@ -3552,6 +4240,8 @@ export type {
   Pool__CreateObjectOutput,
   Pool__CreatePath,
   Pool__CreateOptions,
+  Pool__CreateDescribeOptions,
+  Pool__CreateAction,
 } from "./resources/pool/actions/create.js";
 export type {
   Pool__IndexInput,
@@ -3562,6 +4252,8 @@ export type {
   Pool__IndexObjectOutput,
   Pool__IndexPath,
   Pool__IndexOptions,
+  Pool__IndexDescribeOptions,
+  Pool__IndexAction,
 } from "./resources/pool/actions/index.js";
 export type {
   Pool__SetMaintenanceInput,
@@ -3572,6 +4264,8 @@ export type {
   Pool__SetMaintenanceObjectOutput,
   Pool__SetMaintenancePath,
   Pool__SetMaintenanceOptions,
+  Pool__SetMaintenanceDescribeOptions,
+  Pool__SetMaintenanceAction,
 } from "./resources/pool/actions/set_maintenance.js";
 export type {
   Pool__ShowInput,
@@ -3582,6 +4276,8 @@ export type {
   Pool__ShowObjectOutput,
   Pool__ShowPath,
   Pool__ShowOptions,
+  Pool__ShowDescribeOptions,
+  Pool__ShowAction,
 } from "./resources/pool/actions/show.js";
 export type { PoolResource } from "./resources/pool/resource.js";
 export type {
@@ -3593,6 +4289,8 @@ export type {
   SecurityAdvisory__CreateObjectOutput,
   SecurityAdvisory__CreatePath,
   SecurityAdvisory__CreateOptions,
+  SecurityAdvisory__CreateDescribeOptions,
+  SecurityAdvisory__CreateAction,
 } from "./resources/security_advisory/actions/create.js";
 export type {
   SecurityAdvisory__IndexInput,
@@ -3603,6 +4301,8 @@ export type {
   SecurityAdvisory__IndexObjectOutput,
   SecurityAdvisory__IndexPath,
   SecurityAdvisory__IndexOptions,
+  SecurityAdvisory__IndexDescribeOptions,
+  SecurityAdvisory__IndexAction,
 } from "./resources/security_advisory/actions/index.js";
 export type {
   SecurityAdvisory__PublishInput,
@@ -3613,6 +4313,8 @@ export type {
   SecurityAdvisory__PublishObjectOutput,
   SecurityAdvisory__PublishPath,
   SecurityAdvisory__PublishOptions,
+  SecurityAdvisory__PublishDescribeOptions,
+  SecurityAdvisory__PublishAction,
 } from "./resources/security_advisory/actions/publish.js";
 export type {
   SecurityAdvisory__RebuildAffectedVpsInput,
@@ -3623,6 +4325,8 @@ export type {
   SecurityAdvisory__RebuildAffectedVpsObjectOutput,
   SecurityAdvisory__RebuildAffectedVpsPath,
   SecurityAdvisory__RebuildAffectedVpsOptions,
+  SecurityAdvisory__RebuildAffectedVpsDescribeOptions,
+  SecurityAdvisory__RebuildAffectedVpsAction,
 } from "./resources/security_advisory/actions/rebuild_affected_vps.js";
 export type {
   SecurityAdvisory__ShowInput,
@@ -3633,6 +4337,8 @@ export type {
   SecurityAdvisory__ShowObjectOutput,
   SecurityAdvisory__ShowPath,
   SecurityAdvisory__ShowOptions,
+  SecurityAdvisory__ShowDescribeOptions,
+  SecurityAdvisory__ShowAction,
 } from "./resources/security_advisory/actions/show.js";
 export type {
   SecurityAdvisory__UpdateInput,
@@ -3643,6 +4349,8 @@ export type {
   SecurityAdvisory__UpdateObjectOutput,
   SecurityAdvisory__UpdatePath,
   SecurityAdvisory__UpdateOptions,
+  SecurityAdvisory__UpdateDescribeOptions,
+  SecurityAdvisory__UpdateAction,
 } from "./resources/security_advisory/actions/update.js";
 export type { SecurityAdvisoryResource } from "./resources/security_advisory/resource.js";
 export type {
@@ -3654,6 +4362,8 @@ export type {
   SecurityAdvisory__NodeStatus__CreateObjectOutput,
   SecurityAdvisory__NodeStatus__CreatePath,
   SecurityAdvisory__NodeStatus__CreateOptions,
+  SecurityAdvisory__NodeStatus__CreateDescribeOptions,
+  SecurityAdvisory__NodeStatus__CreateAction,
 } from "./resources/security_advisory/resources/node_status/actions/create.js";
 export type {
   SecurityAdvisory__NodeStatus__DeleteInput,
@@ -3664,6 +4374,8 @@ export type {
   SecurityAdvisory__NodeStatus__DeleteObjectOutput,
   SecurityAdvisory__NodeStatus__DeletePath,
   SecurityAdvisory__NodeStatus__DeleteOptions,
+  SecurityAdvisory__NodeStatus__DeleteDescribeOptions,
+  SecurityAdvisory__NodeStatus__DeleteAction,
 } from "./resources/security_advisory/resources/node_status/actions/delete.js";
 export type {
   SecurityAdvisory__NodeStatus__IndexInput,
@@ -3674,6 +4386,8 @@ export type {
   SecurityAdvisory__NodeStatus__IndexObjectOutput,
   SecurityAdvisory__NodeStatus__IndexPath,
   SecurityAdvisory__NodeStatus__IndexOptions,
+  SecurityAdvisory__NodeStatus__IndexDescribeOptions,
+  SecurityAdvisory__NodeStatus__IndexAction,
 } from "./resources/security_advisory/resources/node_status/actions/index.js";
 export type {
   SecurityAdvisory__NodeStatus__UpdateInput,
@@ -3684,6 +4398,8 @@ export type {
   SecurityAdvisory__NodeStatus__UpdateObjectOutput,
   SecurityAdvisory__NodeStatus__UpdatePath,
   SecurityAdvisory__NodeStatus__UpdateOptions,
+  SecurityAdvisory__NodeStatus__UpdateDescribeOptions,
+  SecurityAdvisory__NodeStatus__UpdateAction,
 } from "./resources/security_advisory/resources/node_status/actions/update.js";
 export type { SecurityAdvisory__NodeStatusResource } from "./resources/security_advisory/resources/node_status/resource.js";
 export type {
@@ -3695,6 +4411,8 @@ export type {
   SecurityAdvisoryCve__CreateObjectOutput,
   SecurityAdvisoryCve__CreatePath,
   SecurityAdvisoryCve__CreateOptions,
+  SecurityAdvisoryCve__CreateDescribeOptions,
+  SecurityAdvisoryCve__CreateAction,
 } from "./resources/security_advisory_cve/actions/create.js";
 export type {
   SecurityAdvisoryCve__DeleteInput,
@@ -3705,6 +4423,8 @@ export type {
   SecurityAdvisoryCve__DeleteObjectOutput,
   SecurityAdvisoryCve__DeletePath,
   SecurityAdvisoryCve__DeleteOptions,
+  SecurityAdvisoryCve__DeleteDescribeOptions,
+  SecurityAdvisoryCve__DeleteAction,
 } from "./resources/security_advisory_cve/actions/delete.js";
 export type {
   SecurityAdvisoryCve__IndexInput,
@@ -3715,6 +4435,8 @@ export type {
   SecurityAdvisoryCve__IndexObjectOutput,
   SecurityAdvisoryCve__IndexPath,
   SecurityAdvisoryCve__IndexOptions,
+  SecurityAdvisoryCve__IndexDescribeOptions,
+  SecurityAdvisoryCve__IndexAction,
 } from "./resources/security_advisory_cve/actions/index.js";
 export type {
   SecurityAdvisoryCve__ShowInput,
@@ -3725,6 +4447,8 @@ export type {
   SecurityAdvisoryCve__ShowObjectOutput,
   SecurityAdvisoryCve__ShowPath,
   SecurityAdvisoryCve__ShowOptions,
+  SecurityAdvisoryCve__ShowDescribeOptions,
+  SecurityAdvisoryCve__ShowAction,
 } from "./resources/security_advisory_cve/actions/show.js";
 export type {
   SecurityAdvisoryCve__UpdateInput,
@@ -3735,6 +4459,8 @@ export type {
   SecurityAdvisoryCve__UpdateObjectOutput,
   SecurityAdvisoryCve__UpdatePath,
   SecurityAdvisoryCve__UpdateOptions,
+  SecurityAdvisoryCve__UpdateDescribeOptions,
+  SecurityAdvisoryCve__UpdateAction,
 } from "./resources/security_advisory_cve/actions/update.js";
 export type { SecurityAdvisoryCveResource } from "./resources/security_advisory_cve/resource.js";
 export type {
@@ -3746,6 +4472,8 @@ export type {
   SecurityAdvisoryUpdate__CreateObjectOutput,
   SecurityAdvisoryUpdate__CreatePath,
   SecurityAdvisoryUpdate__CreateOptions,
+  SecurityAdvisoryUpdate__CreateDescribeOptions,
+  SecurityAdvisoryUpdate__CreateAction,
 } from "./resources/security_advisory_update/actions/create.js";
 export type {
   SecurityAdvisoryUpdate__DeleteInput,
@@ -3756,6 +4484,8 @@ export type {
   SecurityAdvisoryUpdate__DeleteObjectOutput,
   SecurityAdvisoryUpdate__DeletePath,
   SecurityAdvisoryUpdate__DeleteOptions,
+  SecurityAdvisoryUpdate__DeleteDescribeOptions,
+  SecurityAdvisoryUpdate__DeleteAction,
 } from "./resources/security_advisory_update/actions/delete.js";
 export type {
   SecurityAdvisoryUpdate__IndexInput,
@@ -3766,6 +4496,8 @@ export type {
   SecurityAdvisoryUpdate__IndexObjectOutput,
   SecurityAdvisoryUpdate__IndexPath,
   SecurityAdvisoryUpdate__IndexOptions,
+  SecurityAdvisoryUpdate__IndexDescribeOptions,
+  SecurityAdvisoryUpdate__IndexAction,
 } from "./resources/security_advisory_update/actions/index.js";
 export type {
   SecurityAdvisoryUpdate__ShowInput,
@@ -3776,6 +4508,8 @@ export type {
   SecurityAdvisoryUpdate__ShowObjectOutput,
   SecurityAdvisoryUpdate__ShowPath,
   SecurityAdvisoryUpdate__ShowOptions,
+  SecurityAdvisoryUpdate__ShowDescribeOptions,
+  SecurityAdvisoryUpdate__ShowAction,
 } from "./resources/security_advisory_update/actions/show.js";
 export type {
   SecurityAdvisoryUpdate__UpdateInput,
@@ -3786,6 +4520,8 @@ export type {
   SecurityAdvisoryUpdate__UpdateObjectOutput,
   SecurityAdvisoryUpdate__UpdatePath,
   SecurityAdvisoryUpdate__UpdateOptions,
+  SecurityAdvisoryUpdate__UpdateDescribeOptions,
+  SecurityAdvisoryUpdate__UpdateAction,
 } from "./resources/security_advisory_update/actions/update.js";
 export type { SecurityAdvisoryUpdateResource } from "./resources/security_advisory_update/resource.js";
 export type {
@@ -3797,6 +4533,8 @@ export type {
   SnapshotDownload__CreateObjectOutput,
   SnapshotDownload__CreatePath,
   SnapshotDownload__CreateOptions,
+  SnapshotDownload__CreateDescribeOptions,
+  SnapshotDownload__CreateAction,
 } from "./resources/snapshot_download/actions/create.js";
 export type {
   SnapshotDownload__DeleteInput,
@@ -3807,6 +4545,8 @@ export type {
   SnapshotDownload__DeleteObjectOutput,
   SnapshotDownload__DeletePath,
   SnapshotDownload__DeleteOptions,
+  SnapshotDownload__DeleteDescribeOptions,
+  SnapshotDownload__DeleteAction,
 } from "./resources/snapshot_download/actions/delete.js";
 export type {
   SnapshotDownload__IndexInput,
@@ -3817,6 +4557,8 @@ export type {
   SnapshotDownload__IndexObjectOutput,
   SnapshotDownload__IndexPath,
   SnapshotDownload__IndexOptions,
+  SnapshotDownload__IndexDescribeOptions,
+  SnapshotDownload__IndexAction,
 } from "./resources/snapshot_download/actions/index.js";
 export type {
   SnapshotDownload__ShowInput,
@@ -3827,6 +4569,8 @@ export type {
   SnapshotDownload__ShowObjectOutput,
   SnapshotDownload__ShowPath,
   SnapshotDownload__ShowOptions,
+  SnapshotDownload__ShowDescribeOptions,
+  SnapshotDownload__ShowAction,
 } from "./resources/snapshot_download/actions/show.js";
 export type { SnapshotDownloadResource } from "./resources/snapshot_download/resource.js";
 export type {
@@ -3838,6 +4582,8 @@ export type {
   SystemConfig__IndexObjectOutput,
   SystemConfig__IndexPath,
   SystemConfig__IndexOptions,
+  SystemConfig__IndexDescribeOptions,
+  SystemConfig__IndexAction,
 } from "./resources/system_config/actions/index.js";
 export type {
   SystemConfig__ShowInput,
@@ -3848,6 +4594,8 @@ export type {
   SystemConfig__ShowObjectOutput,
   SystemConfig__ShowPath,
   SystemConfig__ShowOptions,
+  SystemConfig__ShowDescribeOptions,
+  SystemConfig__ShowAction,
 } from "./resources/system_config/actions/show.js";
 export type {
   SystemConfig__UpdateInput,
@@ -3858,6 +4606,8 @@ export type {
   SystemConfig__UpdateObjectOutput,
   SystemConfig__UpdatePath,
   SystemConfig__UpdateOptions,
+  SystemConfig__UpdateDescribeOptions,
+  SystemConfig__UpdateAction,
 } from "./resources/system_config/actions/update.js";
 export type { SystemConfigResource } from "./resources/system_config/resource.js";
 export type {
@@ -3869,6 +4619,8 @@ export type {
   Transaction__IndexObjectOutput,
   Transaction__IndexPath,
   Transaction__IndexOptions,
+  Transaction__IndexDescribeOptions,
+  Transaction__IndexAction,
 } from "./resources/transaction/actions/index.js";
 export type {
   Transaction__ShowInput,
@@ -3879,6 +4631,8 @@ export type {
   Transaction__ShowObjectOutput,
   Transaction__ShowPath,
   Transaction__ShowOptions,
+  Transaction__ShowDescribeOptions,
+  Transaction__ShowAction,
 } from "./resources/transaction/actions/show.js";
 export type { TransactionResource } from "./resources/transaction/resource.js";
 export type {
@@ -3890,6 +4644,8 @@ export type {
   TransactionChain__IndexObjectOutput,
   TransactionChain__IndexPath,
   TransactionChain__IndexOptions,
+  TransactionChain__IndexDescribeOptions,
+  TransactionChain__IndexAction,
 } from "./resources/transaction_chain/actions/index.js";
 export type {
   TransactionChain__ShowInput,
@@ -3900,6 +4656,8 @@ export type {
   TransactionChain__ShowObjectOutput,
   TransactionChain__ShowPath,
   TransactionChain__ShowOptions,
+  TransactionChain__ShowDescribeOptions,
+  TransactionChain__ShowAction,
 } from "./resources/transaction_chain/actions/show.js";
 export type { TransactionChainResource } from "./resources/transaction_chain/resource.js";
 export type {
@@ -3911,6 +4669,8 @@ export type {
   User__AvailableIpsObjectOutput,
   User__AvailableIpsPath,
   User__AvailableIpsOptions,
+  User__AvailableIpsDescribeOptions,
+  User__AvailableIpsAction,
 } from "./resources/user/actions/available_ips.js";
 export type {
   User__CreateInput,
@@ -3921,6 +4681,8 @@ export type {
   User__CreateObjectOutput,
   User__CreatePath,
   User__CreateOptions,
+  User__CreateDescribeOptions,
+  User__CreateAction,
 } from "./resources/user/actions/create.js";
 export type {
   User__CurrentInput,
@@ -3931,6 +4693,8 @@ export type {
   User__CurrentObjectOutput,
   User__CurrentPath,
   User__CurrentOptions,
+  User__CurrentDescribeOptions,
+  User__CurrentAction,
 } from "./resources/user/actions/current.js";
 export type {
   User__DeleteInput,
@@ -3941,6 +4705,8 @@ export type {
   User__DeleteObjectOutput,
   User__DeletePath,
   User__DeleteOptions,
+  User__DeleteDescribeOptions,
+  User__DeleteAction,
 } from "./resources/user/actions/delete.js";
 export type {
   User__GetPaymentInstructionsInput,
@@ -3951,6 +4717,8 @@ export type {
   User__GetPaymentInstructionsObjectOutput,
   User__GetPaymentInstructionsPath,
   User__GetPaymentInstructionsOptions,
+  User__GetPaymentInstructionsDescribeOptions,
+  User__GetPaymentInstructionsAction,
 } from "./resources/user/actions/get_payment_instructions.js";
 export type {
   User__IndexInput,
@@ -3961,6 +4729,8 @@ export type {
   User__IndexObjectOutput,
   User__IndexPath,
   User__IndexOptions,
+  User__IndexDescribeOptions,
+  User__IndexAction,
 } from "./resources/user/actions/index.js";
 export type {
   User__ShowInput,
@@ -3971,6 +4741,8 @@ export type {
   User__ShowObjectOutput,
   User__ShowPath,
   User__ShowOptions,
+  User__ShowDescribeOptions,
+  User__ShowAction,
 } from "./resources/user/actions/show.js";
 export type {
   User__TouchInput,
@@ -3981,6 +4753,8 @@ export type {
   User__TouchObjectOutput,
   User__TouchPath,
   User__TouchOptions,
+  User__TouchDescribeOptions,
+  User__TouchAction,
 } from "./resources/user/actions/touch.js";
 export type {
   User__UpdateInput,
@@ -3991,6 +4765,8 @@ export type {
   User__UpdateObjectOutput,
   User__UpdatePath,
   User__UpdateOptions,
+  User__UpdateDescribeOptions,
+  User__UpdateAction,
 } from "./resources/user/actions/update.js";
 export type { UserResource } from "./resources/user/resource.js";
 export type {
@@ -4002,6 +4778,8 @@ export type {
   User__ClusterResource__CreateObjectOutput,
   User__ClusterResource__CreatePath,
   User__ClusterResource__CreateOptions,
+  User__ClusterResource__CreateDescribeOptions,
+  User__ClusterResource__CreateAction,
 } from "./resources/user/resources/cluster_resource/actions/create.js";
 export type {
   User__ClusterResource__IndexInput,
@@ -4012,6 +4790,8 @@ export type {
   User__ClusterResource__IndexObjectOutput,
   User__ClusterResource__IndexPath,
   User__ClusterResource__IndexOptions,
+  User__ClusterResource__IndexDescribeOptions,
+  User__ClusterResource__IndexAction,
 } from "./resources/user/resources/cluster_resource/actions/index.js";
 export type {
   User__ClusterResource__ShowInput,
@@ -4022,6 +4802,8 @@ export type {
   User__ClusterResource__ShowObjectOutput,
   User__ClusterResource__ShowPath,
   User__ClusterResource__ShowOptions,
+  User__ClusterResource__ShowDescribeOptions,
+  User__ClusterResource__ShowAction,
 } from "./resources/user/resources/cluster_resource/actions/show.js";
 export type { User__ClusterResourceResource } from "./resources/user/resources/cluster_resource/resource.js";
 export type {
@@ -4033,6 +4815,8 @@ export type {
   User__EnvironmentConfig__IndexObjectOutput,
   User__EnvironmentConfig__IndexPath,
   User__EnvironmentConfig__IndexOptions,
+  User__EnvironmentConfig__IndexDescribeOptions,
+  User__EnvironmentConfig__IndexAction,
 } from "./resources/user/resources/environment_config/actions/index.js";
 export type {
   User__EnvironmentConfig__ShowInput,
@@ -4043,6 +4827,8 @@ export type {
   User__EnvironmentConfig__ShowObjectOutput,
   User__EnvironmentConfig__ShowPath,
   User__EnvironmentConfig__ShowOptions,
+  User__EnvironmentConfig__ShowDescribeOptions,
+  User__EnvironmentConfig__ShowAction,
 } from "./resources/user/resources/environment_config/actions/show.js";
 export type {
   User__EnvironmentConfig__UpdateInput,
@@ -4053,6 +4839,8 @@ export type {
   User__EnvironmentConfig__UpdateObjectOutput,
   User__EnvironmentConfig__UpdatePath,
   User__EnvironmentConfig__UpdateOptions,
+  User__EnvironmentConfig__UpdateDescribeOptions,
+  User__EnvironmentConfig__UpdateAction,
 } from "./resources/user/resources/environment_config/actions/update.js";
 export type { User__EnvironmentConfigResource } from "./resources/user/resources/environment_config/resource.js";
 export type {
@@ -4064,6 +4852,8 @@ export type {
   User__KnownDevice__DeleteObjectOutput,
   User__KnownDevice__DeletePath,
   User__KnownDevice__DeleteOptions,
+  User__KnownDevice__DeleteDescribeOptions,
+  User__KnownDevice__DeleteAction,
 } from "./resources/user/resources/known_device/actions/delete.js";
 export type {
   User__KnownDevice__IndexInput,
@@ -4074,6 +4864,8 @@ export type {
   User__KnownDevice__IndexObjectOutput,
   User__KnownDevice__IndexPath,
   User__KnownDevice__IndexOptions,
+  User__KnownDevice__IndexDescribeOptions,
+  User__KnownDevice__IndexAction,
 } from "./resources/user/resources/known_device/actions/index.js";
 export type {
   User__KnownDevice__ShowInput,
@@ -4084,6 +4876,8 @@ export type {
   User__KnownDevice__ShowObjectOutput,
   User__KnownDevice__ShowPath,
   User__KnownDevice__ShowOptions,
+  User__KnownDevice__ShowDescribeOptions,
+  User__KnownDevice__ShowAction,
 } from "./resources/user/resources/known_device/actions/show.js";
 export type { User__KnownDeviceResource } from "./resources/user/resources/known_device/resource.js";
 export type {
@@ -4095,6 +4889,8 @@ export type {
   User__MailRoleRecipient__IndexObjectOutput,
   User__MailRoleRecipient__IndexPath,
   User__MailRoleRecipient__IndexOptions,
+  User__MailRoleRecipient__IndexDescribeOptions,
+  User__MailRoleRecipient__IndexAction,
 } from "./resources/user/resources/mail_role_recipient/actions/index.js";
 export type {
   User__MailRoleRecipient__ShowInput,
@@ -4105,6 +4901,8 @@ export type {
   User__MailRoleRecipient__ShowObjectOutput,
   User__MailRoleRecipient__ShowPath,
   User__MailRoleRecipient__ShowOptions,
+  User__MailRoleRecipient__ShowDescribeOptions,
+  User__MailRoleRecipient__ShowAction,
 } from "./resources/user/resources/mail_role_recipient/actions/show.js";
 export type {
   User__MailRoleRecipient__UpdateInput,
@@ -4115,6 +4913,8 @@ export type {
   User__MailRoleRecipient__UpdateObjectOutput,
   User__MailRoleRecipient__UpdatePath,
   User__MailRoleRecipient__UpdateOptions,
+  User__MailRoleRecipient__UpdateDescribeOptions,
+  User__MailRoleRecipient__UpdateAction,
 } from "./resources/user/resources/mail_role_recipient/actions/update.js";
 export type { User__MailRoleRecipientResource } from "./resources/user/resources/mail_role_recipient/resource.js";
 export type {
@@ -4126,6 +4926,8 @@ export type {
   User__MailTemplateRecipient__IndexObjectOutput,
   User__MailTemplateRecipient__IndexPath,
   User__MailTemplateRecipient__IndexOptions,
+  User__MailTemplateRecipient__IndexDescribeOptions,
+  User__MailTemplateRecipient__IndexAction,
 } from "./resources/user/resources/mail_template_recipient/actions/index.js";
 export type {
   User__MailTemplateRecipient__ShowInput,
@@ -4136,6 +4938,8 @@ export type {
   User__MailTemplateRecipient__ShowObjectOutput,
   User__MailTemplateRecipient__ShowPath,
   User__MailTemplateRecipient__ShowOptions,
+  User__MailTemplateRecipient__ShowDescribeOptions,
+  User__MailTemplateRecipient__ShowAction,
 } from "./resources/user/resources/mail_template_recipient/actions/show.js";
 export type {
   User__MailTemplateRecipient__UpdateInput,
@@ -4146,6 +4950,8 @@ export type {
   User__MailTemplateRecipient__UpdateObjectOutput,
   User__MailTemplateRecipient__UpdatePath,
   User__MailTemplateRecipient__UpdateOptions,
+  User__MailTemplateRecipient__UpdateDescribeOptions,
+  User__MailTemplateRecipient__UpdateAction,
 } from "./resources/user/resources/mail_template_recipient/actions/update.js";
 export type { User__MailTemplateRecipientResource } from "./resources/user/resources/mail_template_recipient/resource.js";
 export type {
@@ -4157,6 +4963,8 @@ export type {
   User__PublicKey__CreateObjectOutput,
   User__PublicKey__CreatePath,
   User__PublicKey__CreateOptions,
+  User__PublicKey__CreateDescribeOptions,
+  User__PublicKey__CreateAction,
 } from "./resources/user/resources/public_key/actions/create.js";
 export type {
   User__PublicKey__DeleteInput,
@@ -4167,6 +4975,8 @@ export type {
   User__PublicKey__DeleteObjectOutput,
   User__PublicKey__DeletePath,
   User__PublicKey__DeleteOptions,
+  User__PublicKey__DeleteDescribeOptions,
+  User__PublicKey__DeleteAction,
 } from "./resources/user/resources/public_key/actions/delete.js";
 export type {
   User__PublicKey__IndexInput,
@@ -4177,6 +4987,8 @@ export type {
   User__PublicKey__IndexObjectOutput,
   User__PublicKey__IndexPath,
   User__PublicKey__IndexOptions,
+  User__PublicKey__IndexDescribeOptions,
+  User__PublicKey__IndexAction,
 } from "./resources/user/resources/public_key/actions/index.js";
 export type {
   User__PublicKey__ShowInput,
@@ -4187,6 +4999,8 @@ export type {
   User__PublicKey__ShowObjectOutput,
   User__PublicKey__ShowPath,
   User__PublicKey__ShowOptions,
+  User__PublicKey__ShowDescribeOptions,
+  User__PublicKey__ShowAction,
 } from "./resources/user/resources/public_key/actions/show.js";
 export type {
   User__PublicKey__UpdateInput,
@@ -4197,6 +5011,8 @@ export type {
   User__PublicKey__UpdateObjectOutput,
   User__PublicKey__UpdatePath,
   User__PublicKey__UpdateOptions,
+  User__PublicKey__UpdateDescribeOptions,
+  User__PublicKey__UpdateAction,
 } from "./resources/user/resources/public_key/actions/update.js";
 export type { User__PublicKeyResource } from "./resources/user/resources/public_key/resource.js";
 export type {
@@ -4208,6 +5024,8 @@ export type {
   User__StateLog__IndexObjectOutput,
   User__StateLog__IndexPath,
   User__StateLog__IndexOptions,
+  User__StateLog__IndexDescribeOptions,
+  User__StateLog__IndexAction,
 } from "./resources/user/resources/state_log/actions/index.js";
 export type {
   User__StateLog__ShowInput,
@@ -4218,6 +5036,8 @@ export type {
   User__StateLog__ShowObjectOutput,
   User__StateLog__ShowPath,
   User__StateLog__ShowOptions,
+  User__StateLog__ShowDescribeOptions,
+  User__StateLog__ShowAction,
 } from "./resources/user/resources/state_log/actions/show.js";
 export type { User__StateLogResource } from "./resources/user/resources/state_log/resource.js";
 export type {
@@ -4229,6 +5049,8 @@ export type {
   User__TotpDevice__ConfirmObjectOutput,
   User__TotpDevice__ConfirmPath,
   User__TotpDevice__ConfirmOptions,
+  User__TotpDevice__ConfirmDescribeOptions,
+  User__TotpDevice__ConfirmAction,
 } from "./resources/user/resources/totp_device/actions/confirm.js";
 export type {
   User__TotpDevice__CreateInput,
@@ -4239,6 +5061,8 @@ export type {
   User__TotpDevice__CreateObjectOutput,
   User__TotpDevice__CreatePath,
   User__TotpDevice__CreateOptions,
+  User__TotpDevice__CreateDescribeOptions,
+  User__TotpDevice__CreateAction,
 } from "./resources/user/resources/totp_device/actions/create.js";
 export type {
   User__TotpDevice__DeleteInput,
@@ -4249,6 +5073,8 @@ export type {
   User__TotpDevice__DeleteObjectOutput,
   User__TotpDevice__DeletePath,
   User__TotpDevice__DeleteOptions,
+  User__TotpDevice__DeleteDescribeOptions,
+  User__TotpDevice__DeleteAction,
 } from "./resources/user/resources/totp_device/actions/delete.js";
 export type {
   User__TotpDevice__IndexInput,
@@ -4259,6 +5085,8 @@ export type {
   User__TotpDevice__IndexObjectOutput,
   User__TotpDevice__IndexPath,
   User__TotpDevice__IndexOptions,
+  User__TotpDevice__IndexDescribeOptions,
+  User__TotpDevice__IndexAction,
 } from "./resources/user/resources/totp_device/actions/index.js";
 export type {
   User__TotpDevice__ShowInput,
@@ -4269,6 +5097,8 @@ export type {
   User__TotpDevice__ShowObjectOutput,
   User__TotpDevice__ShowPath,
   User__TotpDevice__ShowOptions,
+  User__TotpDevice__ShowDescribeOptions,
+  User__TotpDevice__ShowAction,
 } from "./resources/user/resources/totp_device/actions/show.js";
 export type {
   User__TotpDevice__UpdateInput,
@@ -4279,6 +5109,8 @@ export type {
   User__TotpDevice__UpdateObjectOutput,
   User__TotpDevice__UpdatePath,
   User__TotpDevice__UpdateOptions,
+  User__TotpDevice__UpdateDescribeOptions,
+  User__TotpDevice__UpdateAction,
 } from "./resources/user/resources/totp_device/actions/update.js";
 export type { User__TotpDeviceResource } from "./resources/user/resources/totp_device/resource.js";
 export type {
@@ -4290,6 +5122,8 @@ export type {
   User__WebauthnCredential__DeleteObjectOutput,
   User__WebauthnCredential__DeletePath,
   User__WebauthnCredential__DeleteOptions,
+  User__WebauthnCredential__DeleteDescribeOptions,
+  User__WebauthnCredential__DeleteAction,
 } from "./resources/user/resources/webauthn_credential/actions/delete.js";
 export type {
   User__WebauthnCredential__IndexInput,
@@ -4300,6 +5134,8 @@ export type {
   User__WebauthnCredential__IndexObjectOutput,
   User__WebauthnCredential__IndexPath,
   User__WebauthnCredential__IndexOptions,
+  User__WebauthnCredential__IndexDescribeOptions,
+  User__WebauthnCredential__IndexAction,
 } from "./resources/user/resources/webauthn_credential/actions/index.js";
 export type {
   User__WebauthnCredential__ShowInput,
@@ -4310,6 +5146,8 @@ export type {
   User__WebauthnCredential__ShowObjectOutput,
   User__WebauthnCredential__ShowPath,
   User__WebauthnCredential__ShowOptions,
+  User__WebauthnCredential__ShowDescribeOptions,
+  User__WebauthnCredential__ShowAction,
 } from "./resources/user/resources/webauthn_credential/actions/show.js";
 export type {
   User__WebauthnCredential__UpdateInput,
@@ -4320,6 +5158,8 @@ export type {
   User__WebauthnCredential__UpdateObjectOutput,
   User__WebauthnCredential__UpdatePath,
   User__WebauthnCredential__UpdateOptions,
+  User__WebauthnCredential__UpdateDescribeOptions,
+  User__WebauthnCredential__UpdateAction,
 } from "./resources/user/resources/webauthn_credential/actions/update.js";
 export type { User__WebauthnCredentialResource } from "./resources/user/resources/webauthn_credential/resource.js";
 export type {
@@ -4331,6 +5171,8 @@ export type {
   UserAccount__IndexObjectOutput,
   UserAccount__IndexPath,
   UserAccount__IndexOptions,
+  UserAccount__IndexDescribeOptions,
+  UserAccount__IndexAction,
 } from "./resources/user_account/actions/index.js";
 export type {
   UserAccount__ShowInput,
@@ -4341,6 +5183,8 @@ export type {
   UserAccount__ShowObjectOutput,
   UserAccount__ShowPath,
   UserAccount__ShowOptions,
+  UserAccount__ShowDescribeOptions,
+  UserAccount__ShowAction,
 } from "./resources/user_account/actions/show.js";
 export type {
   UserAccount__UpdateInput,
@@ -4351,6 +5195,8 @@ export type {
   UserAccount__UpdateObjectOutput,
   UserAccount__UpdatePath,
   UserAccount__UpdateOptions,
+  UserAccount__UpdateDescribeOptions,
+  UserAccount__UpdateAction,
 } from "./resources/user_account/actions/update.js";
 export type { UserAccountResource } from "./resources/user_account/resource.js";
 export type {
@@ -4362,6 +5208,8 @@ export type {
   UserClusterResourcePackage__CreateObjectOutput,
   UserClusterResourcePackage__CreatePath,
   UserClusterResourcePackage__CreateOptions,
+  UserClusterResourcePackage__CreateDescribeOptions,
+  UserClusterResourcePackage__CreateAction,
 } from "./resources/user_cluster_resource_package/actions/create.js";
 export type {
   UserClusterResourcePackage__DeleteInput,
@@ -4372,6 +5220,8 @@ export type {
   UserClusterResourcePackage__DeleteObjectOutput,
   UserClusterResourcePackage__DeletePath,
   UserClusterResourcePackage__DeleteOptions,
+  UserClusterResourcePackage__DeleteDescribeOptions,
+  UserClusterResourcePackage__DeleteAction,
 } from "./resources/user_cluster_resource_package/actions/delete.js";
 export type {
   UserClusterResourcePackage__IndexInput,
@@ -4382,6 +5232,8 @@ export type {
   UserClusterResourcePackage__IndexObjectOutput,
   UserClusterResourcePackage__IndexPath,
   UserClusterResourcePackage__IndexOptions,
+  UserClusterResourcePackage__IndexDescribeOptions,
+  UserClusterResourcePackage__IndexAction,
 } from "./resources/user_cluster_resource_package/actions/index.js";
 export type {
   UserClusterResourcePackage__ShowInput,
@@ -4392,6 +5244,8 @@ export type {
   UserClusterResourcePackage__ShowObjectOutput,
   UserClusterResourcePackage__ShowPath,
   UserClusterResourcePackage__ShowOptions,
+  UserClusterResourcePackage__ShowDescribeOptions,
+  UserClusterResourcePackage__ShowAction,
 } from "./resources/user_cluster_resource_package/actions/show.js";
 export type {
   UserClusterResourcePackage__UpdateInput,
@@ -4402,6 +5256,8 @@ export type {
   UserClusterResourcePackage__UpdateObjectOutput,
   UserClusterResourcePackage__UpdatePath,
   UserClusterResourcePackage__UpdateOptions,
+  UserClusterResourcePackage__UpdateDescribeOptions,
+  UserClusterResourcePackage__UpdateAction,
 } from "./resources/user_cluster_resource_package/actions/update.js";
 export type { UserClusterResourcePackageResource } from "./resources/user_cluster_resource_package/resource.js";
 export type {
@@ -4413,6 +5269,8 @@ export type {
   UserClusterResourcePackage__Item__IndexObjectOutput,
   UserClusterResourcePackage__Item__IndexPath,
   UserClusterResourcePackage__Item__IndexOptions,
+  UserClusterResourcePackage__Item__IndexDescribeOptions,
+  UserClusterResourcePackage__Item__IndexAction,
 } from "./resources/user_cluster_resource_package/resources/item/actions/index.js";
 export type {
   UserClusterResourcePackage__Item__ShowInput,
@@ -4423,6 +5281,8 @@ export type {
   UserClusterResourcePackage__Item__ShowObjectOutput,
   UserClusterResourcePackage__Item__ShowPath,
   UserClusterResourcePackage__Item__ShowOptions,
+  UserClusterResourcePackage__Item__ShowDescribeOptions,
+  UserClusterResourcePackage__Item__ShowAction,
 } from "./resources/user_cluster_resource_package/resources/item/actions/show.js";
 export type { UserClusterResourcePackage__ItemResource } from "./resources/user_cluster_resource_package/resources/item/resource.js";
 export type {
@@ -4434,6 +5294,8 @@ export type {
   UserNamespace__IndexObjectOutput,
   UserNamespace__IndexPath,
   UserNamespace__IndexOptions,
+  UserNamespace__IndexDescribeOptions,
+  UserNamespace__IndexAction,
 } from "./resources/user_namespace/actions/index.js";
 export type {
   UserNamespace__ShowInput,
@@ -4444,6 +5306,8 @@ export type {
   UserNamespace__ShowObjectOutput,
   UserNamespace__ShowPath,
   UserNamespace__ShowOptions,
+  UserNamespace__ShowDescribeOptions,
+  UserNamespace__ShowAction,
 } from "./resources/user_namespace/actions/show.js";
 export type { UserNamespaceResource } from "./resources/user_namespace/resource.js";
 export type {
@@ -4455,6 +5319,8 @@ export type {
   UserNamespaceMap__CreateObjectOutput,
   UserNamespaceMap__CreatePath,
   UserNamespaceMap__CreateOptions,
+  UserNamespaceMap__CreateDescribeOptions,
+  UserNamespaceMap__CreateAction,
 } from "./resources/user_namespace_map/actions/create.js";
 export type {
   UserNamespaceMap__DeleteInput,
@@ -4465,6 +5331,8 @@ export type {
   UserNamespaceMap__DeleteObjectOutput,
   UserNamespaceMap__DeletePath,
   UserNamespaceMap__DeleteOptions,
+  UserNamespaceMap__DeleteDescribeOptions,
+  UserNamespaceMap__DeleteAction,
 } from "./resources/user_namespace_map/actions/delete.js";
 export type {
   UserNamespaceMap__IndexInput,
@@ -4475,6 +5343,8 @@ export type {
   UserNamespaceMap__IndexObjectOutput,
   UserNamespaceMap__IndexPath,
   UserNamespaceMap__IndexOptions,
+  UserNamespaceMap__IndexDescribeOptions,
+  UserNamespaceMap__IndexAction,
 } from "./resources/user_namespace_map/actions/index.js";
 export type {
   UserNamespaceMap__ShowInput,
@@ -4485,6 +5355,8 @@ export type {
   UserNamespaceMap__ShowObjectOutput,
   UserNamespaceMap__ShowPath,
   UserNamespaceMap__ShowOptions,
+  UserNamespaceMap__ShowDescribeOptions,
+  UserNamespaceMap__ShowAction,
 } from "./resources/user_namespace_map/actions/show.js";
 export type {
   UserNamespaceMap__UpdateInput,
@@ -4495,6 +5367,8 @@ export type {
   UserNamespaceMap__UpdateObjectOutput,
   UserNamespaceMap__UpdatePath,
   UserNamespaceMap__UpdateOptions,
+  UserNamespaceMap__UpdateDescribeOptions,
+  UserNamespaceMap__UpdateAction,
 } from "./resources/user_namespace_map/actions/update.js";
 export type { UserNamespaceMapResource } from "./resources/user_namespace_map/resource.js";
 export type {
@@ -4506,6 +5380,8 @@ export type {
   UserNamespaceMap__Entry__CreateObjectOutput,
   UserNamespaceMap__Entry__CreatePath,
   UserNamespaceMap__Entry__CreateOptions,
+  UserNamespaceMap__Entry__CreateDescribeOptions,
+  UserNamespaceMap__Entry__CreateAction,
 } from "./resources/user_namespace_map/resources/entry/actions/create.js";
 export type {
   UserNamespaceMap__Entry__DeleteInput,
@@ -4516,6 +5392,8 @@ export type {
   UserNamespaceMap__Entry__DeleteObjectOutput,
   UserNamespaceMap__Entry__DeletePath,
   UserNamespaceMap__Entry__DeleteOptions,
+  UserNamespaceMap__Entry__DeleteDescribeOptions,
+  UserNamespaceMap__Entry__DeleteAction,
 } from "./resources/user_namespace_map/resources/entry/actions/delete.js";
 export type {
   UserNamespaceMap__Entry__IndexInput,
@@ -4526,6 +5404,8 @@ export type {
   UserNamespaceMap__Entry__IndexObjectOutput,
   UserNamespaceMap__Entry__IndexPath,
   UserNamespaceMap__Entry__IndexOptions,
+  UserNamespaceMap__Entry__IndexDescribeOptions,
+  UserNamespaceMap__Entry__IndexAction,
 } from "./resources/user_namespace_map/resources/entry/actions/index.js";
 export type {
   UserNamespaceMap__Entry__ShowInput,
@@ -4536,6 +5416,8 @@ export type {
   UserNamespaceMap__Entry__ShowObjectOutput,
   UserNamespaceMap__Entry__ShowPath,
   UserNamespaceMap__Entry__ShowOptions,
+  UserNamespaceMap__Entry__ShowDescribeOptions,
+  UserNamespaceMap__Entry__ShowAction,
 } from "./resources/user_namespace_map/resources/entry/actions/show.js";
 export type {
   UserNamespaceMap__Entry__UpdateInput,
@@ -4546,6 +5428,8 @@ export type {
   UserNamespaceMap__Entry__UpdateObjectOutput,
   UserNamespaceMap__Entry__UpdatePath,
   UserNamespaceMap__Entry__UpdateOptions,
+  UserNamespaceMap__Entry__UpdateDescribeOptions,
+  UserNamespaceMap__Entry__UpdateAction,
 } from "./resources/user_namespace_map/resources/entry/actions/update.js";
 export type { UserNamespaceMap__EntryResource } from "./resources/user_namespace_map/resources/entry/resource.js";
 export type {
@@ -4557,6 +5441,8 @@ export type {
   UserOutage__IndexObjectOutput,
   UserOutage__IndexPath,
   UserOutage__IndexOptions,
+  UserOutage__IndexDescribeOptions,
+  UserOutage__IndexAction,
 } from "./resources/user_outage/actions/index.js";
 export type {
   UserOutage__ShowInput,
@@ -4567,6 +5453,8 @@ export type {
   UserOutage__ShowObjectOutput,
   UserOutage__ShowPath,
   UserOutage__ShowOptions,
+  UserOutage__ShowDescribeOptions,
+  UserOutage__ShowAction,
 } from "./resources/user_outage/actions/show.js";
 export type { UserOutageResource } from "./resources/user_outage/resource.js";
 export type {
@@ -4578,6 +5466,8 @@ export type {
   UserPayment__CreateObjectOutput,
   UserPayment__CreatePath,
   UserPayment__CreateOptions,
+  UserPayment__CreateDescribeOptions,
+  UserPayment__CreateAction,
 } from "./resources/user_payment/actions/create.js";
 export type {
   UserPayment__IndexInput,
@@ -4588,6 +5478,8 @@ export type {
   UserPayment__IndexObjectOutput,
   UserPayment__IndexPath,
   UserPayment__IndexOptions,
+  UserPayment__IndexDescribeOptions,
+  UserPayment__IndexAction,
 } from "./resources/user_payment/actions/index.js";
 export type {
   UserPayment__ShowInput,
@@ -4598,6 +5490,8 @@ export type {
   UserPayment__ShowObjectOutput,
   UserPayment__ShowPath,
   UserPayment__ShowOptions,
+  UserPayment__ShowDescribeOptions,
+  UserPayment__ShowAction,
 } from "./resources/user_payment/actions/show.js";
 export type { UserPaymentResource } from "./resources/user_payment/resource.js";
 export type { UserRequestResource } from "./resources/user_request/resource.js";
@@ -4610,6 +5504,8 @@ export type {
   UserRequest__Change__CreateObjectOutput,
   UserRequest__Change__CreatePath,
   UserRequest__Change__CreateOptions,
+  UserRequest__Change__CreateDescribeOptions,
+  UserRequest__Change__CreateAction,
 } from "./resources/user_request/resources/change/actions/create.js";
 export type {
   UserRequest__Change__IndexInput,
@@ -4620,6 +5516,8 @@ export type {
   UserRequest__Change__IndexObjectOutput,
   UserRequest__Change__IndexPath,
   UserRequest__Change__IndexOptions,
+  UserRequest__Change__IndexDescribeOptions,
+  UserRequest__Change__IndexAction,
 } from "./resources/user_request/resources/change/actions/index.js";
 export type {
   UserRequest__Change__ResolveInput,
@@ -4630,6 +5528,8 @@ export type {
   UserRequest__Change__ResolveObjectOutput,
   UserRequest__Change__ResolvePath,
   UserRequest__Change__ResolveOptions,
+  UserRequest__Change__ResolveDescribeOptions,
+  UserRequest__Change__ResolveAction,
 } from "./resources/user_request/resources/change/actions/resolve.js";
 export type {
   UserRequest__Change__ShowInput,
@@ -4640,6 +5540,8 @@ export type {
   UserRequest__Change__ShowObjectOutput,
   UserRequest__Change__ShowPath,
   UserRequest__Change__ShowOptions,
+  UserRequest__Change__ShowDescribeOptions,
+  UserRequest__Change__ShowAction,
 } from "./resources/user_request/resources/change/actions/show.js";
 export type { UserRequest__ChangeResource } from "./resources/user_request/resources/change/resource.js";
 export type {
@@ -4651,6 +5553,8 @@ export type {
   UserRequest__Registration__CreateObjectOutput,
   UserRequest__Registration__CreatePath,
   UserRequest__Registration__CreateOptions,
+  UserRequest__Registration__CreateDescribeOptions,
+  UserRequest__Registration__CreateAction,
 } from "./resources/user_request/resources/registration/actions/create.js";
 export type {
   UserRequest__Registration__IndexInput,
@@ -4661,6 +5565,8 @@ export type {
   UserRequest__Registration__IndexObjectOutput,
   UserRequest__Registration__IndexPath,
   UserRequest__Registration__IndexOptions,
+  UserRequest__Registration__IndexDescribeOptions,
+  UserRequest__Registration__IndexAction,
 } from "./resources/user_request/resources/registration/actions/index.js";
 export type {
   UserRequest__Registration__PreviewInput,
@@ -4671,6 +5577,8 @@ export type {
   UserRequest__Registration__PreviewObjectOutput,
   UserRequest__Registration__PreviewPath,
   UserRequest__Registration__PreviewOptions,
+  UserRequest__Registration__PreviewDescribeOptions,
+  UserRequest__Registration__PreviewAction,
 } from "./resources/user_request/resources/registration/actions/preview.js";
 export type {
   UserRequest__Registration__ResolveInput,
@@ -4681,6 +5589,8 @@ export type {
   UserRequest__Registration__ResolveObjectOutput,
   UserRequest__Registration__ResolvePath,
   UserRequest__Registration__ResolveOptions,
+  UserRequest__Registration__ResolveDescribeOptions,
+  UserRequest__Registration__ResolveAction,
 } from "./resources/user_request/resources/registration/actions/resolve.js";
 export type {
   UserRequest__Registration__ShowInput,
@@ -4691,6 +5601,8 @@ export type {
   UserRequest__Registration__ShowObjectOutput,
   UserRequest__Registration__ShowPath,
   UserRequest__Registration__ShowOptions,
+  UserRequest__Registration__ShowDescribeOptions,
+  UserRequest__Registration__ShowAction,
 } from "./resources/user_request/resources/registration/actions/show.js";
 export type {
   UserRequest__Registration__UpdateInput,
@@ -4701,6 +5613,8 @@ export type {
   UserRequest__Registration__UpdateObjectOutput,
   UserRequest__Registration__UpdatePath,
   UserRequest__Registration__UpdateOptions,
+  UserRequest__Registration__UpdateDescribeOptions,
+  UserRequest__Registration__UpdateAction,
 } from "./resources/user_request/resources/registration/actions/update.js";
 export type { UserRequest__RegistrationResource } from "./resources/user_request/resources/registration/resource.js";
 export type {
@@ -4712,6 +5626,8 @@ export type {
   UserSecurityAdvisory__IndexObjectOutput,
   UserSecurityAdvisory__IndexPath,
   UserSecurityAdvisory__IndexOptions,
+  UserSecurityAdvisory__IndexDescribeOptions,
+  UserSecurityAdvisory__IndexAction,
 } from "./resources/user_security_advisory/actions/index.js";
 export type { UserSecurityAdvisoryResource } from "./resources/user_security_advisory/resource.js";
 export type {
@@ -4723,6 +5639,8 @@ export type {
   UserSession__CloseObjectOutput,
   UserSession__ClosePath,
   UserSession__CloseOptions,
+  UserSession__CloseDescribeOptions,
+  UserSession__CloseAction,
 } from "./resources/user_session/actions/close.js";
 export type {
   UserSession__CreateInput,
@@ -4733,6 +5651,8 @@ export type {
   UserSession__CreateObjectOutput,
   UserSession__CreatePath,
   UserSession__CreateOptions,
+  UserSession__CreateDescribeOptions,
+  UserSession__CreateAction,
 } from "./resources/user_session/actions/create.js";
 export type {
   UserSession__IndexInput,
@@ -4743,6 +5663,8 @@ export type {
   UserSession__IndexObjectOutput,
   UserSession__IndexPath,
   UserSession__IndexOptions,
+  UserSession__IndexDescribeOptions,
+  UserSession__IndexAction,
 } from "./resources/user_session/actions/index.js";
 export type {
   UserSession__ShowInput,
@@ -4753,6 +5675,8 @@ export type {
   UserSession__ShowObjectOutput,
   UserSession__ShowPath,
   UserSession__ShowOptions,
+  UserSession__ShowDescribeOptions,
+  UserSession__ShowAction,
 } from "./resources/user_session/actions/show.js";
 export type {
   UserSession__UpdateInput,
@@ -4763,6 +5687,8 @@ export type {
   UserSession__UpdateObjectOutput,
   UserSession__UpdatePath,
   UserSession__UpdateOptions,
+  UserSession__UpdateDescribeOptions,
+  UserSession__UpdateAction,
 } from "./resources/user_session/actions/update.js";
 export type { UserSessionResource } from "./resources/user_session/resource.js";
 export type {
@@ -4774,6 +5700,8 @@ export type {
   Vps__BootObjectOutput,
   Vps__BootPath,
   Vps__BootOptions,
+  Vps__BootDescribeOptions,
+  Vps__BootAction,
 } from "./resources/vps/actions/boot.js";
 export type {
   Vps__CloneInput,
@@ -4784,6 +5712,8 @@ export type {
   Vps__CloneObjectOutput,
   Vps__ClonePath,
   Vps__CloneOptions,
+  Vps__CloneDescribeOptions,
+  Vps__CloneAction,
 } from "./resources/vps/actions/clone.js";
 export type {
   Vps__CreateInput,
@@ -4794,6 +5724,8 @@ export type {
   Vps__CreateObjectOutput,
   Vps__CreatePath,
   Vps__CreateOptions,
+  Vps__CreateDescribeOptions,
+  Vps__CreateAction,
 } from "./resources/vps/actions/create.js";
 export type {
   Vps__DeleteInput,
@@ -4804,6 +5736,8 @@ export type {
   Vps__DeleteObjectOutput,
   Vps__DeletePath,
   Vps__DeleteOptions,
+  Vps__DeleteDescribeOptions,
+  Vps__DeleteAction,
 } from "./resources/vps/actions/delete.js";
 export type {
   Vps__DeployPublicKeyInput,
@@ -4814,6 +5748,8 @@ export type {
   Vps__DeployPublicKeyObjectOutput,
   Vps__DeployPublicKeyPath,
   Vps__DeployPublicKeyOptions,
+  Vps__DeployPublicKeyDescribeOptions,
+  Vps__DeployPublicKeyAction,
 } from "./resources/vps/actions/deploy_public_key.js";
 export type {
   Vps__IndexInput,
@@ -4824,6 +5760,8 @@ export type {
   Vps__IndexObjectOutput,
   Vps__IndexPath,
   Vps__IndexOptions,
+  Vps__IndexDescribeOptions,
+  Vps__IndexAction,
 } from "./resources/vps/actions/index.js";
 export type {
   Vps__MigrateInput,
@@ -4834,6 +5772,8 @@ export type {
   Vps__MigrateObjectOutput,
   Vps__MigratePath,
   Vps__MigrateOptions,
+  Vps__MigrateDescribeOptions,
+  Vps__MigrateAction,
 } from "./resources/vps/actions/migrate.js";
 export type {
   Vps__PasswdInput,
@@ -4844,6 +5784,8 @@ export type {
   Vps__PasswdObjectOutput,
   Vps__PasswdPath,
   Vps__PasswdOptions,
+  Vps__PasswdDescribeOptions,
+  Vps__PasswdAction,
 } from "./resources/vps/actions/passwd.js";
 export type {
   Vps__ReinstallInput,
@@ -4854,6 +5796,8 @@ export type {
   Vps__ReinstallObjectOutput,
   Vps__ReinstallPath,
   Vps__ReinstallOptions,
+  Vps__ReinstallDescribeOptions,
+  Vps__ReinstallAction,
 } from "./resources/vps/actions/reinstall.js";
 export type {
   Vps__ReplaceInput,
@@ -4864,6 +5808,8 @@ export type {
   Vps__ReplaceObjectOutput,
   Vps__ReplacePath,
   Vps__ReplaceOptions,
+  Vps__ReplaceDescribeOptions,
+  Vps__ReplaceAction,
 } from "./resources/vps/actions/replace.js";
 export type {
   Vps__RestartInput,
@@ -4874,6 +5820,8 @@ export type {
   Vps__RestartObjectOutput,
   Vps__RestartPath,
   Vps__RestartOptions,
+  Vps__RestartDescribeOptions,
+  Vps__RestartAction,
 } from "./resources/vps/actions/restart.js";
 export type {
   Vps__SetMaintenanceInput,
@@ -4884,6 +5832,8 @@ export type {
   Vps__SetMaintenanceObjectOutput,
   Vps__SetMaintenancePath,
   Vps__SetMaintenanceOptions,
+  Vps__SetMaintenanceDescribeOptions,
+  Vps__SetMaintenanceAction,
 } from "./resources/vps/actions/set_maintenance.js";
 export type {
   Vps__ShowInput,
@@ -4894,6 +5844,8 @@ export type {
   Vps__ShowObjectOutput,
   Vps__ShowPath,
   Vps__ShowOptions,
+  Vps__ShowDescribeOptions,
+  Vps__ShowAction,
 } from "./resources/vps/actions/show.js";
 export type {
   Vps__StartInput,
@@ -4904,6 +5856,8 @@ export type {
   Vps__StartObjectOutput,
   Vps__StartPath,
   Vps__StartOptions,
+  Vps__StartDescribeOptions,
+  Vps__StartAction,
 } from "./resources/vps/actions/start.js";
 export type {
   Vps__StopInput,
@@ -4914,6 +5868,8 @@ export type {
   Vps__StopObjectOutput,
   Vps__StopPath,
   Vps__StopOptions,
+  Vps__StopDescribeOptions,
+  Vps__StopAction,
 } from "./resources/vps/actions/stop.js";
 export type {
   Vps__SwapWithInput,
@@ -4924,6 +5880,8 @@ export type {
   Vps__SwapWithObjectOutput,
   Vps__SwapWithPath,
   Vps__SwapWithOptions,
+  Vps__SwapWithDescribeOptions,
+  Vps__SwapWithAction,
 } from "./resources/vps/actions/swap_with.js";
 export type {
   Vps__UpdateInput,
@@ -4934,6 +5892,8 @@ export type {
   Vps__UpdateObjectOutput,
   Vps__UpdatePath,
   Vps__UpdateOptions,
+  Vps__UpdateDescribeOptions,
+  Vps__UpdateAction,
 } from "./resources/vps/actions/update.js";
 export type { VpsResource } from "./resources/vps/resource.js";
 export type {
@@ -4945,6 +5905,8 @@ export type {
   Vps__ConsoleToken__CreateObjectOutput,
   Vps__ConsoleToken__CreatePath,
   Vps__ConsoleToken__CreateOptions,
+  Vps__ConsoleToken__CreateDescribeOptions,
+  Vps__ConsoleToken__CreateAction,
 } from "./resources/vps/resources/console_token/actions/create.js";
 export type {
   Vps__ConsoleToken__DeleteInput,
@@ -4955,6 +5917,8 @@ export type {
   Vps__ConsoleToken__DeleteObjectOutput,
   Vps__ConsoleToken__DeletePath,
   Vps__ConsoleToken__DeleteOptions,
+  Vps__ConsoleToken__DeleteDescribeOptions,
+  Vps__ConsoleToken__DeleteAction,
 } from "./resources/vps/resources/console_token/actions/delete.js";
 export type {
   Vps__ConsoleToken__ShowInput,
@@ -4965,6 +5929,8 @@ export type {
   Vps__ConsoleToken__ShowObjectOutput,
   Vps__ConsoleToken__ShowPath,
   Vps__ConsoleToken__ShowOptions,
+  Vps__ConsoleToken__ShowDescribeOptions,
+  Vps__ConsoleToken__ShowAction,
 } from "./resources/vps/resources/console_token/actions/show.js";
 export type { Vps__ConsoleTokenResource } from "./resources/vps/resources/console_token/resource.js";
 export type {
@@ -4976,6 +5942,8 @@ export type {
   Vps__Feature__IndexObjectOutput,
   Vps__Feature__IndexPath,
   Vps__Feature__IndexOptions,
+  Vps__Feature__IndexDescribeOptions,
+  Vps__Feature__IndexAction,
 } from "./resources/vps/resources/feature/actions/index.js";
 export type {
   Vps__Feature__ShowInput,
@@ -4986,6 +5954,8 @@ export type {
   Vps__Feature__ShowObjectOutput,
   Vps__Feature__ShowPath,
   Vps__Feature__ShowOptions,
+  Vps__Feature__ShowDescribeOptions,
+  Vps__Feature__ShowAction,
 } from "./resources/vps/resources/feature/actions/show.js";
 export type {
   Vps__Feature__UpdateInput,
@@ -4996,6 +5966,8 @@ export type {
   Vps__Feature__UpdateObjectOutput,
   Vps__Feature__UpdatePath,
   Vps__Feature__UpdateOptions,
+  Vps__Feature__UpdateDescribeOptions,
+  Vps__Feature__UpdateAction,
 } from "./resources/vps/resources/feature/actions/update.js";
 export type {
   Vps__Feature__UpdateAllInput,
@@ -5006,6 +5978,8 @@ export type {
   Vps__Feature__UpdateAllObjectOutput,
   Vps__Feature__UpdateAllPath,
   Vps__Feature__UpdateAllOptions,
+  Vps__Feature__UpdateAllDescribeOptions,
+  Vps__Feature__UpdateAllAction,
 } from "./resources/vps/resources/feature/actions/update_all.js";
 export type { Vps__FeatureResource } from "./resources/vps/resources/feature/resource.js";
 export type {
@@ -5017,6 +5991,8 @@ export type {
   Vps__MaintenanceWindow__IndexObjectOutput,
   Vps__MaintenanceWindow__IndexPath,
   Vps__MaintenanceWindow__IndexOptions,
+  Vps__MaintenanceWindow__IndexDescribeOptions,
+  Vps__MaintenanceWindow__IndexAction,
 } from "./resources/vps/resources/maintenance_window/actions/index.js";
 export type {
   Vps__MaintenanceWindow__ShowInput,
@@ -5027,6 +6003,8 @@ export type {
   Vps__MaintenanceWindow__ShowObjectOutput,
   Vps__MaintenanceWindow__ShowPath,
   Vps__MaintenanceWindow__ShowOptions,
+  Vps__MaintenanceWindow__ShowDescribeOptions,
+  Vps__MaintenanceWindow__ShowAction,
 } from "./resources/vps/resources/maintenance_window/actions/show.js";
 export type {
   Vps__MaintenanceWindow__UpdateInput,
@@ -5037,6 +6015,8 @@ export type {
   Vps__MaintenanceWindow__UpdateObjectOutput,
   Vps__MaintenanceWindow__UpdatePath,
   Vps__MaintenanceWindow__UpdateOptions,
+  Vps__MaintenanceWindow__UpdateDescribeOptions,
+  Vps__MaintenanceWindow__UpdateAction,
 } from "./resources/vps/resources/maintenance_window/actions/update.js";
 export type {
   Vps__MaintenanceWindow__UpdateAllInput,
@@ -5047,6 +6027,8 @@ export type {
   Vps__MaintenanceWindow__UpdateAllObjectOutput,
   Vps__MaintenanceWindow__UpdateAllPath,
   Vps__MaintenanceWindow__UpdateAllOptions,
+  Vps__MaintenanceWindow__UpdateAllDescribeOptions,
+  Vps__MaintenanceWindow__UpdateAllAction,
 } from "./resources/vps/resources/maintenance_window/actions/update_all.js";
 export type { Vps__MaintenanceWindowResource } from "./resources/vps/resources/maintenance_window/resource.js";
 export type {
@@ -5058,6 +6040,8 @@ export type {
   Vps__Mount__CreateObjectOutput,
   Vps__Mount__CreatePath,
   Vps__Mount__CreateOptions,
+  Vps__Mount__CreateDescribeOptions,
+  Vps__Mount__CreateAction,
 } from "./resources/vps/resources/mount/actions/create.js";
 export type {
   Vps__Mount__DeleteInput,
@@ -5068,6 +6052,8 @@ export type {
   Vps__Mount__DeleteObjectOutput,
   Vps__Mount__DeletePath,
   Vps__Mount__DeleteOptions,
+  Vps__Mount__DeleteDescribeOptions,
+  Vps__Mount__DeleteAction,
 } from "./resources/vps/resources/mount/actions/delete.js";
 export type {
   Vps__Mount__IndexInput,
@@ -5078,6 +6064,8 @@ export type {
   Vps__Mount__IndexObjectOutput,
   Vps__Mount__IndexPath,
   Vps__Mount__IndexOptions,
+  Vps__Mount__IndexDescribeOptions,
+  Vps__Mount__IndexAction,
 } from "./resources/vps/resources/mount/actions/index.js";
 export type {
   Vps__Mount__ShowInput,
@@ -5088,6 +6076,8 @@ export type {
   Vps__Mount__ShowObjectOutput,
   Vps__Mount__ShowPath,
   Vps__Mount__ShowOptions,
+  Vps__Mount__ShowDescribeOptions,
+  Vps__Mount__ShowAction,
 } from "./resources/vps/resources/mount/actions/show.js";
 export type {
   Vps__Mount__UpdateInput,
@@ -5098,6 +6088,8 @@ export type {
   Vps__Mount__UpdateObjectOutput,
   Vps__Mount__UpdatePath,
   Vps__Mount__UpdateOptions,
+  Vps__Mount__UpdateDescribeOptions,
+  Vps__Mount__UpdateAction,
 } from "./resources/vps/resources/mount/actions/update.js";
 export type { Vps__MountResource } from "./resources/vps/resources/mount/resource.js";
 export type {
@@ -5109,6 +6101,8 @@ export type {
   Vps__SshHostKey__IndexObjectOutput,
   Vps__SshHostKey__IndexPath,
   Vps__SshHostKey__IndexOptions,
+  Vps__SshHostKey__IndexDescribeOptions,
+  Vps__SshHostKey__IndexAction,
 } from "./resources/vps/resources/ssh_host_key/actions/index.js";
 export type {
   Vps__SshHostKey__ShowInput,
@@ -5119,6 +6113,8 @@ export type {
   Vps__SshHostKey__ShowObjectOutput,
   Vps__SshHostKey__ShowPath,
   Vps__SshHostKey__ShowOptions,
+  Vps__SshHostKey__ShowDescribeOptions,
+  Vps__SshHostKey__ShowAction,
 } from "./resources/vps/resources/ssh_host_key/actions/show.js";
 export type { Vps__SshHostKeyResource } from "./resources/vps/resources/ssh_host_key/resource.js";
 export type {
@@ -5130,6 +6126,8 @@ export type {
   Vps__StateLog__IndexObjectOutput,
   Vps__StateLog__IndexPath,
   Vps__StateLog__IndexOptions,
+  Vps__StateLog__IndexDescribeOptions,
+  Vps__StateLog__IndexAction,
 } from "./resources/vps/resources/state_log/actions/index.js";
 export type {
   Vps__StateLog__ShowInput,
@@ -5140,6 +6138,8 @@ export type {
   Vps__StateLog__ShowObjectOutput,
   Vps__StateLog__ShowPath,
   Vps__StateLog__ShowOptions,
+  Vps__StateLog__ShowDescribeOptions,
+  Vps__StateLog__ShowAction,
 } from "./resources/vps/resources/state_log/actions/show.js";
 export type { Vps__StateLogResource } from "./resources/vps/resources/state_log/resource.js";
 export type {
@@ -5151,6 +6151,8 @@ export type {
   Vps__Status__IndexObjectOutput,
   Vps__Status__IndexPath,
   Vps__Status__IndexOptions,
+  Vps__Status__IndexDescribeOptions,
+  Vps__Status__IndexAction,
 } from "./resources/vps/resources/status/actions/index.js";
 export type {
   Vps__Status__ShowInput,
@@ -5161,6 +6163,8 @@ export type {
   Vps__Status__ShowObjectOutput,
   Vps__Status__ShowPath,
   Vps__Status__ShowOptions,
+  Vps__Status__ShowDescribeOptions,
+  Vps__Status__ShowAction,
 } from "./resources/vps/resources/status/actions/show.js";
 export type { Vps__StatusResource } from "./resources/vps/resources/status/resource.js";
 export type {
@@ -5172,6 +6176,8 @@ export type {
   VpsOutage__IndexObjectOutput,
   VpsOutage__IndexPath,
   VpsOutage__IndexOptions,
+  VpsOutage__IndexDescribeOptions,
+  VpsOutage__IndexAction,
 } from "./resources/vps_outage/actions/index.js";
 export type {
   VpsOutage__ShowInput,
@@ -5182,6 +6188,8 @@ export type {
   VpsOutage__ShowObjectOutput,
   VpsOutage__ShowPath,
   VpsOutage__ShowOptions,
+  VpsOutage__ShowDescribeOptions,
+  VpsOutage__ShowAction,
 } from "./resources/vps_outage/actions/show.js";
 export type { VpsOutageResource } from "./resources/vps_outage/resource.js";
 export type {
@@ -5193,6 +6201,8 @@ export type {
   VpsSecurityAdvisory__IndexObjectOutput,
   VpsSecurityAdvisory__IndexPath,
   VpsSecurityAdvisory__IndexOptions,
+  VpsSecurityAdvisory__IndexDescribeOptions,
+  VpsSecurityAdvisory__IndexAction,
 } from "./resources/vps_security_advisory/actions/index.js";
 export type { VpsSecurityAdvisoryResource } from "./resources/vps_security_advisory/resource.js";
 export type {
@@ -5204,6 +6214,8 @@ export type {
   VpsUserData__CreateObjectOutput,
   VpsUserData__CreatePath,
   VpsUserData__CreateOptions,
+  VpsUserData__CreateDescribeOptions,
+  VpsUserData__CreateAction,
 } from "./resources/vps_user_data/actions/create.js";
 export type {
   VpsUserData__DeleteInput,
@@ -5214,6 +6226,8 @@ export type {
   VpsUserData__DeleteObjectOutput,
   VpsUserData__DeletePath,
   VpsUserData__DeleteOptions,
+  VpsUserData__DeleteDescribeOptions,
+  VpsUserData__DeleteAction,
 } from "./resources/vps_user_data/actions/delete.js";
 export type {
   VpsUserData__DeployInput,
@@ -5224,6 +6238,8 @@ export type {
   VpsUserData__DeployObjectOutput,
   VpsUserData__DeployPath,
   VpsUserData__DeployOptions,
+  VpsUserData__DeployDescribeOptions,
+  VpsUserData__DeployAction,
 } from "./resources/vps_user_data/actions/deploy.js";
 export type {
   VpsUserData__IndexInput,
@@ -5234,6 +6250,8 @@ export type {
   VpsUserData__IndexObjectOutput,
   VpsUserData__IndexPath,
   VpsUserData__IndexOptions,
+  VpsUserData__IndexDescribeOptions,
+  VpsUserData__IndexAction,
 } from "./resources/vps_user_data/actions/index.js";
 export type {
   VpsUserData__ShowInput,
@@ -5244,6 +6262,8 @@ export type {
   VpsUserData__ShowObjectOutput,
   VpsUserData__ShowPath,
   VpsUserData__ShowOptions,
+  VpsUserData__ShowDescribeOptions,
+  VpsUserData__ShowAction,
 } from "./resources/vps_user_data/actions/show.js";
 export type {
   VpsUserData__UpdateInput,
@@ -5254,6 +6274,8 @@ export type {
   VpsUserData__UpdateObjectOutput,
   VpsUserData__UpdatePath,
   VpsUserData__UpdateOptions,
+  VpsUserData__UpdateDescribeOptions,
+  VpsUserData__UpdateAction,
 } from "./resources/vps_user_data/actions/update.js";
 export type { VpsUserDataResource } from "./resources/vps_user_data/resource.js";
 export type { WebauthnResource } from "./resources/webauthn/resource.js";
@@ -5266,6 +6288,8 @@ export type {
   Webauthn__Authentication__BeginObjectOutput,
   Webauthn__Authentication__BeginPath,
   Webauthn__Authentication__BeginOptions,
+  Webauthn__Authentication__BeginDescribeOptions,
+  Webauthn__Authentication__BeginAction,
 } from "./resources/webauthn/resources/authentication/actions/begin.js";
 export type {
   Webauthn__Authentication__FinishInput,
@@ -5276,6 +6300,8 @@ export type {
   Webauthn__Authentication__FinishObjectOutput,
   Webauthn__Authentication__FinishPath,
   Webauthn__Authentication__FinishOptions,
+  Webauthn__Authentication__FinishDescribeOptions,
+  Webauthn__Authentication__FinishAction,
 } from "./resources/webauthn/resources/authentication/actions/finish.js";
 export type { Webauthn__AuthenticationResource } from "./resources/webauthn/resources/authentication/resource.js";
 export type {
@@ -5287,6 +6313,8 @@ export type {
   Webauthn__Registration__BeginObjectOutput,
   Webauthn__Registration__BeginPath,
   Webauthn__Registration__BeginOptions,
+  Webauthn__Registration__BeginDescribeOptions,
+  Webauthn__Registration__BeginAction,
 } from "./resources/webauthn/resources/registration/actions/begin.js";
 export type {
   Webauthn__Registration__FinishInput,
@@ -5297,6 +6325,8 @@ export type {
   Webauthn__Registration__FinishObjectOutput,
   Webauthn__Registration__FinishPath,
   Webauthn__Registration__FinishOptions,
+  Webauthn__Registration__FinishDescribeOptions,
+  Webauthn__Registration__FinishAction,
 } from "./resources/webauthn/resources/registration/actions/finish.js";
 export type { Webauthn__RegistrationResource } from "./resources/webauthn/resources/registration/resource.js";
 export type {
@@ -5308,6 +6338,8 @@ export type {
   WebuiUserSetting__DeleteObjectOutput,
   WebuiUserSetting__DeletePath,
   WebuiUserSetting__DeleteOptions,
+  WebuiUserSetting__DeleteDescribeOptions,
+  WebuiUserSetting__DeleteAction,
 } from "./resources/webui_user_setting/actions/delete.js";
 export type {
   WebuiUserSetting__IndexInput,
@@ -5318,6 +6350,8 @@ export type {
   WebuiUserSetting__IndexObjectOutput,
   WebuiUserSetting__IndexPath,
   WebuiUserSetting__IndexOptions,
+  WebuiUserSetting__IndexDescribeOptions,
+  WebuiUserSetting__IndexAction,
 } from "./resources/webui_user_setting/actions/index.js";
 export type {
   WebuiUserSetting__SetInput,
@@ -5328,6 +6362,8 @@ export type {
   WebuiUserSetting__SetObjectOutput,
   WebuiUserSetting__SetPath,
   WebuiUserSetting__SetOptions,
+  WebuiUserSetting__SetDescribeOptions,
+  WebuiUserSetting__SetAction,
 } from "./resources/webui_user_setting/actions/set.js";
 export type {
   WebuiUserSetting__ShowInput,
@@ -5338,5 +6374,7 @@ export type {
   WebuiUserSetting__ShowObjectOutput,
   WebuiUserSetting__ShowPath,
   WebuiUserSetting__ShowOptions,
+  WebuiUserSetting__ShowDescribeOptions,
+  WebuiUserSetting__ShowAction,
 } from "./resources/webui_user_setting/actions/show.js";
 export type { WebuiUserSettingResource } from "./resources/webui_user_setting/resource.js";
