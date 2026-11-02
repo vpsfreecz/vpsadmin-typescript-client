@@ -12,6 +12,22 @@ const result = await client.network.index({
   meta: { count: true, includes: 'primary_location' },
   signal: new AbortController().signal,
 });
+const total: number | null | undefined = result.meta.total_count;
+const extension: unknown = result.meta.extension;
+// @ts-expect-error declared metadata retains its numeric type
+const invalidTotal: string = result.meta.total_count;
+void [total, extension, invalidTotal];
+
+const description = await client.network.update.describe({ path: { network_id: 1 } });
+const required: boolean | null | undefined = description.data.input?.parameters?.['label']?.required;
+void required;
+client.describe({ timeoutMs: 1000 });
+// @ts-expect-error action description requires its path placeholders
+client.network.update.describe();
+// @ts-expect-error live descriptions do not accept mutation input
+client.network.update.describe({ path: { network_id: 1 }, params: { label: 'test' } });
+// @ts-expect-error API root description cannot select an arbitrary route
+client.describe({ path: '/untrusted' });
 const first = result.data[0];
 if (first) {
   const label: string | null | undefined = first.label;

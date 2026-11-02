@@ -1,23 +1,23 @@
 {
-  "haveapi_revision": "0e7166a0f8f15827bfac051666a53bf449e999ec",
-  "generator_source_sha256": "947a98d704dca737f8bef2e1042f710e77396a0a793cb7233e8093887a713d6e",
-  "haveapi_version_sha256": "e0ccf7913110f807adecc59be43ce6fb334f82a8a7f70f70fbbba34bf1eeaaf2",
+  "haveapi_revision": "1ef9b204ba45bb261d3334be5c555cc1856b713b",
+  "generator_source_sha256": "c21f17af40295bdd633f846ef9099bfb3d7a3c52aa1b581a802b5c42d7b426e7",
+  "haveapi_version_sha256": "76c46a6bd29921677707362fa740e3f171f82a3091d69cc97cd8c7dccdcc1d10",
   "api_version": "7.0",
   "schema_file": "schema/schema.json",
   "schema_sha256": "476f0086726a443a6ef8ad9a9d499bd3feff6eb6c5b0b652dcc999192d638794",
   "provenance_file": "schema/provenance.json",
-  "provenance_sha256": "7b477c6156c82ab483d686e1e0305ea2a40b82e0e24d50dc7653228b19556927",
+  "provenance_sha256": "d51cfb24217fb381f66c1a0eb46168c637fea7ec988beb7e54b2d9a679ad81b6",
   "tooling_sha256": {
-    "package-lock.json": "da67cb3a5430a26f86b9df6b912d14e66214f1d8239fd1a35446bb6c61e62e15",
+    "package-lock.json": "ea6d84d57e98a4085399d2a40f5e702822744845a0eaf93d5385210e6208fdd8",
     "flake.lock": "187d63f65b46f5cfa3ac830a5d0c182693cd0ca7ab8e486c3876fcf4b4f6d4f4",
     "tools/toolchain.json": "dc28c254a633e5d19fc079b573082507f104089a8c826075d50a850688310d93",
-    "schema/tooling.Gemfile.lock": "b1d32a5ff5fb7e922c56ac6efadfa765ac4b2043cae90a54f0a71124b9b90019",
+    "schema/tooling.Gemfile.lock": "62a0e7f65e0755296ea50e3f5efa590f51e8615571a078cf45243f6ca8555f1c",
     "tools/regenerate": "87f89189684004ca04a07997b6022385f09e812365522592984d3a6f01446513",
     "tools/generator-source.rb": "737f261eb3818e82bda62c654bfb8b365168131679a0d9abfe378d6b854d3925"
   },
   "shared_source_identity": {
     "package_name": "haveapi-client",
-    "version": "0.32.0",
-    "source_sha256": "e12f7989a028bb529f4a78a510af8e09411bbeb5eec9c782feb1fbf20862533c"
+    "version": "0.32.2",
+    "source_sha256": "d704e6c155f9f2ec82bdf627857bdc23aa08a1d2133806df1f8ed5beb2d8c439"
   }
 }

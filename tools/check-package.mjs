@@ -98,7 +98,9 @@ try {
 
   const manifest = JSON.parse(readFileSync(join(modules, 'vpsadmin-typescript-client/package.json')));
   assert.equal(manifest.type, 'module');
-  assert.equal(manifest.peerDependencies['haveapi-client'], '0.30.2');
+  assert.equal(manifest.peerDependencies['haveapi-client'], '0.32.0');
+  const runtimeManifest = JSON.parse(readFileSync(join(modules, 'haveapi-client/package.json')));
+  assert.equal(runtimeManifest.version, manifest.peerDependencies['haveapi-client']);
   run(process.execPath, [join(root, 'node_modules/typescript/bin/tsc'), '-p', 'tsconfig.json'], consumer);
   run(process.execPath, ['runtime.mjs'], consumer);
   console.log('Packed ESM, strict types and executor consumer passed.');
