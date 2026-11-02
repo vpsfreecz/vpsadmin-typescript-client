@@ -318,8 +318,9 @@ These calls send OPTIONS to the version root or the concrete action's help
 route. They preserve headers, cancellation, timeouts and the full receipt. The
 server can omit resources, actions or parameters according to authorization.
 Keep capability caches scoped to the authenticated identity and refresh them
-when permissions change. The SDK does not infer permissions from the saved
-schema or cache live descriptions. Description types do not validate payloads.
+when permissions change. The generated client does not infer permissions from
+the saved schema or cache live descriptions. Description types do not validate
+payloads.
 
 ## Development and regeneration
 
