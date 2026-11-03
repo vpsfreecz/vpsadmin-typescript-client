@@ -1,3 +1,9 @@
+# 0.4.0
+
+- Add advisory retraction and deletion operations.
+- Accept `expected_state` on advisory, CVE and node-status mutations so callers
+  can guard writes against a changed advisory state.
+
 # 0.3.0
 
 - Regenerate from the full vpsAdmin API fixture with HaveAPI 0.32.2 and require
