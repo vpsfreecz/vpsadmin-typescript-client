@@ -179,3 +179,49 @@ test('published runtime sends descriptions, writes and metadata through a mounte
     await new Promise((resolve) => server.close(resolve));
   }
 });
+
+test('advisory mutations send revision and state guards through the published runtime', async () => {
+  const calls = [];
+  const server = createServer(async (request, response) => {
+    let body = '';
+    for await (const chunk of request) body += chunk;
+    calls.push({ method: request.method, path: request.url, body: body ? JSON.parse(body) : undefined });
+    response.setHeader('Content-Type', 'application/json');
+    response.end(JSON.stringify({
+      status: true,
+      response: { security_advisory: {}, security_advisory_cve: {}, node_status: {} },
+    }));
+  });
+  await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
+  try {
+    const runtime = new AsyncClient(`http://127.0.0.1:${server.address().port}/mount/v7.0`);
+    const client = createVpsAdminClient({ execute: createHaveApiExecutor(runtime) });
+    const advisoryPath = { security_advisory_id: 10 };
+    const cvePath = { security_advisory_cve_id: 20 };
+    const nodePath = { ...advisoryPath, node_status_id: 30 };
+    const guards = { expected_content_revision: 0, expected_state: 'draft' };
+    const mutations = [
+      [client.security_advisory.update, advisoryPath, {}, 'PUT', '/security_advisories/10', 'security_advisory'],
+      [client.security_advisory_cve.create, undefined, { security_advisory: 10, cve_id: 'CVE-2026-12345' }, 'POST', '/security_advisory_cves', 'security_advisory_cve'],
+      [client.security_advisory_cve.update, cvePath, {}, 'PUT', '/security_advisory_cves/20', 'security_advisory_cve'],
+      [client.security_advisory_cve.delete, cvePath, {}, 'DELETE', '/security_advisory_cves/20', 'security_advisory_cve'],
+      [client.security_advisory.node_status.create, advisoryPath, { node: 40, state: 'unknown' }, 'POST', '/security_advisories/10/node_statuses', 'node_status'],
+      [client.security_advisory.node_status.update, nodePath, {}, 'PUT', '/security_advisories/10/node_statuses/30', 'node_status'],
+      [client.security_advisory.node_status.delete, nodePath, {}, 'DELETE', '/security_advisories/10/node_statuses/30', 'node_status'],
+      [client.security_advisory.retract, advisoryPath, { expected_state: 'published' }, 'POST', '/security_advisories/10/retract', 'security_advisory'],
+      [client.security_advisory.delete, advisoryPath, {}, 'DELETE', '/security_advisories/10', 'security_advisory'],
+    ];
+    for (const [action, path, fields, method, route, namespace] of mutations) {
+      const params = { ...guards, ...fields };
+      await action({ ...(path ? { path } : {}), params, timeoutMs: 5000 });
+      assert.deepEqual(calls.at(-1), { method, path: `/mount/v7.0${route}`, body: { [namespace]: params } });
+    }
+    assert.equal(calls.length, mutations.length, 'each guarded mutation dispatches once');
+    await assert.rejects(client.security_advisory.delete({ path: advisoryPath, params: { expected_state: 'draft' } }), ClientInputError);
+    await assert.rejects(client.security_advisory.retract({ path: advisoryPath, params: { expected_content_revision: 0, expected_state: null } }), ClientInputError);
+    assert.equal(calls.length, mutations.length, 'invalid local guards never reach the server');
+  } finally {
+    server.closeAllConnections();
+    await new Promise((resolve) => server.close(resolve));
+  }
+});

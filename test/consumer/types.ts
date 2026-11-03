@@ -45,6 +45,22 @@ client.network.index();
 client.network.show({ path: { network_id: '1' } });
 client.network.update({ path: { network_id: 1 }, params: { label: '', enabled: false, prefix: 0 } });
 
+const advisoryPath = { security_advisory_id: 1 };
+const guardedDraft = { expected_content_revision: 0, expected_state: 'draft' };
+client.security_advisory.update({ path: advisoryPath, params: guardedDraft });
+client.security_advisory_cve.create({ params: { ...guardedDraft, security_advisory: 1, cve_id: 'CVE-2026-12345' } });
+client.security_advisory_cve.update({ path: { security_advisory_cve_id: 2 }, params: guardedDraft });
+client.security_advisory_cve.delete({ path: { security_advisory_cve_id: 2 }, params: guardedDraft });
+client.security_advisory.node_status.create({ path: advisoryPath, params: { ...guardedDraft, node: 3, state: 'unknown' } });
+client.security_advisory.node_status.update({ path: { ...advisoryPath, node_status_id: 4 }, params: guardedDraft });
+client.security_advisory.node_status.delete({ path: { ...advisoryPath, node_status_id: 4 }, params: guardedDraft });
+client.security_advisory.retract({ path: advisoryPath, params: { expected_content_revision: 1, expected_state: 'published' } });
+client.security_advisory.delete({ path: advisoryPath, params: guardedDraft });
+// @ts-expect-error advisory deletion requires a reviewed content revision
+client.security_advisory.delete({ path: advisoryPath, params: { expected_state: 'draft' } });
+// @ts-expect-error a state precondition cannot be null
+client.security_advisory.retract({ path: advisoryPath, params: { expected_content_revision: 1, expected_state: null } });
+
 // @ts-expect-error resource names come from the saved schema
 client.missing.index();
 // @ts-expect-error action names come from the saved schema
