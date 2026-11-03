@@ -16,6 +16,7 @@ import type {
 export type SecurityAdvisoryCve__UpdateInput = {
   cve_id?: string | undefined;
   expected_content_revision: number;
+  expected_state?: string | undefined;
   security_advisory?: number | undefined;
 };
 
@@ -93,6 +94,13 @@ const descriptor = {
       emitted_name: "expected_content_revision",
       kind: "Integer",
       required: true,
+      nullable: false,
+    },
+    {
+      wire_name: "expected_state",
+      emitted_name: "expected_state",
+      kind: "String",
+      required: false,
       nullable: false,
     },
     {

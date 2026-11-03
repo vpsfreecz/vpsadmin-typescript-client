@@ -21,6 +21,7 @@ export type SecurityAdvisory__UpdateInput = {
   en_response?: string | undefined;
   en_summary?: string | undefined;
   expected_content_revision: number;
+  expected_state?: string | undefined;
   name?: string | null | undefined;
   published_at?: string | null | undefined;
 };
@@ -150,6 +151,13 @@ const descriptor = {
       emitted_name: "expected_content_revision",
       kind: "Integer",
       required: true,
+      nullable: false,
+    },
+    {
+      wire_name: "expected_state",
+      emitted_name: "expected_state",
+      kind: "String",
+      required: false,
       nullable: false,
     },
     {

@@ -4,9 +4,9 @@
   "haveapi_version_sha256": "76c46a6bd29921677707362fa740e3f171f82a3091d69cc97cd8c7dccdcc1d10",
   "api_version": "7.0",
   "schema_file": "schema/schema.json",
-  "schema_sha256": "476f0086726a443a6ef8ad9a9d499bd3feff6eb6c5b0b652dcc999192d638794",
+  "schema_sha256": "d6ec617653913c56e92398a6032aa350118597a0e3f45c599bc92b6071ea0a26",
   "provenance_file": "schema/provenance.json",
-  "provenance_sha256": "d51cfb24217fb381f66c1a0eb46168c637fea7ec988beb7e54b2d9a679ad81b6",
+  "provenance_sha256": "c85815abd315f53a5ef05f324abe377760293786a13a25b7a127ec804c50e0c1",
   "tooling_sha256": {
     "package-lock.json": "ea6d84d57e98a4085399d2a40f5e702822744845a0eaf93d5385210e6208fdd8",
     "flake.lock": "187d63f65b46f5cfa3ac830a5d0c182693cd0ca7ab8e486c3876fcf4b4f6d4f4",

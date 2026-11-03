@@ -15,6 +15,7 @@ import type {
 
 export type SecurityAdvisory__NodeStatus__DeleteInput = {
   expected_content_revision: number;
+  expected_state?: string | undefined;
 };
 
 export type SecurityAdvisory__NodeStatus__DeleteOutput = Record<string, never>;
@@ -89,6 +90,13 @@ const descriptor = {
       emitted_name: "expected_content_revision",
       kind: "Integer",
       required: true,
+      nullable: false,
+    },
+    {
+      wire_name: "expected_state",
+      emitted_name: "expected_state",
+      kind: "String",
+      required: false,
       nullable: false,
     },
   ],

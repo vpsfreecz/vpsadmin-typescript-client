@@ -4293,6 +4293,18 @@ export type {
   SecurityAdvisory__CreateAction,
 } from "./resources/security_advisory/actions/create.js";
 export type {
+  SecurityAdvisory__DeleteInput,
+  SecurityAdvisory__DeleteOutput,
+  SecurityAdvisory__DeleteGlobalInput,
+  SecurityAdvisory__DeleteGlobalOutput,
+  SecurityAdvisory__DeleteObjectInput,
+  SecurityAdvisory__DeleteObjectOutput,
+  SecurityAdvisory__DeletePath,
+  SecurityAdvisory__DeleteOptions,
+  SecurityAdvisory__DeleteDescribeOptions,
+  SecurityAdvisory__DeleteAction,
+} from "./resources/security_advisory/actions/delete.js";
+export type {
   SecurityAdvisory__IndexInput,
   SecurityAdvisory__IndexOutput,
   SecurityAdvisory__IndexGlobalInput,
@@ -4328,6 +4340,18 @@ export type {
   SecurityAdvisory__RebuildAffectedVpsDescribeOptions,
   SecurityAdvisory__RebuildAffectedVpsAction,
 } from "./resources/security_advisory/actions/rebuild_affected_vps.js";
+export type {
+  SecurityAdvisory__RetractInput,
+  SecurityAdvisory__RetractOutput,
+  SecurityAdvisory__RetractGlobalInput,
+  SecurityAdvisory__RetractGlobalOutput,
+  SecurityAdvisory__RetractObjectInput,
+  SecurityAdvisory__RetractObjectOutput,
+  SecurityAdvisory__RetractPath,
+  SecurityAdvisory__RetractOptions,
+  SecurityAdvisory__RetractDescribeOptions,
+  SecurityAdvisory__RetractAction,
+} from "./resources/security_advisory/actions/retract.js";
 export type {
   SecurityAdvisory__ShowInput,
   SecurityAdvisory__ShowOutput,

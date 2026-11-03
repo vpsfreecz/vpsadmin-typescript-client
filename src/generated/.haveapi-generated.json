@@ -4,14 +4,14 @@
     "runtime_import": "haveapi-client"
   },
   "coverage": {
-    "application_action_count": 519,
+    "application_action_count": 521,
     "application_resource_count": 151,
     "authentication_action_count": 5,
     "authentication_exclusion": "Authentication resources are retained and validated; the existing runtime owns their API-root routes.",
     "authentication_resource_count": 1
   },
   "files": {
-    "api.ts": "887837c0ea31fb162236e82a398aa3167a329eff025c331b405d62248c93912e",
+    "api.ts": "5442982a3173565daf534d67c975f5e7311090baa69da86d049a7e5f46d78ed7",
     "descriptions.ts": "36f2c93d11f195b17d8d7217fff230b6a5b054d0aaec62f29bc3e7bbe231decc",
     "index.ts": "2a879cfd5f39c537a88eed0d8c071625a1bb6191d35c69e5a6134073cf79324b",
     "resources/action_state/actions/cancel.ts": "7f0215c6499e612a7899c5d242ee37fa2f196d4f43e1ae0fb777436674cc87cd",
@@ -468,22 +468,24 @@
     "resources/pool/actions/show.ts": "2c53814b63a86d4a677687cf9d516706e1c5e2a6a1784382839d5854d812e4e7",
     "resources/pool/resource.ts": "d3c74428c68031326aff875d38063e9b2a78309fa5b9bf6673e2b3eb582387e5",
     "resources/security_advisory/actions/create.ts": "ab0921361c3830114680f0a3eb9f86ba573de4356db057037c34bc68a737f015",
+    "resources/security_advisory/actions/delete.ts": "28f5ef6f00d287f3fbfb398d2936579b5552b8575ed56bbd55a42c41700b1904",
     "resources/security_advisory/actions/index.ts": "0bb9db3e6e9511f2663f1e46ac9ad3d3065e90ecae641bf347acdeb0b7007585",
     "resources/security_advisory/actions/publish.ts": "8f044a9fc0aef8851a971b54932f18b431d4c4f516cb1a837b0cd31267c7ee00",
     "resources/security_advisory/actions/rebuild_affected_vps.ts": "929962ebe237faa947a65c35d3d9745c9ea65698b1232a120f8c36f48e118ad6",
+    "resources/security_advisory/actions/retract.ts": "bca89789399fa296e4a0a8d29df058ec52225e9794c921678c12051e02744b05",
     "resources/security_advisory/actions/show.ts": "7501f065b12be44733cc55baf804fa068e6efedcc117b1d15eeaf261be7ab8f2",
-    "resources/security_advisory/actions/update.ts": "4e7659def1c29e7da896fe3dd498360f938546e9c20d6f630132de1d04bca469",
-    "resources/security_advisory/resource.ts": "f8106283d16ab24e9f381ba73413ee9caae4ee68a95d9787ed6d2b13fb6cc669",
-    "resources/security_advisory/resources/node_status/actions/create.ts": "7f14b215b39e226ab3423e655df8a3eb7057c1237e89380959a1bcf51bb96150",
-    "resources/security_advisory/resources/node_status/actions/delete.ts": "d12e9e0375dbd081d6493dd6e39e1eb94d6b81199ba9f29b78b14e7b09c020c4",
+    "resources/security_advisory/actions/update.ts": "feb2afbf5bdebcfd7cd09ebbdfb7f459240b486a2b607a7ce676a88bc9b561ef",
+    "resources/security_advisory/resource.ts": "4e8ec79409d54c3ba8fd212e80cdc206820f6563567d5178adffe7dc39ed34b2",
+    "resources/security_advisory/resources/node_status/actions/create.ts": "98d20ce5ed505d636120e8c4e9d1d8d906a37cd9db34e81f78f39408bd4b1080",
+    "resources/security_advisory/resources/node_status/actions/delete.ts": "4a1cecfae07599e07ed91b2e527fcba162d960fbadc89a27590ef2a93cd31227",
     "resources/security_advisory/resources/node_status/actions/index.ts": "0c4c279c00abe4e097de66f2fc5869e8abb8a2d4ddadd45dcb07fa2d7e20845d",
-    "resources/security_advisory/resources/node_status/actions/update.ts": "6949836b051233ad43e30ec892eab06e7a385c675749d8448969ddf5579e7f5d",
+    "resources/security_advisory/resources/node_status/actions/update.ts": "2c165146970700f7d74e98d7a7b5f4007227015630046248d2cb74827d0f5341",
     "resources/security_advisory/resources/node_status/resource.ts": "4e4de2b8622db3262cbbd98738542770c6d1c65173d5a7401c17cae15f12e046",
-    "resources/security_advisory_cve/actions/create.ts": "48b913dcbc342bdeb041da9f4a0ef4cd1bc0a38a64af2a9ff52180bb4dfb73b7",
-    "resources/security_advisory_cve/actions/delete.ts": "ef80ad41f1601f241d7ef69442fa1ddc88f74c1d86ff0f900f129a944e793fbe",
+    "resources/security_advisory_cve/actions/create.ts": "8685d4951b366d0c3ebf3683a7817e3378014e1558a65006d0eb77ddaa404d43",
+    "resources/security_advisory_cve/actions/delete.ts": "68383cdba41e50e99b1475db27ce9c38bfdac1f0d91937e2cdf72209465f2427",
     "resources/security_advisory_cve/actions/index.ts": "12dbedcf37c098ab438ac96e74d792dba6f8b2d64c0dc22124595e8628d2d2af",
     "resources/security_advisory_cve/actions/show.ts": "879876bf98d2dbb6456f001a113c8f08fc647621ab1226132f6f01bb04de20e6",
-    "resources/security_advisory_cve/actions/update.ts": "e7fb128316d70683be2f8ed88419aca5e7548e64cccd2b609e4cf6b86c465c53",
+    "resources/security_advisory_cve/actions/update.ts": "efbec3f89c32f8dc21a4c8b1d2120a25f3a82d6a74b271a138bb0f2c3d0662f0",
     "resources/security_advisory_cve/resource.ts": "8d4bb67eb3c05f07d697a379384208f5d74204c85cff72e5aacae5a21a00a545",
     "resources/security_advisory_update/actions/create.ts": "e8eaf79195efbce4b1cf5e3de05cfaf0563e0ba457a8099d0000cd162aa17706",
     "resources/security_advisory_update/actions/delete.ts": "53b1fec364f7e29946819ff4a8465e1542e3973034722a7d8ec4b01c7a1a6915",
@@ -685,7 +687,7 @@
     "resources/webui_user_setting/actions/show.ts": "5c3633e5f05a72c0af5b4470fd45161ae777ed7e3872aaadb31cf49a2e8ad66b",
     "resources/webui_user_setting/resource.ts": "da734dec0115cd461b21f5e685d9ecdbb76d183f9424932adffef1307f8b069d",
     "runtime.ts": "8ec81accc1c29a4effe8576dd41a776bd4cd4270986d956fa837f41fe49b1649",
-    "types.ts": "f2fede0fae35aa0e868e8d1293296937b370a84561beda57d868e5520e0b7614"
+    "types.ts": "8c77120dcca2066445ea13186621052178c23a17810c629766afc1030f13c98a"
   },
   "format": 1,
   "formatter": {
@@ -698,5 +700,5 @@
   "owner": "haveapi-typescript-client",
   "profile": "vpsadmin-full-fixture",
   "protocol_version": "2.0",
-  "schema_sha256": "476f0086726a443a6ef8ad9a9d499bd3feff6eb6c5b0b652dcc999192d638794"
+  "schema_sha256": "d6ec617653913c56e92398a6032aa350118597a0e3f45c599bc92b6071ea0a26"
 }

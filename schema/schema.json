@@ -72103,6 +72103,108 @@
             "path": "/v7.0/security_advisories",
             "scope": "security_advisory#create"
           },
+          "delete": {
+            "aliases": [
+              "destroy"
+            ],
+            "auth": true,
+            "blocking": false,
+            "help": "/v7.0/security_advisories/{security_advisory_id}?method=DELETE",
+            "input": {
+              "layout": "object",
+              "namespace": "security_advisory",
+              "parameters": {
+                "expected_content_revision": {
+                  "default": null,
+                  "nullable": false,
+                  "protected": false,
+                  "required": true,
+                  "type": "Integer",
+                  "validators": {
+                    "present": {
+                      "empty": false
+                    }
+                  }
+                },
+                "expected_state": {
+                  "default": null,
+                  "nullable": false,
+                  "protected": false,
+                  "required": false,
+                  "type": "String",
+                  "validators": {
+                    "include": {
+                      "values": {
+                        "draft": null,
+                        "published": null,
+                        "retracted": null
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "meta": {
+              "global": {
+                "input": {
+                  "layout": "hash",
+                  "namespace": false,
+                  "parameters": {
+                    "includes": {
+                      "default": null,
+                      "nullable": false,
+                      "protected": false,
+                      "required": false,
+                      "type": "Custom",
+                      "validators": {}
+                    },
+                    "no": {
+                      "default": null,
+                      "nullable": false,
+                      "protected": false,
+                      "required": false,
+                      "type": "Boolean",
+                      "validators": {}
+                    }
+                  }
+                },
+                "output": null
+              },
+              "object": {
+                "input": null,
+                "output": {
+                  "layout": "hash",
+                  "namespace": false,
+                  "parameters": {
+                    "path_params": {
+                      "default": null,
+                      "nullable": false,
+                      "protected": false,
+                      "required": false,
+                      "type": "Custom",
+                      "validators": {}
+                    },
+                    "resolved": {
+                      "default": null,
+                      "nullable": false,
+                      "protected": false,
+                      "required": false,
+                      "type": "Boolean",
+                      "validators": {}
+                    }
+                  }
+                }
+              }
+            },
+            "method": "DELETE",
+            "output": {
+              "layout": "object",
+              "namespace": "security_advisory",
+              "parameters": {}
+            },
+            "path": "/v7.0/security_advisories/{security_advisory_id}",
+            "scope": "security_advisory#delete"
+          },
           "index": {
             "aliases": [
               "list"
@@ -72916,6 +73018,299 @@
             "path": "/v7.0/security_advisories/{security_advisory_id}/rebuild_affected_vps",
             "scope": "security_advisory#rebuild_affected_vps"
           },
+          "retract": {
+            "aliases": [],
+            "auth": true,
+            "blocking": false,
+            "help": "/v7.0/security_advisories/{security_advisory_id}/retract?method=POST",
+            "input": {
+              "layout": "object",
+              "namespace": "security_advisory",
+              "parameters": {
+                "expected_content_revision": {
+                  "default": null,
+                  "nullable": false,
+                  "protected": false,
+                  "required": true,
+                  "type": "Integer",
+                  "validators": {
+                    "present": {
+                      "empty": false
+                    }
+                  }
+                },
+                "expected_state": {
+                  "default": null,
+                  "nullable": false,
+                  "protected": false,
+                  "required": false,
+                  "type": "String",
+                  "validators": {
+                    "include": {
+                      "values": {
+                        "draft": null,
+                        "published": null,
+                        "retracted": null
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "meta": {
+              "global": {
+                "input": {
+                  "layout": "hash",
+                  "namespace": false,
+                  "parameters": {
+                    "includes": {
+                      "default": null,
+                      "nullable": false,
+                      "protected": false,
+                      "required": false,
+                      "type": "Custom",
+                      "validators": {}
+                    },
+                    "no": {
+                      "default": null,
+                      "nullable": false,
+                      "protected": false,
+                      "required": false,
+                      "type": "Boolean",
+                      "validators": {}
+                    }
+                  }
+                },
+                "output": null
+              },
+              "object": {
+                "input": null,
+                "output": {
+                  "layout": "hash",
+                  "namespace": false,
+                  "parameters": {
+                    "path_params": {
+                      "default": null,
+                      "nullable": false,
+                      "protected": false,
+                      "required": false,
+                      "type": "Custom",
+                      "validators": {}
+                    },
+                    "resolved": {
+                      "default": null,
+                      "nullable": false,
+                      "protected": false,
+                      "required": false,
+                      "type": "Boolean",
+                      "validators": {}
+                    }
+                  }
+                }
+              }
+            },
+            "method": "POST",
+            "output": {
+              "layout": "object",
+              "namespace": "security_advisory",
+              "parameters": {
+                "affected": {
+                  "default": null,
+                  "nullable": false,
+                  "protected": false,
+                  "required": false,
+                  "type": "Boolean",
+                  "validators": {}
+                },
+                "affected_node_count": {
+                  "default": null,
+                  "nullable": false,
+                  "protected": false,
+                  "required": false,
+                  "type": "Integer",
+                  "validators": {}
+                },
+                "affected_user_count": {
+                  "default": null,
+                  "nullable": false,
+                  "protected": false,
+                  "required": false,
+                  "type": "Integer",
+                  "validators": {}
+                },
+                "affected_vps_count": {
+                  "default": null,
+                  "nullable": false,
+                  "protected": false,
+                  "required": false,
+                  "type": "Integer",
+                  "validators": {}
+                },
+                "content_revision": {
+                  "default": null,
+                  "nullable": false,
+                  "protected": false,
+                  "required": false,
+                  "type": "Integer",
+                  "validators": {}
+                },
+                "created_at": {
+                  "default": null,
+                  "nullable": false,
+                  "protected": false,
+                  "required": false,
+                  "type": "Datetime",
+                  "validators": {}
+                },
+                "created_by": {
+                  "choices": {
+                    "help": "/v7.0/users?method=GET",
+                    "method": "GET",
+                    "path": "/v7.0/users"
+                  },
+                  "nullable": true,
+                  "required": null,
+                  "resource": [
+                    "user"
+                  ],
+                  "type": "Resource",
+                  "value": null,
+                  "value_id": "id",
+                  "value_label": "login"
+                },
+                "cs_description": {
+                  "default": null,
+                  "nullable": false,
+                  "protected": false,
+                  "required": false,
+                  "type": "Text",
+                  "validators": {}
+                },
+                "cs_response": {
+                  "default": null,
+                  "nullable": false,
+                  "protected": false,
+                  "required": false,
+                  "type": "Text",
+                  "validators": {}
+                },
+                "cs_summary": {
+                  "default": null,
+                  "nullable": false,
+                  "protected": false,
+                  "required": false,
+                  "type": "String",
+                  "validators": {}
+                },
+                "en_description": {
+                  "default": null,
+                  "nullable": false,
+                  "protected": false,
+                  "required": false,
+                  "type": "Text",
+                  "validators": {}
+                },
+                "en_response": {
+                  "default": null,
+                  "nullable": false,
+                  "protected": false,
+                  "required": false,
+                  "type": "Text",
+                  "validators": {}
+                },
+                "en_summary": {
+                  "default": null,
+                  "nullable": false,
+                  "protected": false,
+                  "required": false,
+                  "type": "String",
+                  "validators": {}
+                },
+                "external_id": {
+                  "default": null,
+                  "nullable": true,
+                  "protected": false,
+                  "required": false,
+                  "type": "String",
+                  "validators": {}
+                },
+                "id": {
+                  "default": null,
+                  "nullable": false,
+                  "protected": false,
+                  "required": false,
+                  "type": "Integer",
+                  "validators": {}
+                },
+                "name": {
+                  "default": null,
+                  "nullable": true,
+                  "protected": false,
+                  "required": false,
+                  "type": "String",
+                  "validators": {}
+                },
+                "published_at": {
+                  "default": null,
+                  "nullable": true,
+                  "protected": false,
+                  "required": false,
+                  "type": "Datetime",
+                  "validators": {}
+                },
+                "published_by": {
+                  "choices": {
+                    "help": "/v7.0/users?method=GET",
+                    "method": "GET",
+                    "path": "/v7.0/users"
+                  },
+                  "nullable": true,
+                  "required": null,
+                  "resource": [
+                    "user"
+                  ],
+                  "type": "Resource",
+                  "value": null,
+                  "value_id": "id",
+                  "value_label": "login"
+                },
+                "retracted_at": {
+                  "default": null,
+                  "nullable": true,
+                  "protected": false,
+                  "required": false,
+                  "type": "Datetime",
+                  "validators": {}
+                },
+                "state": {
+                  "default": null,
+                  "nullable": false,
+                  "protected": false,
+                  "required": false,
+                  "type": "String",
+                  "validators": {
+                    "include": {
+                      "values": [
+                        "draft",
+                        "published",
+                        "retracted"
+                      ]
+                    }
+                  }
+                },
+                "updated_at": {
+                  "default": null,
+                  "nullable": false,
+                  "protected": false,
+                  "required": false,
+                  "type": "Datetime",
+                  "validators": {}
+                }
+              }
+            },
+            "path": "/v7.0/security_advisories/{security_advisory_id}/retract",
+            "scope": "security_advisory#retract"
+          },
           "show": {
             "aliases": [
               "find"
@@ -73251,6 +73646,22 @@
                     }
                   }
                 },
+                "expected_state": {
+                  "default": null,
+                  "nullable": false,
+                  "protected": false,
+                  "required": false,
+                  "type": "String",
+                  "validators": {
+                    "include": {
+                      "values": {
+                        "draft": null,
+                        "published": null,
+                        "retracted": null
+                      }
+                    }
+                  }
+                },
                 "name": {
                   "default": null,
                   "nullable": true,
@@ -73566,6 +73977,22 @@
                         }
                       }
                     },
+                    "expected_state": {
+                      "default": null,
+                      "nullable": false,
+                      "protected": false,
+                      "required": false,
+                      "type": "String",
+                      "validators": {
+                        "include": {
+                          "values": {
+                            "draft": null,
+                            "published": null,
+                            "retracted": null
+                          }
+                        }
+                      }
+                    },
                     "mitigated_since": {
                       "default": null,
                       "nullable": true,
@@ -73791,6 +74218,22 @@
                       "validators": {
                         "present": {
                           "empty": false
+                        }
+                      }
+                    },
+                    "expected_state": {
+                      "default": null,
+                      "nullable": false,
+                      "protected": false,
+                      "required": false,
+                      "type": "String",
+                      "validators": {
+                        "include": {
+                          "values": {
+                            "draft": null,
+                            "published": null,
+                            "retracted": null
+                          }
                         }
                       }
                     }
@@ -74137,6 +74580,22 @@
                         }
                       }
                     },
+                    "expected_state": {
+                      "default": null,
+                      "nullable": false,
+                      "protected": false,
+                      "required": false,
+                      "type": "String",
+                      "validators": {
+                        "include": {
+                          "values": {
+                            "draft": null,
+                            "published": null,
+                            "retracted": null
+                          }
+                        }
+                      }
+                    },
                     "mitigated_since": {
                       "default": null,
                       "nullable": true,
@@ -74371,6 +74830,22 @@
                     }
                   }
                 },
+                "expected_state": {
+                  "default": null,
+                  "nullable": false,
+                  "protected": false,
+                  "required": false,
+                  "type": "String",
+                  "validators": {
+                    "include": {
+                      "values": {
+                        "draft": null,
+                        "published": null,
+                        "retracted": null
+                      }
+                    }
+                  }
+                },
                 "security_advisory": {
                   "choices": {
                     "help": "/v7.0/security_advisories?method=GET",
@@ -74519,6 +74994,22 @@
                   "validators": {
                     "present": {
                       "empty": false
+                    }
+                  }
+                },
+                "expected_state": {
+                  "default": null,
+                  "nullable": false,
+                  "protected": false,
+                  "required": false,
+                  "type": "String",
+                  "validators": {
+                    "include": {
+                      "values": {
+                        "draft": null,
+                        "published": null,
+                        "retracted": null
+                      }
                     }
                   }
                 }
@@ -74933,6 +75424,22 @@
                   "validators": {
                     "present": {
                       "empty": false
+                    }
+                  }
+                },
+                "expected_state": {
+                  "default": null,
+                  "nullable": false,
+                  "protected": false,
+                  "required": false,
+                  "type": "String",
+                  "validators": {
+                    "include": {
+                      "values": {
+                        "draft": null,
+                        "published": null,
+                        "retracted": null
+                      }
                     }
                   }
                 },

@@ -4,25 +4,32 @@ import { createResource as child0 } from "./resources/node_status/resource.js";
 import type { SecurityAdvisory__NodeStatusResource } from "./resources/node_status/resource.js";
 import { createAction as bind0 } from "./actions/create.js";
 import type { SecurityAdvisory__CreateAction } from "./actions/create.js";
-import { createAction as bind1 } from "./actions/index.js";
+import { createAction as bind1 } from "./actions/delete.js";
+import type { SecurityAdvisory__DeleteAction } from "./actions/delete.js";
+import { createAction as bind2 } from "./actions/index.js";
 import type { SecurityAdvisory__IndexAction } from "./actions/index.js";
-import { createAction as bind2 } from "./actions/publish.js";
+import { createAction as bind3 } from "./actions/publish.js";
 import type { SecurityAdvisory__PublishAction } from "./actions/publish.js";
-import { createAction as bind3 } from "./actions/rebuild_affected_vps.js";
+import { createAction as bind4 } from "./actions/rebuild_affected_vps.js";
 import type { SecurityAdvisory__RebuildAffectedVpsAction } from "./actions/rebuild_affected_vps.js";
-import { createAction as bind4 } from "./actions/show.js";
+import { createAction as bind5 } from "./actions/retract.js";
+import type { SecurityAdvisory__RetractAction } from "./actions/retract.js";
+import { createAction as bind6 } from "./actions/show.js";
 import type { SecurityAdvisory__ShowAction } from "./actions/show.js";
-import { createAction as bind5 } from "./actions/update.js";
+import { createAction as bind7 } from "./actions/update.js";
 import type { SecurityAdvisory__UpdateAction } from "./actions/update.js";
 
 export interface SecurityAdvisoryResource {
   readonly node_status: SecurityAdvisory__NodeStatusResource;
   readonly create: SecurityAdvisory__CreateAction;
   readonly new: SecurityAdvisory__CreateAction;
+  readonly delete: SecurityAdvisory__DeleteAction;
+  readonly destroy: SecurityAdvisory__DeleteAction;
   readonly index: SecurityAdvisory__IndexAction;
   readonly list: SecurityAdvisory__IndexAction;
   readonly publish: SecurityAdvisory__PublishAction;
   readonly rebuild_affected_vps: SecurityAdvisory__RebuildAffectedVpsAction;
+  readonly retract: SecurityAdvisory__RetractAction;
   readonly show: SecurityAdvisory__ShowAction;
   readonly find: SecurityAdvisory__ShowAction;
   readonly update: SecurityAdvisory__UpdateAction;
@@ -39,16 +46,21 @@ export function createResource(
   const action3 = bind3(execute, metaNamespace);
   const action4 = bind4(execute, metaNamespace);
   const action5 = bind5(execute, metaNamespace);
+  const action6 = bind6(execute, metaNamespace);
+  const action7 = bind7(execute, metaNamespace);
   return {
     node_status: child0(execute, metaNamespace),
     create: action0,
     new: action0,
-    index: action1,
-    list: action1,
-    publish: action2,
-    rebuild_affected_vps: action3,
-    show: action4,
-    find: action4,
-    update: action5,
+    delete: action1,
+    destroy: action1,
+    index: action2,
+    list: action2,
+    publish: action3,
+    rebuild_affected_vps: action4,
+    retract: action5,
+    show: action6,
+    find: action6,
+    update: action7,
   };
 }

@@ -17,6 +17,7 @@ export type SecurityAdvisory__NodeStatus__CreateInput = {
   cs_note?: string | null | undefined;
   en_note?: string | null | undefined;
   expected_content_revision: number;
+  expected_state?: string | undefined;
   mitigated_since?: string | null | undefined;
   node: number;
   state: string;
@@ -114,6 +115,13 @@ const descriptor = {
       emitted_name: "expected_content_revision",
       kind: "Integer",
       required: true,
+      nullable: false,
+    },
+    {
+      wire_name: "expected_state",
+      emitted_name: "expected_state",
+      kind: "String",
+      required: false,
       nullable: false,
     },
     {

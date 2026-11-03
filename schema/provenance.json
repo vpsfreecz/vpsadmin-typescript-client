@@ -15,10 +15,10 @@
     "tools/test_db.rb": "b9faee4880ac40526808eae5aa408e3160adff5f4efe92eddfdaee115eb29e5c"
   },
   "inventory": {
-    "actions": 519,
-    "parameters": 8720,
+    "actions": 521,
+    "parameters": 8760,
     "resources": 151,
-    "scopes_sha256": "2e575a597445cf4b4277596c5f7f990b04f75a56dca2a0a3ce80d5c7a2abe177"
+    "scopes_sha256": "a8d34345461583b9c489067ef72829a62add2cd119e815c9e318ad459602590a"
   },
   "locale": "en",
   "plugins": {
@@ -48,7 +48,7 @@
         20240124185400,
         20260601121000
       ],
-      "source_sha256": "b575d3086c53a9d77af6e8fce94658ec1d6004b8e5c959aeb68817178ed35a5d",
+      "source_sha256": "23fd593c5b6c5dcf32a146a5f61635dbbfb5921257a6388de1df73964cc022f4",
       "version": "4.2.1"
     },
     "payments": {
@@ -82,10 +82,10 @@
   },
   "profile": "vpsadmin-full-fixture",
   "protocol_version": "2.0",
-  "schema_sha256": "476f0086726a443a6ef8ad9a9d499bd3feff6eb6c5b0b652dcc999192d638794",
+  "schema_sha256": "d6ec617653913c56e92398a6032aa350118597a0e3f45c599bc92b6071ea0a26",
   "source": {
     "repository": "git@github.com:vpsfreecz/vpsadmin.git",
-    "revision": "5586ea8ab7dbf7e116083b0ea1819ea4d17f66a5"
+    "revision": "942c6eaed41331f823d8e0f670ed239e2b308440"
   },
   "tooling": {
     "bundler": "4.0.23",
