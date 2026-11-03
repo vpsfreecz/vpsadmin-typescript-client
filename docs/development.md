@@ -54,6 +54,12 @@ complete declared fixture capture, including all six configured plugins; a
 permission-filtered live description is not a replacement. Check compatibility
 before using the generated package with another API release.
 
+Follow vpsAdmin's [generated-client synchronization procedure](https://github.com/vpsfreecz/vpsadmin/blob/master/docs/api-schema-export.md#generated-client-synchronization)
+when API contracts or generator output change. It covers the Go, Rust and
+TypeScript clients and the evidence needed to finish synchronization. This
+repository's offline checks verify the saved inputs and generated output;
+they do not establish freshness against the current vpsAdmin API source.
+
 The committed inputs are:
 
 - `schema/schema.json`: canonical API 7.0/protocol 2.0 mounted-source snapshot,

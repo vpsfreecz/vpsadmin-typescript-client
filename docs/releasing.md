@@ -3,6 +3,12 @@
 The package is published on npm under the MIT license. The release workflow
 validates candidate archives before a separately authorized publication.
 
+Default a TypeScript-client release to the next minor version unless the user
+explicitly specifies a version or bump. Check the current tags and npm releases
+before selecting the version. Ordinary source synchronization does not require
+publication; follow the [generated-client synchronization procedure](https://github.com/vpsfreecz/vpsadmin/blob/master/docs/api-schema-export.md#generated-client-synchronization)
+for the separate release requirement when a WebUI change needs new SDK support.
+
 ## Build-only validation
 
 `.github/workflows/release.yml` validates branch pushes, pull requests and manual
