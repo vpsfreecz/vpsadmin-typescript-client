@@ -47,7 +47,7 @@ operation's implementation and declarations.
 Applications import from `vpsadmin-typescript-client`. Individual generated
 module paths are internal and are not package subpath exports.
 
-The saved schema covers 151 application resources and 521 actions. One
+The saved schema covers 152 application resources and 522 actions. One
 authentication resource and five authentication actions are retained and validated
 in the snapshot, counted separately, and excluded from generation. This is the
 complete declared fixture capture, including all six configured plugins; a
@@ -129,3 +129,24 @@ the exact `haveapi-client` 0.32.0 peer dependency.
 
 See [release preparation](releasing.md) for build-only workflow checks,
 trusted-publisher setup prerequisites and the retained-archive publication path.
+
+
+## Secondary DNS contract synchronization
+
+The saved full fixture comes from committed API
+`68a36237b0bad9625fb25965bd415e801ddccf4c`. Its raw schema SHA-256 is
+`46317b52cbb73ddb54973e5227a9a274bc74f76834eb8e4ead3f2266cf46a972`;
+no transformation is applied. It adds the read-only
+`dns_server_zone_primary_transfer_state` resource, meaningful-evidence currentness,
+configured-primary readiness aggregates, per-secondary `zone_status` and
+source-classified diagnostics including `legacy`. Existing DNS server writes
+also expose their probe configuration fields. Generated members do not infer
+readiness from serial equality or grant permission to read these paths.
+
+The HaveAPI generator stays at
+`1ef9b204ba45bb261d3334be5c555cc1856b713b`, with its recorded formatter and
+shared Ruby-client 0.32.2 inputs. The JavaScript runtime peer remains exact
+`haveapi-client@0.32.0`. No version bump or publication is part of source
+synchronization. Consumers must check live API capabilities before new calls;
+old servers retain the preceding operations and reject unavailable new routes.
+Restore schema/provenance/tooling pins and generated output together for rollback.

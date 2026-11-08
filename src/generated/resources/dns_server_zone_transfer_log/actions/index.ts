@@ -14,8 +14,11 @@ import type {
 } from "../../../runtime.js";
 
 export type DnsServerZoneTransferLog__IndexInput = {
+  attempt_kind?: string | undefined;
   dns_server_zone?: number | undefined;
   dns_zone?: number | undefined;
+  dns_zone_transfer?: number | null | undefined;
+  failure_class?: string | null | undefined;
   from_id?: number | undefined;
   limit?: number | undefined;
   order?: string | undefined;
@@ -25,16 +28,21 @@ export type DnsServerZoneTransferLog__IndexInput = {
 };
 
 export type DnsServerZoneTransferLog__IndexOutput = Array<{
+  attempt_kind?: string | null;
   created_at?: string | null;
   dns_server_zone?: Partial<Record<"id", unknown>> | null;
+  dns_zone_transfer?: Partial<Record<"id", unknown>> | null;
   event_at?: string | null;
   event_key?: string | null;
+  failure_class?: string | null;
   id?: number | null;
   message?: string | null;
   primary_addr?: string | null;
+  primary_serial?: number | null;
   raw_message?: string | null;
   reason?: string | null;
   reason_code?: string | null;
+  secondary_serial?: number | null;
   serial?: number | null;
   source_cursor?: string | null;
   status?: string | null;
@@ -98,6 +106,13 @@ const descriptor = {
   metaNamespace: "_meta",
   input: [
     {
+      wire_name: "attempt_kind",
+      emitted_name: "attempt_kind",
+      kind: "String",
+      required: false,
+      nullable: false,
+    },
+    {
       wire_name: "dns_server_zone",
       emitted_name: "dns_server_zone",
       kind: "Resource",
@@ -110,6 +125,20 @@ const descriptor = {
       kind: "Resource",
       required: false,
       nullable: false,
+    },
+    {
+      wire_name: "dns_zone_transfer",
+      emitted_name: "dns_zone_transfer",
+      kind: "Resource",
+      required: false,
+      nullable: true,
+    },
+    {
+      wire_name: "failure_class",
+      emitted_name: "failure_class",
+      kind: "String",
+      required: false,
+      nullable: true,
     },
     {
       wire_name: "from_id",
@@ -179,16 +208,21 @@ const descriptor = {
   ],
   objectInput: null,
   outputNames: [
+    "attempt_kind",
     "created_at",
     "dns_server_zone",
+    "dns_zone_transfer",
     "event_at",
     "event_key",
+    "failure_class",
     "id",
     "message",
     "primary_addr",
+    "primary_serial",
     "raw_message",
     "reason",
     "reason_code",
+    "secondary_serial",
     "serial",
     "source_cursor",
     "status",

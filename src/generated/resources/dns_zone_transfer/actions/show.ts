@@ -21,7 +21,13 @@ export type DnsZoneTransfer__ShowOutput = {
   dns_zone?: Partial<Record<"id" | "label", unknown>> | null;
   host_ip_address?: Partial<Record<"id" | "addr", unknown>> | null;
   id?: number | null;
+  last_transfer_check_at?: string | null;
   peer_type?: string | null;
+  transfer_check_failed_count?: number | null;
+  transfer_check_pending_count?: number | null;
+  transfer_check_server_count?: number | null;
+  transfer_check_status?: string | null;
+  transfer_check_success_count?: number | null;
   updated_at?: string | null;
 };
 

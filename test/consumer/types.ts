@@ -79,3 +79,20 @@ client.network.update({ path: { network_id: 1 }, params: { label: null } });
 client.network.index({ meta: { includes: ['primary_location'] } });
 // @ts-expect-error authentication routes remain owned by the HaveAPI runtime
 client.authentication.token.request();
+
+
+const readiness = await client.dns_server_zone_primary_transfer_state.index({
+  params: { dns_zone: 42, dns_zone_transfer: 3, from_id: 7, limit: 25 },
+});
+const current: boolean | null | undefined = readiness.data[0]?.evidence_current;
+const checkTime: string | null | undefined = readiness.data[0]?.last_attempt_at;
+const serving = await client.dns_server_zone.index();
+const servingState: string | null | undefined = serving.data[0]?.zone_status;
+const transfers = await client.dns_zone_transfer.index();
+const failedCount: number | null | undefined = transfers.data[0]?.transfer_check_failed_count;
+client.dns_server_zone_transfer_log.index({ params: { attempt_kind: 'legacy', dns_zone_transfer: 3 } });
+// @ts-expect-error currentness is a readonly output, not an index filter
+client.dns_server_zone_primary_transfer_state.index({ params: { evidence_current: true } });
+// @ts-expect-error permission-filtered currentness can be absent or null
+const requiredCurrent: boolean = readiness.data[0]?.evidence_current;
+void [current, checkTime, servingState, failedCount, requiredCurrent];

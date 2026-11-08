@@ -16,16 +16,21 @@ import type {
 export type DnsServerZoneTransferLog__ShowInput = Record<string, never>;
 
 export type DnsServerZoneTransferLog__ShowOutput = {
+  attempt_kind?: string | null;
   created_at?: string | null;
   dns_server_zone?: Partial<Record<"id", unknown>> | null;
+  dns_zone_transfer?: Partial<Record<"id", unknown>> | null;
   event_at?: string | null;
   event_key?: string | null;
+  failure_class?: string | null;
   id?: number | null;
   message?: string | null;
   primary_addr?: string | null;
+  primary_serial?: number | null;
   raw_message?: string | null;
   reason?: string | null;
   reason_code?: string | null;
+  secondary_serial?: number | null;
   serial?: number | null;
   source_cursor?: string | null;
   status?: string | null;

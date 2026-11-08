@@ -38,6 +38,7 @@ export type DnsServerZone__CreateOutput = {
   serial?: number | null;
   type?: string | null;
   updated_at?: string | null;
+  zone_status?: string | null;
 };
 
 export type DnsServerZone__CreateGlobalInput = {

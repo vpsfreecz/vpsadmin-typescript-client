@@ -28,7 +28,13 @@ export type DnsZoneTransfer__IndexOutput = Array<{
   dns_zone?: Partial<Record<"id" | "label", unknown>> | null;
   host_ip_address?: Partial<Record<"id" | "addr", unknown>> | null;
   id?: number | null;
+  last_transfer_check_at?: string | null;
   peer_type?: string | null;
+  transfer_check_failed_count?: number | null;
+  transfer_check_pending_count?: number | null;
+  transfer_check_server_count?: number | null;
+  transfer_check_status?: string | null;
+  transfer_check_success_count?: number | null;
   updated_at?: string | null;
   _meta?: DnsZoneTransfer__IndexObjectOutput | null;
 }>;
@@ -161,7 +167,13 @@ const descriptor = {
     "dns_zone",
     "host_ip_address",
     "id",
+    "last_transfer_check_at",
     "peer_type",
+    "transfer_check_failed_count",
+    "transfer_check_pending_count",
+    "transfer_check_server_count",
+    "transfer_check_status",
+    "transfer_check_success_count",
     "updated_at",
   ],
   objectOutput: true,

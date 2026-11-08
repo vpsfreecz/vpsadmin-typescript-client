@@ -40,6 +40,7 @@ export type DnsServerZone__IndexOutput = Array<{
   serial?: number | null;
   type?: string | null;
   updated_at?: string | null;
+  zone_status?: string | null;
   _meta?: DnsServerZone__IndexObjectOutput | null;
 }>;
 
@@ -174,6 +175,7 @@ const descriptor = {
     "serial",
     "type",
     "updated_at",
+    "zone_status",
   ],
   objectOutput: true,
 } as const;

@@ -16,8 +16,8 @@ import type {
 export type DnsServer__CreateInput = {
   enable_user_dns_zones?: boolean | undefined;
   hidden?: boolean | undefined;
-  ipv4_addr?: string | undefined;
-  ipv6_addr?: string | undefined;
+  ipv4_addr?: string | null | undefined;
+  ipv6_addr?: string | null | undefined;
   name: string;
   node: number;
   user_dns_zone_type?: string | undefined;
@@ -104,14 +104,14 @@ const descriptor = {
       emitted_name: "ipv4_addr",
       kind: "String",
       required: false,
-      nullable: false,
+      nullable: true,
     },
     {
       wire_name: "ipv6_addr",
       emitted_name: "ipv6_addr",
       kind: "String",
       required: false,
-      nullable: false,
+      nullable: true,
     },
     {
       wire_name: "name",

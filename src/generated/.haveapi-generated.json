@@ -4,14 +4,14 @@
     "runtime_import": "haveapi-client"
   },
   "coverage": {
-    "application_action_count": 521,
-    "application_resource_count": 151,
+    "application_action_count": 522,
+    "application_resource_count": 152,
     "authentication_action_count": 5,
     "authentication_exclusion": "Authentication resources are retained and validated; the existing runtime owns their API-root routes.",
     "authentication_resource_count": 1
   },
   "files": {
-    "api.ts": "5442982a3173565daf534d67c975f5e7311090baa69da86d049a7e5f46d78ed7",
+    "api.ts": "720489f009451f58ed6b6b3e988f4499bce5f7d5cedafdae56e4de6f670ccf63",
     "descriptions.ts": "36f2c93d11f195b17d8d7217fff230b6a5b054d0aaec62f29bc3e7bbe231decc",
     "index.ts": "2a879cfd5f39c537a88eed0d8c071625a1bb6191d35c69e5a6134073cf79324b",
     "resources/action_state/actions/cancel.ts": "7f0215c6499e612a7899c5d242ee37fa2f196d4f43e1ae0fb777436674cc87cd",
@@ -110,19 +110,21 @@
     "resources/dns_resolver/actions/show.ts": "18ae6412a85e6842b782456363bd0eec48a670d1e58390fb0daf9c6b39ceab45",
     "resources/dns_resolver/actions/update.ts": "05b1cf01b7f8683399df32e5691da0596c02209a8e45eff5a67e5c8a1dd15a1c",
     "resources/dns_resolver/resource.ts": "42ab614564706e5e376c8fb533fa86dc0af600efc10f49081eb3bd9ccf9332ea",
-    "resources/dns_server/actions/create.ts": "1e76ff5900cd385e250d55ec945bfafd2c3b014d6e1d05c19f1be472b191bc75",
+    "resources/dns_server/actions/create.ts": "2fbccbb204c0c4a72747b88021ae0f82880ae135bc715b61d8527c3ab79cbc44",
     "resources/dns_server/actions/delete.ts": "f2b323c8bceec66e9949aadb63b8fbd10963a1a0c5685a0075092341a5be7f4a",
     "resources/dns_server/actions/index.ts": "0adfeeb9f4624fd863184d74217a9e57b0a418ba7c4a834e46ca13435081e974",
     "resources/dns_server/actions/show.ts": "8d784f907a61ccebb02c9415ff4947bb9abb113273d7f3c1f1aa6d3178fbea2e",
-    "resources/dns_server/actions/update.ts": "fc0481a4f2fa931252372e1f760769bc13e6c8ab8c3c6b8d5afd51c0f43ce09d",
+    "resources/dns_server/actions/update.ts": "2dc9b907d93e453666024ac432676d2c945065246c4079a3b9f5635c34270026",
     "resources/dns_server/resource.ts": "50083f7820bdd5fe311a7f532d560e6d99c192985f90fbdea2c9f74fd9972626",
-    "resources/dns_server_zone/actions/create.ts": "edba13bbf2ad83714e70ca68b771af17563f7b97e591122a1f8df2a7500d6d4b",
+    "resources/dns_server_zone/actions/create.ts": "a8869cffc720e0f7820f46a31f8dc4bc49a2e57f57ab33a5f6584b61dbeba8f5",
     "resources/dns_server_zone/actions/delete.ts": "db82f354b38ae9ef6df350582268e04a2538fc6f34baad9f59840e88c4ce5b7d",
-    "resources/dns_server_zone/actions/index.ts": "454b0fd0f8f771d8af251e1d2193a06712d1da07b0e0b053a44c8b4b33f8801c",
-    "resources/dns_server_zone/actions/show.ts": "c28583e5c3de630b14be7cff7859b1e79beae386e4beac99dfcdd19316324884",
+    "resources/dns_server_zone/actions/index.ts": "eb24e5be28232b9cac3b2094bcdebc0a70fe3d57cd2e1ab135d0a803a4e31e3c",
+    "resources/dns_server_zone/actions/show.ts": "641352f84fabd71e98eb5646b8a2376cf066399a9f55a875a5163de846d1649a",
     "resources/dns_server_zone/resource.ts": "6bb30661a5ed7d6b16e9327c8dc679544cc297e4aed1d93353ab89f6c028d0fc",
-    "resources/dns_server_zone_transfer_log/actions/index.ts": "3931c201c6fb73c57036eafbef4797e6781365fd9582236719b1ba63da624b53",
-    "resources/dns_server_zone_transfer_log/actions/show.ts": "04a56d5b2eb54a8bbfff8f0c2190f6937a9a599c727166f4e364d07e798c6cf9",
+    "resources/dns_server_zone_primary_transfer_state/actions/index.ts": "281f020fec035075c6c236c1a2a2fb767fa61379d8066d66021baa98e4c63707",
+    "resources/dns_server_zone_primary_transfer_state/resource.ts": "2a8dd02f95f9855c79650870c2a6878788c17eefee0a5653c5d4764531ad57f1",
+    "resources/dns_server_zone_transfer_log/actions/index.ts": "2a50f15ad874e45d6b342942682e5611f2af7ae0425f2c08e9e520047d18f6a8",
+    "resources/dns_server_zone_transfer_log/actions/show.ts": "f10af132248cea238e7757b3c25e7fc48cb2959b701a131a41df0c97fc8b8171",
     "resources/dns_server_zone_transfer_log/resource.ts": "53777c6612542cb30503f5618847d9dc83a53dbb4c469dacfbe0b82800980bba",
     "resources/dns_tsig_key/actions/create.ts": "11993daaef29b695f22b19c64420d7720c1fe47ee487e91176f2f86e6ff22c9f",
     "resources/dns_tsig_key/actions/delete.ts": "a51f00c9d8d855bb3323894bc183110347fd8a5334445b9c6fd749c746fcd94d",
@@ -135,10 +137,10 @@
     "resources/dns_zone/actions/show.ts": "e2c1266c703377c4ace7916357141c3421fcc040c2b2fe6eba1d3aa96daeafb7",
     "resources/dns_zone/actions/update.ts": "f14289f7c0440ab9a0ae61fb3d0fcda10b49d0b15a8bebb8a315cae314960a39",
     "resources/dns_zone/resource.ts": "90704394ff458f251454fd1396ae154c899f516af36f519b081d9040c3110432",
-    "resources/dns_zone_transfer/actions/create.ts": "e99939a493f8c4e2f17788e07c2dd5cc6bd1762080ddb5fb3f247e6ae8031f3f",
+    "resources/dns_zone_transfer/actions/create.ts": "758a8a5abd3468f15b2bebbed42b55444a81fc4581ec546d4750efcc35359ebc",
     "resources/dns_zone_transfer/actions/delete.ts": "8ce738d647f941ffda0a211edee62d15574bf59fd6b43199668888974140c194",
-    "resources/dns_zone_transfer/actions/index.ts": "edd148129601b8042a851e65d301bdde8fba8d5e663146804bbed82fa8f93849",
-    "resources/dns_zone_transfer/actions/show.ts": "fe0b8a5fb1db8ff7a27b0e65dbae9774c861e01100374ef7ee98d23f1f48c836",
+    "resources/dns_zone_transfer/actions/index.ts": "f941fa21dc1b736d6f6c49d5fa00dec65071cd9bf67f36f7eb04a1c092aa26ac",
+    "resources/dns_zone_transfer/actions/show.ts": "c5d7a1b0d37c2181d515843f18084baeb41dcda2ecf955f7680fb5f5b1206311",
     "resources/dns_zone_transfer/resource.ts": "0a93aa3487c97eb9f304330e83342f0c109a9d8979b74e32e53cba8ed0a81577",
     "resources/dnssec_record/actions/index.ts": "0f0672e0091531c15161687fb07d8af1346524c764e029f2be6df436389ad810",
     "resources/dnssec_record/actions/show.ts": "d9d54f5904f70dedada87245238f71edb46e904b0cc0b997f7d4cd41bdc853be",
@@ -687,7 +689,7 @@
     "resources/webui_user_setting/actions/show.ts": "5c3633e5f05a72c0af5b4470fd45161ae777ed7e3872aaadb31cf49a2e8ad66b",
     "resources/webui_user_setting/resource.ts": "da734dec0115cd461b21f5e685d9ecdbb76d183f9424932adffef1307f8b069d",
     "runtime.ts": "8ec81accc1c29a4effe8576dd41a776bd4cd4270986d956fa837f41fe49b1649",
-    "types.ts": "8c77120dcca2066445ea13186621052178c23a17810c629766afc1030f13c98a"
+    "types.ts": "6f6206f1929fa2ae883bb17545a15343eef99a0a0d1a1698db5bd10ab2a6eede"
   },
   "format": 1,
   "formatter": {
@@ -700,5 +702,5 @@
   "owner": "haveapi-typescript-client",
   "profile": "vpsadmin-full-fixture",
   "protocol_version": "2.0",
-  "schema_sha256": "d6ec617653913c56e92398a6032aa350118597a0e3f45c599bc92b6071ea0a26"
+  "schema_sha256": "46317b52cbb73ddb54973e5227a9a274bc74f76834eb8e4ead3f2266cf46a972"
 }

@@ -27,7 +27,7 @@ test('generated modules compose behind the unchanged public package surface', as
 
 test('versioned Network read preserves namespaces, options and partial response receipts', async () => {
   assert.equal(API_VERSION, '7.0');
-  assert.equal(SCHEMA_SHA256, 'd6ec617653913c56e92398a6032aa350118597a0e3f45c599bc92b6071ea0a26');
+  assert.equal(SCHEMA_SHA256, '46317b52cbb73ddb54973e5227a9a274bc74f76834eb8e4ead3f2266cf46a972');
   const signal = new AbortController().signal;
   const headers = { 'X-Request-Id': 'consumer' };
   const receipt = {
@@ -224,4 +224,26 @@ test('advisory mutations send revision and state guards through the published ru
     server.closeAllConnections();
     await new Promise((resolve) => server.close(resolve));
   }
+});
+
+
+test('DNS readiness reads use generated namespaces and preserve stale raw evidence', async () => {
+  const calls = [];
+  const row = { id: 1, status: 'success', evidence_current: false, last_attempt_kind: 'ixfr_probe' };
+  const receipt = { data: [row], meta: { total_count: 1 }, envelope: { status: true }, httpStatus: 200 };
+  const client = createVpsAdminClient({ execute: async spec => { calls.push(spec); return receipt; } });
+  const result = await client.dns_server_zone_primary_transfer_state.index({
+    params: { dns_zone: 42, dns_zone_transfer: 3, from_id: 7, limit: 25 },
+    meta: { includes: 'dns_server_zone__dns_server,dns_zone_transfer__host_ip_address' },
+  });
+  assert.equal(calls[0].path, '/dns_server_zone_primary_transfer_states');
+  assert.equal(calls[0].inputNamespace, 'dns_server_zone_primary_transfer_state');
+  assert.equal(calls[0].outputNamespace, 'dns_server_zone_primary_transfer_states');
+  assert.deepEqual({ ...calls[0].params }, { dns_zone: 42, dns_zone_transfer: 3, from_id: 7, limit: 25 });
+  assert.equal(result.data, receipt.data);
+  assert.equal(result.data[0].evidence_current, false);
+  await client.dns_server_zone_transfer_log.index({ params: { attempt_kind: 'legacy', dns_zone_transfer: 3 } });
+  assert.deepEqual({ ...calls[1].params }, { attempt_kind: 'legacy', dns_zone_transfer: 3 });
+  await assert.rejects(client.dns_server_zone_primary_transfer_state.index({ params: { evidence_current: true } }), ClientInputError);
+  assert.equal(calls.length, 2, 'readonly currentness is never sent as an invented filter');
 });

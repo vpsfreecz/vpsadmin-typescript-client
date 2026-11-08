@@ -1053,6 +1053,19 @@ export type {
 } from "./resources/dns_server_zone/actions/show.js";
 export type { DnsServerZoneResource } from "./resources/dns_server_zone/resource.js";
 export type {
+  DnsServerZonePrimaryTransferState__IndexInput,
+  DnsServerZonePrimaryTransferState__IndexOutput,
+  DnsServerZonePrimaryTransferState__IndexGlobalInput,
+  DnsServerZonePrimaryTransferState__IndexGlobalOutput,
+  DnsServerZonePrimaryTransferState__IndexObjectInput,
+  DnsServerZonePrimaryTransferState__IndexObjectOutput,
+  DnsServerZonePrimaryTransferState__IndexPath,
+  DnsServerZonePrimaryTransferState__IndexOptions,
+  DnsServerZonePrimaryTransferState__IndexDescribeOptions,
+  DnsServerZonePrimaryTransferState__IndexAction,
+} from "./resources/dns_server_zone_primary_transfer_state/actions/index.js";
+export type { DnsServerZonePrimaryTransferStateResource } from "./resources/dns_server_zone_primary_transfer_state/resource.js";
+export type {
   DnsServerZoneTransferLog__IndexInput,
   DnsServerZoneTransferLog__IndexOutput,
   DnsServerZoneTransferLog__IndexGlobalInput,
