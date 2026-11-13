@@ -47,7 +47,7 @@ operation's implementation and declarations.
 Applications import from `vpsadmin-typescript-client`. Individual generated
 module paths are internal and are not package subpath exports.
 
-The saved schema covers 151 application resources and 521 actions. One
+The saved schema covers 154 application resources and 527 actions. One
 authentication resource and five authentication actions are retained and validated
 in the snapshot, counted separately, and excluded from generation. This is the
 complete declared fixture capture, including all six configured plugins; a
@@ -59,6 +59,40 @@ when API contracts or generator output change. It covers the Go, Rust and
 TypeScript clients and the evidence needed to finish synchronization. This
 repository's offline checks verify the saved inputs and generated output;
 they do not establish freshness against the current vpsAdmin API source.
+
+Use `incident_policy.index` to discover policies and `vps.incident_policy.index`
+or `vps.incident_policy.show` to read their current rows for a VPS. Policy keys
+come from the registry at runtime; the generated client does not enumerate a
+site's configured policies. The path encoder accepts string and numeric scalar
+segments. Pass the registry's string key when addressing a policy.
+
+Update limits through `vps.incident_policy.update` with the VPS ID and policy
+key. Explicit null clears an override so the limit is inherited. This synchronous
+update returns the authoritative policy row. Change shared shutdown permission
+in a separate VPS update, then read the VPS to confirm its current value.
+
+Current policy rows include counts, limits, overrides and `configuration_valid`,
+even before any incident matches. Limits reflect the declaration and current
+overrides. Invalid configurations have null effective limits and status.
+Evaluation IDs, timestamps, states and nested incident-report policy evaluations
+describe saved history. They do not supply current limits or predict whether a
+policy will match a future event. Timestamps remain wire strings. Check the
+server's capabilities before enabling these calls. Optional output values remain
+absent or null when the server supplies no fact.
+
+Saved evaluations include nullable `matched` and the count-window lengths
+`warning_period_days` and `stop_period_days`. Keep `true`, `false`, `null` and
+missing membership distinct. A report's `notice_policy_key` and
+`notice_policy_label` identify its saved originating policy and can be null
+or absent. They do not select a current policy. Active registry and VPS policy
+metadata have no `source_type` field.
+
+Incident reports expose nullable notice kind, triggering report ID and mail
+state. Ordinary reports return null for all three. Notice kind distinguishes a
+warning from a confirmed stop. The triggering report ID is an integer and may
+be unavailable. Mail state `pending` means the notice has not been queued.
+`queued` does not establish SMTP success; `sent` means SMTP succeeded, without
+proving delivery to the recipient's inbox.
 
 The committed inputs are:
 

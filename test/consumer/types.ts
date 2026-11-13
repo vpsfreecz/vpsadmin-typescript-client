@@ -79,3 +79,72 @@ client.network.update({ path: { network_id: 1 }, params: { label: null } });
 client.network.index({ meta: { includes: ['primary_location'] } });
 // @ts-expect-error authentication routes remain owned by the HaveAPI runtime
 client.authentication.token.request();
+
+
+// Runtime string keys select generic policy resources; configured keys are not enums.
+const key: string = 'another_policy';
+const registry = await client.incident_policy.index();
+const declared = await client.incident_policy.show({ path: { key } });
+const policies = await client.vps.incident_policy.index({ path: { vps_id: 1 } });
+const current = await client.vps.incident_policy.show({ path: { vps_id: 1, key } });
+const updated = await client.vps.incident_policy.update({
+  path: { vps_id: 1, key },
+  params: { warning_limit_override: null, stop_limit_override: 12 },
+});
+const shared = await client.vps.show({ path: { vps_id: 1 } });
+client.vps.update({ path: { vps_id: 1 }, params: { incident_enforcement_enabled: false } });
+client.vps.index({ params: { incident_policy: key, incident_status: 'near_limit' } });
+const labels: (string | null | undefined)[] = [declared.data.key, declared.data.label, current.data.description, current.data.global_mode, current.data.effective_mode, current.data.status];
+const counts: (number | null | undefined)[] = [current.data.count_7d, current.data.count_30d, current.data.warning_limit, current.data.stop_limit, current.data.warning_limit_override, current.data.stop_limit_override, shared.data.incident_warning_count, shared.data.incident_stop_threshold_count];
+const flags: (boolean | null | undefined)[] = [current.data.configuration_valid, current.data.stop_enforced, shared.data.incident_enforcement_enabled];
+const historical = await client.incident_report.policy_evaluation.index({ path: { incident_report_id: 3 } });
+const evaluation = historical.data[0];
+const savedTime: string | null | undefined = evaluation?.evaluated_at;
+const savedKey: string | null | undefined = evaluation?.policy_key;
+const matched: boolean | null | undefined = evaluation?.matched;
+const warningDays: number | null | undefined = evaluation?.warning_period_days;
+const stopDays: number | null | undefined = evaluation?.stop_period_days;
+// @ts-expect-error unavailable membership cannot be treated as false
+const knownMembership: boolean = evaluation?.matched;
+// @ts-expect-error source admission metadata is absent from reusable policies
+const oldRegistrySource = declared.data.source_type;
+// @ts-expect-error current VPS policy rows do not declare a source type
+const oldPolicySource = current.data.source_type;
+const samePolicyOutput: typeof current.data | undefined = policies.data[0];
+const authoritativeUpdate: typeof current.data = updated.data;
+void [registry, labels, counts, flags, savedTime, savedKey, matched, warningDays, stopDays, knownMembership, oldRegistrySource, oldPolicySource, samePolicyOutput, authoritativeUpdate];
+// @ts-expect-error generic path scalars reject booleans
+client.vps.incident_policy.show({ path: { vps_id: 1, key: true } });
+// @ts-expect-error enforcement is a non-null shared VPS boolean
+client.vps.update({ path: { vps_id: 1 }, params: { incident_enforcement_enabled: null } });
+// @ts-expect-error override fields retain numeric types
+client.vps.incident_policy.update({ path: { vps_id: 1, key }, params: { warning_limit_override: '5' } });
+// @ts-expect-error overrides no longer belong to the shared VPS Update
+client.vps.update({ path: { vps_id: 1 }, params: { incident_warning_limit_override: 5 } });
+// @ts-expect-error policy configuration cannot reset shared permission
+client.vps.incident_policy.update({ path: { vps_id: 1, key }, params: { incident_enforcement_enabled: false } });
+// @ts-expect-error obsolete flat summary fields are absent
+const oldLimit = shared.data.incident_warning_limit;
+// @ts-expect-error nullable current limits cannot be treated as known thresholds
+const knownLimit: number = current.data.warning_limit;
+// @ts-expect-error output-only counters cannot be updated
+client.vps.update({ path: { vps_id: 1 }, params: { incident_warning_count: 5 } });
+const reportPage = await client.incident_report.index({ params: { vps: 1, policy_key: key } });
+const reportDetail = await client.incident_report.show({ path: { incident_report_id: 1 } });
+const report = reportDetail.data;
+const noticeKind: string | null | undefined = report.notice_kind;
+const triggerId: number | null | undefined = report.trigger_incident_report_id;
+const mailState: string | null | undefined = report.notice_mail_state;
+const noticeKey: string | null | undefined = report.notice_policy_key;
+const noticeLabel: string | null | undefined = report.notice_policy_label;
+// @ts-expect-error notice policy identity is output-only
+client.incident_report.create({ params: { notice_policy_key: key } });
+void [reportPage, noticeKind, triggerId, mailState, noticeKey, noticeLabel, oldLimit, knownLimit];
+// @ts-expect-error historical trigger is a raw integer, not a live resource object
+const wrongTrigger: { id: number } = report.trigger_incident_report_id;
+// @ts-expect-error report classification is read-only
+client.incident_report.create({ params: { notice_kind: 'warning' } });
+void wrongTrigger;
+
+// Nullable global overrides use the described Custom value input.
+client.system_config.update({ path: { category: 'test', name: 'limit' }, params: { value: null } });
