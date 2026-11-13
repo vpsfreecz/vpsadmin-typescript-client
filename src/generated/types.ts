@@ -1641,6 +1641,31 @@ export type {
 } from "./resources/host_ip_address/actions/update.js";
 export type { HostIpAddressResource } from "./resources/host_ip_address/resource.js";
 export type {
+  IncidentPolicy__IndexInput,
+  IncidentPolicy__IndexOutput,
+  IncidentPolicy__IndexGlobalInput,
+  IncidentPolicy__IndexGlobalOutput,
+  IncidentPolicy__IndexObjectInput,
+  IncidentPolicy__IndexObjectOutput,
+  IncidentPolicy__IndexPath,
+  IncidentPolicy__IndexOptions,
+  IncidentPolicy__IndexDescribeOptions,
+  IncidentPolicy__IndexAction,
+} from "./resources/incident_policy/actions/index.js";
+export type {
+  IncidentPolicy__ShowInput,
+  IncidentPolicy__ShowOutput,
+  IncidentPolicy__ShowGlobalInput,
+  IncidentPolicy__ShowGlobalOutput,
+  IncidentPolicy__ShowObjectInput,
+  IncidentPolicy__ShowObjectOutput,
+  IncidentPolicy__ShowPath,
+  IncidentPolicy__ShowOptions,
+  IncidentPolicy__ShowDescribeOptions,
+  IncidentPolicy__ShowAction,
+} from "./resources/incident_policy/actions/show.js";
+export type { IncidentPolicyResource } from "./resources/incident_policy/resource.js";
+export type {
   IncidentReport__CreateInput,
   IncidentReport__CreateOutput,
   IncidentReport__CreateGlobalInput,
@@ -1677,6 +1702,19 @@ export type {
   IncidentReport__ShowAction,
 } from "./resources/incident_report/actions/show.js";
 export type { IncidentReportResource } from "./resources/incident_report/resource.js";
+export type {
+  IncidentReport__PolicyEvaluation__IndexInput,
+  IncidentReport__PolicyEvaluation__IndexOutput,
+  IncidentReport__PolicyEvaluation__IndexGlobalInput,
+  IncidentReport__PolicyEvaluation__IndexGlobalOutput,
+  IncidentReport__PolicyEvaluation__IndexObjectInput,
+  IncidentReport__PolicyEvaluation__IndexObjectOutput,
+  IncidentReport__PolicyEvaluation__IndexPath,
+  IncidentReport__PolicyEvaluation__IndexOptions,
+  IncidentReport__PolicyEvaluation__IndexDescribeOptions,
+  IncidentReport__PolicyEvaluation__IndexAction,
+} from "./resources/incident_report/resources/policy_evaluation/actions/index.js";
+export type { IncidentReport__PolicyEvaluationResource } from "./resources/incident_report/resources/policy_evaluation/resource.js";
 export type {
   IncomingPayment__IndexInput,
   IncomingPayment__IndexOutput,
@@ -6006,6 +6044,43 @@ export type {
   Vps__Feature__UpdateAllAction,
 } from "./resources/vps/resources/feature/actions/update_all.js";
 export type { Vps__FeatureResource } from "./resources/vps/resources/feature/resource.js";
+export type {
+  Vps__IncidentPolicy__IndexInput,
+  Vps__IncidentPolicy__IndexOutput,
+  Vps__IncidentPolicy__IndexGlobalInput,
+  Vps__IncidentPolicy__IndexGlobalOutput,
+  Vps__IncidentPolicy__IndexObjectInput,
+  Vps__IncidentPolicy__IndexObjectOutput,
+  Vps__IncidentPolicy__IndexPath,
+  Vps__IncidentPolicy__IndexOptions,
+  Vps__IncidentPolicy__IndexDescribeOptions,
+  Vps__IncidentPolicy__IndexAction,
+} from "./resources/vps/resources/incident_policy/actions/index.js";
+export type {
+  Vps__IncidentPolicy__ShowInput,
+  Vps__IncidentPolicy__ShowOutput,
+  Vps__IncidentPolicy__ShowGlobalInput,
+  Vps__IncidentPolicy__ShowGlobalOutput,
+  Vps__IncidentPolicy__ShowObjectInput,
+  Vps__IncidentPolicy__ShowObjectOutput,
+  Vps__IncidentPolicy__ShowPath,
+  Vps__IncidentPolicy__ShowOptions,
+  Vps__IncidentPolicy__ShowDescribeOptions,
+  Vps__IncidentPolicy__ShowAction,
+} from "./resources/vps/resources/incident_policy/actions/show.js";
+export type {
+  Vps__IncidentPolicy__UpdateInput,
+  Vps__IncidentPolicy__UpdateOutput,
+  Vps__IncidentPolicy__UpdateGlobalInput,
+  Vps__IncidentPolicy__UpdateGlobalOutput,
+  Vps__IncidentPolicy__UpdateObjectInput,
+  Vps__IncidentPolicy__UpdateObjectOutput,
+  Vps__IncidentPolicy__UpdatePath,
+  Vps__IncidentPolicy__UpdateOptions,
+  Vps__IncidentPolicy__UpdateDescribeOptions,
+  Vps__IncidentPolicy__UpdateAction,
+} from "./resources/vps/resources/incident_policy/actions/update.js";
+export type { Vps__IncidentPolicyResource } from "./resources/vps/resources/incident_policy/resource.js";
 export type {
   Vps__MaintenanceWindow__IndexInput,
   Vps__MaintenanceWindow__IndexOutput,

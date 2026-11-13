@@ -4,15 +4,17 @@ import { createResource as child0 } from "./resources/console_token/resource.js"
 import type { Vps__ConsoleTokenResource } from "./resources/console_token/resource.js";
 import { createResource as child1 } from "./resources/feature/resource.js";
 import type { Vps__FeatureResource } from "./resources/feature/resource.js";
-import { createResource as child2 } from "./resources/maintenance_window/resource.js";
+import { createResource as child2 } from "./resources/incident_policy/resource.js";
+import type { Vps__IncidentPolicyResource } from "./resources/incident_policy/resource.js";
+import { createResource as child3 } from "./resources/maintenance_window/resource.js";
 import type { Vps__MaintenanceWindowResource } from "./resources/maintenance_window/resource.js";
-import { createResource as child3 } from "./resources/mount/resource.js";
+import { createResource as child4 } from "./resources/mount/resource.js";
 import type { Vps__MountResource } from "./resources/mount/resource.js";
-import { createResource as child4 } from "./resources/ssh_host_key/resource.js";
+import { createResource as child5 } from "./resources/ssh_host_key/resource.js";
 import type { Vps__SshHostKeyResource } from "./resources/ssh_host_key/resource.js";
-import { createResource as child5 } from "./resources/state_log/resource.js";
+import { createResource as child6 } from "./resources/state_log/resource.js";
 import type { Vps__StateLogResource } from "./resources/state_log/resource.js";
-import { createResource as child6 } from "./resources/status/resource.js";
+import { createResource as child7 } from "./resources/status/resource.js";
 import type { Vps__StatusResource } from "./resources/status/resource.js";
 import { createAction as bind0 } from "./actions/boot.js";
 import type { Vps__BootAction } from "./actions/boot.js";
@@ -52,6 +54,7 @@ import type { Vps__UpdateAction } from "./actions/update.js";
 export interface VpsResource {
   readonly console_token: Vps__ConsoleTokenResource;
   readonly feature: Vps__FeatureResource;
+  readonly incident_policy: Vps__IncidentPolicyResource;
   readonly maintenance_window: Vps__MaintenanceWindowResource;
   readonly mount: Vps__MountResource;
   readonly ssh_host_key: Vps__SshHostKeyResource;
@@ -105,11 +108,12 @@ export function createResource(
   return {
     console_token: child0(execute, metaNamespace),
     feature: child1(execute, metaNamespace),
-    maintenance_window: child2(execute, metaNamespace),
-    mount: child3(execute, metaNamespace),
-    ssh_host_key: child4(execute, metaNamespace),
-    state_log: child5(execute, metaNamespace),
-    status: child6(execute, metaNamespace),
+    incident_policy: child2(execute, metaNamespace),
+    maintenance_window: child3(execute, metaNamespace),
+    mount: child4(execute, metaNamespace),
+    ssh_host_key: child5(execute, metaNamespace),
+    state_log: child6(execute, metaNamespace),
+    status: child7(execute, metaNamespace),
     boot: action0,
     clone: action1,
     create: action2,
