@@ -34,11 +34,14 @@ export type IncidentReport__IndexOutput = Array<{
   id?: number | null;
   ip_address_assignment?: Partial<Record<"id" | "ip_addr", unknown>> | null;
   mailbox?: Partial<Record<"id" | "label", unknown>> | null;
+  notice_kind?: string | null;
+  notice_mail_state?: string | null;
   raw_user_id?: number | null;
   raw_vps_id?: number | null;
   reported_at?: string | null;
   subject?: string | null;
   text?: string | null;
+  trigger_incident_report_id?: number | null;
   user?: Partial<Record<"id" | "login", unknown>> | null;
   vps?: Partial<Record<"id" | "hostname", unknown>> | null;
   vps_action?: string | null;
@@ -194,11 +197,14 @@ const descriptor = {
     "id",
     "ip_address_assignment",
     "mailbox",
+    "notice_kind",
+    "notice_mail_state",
     "raw_user_id",
     "raw_vps_id",
     "reported_at",
     "subject",
     "text",
+    "trigger_incident_report_id",
     "user",
     "vps",
     "vps_action",
