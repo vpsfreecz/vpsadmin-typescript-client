@@ -60,6 +60,29 @@ TypeScript clients and the evidence needed to finish synchronization. This
 repository's offline checks verify the saved inputs and generated output;
 they do not establish freshness against the current vpsAdmin API source.
 
+VPS incident summaries and selectors are optional. Initial reads can omit
+`incident_policy` even though the server declares a default. Check returned
+capability fields before using incident settings with an older API. Selected
+updates preserve explicit null override resets and false enforcement values.
+The server validates registered policy names and status values; the generated
+client represents these values as strings and checks primitive types and
+nullability. Datetimes remain wire strings. A successful synchronous settings
+update does not imply a background action was created.
+
+When the API loads a site Ruby policy, it returns null for the current incident
+warning limit, stop limit and status. Current counts remain available.
+`incident_mode` is the configured global ceiling, and `incident_stop_enforced`
+reports whether the global mode and VPS setting permit automatic stops. Neither
+field predicts that a stop will occur. The evaluation report ID, time and state
+describe a historical evaluation and cannot supply current limits.
+
+Incident reports expose nullable notice kind, triggering report ID and mail
+state. Ordinary reports return null for all three. Notice kind distinguishes a
+warning from a confirmed stop. The triggering report ID is an integer and may
+be unavailable. Mail state `pending` means the notice has not been queued.
+`queued` does not establish SMTP success; `sent` means SMTP succeeded, without
+proving delivery to the recipient's inbox.
+
 The committed inputs are:
 
 - `schema/schema.json`: canonical API 7.0/protocol 2.0 mounted-source snapshot,

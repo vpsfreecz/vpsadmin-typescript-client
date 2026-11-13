@@ -79,3 +79,55 @@ client.network.update({ path: { network_id: 1 }, params: { label: null } });
 client.network.index({ meta: { includes: ['primary_location'] } });
 // @ts-expect-error authentication routes remain owned by the HaveAPI runtime
 client.authentication.token.request();
+
+
+// Selected incident summaries remain optional on older or permission-filtered APIs.
+const incidentPage = await client.vps.index({ params: { incident_policy: 'oomd', incident_status: 'near_limit', incident_enforcement_enabled: false } });
+const incidentDetail = await client.vps.show({ path: { vps_id: 1 }, params: { incident_policy: 'oomd' } });
+client.vps.index();
+client.vps.show({ path: { vps_id: 1 } });
+client.vps.update({ path: { vps_id: 1 }, params: { incident_policy: 'oomd', incident_warning_limit_override: null, incident_stop_limit_override: 12, incident_enforcement_enabled: false } });
+const summary = incidentDetail.data;
+const labels: (string | null | undefined)[] = [summary.incident_policy, summary.incident_policy_label, summary.incident_mode, summary.incident_status, summary.incident_action_state];
+const times: (string | null | undefined)[] = [summary.incident_last_incident_at, summary.incident_last_warning_at, summary.incident_last_stop_at, summary.incident_next_stop_allowed_at, summary.incident_accounting_since];
+const counts: (number | null | undefined)[] = [summary.incident_count_7d, summary.incident_count_30d, summary.incident_warning_limit, summary.incident_stop_limit, summary.incident_warning_limit_override, summary.incident_stop_limit_override, summary.incident_action_chain_id];
+const flags: (boolean | null | undefined)[] = [summary.incident_enforcement_enabled, summary.incident_stop_enforced];
+const sameOutput: typeof summary | undefined = incidentPage.data[0];
+void [labels, times, counts, flags, sameOutput];
+// @ts-expect-error selectors cannot be null
+client.vps.show({ path: { vps_id: 1 }, params: { incident_policy: null } });
+// @ts-expect-error enforcement is a non-null boolean
+client.vps.update({ path: { vps_id: 1 }, params: { incident_enforcement_enabled: null } });
+// @ts-expect-error override limits retain their numeric type
+client.vps.update({ path: { vps_id: 1 }, params: { incident_warning_limit_override: '5' } });
+// @ts-expect-error nullable timestamps stay wire strings
+const wrongTime: number = summary.incident_last_incident_at;
+// @ts-expect-error output-only summary fields are not accepted as update inputs
+client.vps.update({ path: { vps_id: 1 }, params: { incident_count_7d: 5 } });
+void wrongTime;
+
+
+client.vps.index({ params: { incident_status: 'unknown' } });
+const evaluation: (number | null | undefined) = summary.incident_policy_evaluation_report_id;
+const evaluatedAt: (string | null | undefined) = summary.incident_policy_evaluated_at;
+const evaluationState: (string | null | undefined) = summary.incident_policy_evaluation_state;
+const reportPage = await client.incident_report.index({ params: { vps: 1 } });
+const reportDetail = await client.incident_report.show({ path: { incident_report_id: 1 } });
+const report = reportDetail.data;
+const noticeKind: string | null | undefined = report.notice_kind;
+const triggerId: number | null | undefined = report.trigger_incident_report_id;
+const mailState: string | null | undefined = report.notice_mail_state;
+const sameReportOutput: typeof report | undefined = reportPage.data[0];
+void [evaluation, evaluatedAt, evaluationState, noticeKind, triggerId, mailState, sameReportOutput];
+// @ts-expect-error nullable current limits cannot be treated as known numeric thresholds
+const knownLimit: number = summary.incident_warning_limit;
+// @ts-expect-error nullable current status cannot be treated as a known state
+const knownStatus: string = summary.incident_status;
+// @ts-expect-error historical trigger is a raw integer, not a live resource object
+const wrongTrigger: { id: number } = report.trigger_incident_report_id;
+// @ts-expect-error report classification is read-only, not a mutable incident input
+client.incident_report.create({ params: { notice_kind: 'warning' } });
+void [knownLimit, knownStatus, wrongTrigger];
+
+// Nullable global overrides use the described Custom value input.
+client.system_config.update({ path: { category: 'test', name: 'limit' }, params: { value: null } });
