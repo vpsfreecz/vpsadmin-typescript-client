@@ -60,6 +60,15 @@ TypeScript clients and the evidence needed to finish synchronization. This
 repository's offline checks verify the saved inputs and generated output;
 they do not establish freshness against the current vpsAdmin API source.
 
+VPS incident summaries and selectors are optional. Initial reads can omit
+`incident_policy` even though the server declares a default. Check returned
+capability fields before using incident settings with an older API. Selected
+updates preserve explicit null override resets and false enforcement values.
+The server validates registered policy names and status values; the generated
+client represents these values as strings and checks primitive types and
+nullability. Datetimes remain wire strings. A successful synchronous settings
+update does not imply a background action was created.
+
 The committed inputs are:
 
 - `schema/schema.json`: canonical API 7.0/protocol 2.0 mounted-source snapshot,

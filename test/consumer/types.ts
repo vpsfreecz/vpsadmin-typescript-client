@@ -79,3 +79,29 @@ client.network.update({ path: { network_id: 1 }, params: { label: null } });
 client.network.index({ meta: { includes: ['primary_location'] } });
 // @ts-expect-error authentication routes remain owned by the HaveAPI runtime
 client.authentication.token.request();
+
+
+// Selected incident summaries remain optional on older or permission-filtered APIs.
+const incidentPage = await client.vps.index({ params: { incident_policy: 'oomd', incident_status: 'near_limit', incident_enforcement_enabled: false } });
+const incidentDetail = await client.vps.show({ path: { vps_id: 1 }, params: { incident_policy: 'oomd' } });
+client.vps.index();
+client.vps.show({ path: { vps_id: 1 } });
+client.vps.update({ path: { vps_id: 1 }, params: { incident_policy: 'oomd', incident_warning_limit_override: null, incident_stop_limit_override: 12, incident_enforcement_enabled: false } });
+const summary = incidentDetail.data;
+const labels: (string | null | undefined)[] = [summary.incident_policy, summary.incident_policy_label, summary.incident_mode, summary.incident_status, summary.incident_action_state];
+const times: (string | null | undefined)[] = [summary.incident_last_incident_at, summary.incident_last_warning_at, summary.incident_last_stop_at, summary.incident_next_stop_allowed_at, summary.incident_accounting_since];
+const counts: (number | null | undefined)[] = [summary.incident_count_7d, summary.incident_count_30d, summary.incident_warning_limit, summary.incident_stop_limit, summary.incident_warning_limit_override, summary.incident_stop_limit_override, summary.incident_action_chain_id];
+const flags: (boolean | null | undefined)[] = [summary.incident_enforcement_enabled, summary.incident_stop_enforced];
+const sameOutput: typeof summary | undefined = incidentPage.data[0];
+void [labels, times, counts, flags, sameOutput];
+// @ts-expect-error selectors cannot be null
+client.vps.show({ path: { vps_id: 1 }, params: { incident_policy: null } });
+// @ts-expect-error enforcement is a non-null boolean
+client.vps.update({ path: { vps_id: 1 }, params: { incident_enforcement_enabled: null } });
+// @ts-expect-error override limits retain their numeric type
+client.vps.update({ path: { vps_id: 1 }, params: { incident_warning_limit_override: '5' } });
+// @ts-expect-error nullable timestamps stay wire strings
+const wrongTime: number = summary.incident_last_incident_at;
+// @ts-expect-error output-only summary fields are not accepted as update inputs
+client.vps.update({ path: { vps_id: 1 }, params: { incident_count_7d: 5 } });
+void wrongTime;

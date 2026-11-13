@@ -27,7 +27,7 @@ test('generated modules compose behind the unchanged public package surface', as
 
 test('versioned Network read preserves namespaces, options and partial response receipts', async () => {
   assert.equal(API_VERSION, '7.0');
-  assert.equal(SCHEMA_SHA256, 'd6ec617653913c56e92398a6032aa350118597a0e3f45c599bc92b6071ea0a26');
+  assert.equal(SCHEMA_SHA256, 'f919dcebf8ce5453dce6b0eb09e718f72664b5137443bb8e2064ff6452470ca7');
   const signal = new AbortController().signal;
   const headers = { 'X-Request-Id': 'consumer' };
   const receipt = {
@@ -220,6 +220,76 @@ test('advisory mutations send revision and state guards through the published ru
     await assert.rejects(client.security_advisory.delete({ path: advisoryPath, params: { expected_state: 'draft' } }), ClientInputError);
     await assert.rejects(client.security_advisory.retract({ path: advisoryPath, params: { expected_content_revision: 0, expected_state: null } }), ClientInputError);
     assert.equal(calls.length, mutations.length, 'invalid local guards never reach the server');
+  } finally {
+    server.closeAllConnections();
+    await new Promise((resolve) => server.close(resolve));
+  }
+});
+
+
+test('incident reads preserve capability absence and selected writes preserve null resets on the wire', async () => {
+  const calls = [];
+  const summary = {
+    incident_policy: 'oomd', incident_policy_label: 'VPS memory-pressure incidents',
+    incident_count_7d: 5, incident_count_30d: 10,
+    incident_warning_limit: 5, incident_stop_limit: 10,
+    incident_warning_limit_override: null, incident_stop_limit_override: 12,
+    incident_enforcement_enabled: false, incident_mode: 'enforce',
+    incident_stop_enforced: false, incident_status: 'stop_threshold',
+    incident_last_incident_at: '2026-11-14T10:00:00Z', incident_last_warning_at: null,
+    incident_last_stop_at: null, incident_next_stop_allowed_at: '2026-11-15T10:00:00Z',
+    incident_accounting_since: '2026-11-01T00:00:00Z',
+    incident_action_state: 'pending', incident_action_chain_id: 42,
+  };
+  const server = createServer(async (request, response) => {
+    let text = '';
+    for await (const chunk of request) text += chunk;
+    const url = new URL(request.url, 'http://fixture.invalid');
+    const body = text ? JSON.parse(text) : undefined;
+    calls.push({ method: request.method, url, body });
+    response.setHeader('Content-Type', 'application/json');
+    if (url.searchParams.get('vps[incident_policy]') === 'unregistered') {
+      response.statusCode = 400;
+      response.end(JSON.stringify({ status: false, message: 'Invalid incident policy', errors: { incident_policy: ['is not included'] } }));
+      return;
+    }
+    const selected = url.searchParams.has('vps[incident_policy]');
+    const vps = selected ? { id: 1, ...summary } : { id: 1 };
+    response.end(JSON.stringify({ status: true, response: request.method === 'PUT'
+      ? { vps: {}, _meta: {} }
+      : url.pathname.endsWith('/vpses') ? { vpses: [vps] } : { vps } }));
+  });
+  await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
+  try {
+    const runtime = new AsyncClient(`http://127.0.0.1:${server.address().port}/mount/v7.0`);
+    const client = createVpsAdminClient({ execute: createHaveApiExecutor(runtime) });
+    const options = { timeoutMs: 5000 };
+    const initial = await client.vps.index(options);
+    const initialShow = await client.vps.show({ path: { vps_id: 1 }, ...options });
+    await client.vps.index({ params: { limit: 20 }, ...options });
+    assert.equal(Object.hasOwn(initial.data[0], 'incident_policy'), false);
+    assert.equal(Object.hasOwn(initialShow.data, 'incident_count_7d'), false);
+    assert.deepEqual(calls.slice(0, 3).map(({ url }) => [...url.searchParams]), [[], [], [['vps[limit]', '20']]]);
+    const selected = await client.vps.show({ path: { vps_id: 1 }, params: { incident_policy: 'oomd' }, ...options });
+    assert.deepEqual(selected.data, { id: 1, ...summary });
+    const filtered = await client.vps.index({ params: { incident_policy: 'oomd', incident_status: 'stop_threshold', incident_enforcement_enabled: false }, ...options });
+    assert.deepEqual(filtered.data[0], selected.data);
+    assert.deepEqual(Object.fromEntries(calls.at(-1).url.searchParams), {
+      'vps[incident_policy]': 'oomd', 'vps[incident_status]': 'stop_threshold', 'vps[incident_enforcement_enabled]': 'false',
+    });
+    const params = { incident_policy: 'oomd', incident_warning_limit_override: null, incident_stop_limit_override: 12, incident_enforcement_enabled: false };
+    const updated = await client.vps.update({ path: { vps_id: 1 }, params, ...options });
+    assert.deepEqual(calls.at(-1).body, { vps: params });
+    assert.deepEqual(updated.data, {});
+    assert.equal(updated.meta.action_state, undefined, 'synchronous writes do not invent a transaction');
+    await client.vps.update({ path: { vps_id: 1 }, params: { hostname: 'unchanged-contract' }, ...options });
+    assert.deepEqual(calls.at(-1).body, { vps: { hostname: 'unchanged-contract' } });
+    const dispatched = calls.length;
+    await assert.rejects(client.vps.update({ path: { vps_id: 1 }, params: { incident_enforcement_enabled: null } }), ClientInputError);
+    await assert.rejects(client.vps.index({ params: { incident_policy: null } }), ClientInputError);
+    assert.equal(calls.length, dispatched);
+    await assert.rejects(client.vps.index({ params: { incident_policy: 'unregistered' }, ...options }), /Invalid incident policy/);
+    assert.equal(calls.length, dispatched + 1, 'string choices remain authoritative server validation');
   } finally {
     server.closeAllConnections();
     await new Promise((resolve) => server.close(resolve));
