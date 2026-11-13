@@ -47,6 +47,14 @@ export type Vps__ReplaceOutput = {
   id?: number | null;
   implicit_oom_report_rule_hit_count?: number | null;
   in_rescue_mode?: boolean | null;
+  incident_accounting_since?: string | null;
+  incident_action_chain_id?: number | null;
+  incident_action_state?: string | null;
+  incident_enforcement_enabled?: boolean | null;
+  incident_last_stop_at?: string | null;
+  incident_next_stop_allowed_at?: string | null;
+  incident_stop_threshold_count?: number | null;
+  incident_warning_count?: number | null;
   info?: string | null;
   is_running?: boolean | null;
   loadavg1?: number | null;

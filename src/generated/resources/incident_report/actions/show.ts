@@ -24,11 +24,16 @@ export type IncidentReport__ShowOutput = {
   id?: number | null;
   ip_address_assignment?: Partial<Record<"id" | "ip_addr", unknown>> | null;
   mailbox?: Partial<Record<"id" | "label", unknown>> | null;
+  notice_kind?: string | null;
+  notice_mail_state?: string | null;
+  notice_policy_key?: string | null;
+  notice_policy_label?: string | null;
   raw_user_id?: number | null;
   raw_vps_id?: number | null;
   reported_at?: string | null;
   subject?: string | null;
   text?: string | null;
+  trigger_incident_report_id?: number | null;
   user?: Partial<Record<"id" | "login", unknown>> | null;
   vps?: Partial<Record<"id" | "hostname", unknown>> | null;
   vps_action?: string | null;

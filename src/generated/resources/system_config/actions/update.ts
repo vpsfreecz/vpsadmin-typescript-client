@@ -14,7 +14,7 @@ import type {
 } from "../../../runtime.js";
 
 export type SystemConfig__UpdateInput = {
-  value?: Exclude<JsonValue, null> | undefined;
+  value?: Exclude<JsonValue, null> | null | undefined;
 };
 
 export type SystemConfig__UpdateOutput = {
@@ -89,7 +89,7 @@ const descriptor = {
       emitted_name: "value",
       kind: "Custom",
       required: false,
-      nullable: false,
+      nullable: true,
     },
   ],
   globalInput: [

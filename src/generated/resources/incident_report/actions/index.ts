@@ -21,6 +21,7 @@ export type IncidentReport__IndexInput = {
   ip_address_assignment?: number | undefined;
   limit?: number | undefined;
   mailbox?: number | null | undefined;
+  policy_key?: string | undefined;
   user?: number | undefined;
   vps?: number | undefined;
 };
@@ -34,11 +35,16 @@ export type IncidentReport__IndexOutput = Array<{
   id?: number | null;
   ip_address_assignment?: Partial<Record<"id" | "ip_addr", unknown>> | null;
   mailbox?: Partial<Record<"id" | "label", unknown>> | null;
+  notice_kind?: string | null;
+  notice_mail_state?: string | null;
+  notice_policy_key?: string | null;
+  notice_policy_label?: string | null;
   raw_user_id?: number | null;
   raw_vps_id?: number | null;
   reported_at?: string | null;
   subject?: string | null;
   text?: string | null;
+  trigger_incident_report_id?: number | null;
   user?: Partial<Record<"id" | "login", unknown>> | null;
   vps?: Partial<Record<"id" | "hostname", unknown>> | null;
   vps_action?: string | null;
@@ -147,6 +153,13 @@ const descriptor = {
       nullable: true,
     },
     {
+      wire_name: "policy_key",
+      emitted_name: "policy_key",
+      kind: "String",
+      required: false,
+      nullable: false,
+    },
+    {
       wire_name: "user",
       emitted_name: "user",
       kind: "Resource",
@@ -194,11 +207,16 @@ const descriptor = {
     "id",
     "ip_address_assignment",
     "mailbox",
+    "notice_kind",
+    "notice_mail_state",
+    "notice_policy_key",
+    "notice_policy_label",
     "raw_user_id",
     "raw_vps_id",
     "reported_at",
     "subject",
     "text",
+    "trigger_incident_report_id",
     "user",
     "vps",
     "vps_action",
