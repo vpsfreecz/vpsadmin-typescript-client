@@ -18,6 +18,9 @@ export type Vps__IndexInput = {
   from_id?: number | undefined;
   hostname_any?: string | undefined;
   hostname_exact?: string | undefined;
+  incident_enforcement_enabled?: boolean | undefined;
+  incident_policy?: string | undefined;
+  incident_status?: string | undefined;
   limit?: number | undefined;
   location?: number | undefined;
   node?: number | undefined;
@@ -53,6 +56,25 @@ export type Vps__IndexOutput = Array<{
   id?: number | null;
   implicit_oom_report_rule_hit_count?: number | null;
   in_rescue_mode?: boolean | null;
+  incident_accounting_since?: string | null;
+  incident_action_chain_id?: number | null;
+  incident_action_state?: string | null;
+  incident_count_30d?: number | null;
+  incident_count_7d?: number | null;
+  incident_enforcement_enabled?: boolean | null;
+  incident_last_incident_at?: string | null;
+  incident_last_stop_at?: string | null;
+  incident_last_warning_at?: string | null;
+  incident_mode?: string | null;
+  incident_next_stop_allowed_at?: string | null;
+  incident_policy?: string | null;
+  incident_policy_label?: string | null;
+  incident_status?: string | null;
+  incident_stop_enforced?: boolean | null;
+  incident_stop_limit?: number | null;
+  incident_stop_limit_override?: number | null;
+  incident_warning_limit?: number | null;
+  incident_warning_limit_override?: number | null;
   info?: string | null;
   is_running?: boolean | null;
   loadavg1?: number | null;
@@ -160,6 +182,27 @@ const descriptor = {
       nullable: false,
     },
     {
+      wire_name: "incident_enforcement_enabled",
+      emitted_name: "incident_enforcement_enabled",
+      kind: "Boolean",
+      required: false,
+      nullable: false,
+    },
+    {
+      wire_name: "incident_policy",
+      emitted_name: "incident_policy",
+      kind: "String",
+      required: false,
+      nullable: false,
+    },
+    {
+      wire_name: "incident_status",
+      emitted_name: "incident_status",
+      kind: "String",
+      required: false,
+      nullable: false,
+    },
+    {
       wire_name: "limit",
       emitted_name: "limit",
       kind: "Integer",
@@ -259,6 +302,25 @@ const descriptor = {
     "id",
     "implicit_oom_report_rule_hit_count",
     "in_rescue_mode",
+    "incident_accounting_since",
+    "incident_action_chain_id",
+    "incident_action_state",
+    "incident_count_30d",
+    "incident_count_7d",
+    "incident_enforcement_enabled",
+    "incident_last_incident_at",
+    "incident_last_stop_at",
+    "incident_last_warning_at",
+    "incident_mode",
+    "incident_next_stop_allowed_at",
+    "incident_policy",
+    "incident_policy_label",
+    "incident_status",
+    "incident_stop_enforced",
+    "incident_stop_limit",
+    "incident_stop_limit_override",
+    "incident_warning_limit",
+    "incident_warning_limit_override",
     "info",
     "is_running",
     "loadavg1",

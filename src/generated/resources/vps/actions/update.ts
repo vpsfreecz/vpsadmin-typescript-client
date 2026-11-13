@@ -29,6 +29,10 @@ export type Vps__UpdateInput = {
   enable_os_template_auto_update?: boolean | undefined;
   expiration_date?: string | null | undefined;
   hostname?: string | undefined;
+  incident_enforcement_enabled?: boolean | undefined;
+  incident_policy?: string | undefined;
+  incident_stop_limit_override?: number | null | undefined;
+  incident_warning_limit_override?: number | null | undefined;
   info?: string | undefined;
   manage_hostname?: boolean | undefined;
   map_mode?: string | undefined;
@@ -201,6 +205,34 @@ const descriptor = {
       kind: "String",
       required: false,
       nullable: false,
+    },
+    {
+      wire_name: "incident_enforcement_enabled",
+      emitted_name: "incident_enforcement_enabled",
+      kind: "Boolean",
+      required: false,
+      nullable: false,
+    },
+    {
+      wire_name: "incident_policy",
+      emitted_name: "incident_policy",
+      kind: "String",
+      required: false,
+      nullable: false,
+    },
+    {
+      wire_name: "incident_stop_limit_override",
+      emitted_name: "incident_stop_limit_override",
+      kind: "Integer",
+      required: false,
+      nullable: true,
+    },
+    {
+      wire_name: "incident_warning_limit_override",
+      emitted_name: "incident_warning_limit_override",
+      kind: "Integer",
+      required: false,
+      nullable: true,
     },
     {
       wire_name: "info",
