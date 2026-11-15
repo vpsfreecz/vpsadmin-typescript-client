@@ -1,0 +1,29 @@
+{
+  "purpose": "Development dependency for the current React incident history and site Ruby policy candidate using standard Nix HTTPS fetching; not a registry release.",
+  "packed_source": {
+    "repository": "git@github.com:vpsfreecz/vpsadmin-typescript-client.git",
+    "revision": "05c443c43d22cbd67422f53414f022c3a9ac072b",
+    "tree": "0b48133ca8635c08f695a98ea9d9ee9497e821ff"
+  },
+  "api_source": "1a0935b2f0ed0c31d00d645922b88396dbdb2c7c",
+  "schema_sha256": "efff42fbd937ae5c6cc8c0f75c19cf28cc3f95382576cfd175f48e74e1ef97b7",
+  "source_provenance_sha256": "619ebab3710b19c56619ecdaf04f2ea6cdb046498f51257cf89b1351c48da4e6",
+  "exporter_lock_sha256": "2e9a124eff7b80d6fd57cd0f03cb2809847c67cc7f1af6364911c3622d7242a0",
+  "generator": {
+    "revision": "1ef9b204ba45bb261d3334be5c555cc1856b713b",
+    "pin_sha256": "020fedcf83319d7fbe133b6d2fe8f909c4faa2f64847f37cfb4167fa65c75f78",
+    "generated_file_count": 677
+  },
+  "runtime": "haveapi-client@0.32.0",
+  "package": {
+    "name": "vpsadmin-typescript-client",
+    "version": "0.4.0",
+    "published": false
+  },
+  "archive": {
+    "file": "incident-escalation-sdk.tgz",
+    "sha256": "24cf8549246e5beb14652639b911768041e3bd38197fa2a7ac7dbaee8604cb43",
+    "size": 341951
+  },
+  "delivery": "This support commit delivers unchanged bytes packed from packed_source.revision; it is not the packed source revision."
+}
