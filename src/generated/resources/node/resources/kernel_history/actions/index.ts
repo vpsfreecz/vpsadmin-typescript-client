@@ -29,6 +29,7 @@ export type Node__KernelHistory__IndexOutput = Array<{
   event_type?: string | null;
   id?: number | null;
   livepatch_action?: string | null;
+  livepatch_id?: string | null;
   observed_after?: string | null;
   observed_before?: string | null;
   reported_release?: string | null;
@@ -155,6 +156,7 @@ const descriptor = {
     "event_type",
     "id",
     "livepatch_action",
+    "livepatch_id",
     "observed_after",
     "observed_before",
     "reported_release",

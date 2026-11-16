@@ -27,7 +27,7 @@ test('generated modules compose behind the unchanged public package surface', as
 
 test('versioned Network read preserves namespaces, options and partial response receipts', async () => {
   assert.equal(API_VERSION, '7.0');
-  assert.equal(SCHEMA_SHA256, 'd6ec617653913c56e92398a6032aa350118597a0e3f45c599bc92b6071ea0a26');
+  assert.equal(SCHEMA_SHA256, '2ee994bbfcae80d79611d718a295cdd11457e1e2a9d2646d6a224cf5bcd68ca8');
   const signal = new AbortController().signal;
   const headers = { 'X-Request-Id': 'consumer' };
   const receipt = {
@@ -55,6 +55,21 @@ test('versioned Network read preserves namespaces, options and partial response 
   assert.equal(spec.headers, headers);
   assert.equal(spec.timeoutMs, 50);
   for (const key of ['data', 'meta', 'envelope', 'httpStatus']) assert.equal(result[key], receipt[key]);
+});
+
+test('kernel livepatch IDs tolerate old-server absence and null', async () => {
+  const receipts = [
+    { data: [{}], meta: {}, envelope: { status: true }, httpStatus: 200 },
+    { data: [{ livepatch_id: null }], meta: {}, envelope: { status: true }, httpStatus: 200 },
+    { data: { livepatch_id: 'lp_show' }, meta: {}, envelope: { status: true }, httpStatus: 200 },
+  ];
+  const client = createVpsAdminClient({ execute: async () => receipts.shift() });
+  const history = await client.node.kernel_history.index({ path: { node_id: 1 } });
+  const events = await client.node_kernel_event.index();
+  const event = await client.node_kernel_event.show({ path: { node_kernel_event_id: 1 } });
+  assert.equal(history.data[0].livepatch_id, undefined);
+  assert.equal(events.data[0].livepatch_id, null);
+  assert.equal(event.data.livepatch_id, 'lp_show');
 });
 
 test('Network writes encode paths, keep false/zero/empty values and preserve runtime failures', async () => {

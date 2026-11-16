@@ -11,7 +11,7 @@
     "authentication_resource_count": 1
   },
   "files": {
-    "api.ts": "5442982a3173565daf534d67c975f5e7311090baa69da86d049a7e5f46d78ed7",
+    "api.ts": "7e25220ce98e8bc4f839f1a13fb8f6d85994cd81ec5e701dc2ccc1c06897f91d",
     "descriptions.ts": "36f2c93d11f195b17d8d7217fff230b6a5b054d0aaec62f29bc3e7bbe231decc",
     "index.ts": "2a879cfd5f39c537a88eed0d8c071625a1bb6191d35c69e5a6134073cf79324b",
     "resources/action_state/actions/cancel.ts": "7f0215c6499e612a7899c5d242ee37fa2f196d4f43e1ae0fb777436674cc87cd",
@@ -334,7 +334,7 @@
     "resources/node/actions/show.ts": "d2fea5767e066fe6a38c5403b154cd4b5c91c5019dcaf302be654e6f6428a536",
     "resources/node/actions/update.ts": "c2200c741d2351c5d496b436fdf1c51b41cd56e9923dbe1b1318b75a45b9b6f8",
     "resources/node/resource.ts": "98c4f74d8de02cea2a0c7612072cd45280979e89ceb7b4024efbe432d2ab0e4c",
-    "resources/node/resources/kernel_history/actions/index.ts": "4588cfa7a7e909ea8e26f0c6309eec74a245e46a0158d9b8447d20ea20863ae7",
+    "resources/node/resources/kernel_history/actions/index.ts": "947be8a4f5d2d331bfcc9eeefc46b0d11eab63f9b2b14100bee0e5e09bc53757",
     "resources/node/resources/kernel_history/resource.ts": "abd7c830c2ef4cc53b9a6014fdcec621a7b3714c90751a98b4a60d0ef1e223bd",
     "resources/node/resources/status/actions/index.ts": "e39c099b3a887665122f9b7ec2844bd71daf456212524258c2d2f46a5dbd5ea3",
     "resources/node/resources/status/actions/show.ts": "9dd68b4462abf37f80b9042795b2aba91b02709d11b07e0bba5f1ffb19e84545",
@@ -351,8 +351,8 @@
     "resources/node_ebpf_program_object/resource.ts": "0a32a5b561e1a544051677b21a66fe529d2964e99847798a8aa76331dea39ae2",
     "resources/node_kernel_configuration_option/actions/index.ts": "6272c194ea4fabf4e1476f7b5395f4314f19489a97ae9e2515c32a95e1c7bdcf",
     "resources/node_kernel_configuration_option/resource.ts": "bff5f082b2a27e7ed0afc55abb69513d1d5082b6c42d088f630379bc6b3ce034",
-    "resources/node_kernel_event/actions/index.ts": "a703a97027c2380f48cb765d8fc9367121e174fc55ad80e350dd9737bc990976",
-    "resources/node_kernel_event/actions/show.ts": "708e87a2baad0b8ebbe711c0c7d4323266ecdca59b87022003100543fe10f76e",
+    "resources/node_kernel_event/actions/index.ts": "9c6210786560e7f2de71b0aad8ea0989d63197f6abfdfc16c612340ed10c2e46",
+    "resources/node_kernel_event/actions/show.ts": "9c849eeb2a9eb9c1ec5697f5d370f67c718df7db9f2f3ac1db836ad1f81a9d8a",
     "resources/node_kernel_event/resource.ts": "d5ef81b9ed5ad90768f6c2bb145e7ffd65814fb131e00bac5eef58a910b50316",
     "resources/node_kernel_evidence/actions/index.ts": "3c87c15ebf2a136bce7010bc5afc5d5ce2123c0f28c1d888f78d16d5929c71e7",
     "resources/node_kernel_evidence/actions/show.ts": "7cfbffcd0d675868bb374bf04a92979335d82511111223cfa0742ceba8a7fef0",
@@ -700,5 +700,5 @@
   "owner": "haveapi-typescript-client",
   "profile": "vpsadmin-full-fixture",
   "protocol_version": "2.0",
-  "schema_sha256": "d6ec617653913c56e92398a6032aa350118597a0e3f45c599bc92b6071ea0a26"
+  "schema_sha256": "2ee994bbfcae80d79611d718a295cdd11457e1e2a9d2646d6a224cf5bcd68ca8"
 }

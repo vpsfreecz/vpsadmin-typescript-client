@@ -18,6 +18,14 @@ const extension: unknown = result.meta.extension;
 const invalidTotal: string = result.meta.total_count;
 void [total, extension, invalidTotal];
 
+const kernelHistory = await client.node.kernel_history.index({ path: { node_id: 1 } });
+const kernelHistoryLivepatchId: string | null | undefined = kernelHistory.data[0]?.livepatch_id;
+const kernelEvents = await client.node_kernel_event.index();
+const kernelEventLivepatchId: string | null | undefined = kernelEvents.data[0]?.livepatch_id;
+const kernelEvent = await client.node_kernel_event.show({ path: { node_kernel_event_id: 1 } });
+const shownLivepatchId: string | null | undefined = kernelEvent.data.livepatch_id;
+void [kernelHistoryLivepatchId, kernelEventLivepatchId, shownLivepatchId];
+
 const description = await client.network.update.describe({ path: { network_id: 1 } });
 const required: boolean | null | undefined = description.data.input?.parameters?.['label']?.required;
 void required;

@@ -32,6 +32,7 @@ export type NodeKernelEvent__ShowOutput = {
   kernel_config_digest?: string | null;
   kernel_source_revision?: string | null;
   livepatch_action?: string | null;
+  livepatch_id?: string | null;
   node?: Partial<Record<"id" | "domain_name", unknown>> | null;
   node_kernel_evidence?: Partial<Record<"id", unknown>> | null;
   observed_after?: string | null;
