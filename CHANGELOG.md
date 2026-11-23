@@ -1,3 +1,11 @@
+# 0.5.0
+
+- Add generated operations and types for incident policies, per-VPS policy settings
+  and saved incident policy evaluations.
+- Include saved counting periods, nullable match results and policy notice fields
+  in incident report types.
+- Allow `null` for the `value` input of system configuration updates.
+
 # 0.4.0
 
 - Add advisory retraction and deletion operations.
