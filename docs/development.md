@@ -47,7 +47,7 @@ operation's implementation and declarations.
 Applications import from `vpsadmin-typescript-client`. Individual generated
 module paths are internal and are not package subpath exports.
 
-The saved schema covers 154 application resources and 527 actions. One
+The saved schema covers 156 application resources and 529 actions. One
 authentication resource and five authentication actions are retained and validated
 in the snapshot, counted separately, and excluded from generation. This is the
 complete declared fixture capture, including all six configured plugins; a
@@ -93,6 +93,21 @@ warning from a confirmed stop. The triggering report ID is an integer and may
 be unavailable. Mail state `pending` means the notice has not been queued.
 `queued` does not establish SMTP success; `sent` means SMTP succeeded, without
 proving delivery to the recipient's inbox.
+
+Administrators can use `incident_policy_exposure.index` for current VPS/policy
+matches and `incident_policy_evaluation.index` for saved evaluations with
+current action and mail outcomes. Both take `offset` and `limit`. Their global
+response metadata includes `total_count`, `offset`, `limit`, `next_offset`,
+`as_of` and `read_at`; History also returns `from` and `to`. Keep the returned
+`as_of` when requesting another page. It fixes the counting and recording
+cutoff, while settings, ownership and outcomes reflect each read. History
+orders by evaluation time and ID and accepts `direction`, with no `sort` input.
+
+Exposure returns ordinary partial Resource references for `vps`, `user` and
+`node`. Their generated `id` and label values have type `unknown`; check their
+primitive types before displaying them or building links. Preserve absent and
+null values, including `matched` and `next_offset`, instead of replacing them
+with false or zero.
 
 The committed inputs are:
 

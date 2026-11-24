@@ -60,167 +60,171 @@ import { createResource as resource25 } from "./resources/host_ip_address/resour
 import type { HostIpAddressResource } from "./resources/host_ip_address/resource.js";
 import { createResource as resource26 } from "./resources/incident_policy/resource.js";
 import type { IncidentPolicyResource } from "./resources/incident_policy/resource.js";
-import { createResource as resource27 } from "./resources/incident_report/resource.js";
+import { createResource as resource27 } from "./resources/incident_policy_evaluation/resource.js";
+import type { IncidentPolicyEvaluationResource } from "./resources/incident_policy_evaluation/resource.js";
+import { createResource as resource28 } from "./resources/incident_policy_exposure/resource.js";
+import type { IncidentPolicyExposureResource } from "./resources/incident_policy_exposure/resource.js";
+import { createResource as resource29 } from "./resources/incident_report/resource.js";
 import type { IncidentReportResource } from "./resources/incident_report/resource.js";
-import { createResource as resource28 } from "./resources/incoming_payment/resource.js";
+import { createResource as resource30 } from "./resources/incoming_payment/resource.js";
 import type { IncomingPaymentResource } from "./resources/incoming_payment/resource.js";
-import { createResource as resource29 } from "./resources/ip_address/resource.js";
+import { createResource as resource31 } from "./resources/ip_address/resource.js";
 import type { IpAddressResource } from "./resources/ip_address/resource.js";
-import { createResource as resource30 } from "./resources/ip_address_assignment/resource.js";
+import { createResource as resource32 } from "./resources/ip_address_assignment/resource.js";
 import type { IpAddressAssignmentResource } from "./resources/ip_address_assignment/resource.js";
-import { createResource as resource31 } from "./resources/ip_release_campaign/resource.js";
+import { createResource as resource33 } from "./resources/ip_release_campaign/resource.js";
 import type { IpReleaseCampaignResource } from "./resources/ip_release_campaign/resource.js";
-import { createResource as resource32 } from "./resources/ip_release_request/resource.js";
+import { createResource as resource34 } from "./resources/ip_release_request/resource.js";
 import type { IpReleaseRequestResource } from "./resources/ip_release_request/resource.js";
-import { createResource as resource33 } from "./resources/language/resource.js";
+import { createResource as resource35 } from "./resources/language/resource.js";
 import type { LanguageResource } from "./resources/language/resource.js";
-import { createResource as resource34 } from "./resources/location/resource.js";
+import { createResource as resource36 } from "./resources/location/resource.js";
 import type { LocationResource } from "./resources/location/resource.js";
-import { createResource as resource35 } from "./resources/location_network/resource.js";
+import { createResource as resource37 } from "./resources/location_network/resource.js";
 import type { LocationNetworkResource } from "./resources/location_network/resource.js";
-import { createResource as resource36 } from "./resources/mail_log/resource.js";
+import { createResource as resource38 } from "./resources/mail_log/resource.js";
 import type { MailLogResource } from "./resources/mail_log/resource.js";
-import { createResource as resource37 } from "./resources/mail_recipient/resource.js";
+import { createResource as resource39 } from "./resources/mail_recipient/resource.js";
 import type { MailRecipientResource } from "./resources/mail_recipient/resource.js";
-import { createResource as resource38 } from "./resources/mail_template/resource.js";
+import { createResource as resource40 } from "./resources/mail_template/resource.js";
 import type { MailTemplateResource } from "./resources/mail_template/resource.js";
-import { createResource as resource39 } from "./resources/mailbox/resource.js";
+import { createResource as resource41 } from "./resources/mailbox/resource.js";
 import type { MailboxResource } from "./resources/mailbox/resource.js";
-import { createResource as resource40 } from "./resources/metrics_access_token/resource.js";
+import { createResource as resource42 } from "./resources/metrics_access_token/resource.js";
 import type { MetricsAccessTokenResource } from "./resources/metrics_access_token/resource.js";
-import { createResource as resource41 } from "./resources/migration_plan/resource.js";
+import { createResource as resource43 } from "./resources/migration_plan/resource.js";
 import type { MigrationPlanResource } from "./resources/migration_plan/resource.js";
-import { createResource as resource42 } from "./resources/monitored_event/resource.js";
+import { createResource as resource44 } from "./resources/monitored_event/resource.js";
 import type { MonitoredEventResource } from "./resources/monitored_event/resource.js";
-import { createResource as resource43 } from "./resources/network/resource.js";
+import { createResource as resource45 } from "./resources/network/resource.js";
 import type { NetworkResource } from "./resources/network/resource.js";
-import { createResource as resource44 } from "./resources/network_interface/resource.js";
+import { createResource as resource46 } from "./resources/network_interface/resource.js";
 import type { NetworkInterfaceResource } from "./resources/network_interface/resource.js";
-import { createResource as resource45 } from "./resources/network_interface_accounting/resource.js";
+import { createResource as resource47 } from "./resources/network_interface_accounting/resource.js";
 import type { NetworkInterfaceAccountingResource } from "./resources/network_interface_accounting/resource.js";
-import { createResource as resource46 } from "./resources/network_interface_monitor/resource.js";
+import { createResource as resource48 } from "./resources/network_interface_monitor/resource.js";
 import type { NetworkInterfaceMonitorResource } from "./resources/network_interface_monitor/resource.js";
-import { createResource as resource47 } from "./resources/news_log/resource.js";
+import { createResource as resource49 } from "./resources/news_log/resource.js";
 import type { NewsLogResource } from "./resources/news_log/resource.js";
-import { createResource as resource48 } from "./resources/node/resource.js";
+import { createResource as resource50 } from "./resources/node/resource.js";
 import type { NodeResource } from "./resources/node/resource.js";
-import { createResource as resource49 } from "./resources/node_cgroup_state/resource.js";
+import { createResource as resource51 } from "./resources/node_cgroup_state/resource.js";
 import type { NodeCgroupStateResource } from "./resources/node_cgroup_state/resource.js";
-import { createResource as resource50 } from "./resources/node_ebpf_program/resource.js";
+import { createResource as resource52 } from "./resources/node_ebpf_program/resource.js";
 import type { NodeEbpfProgramResource } from "./resources/node_ebpf_program/resource.js";
-import { createResource as resource51 } from "./resources/node_ebpf_program_link/resource.js";
+import { createResource as resource53 } from "./resources/node_ebpf_program_link/resource.js";
 import type { NodeEbpfProgramLinkResource } from "./resources/node_ebpf_program_link/resource.js";
-import { createResource as resource52 } from "./resources/node_ebpf_program_object/resource.js";
+import { createResource as resource54 } from "./resources/node_ebpf_program_object/resource.js";
 import type { NodeEbpfProgramObjectResource } from "./resources/node_ebpf_program_object/resource.js";
-import { createResource as resource53 } from "./resources/node_kernel_configuration_option/resource.js";
+import { createResource as resource55 } from "./resources/node_kernel_configuration_option/resource.js";
 import type { NodeKernelConfigurationOptionResource } from "./resources/node_kernel_configuration_option/resource.js";
-import { createResource as resource54 } from "./resources/node_kernel_event/resource.js";
+import { createResource as resource56 } from "./resources/node_kernel_event/resource.js";
 import type { NodeKernelEventResource } from "./resources/node_kernel_event/resource.js";
-import { createResource as resource55 } from "./resources/node_kernel_evidence/resource.js";
+import { createResource as resource57 } from "./resources/node_kernel_evidence/resource.js";
 import type { NodeKernelEvidenceResource } from "./resources/node_kernel_evidence/resource.js";
-import { createResource as resource56 } from "./resources/node_kernel_evidence_error/resource.js";
+import { createResource as resource58 } from "./resources/node_kernel_evidence_error/resource.js";
 import type { NodeKernelEvidenceErrorResource } from "./resources/node_kernel_evidence_error/resource.js";
-import { createResource as resource57 } from "./resources/node_kernel_history_gap/resource.js";
+import { createResource as resource59 } from "./resources/node_kernel_history_gap/resource.js";
 import type { NodeKernelHistoryGapResource } from "./resources/node_kernel_history_gap/resource.js";
-import { createResource as resource58 } from "./resources/node_kernel_history_state/resource.js";
+import { createResource as resource60 } from "./resources/node_kernel_history_state/resource.js";
 import type { NodeKernelHistoryStateResource } from "./resources/node_kernel_history_state/resource.js";
-import { createResource as resource59 } from "./resources/node_kernel_livepatch/resource.js";
+import { createResource as resource61 } from "./resources/node_kernel_livepatch/resource.js";
 import type { NodeKernelLivepatchResource } from "./resources/node_kernel_livepatch/resource.js";
-import { createResource as resource60 } from "./resources/node_kernel_livepatch_patch/resource.js";
+import { createResource as resource62 } from "./resources/node_kernel_livepatch_patch/resource.js";
 import type { NodeKernelLivepatchPatchResource } from "./resources/node_kernel_livepatch_patch/resource.js";
-import { createResource as resource61 } from "./resources/node_kernel_module/resource.js";
+import { createResource as resource63 } from "./resources/node_kernel_module/resource.js";
 import type { NodeKernelModuleResource } from "./resources/node_kernel_module/resource.js";
-import { createResource as resource62 } from "./resources/node_kernel_parameter/resource.js";
+import { createResource as resource64 } from "./resources/node_kernel_parameter/resource.js";
 import type { NodeKernelParameterResource } from "./resources/node_kernel_parameter/resource.js";
-import { createResource as resource63 } from "./resources/node_software_change/resource.js";
+import { createResource as resource65 } from "./resources/node_software_change/resource.js";
 import type { NodeSoftwareChangeResource } from "./resources/node_software_change/resource.js";
-import { createResource as resource64 } from "./resources/node_software_deployment/resource.js";
+import { createResource as resource66 } from "./resources/node_software_deployment/resource.js";
 import type { NodeSoftwareDeploymentResource } from "./resources/node_software_deployment/resource.js";
-import { createResource as resource65 } from "./resources/node_software_version/resource.js";
+import { createResource as resource67 } from "./resources/node_software_version/resource.js";
 import type { NodeSoftwareVersionResource } from "./resources/node_software_version/resource.js";
-import { createResource as resource66 } from "./resources/node_sysctl/resource.js";
+import { createResource as resource68 } from "./resources/node_sysctl/resource.js";
 import type { NodeSysctlResource } from "./resources/node_sysctl/resource.js";
-import { createResource as resource67 } from "./resources/node_sysctl_change/resource.js";
+import { createResource as resource69 } from "./resources/node_sysctl_change/resource.js";
 import type { NodeSysctlChangeResource } from "./resources/node_sysctl_change/resource.js";
-import { createResource as resource68 } from "./resources/node_system_state/resource.js";
+import { createResource as resource70 } from "./resources/node_system_state/resource.js";
 import type { NodeSystemStateResource } from "./resources/node_system_state/resource.js";
-import { createResource as resource69 } from "./resources/node_transfer_connection/resource.js";
+import { createResource as resource71 } from "./resources/node_transfer_connection/resource.js";
 import type { NodeTransferConnectionResource } from "./resources/node_transfer_connection/resource.js";
-import { createResource as resource70 } from "./resources/oauth2_client/resource.js";
+import { createResource as resource72 } from "./resources/oauth2_client/resource.js";
 import type { Oauth2ClientResource } from "./resources/oauth2_client/resource.js";
-import { createResource as resource71 } from "./resources/object_history/resource.js";
+import { createResource as resource73 } from "./resources/object_history/resource.js";
 import type { ObjectHistoryResource } from "./resources/object_history/resource.js";
-import { createResource as resource72 } from "./resources/oom_report/resource.js";
+import { createResource as resource74 } from "./resources/oom_report/resource.js";
 import type { OomReportResource } from "./resources/oom_report/resource.js";
-import { createResource as resource73 } from "./resources/oom_report_rule/resource.js";
+import { createResource as resource75 } from "./resources/oom_report_rule/resource.js";
 import type { OomReportRuleResource } from "./resources/oom_report_rule/resource.js";
-import { createResource as resource74 } from "./resources/os_family/resource.js";
+import { createResource as resource76 } from "./resources/os_family/resource.js";
 import type { OsFamilyResource } from "./resources/os_family/resource.js";
-import { createResource as resource75 } from "./resources/os_template/resource.js";
+import { createResource as resource77 } from "./resources/os_template/resource.js";
 import type { OsTemplateResource } from "./resources/os_template/resource.js";
-import { createResource as resource76 } from "./resources/outage/resource.js";
+import { createResource as resource78 } from "./resources/outage/resource.js";
 import type { OutageResource } from "./resources/outage/resource.js";
-import { createResource as resource77 } from "./resources/outage_security_advisory/resource.js";
+import { createResource as resource79 } from "./resources/outage_security_advisory/resource.js";
 import type { OutageSecurityAdvisoryResource } from "./resources/outage_security_advisory/resource.js";
-import { createResource as resource78 } from "./resources/outage_update/resource.js";
+import { createResource as resource80 } from "./resources/outage_update/resource.js";
 import type { OutageUpdateResource } from "./resources/outage_update/resource.js";
-import { createResource as resource79 } from "./resources/password_change_log/resource.js";
+import { createResource as resource81 } from "./resources/password_change_log/resource.js";
 import type { PasswordChangeLogResource } from "./resources/password_change_log/resource.js";
-import { createResource as resource80 } from "./resources/payment_stats/resource.js";
+import { createResource as resource82 } from "./resources/payment_stats/resource.js";
 import type { PaymentStatsResource } from "./resources/payment_stats/resource.js";
-import { createResource as resource81 } from "./resources/pool/resource.js";
+import { createResource as resource83 } from "./resources/pool/resource.js";
 import type { PoolResource } from "./resources/pool/resource.js";
-import { createResource as resource82 } from "./resources/security_advisory/resource.js";
+import { createResource as resource84 } from "./resources/security_advisory/resource.js";
 import type { SecurityAdvisoryResource } from "./resources/security_advisory/resource.js";
-import { createResource as resource83 } from "./resources/security_advisory_cve/resource.js";
+import { createResource as resource85 } from "./resources/security_advisory_cve/resource.js";
 import type { SecurityAdvisoryCveResource } from "./resources/security_advisory_cve/resource.js";
-import { createResource as resource84 } from "./resources/security_advisory_update/resource.js";
+import { createResource as resource86 } from "./resources/security_advisory_update/resource.js";
 import type { SecurityAdvisoryUpdateResource } from "./resources/security_advisory_update/resource.js";
-import { createResource as resource85 } from "./resources/snapshot_download/resource.js";
+import { createResource as resource87 } from "./resources/snapshot_download/resource.js";
 import type { SnapshotDownloadResource } from "./resources/snapshot_download/resource.js";
-import { createResource as resource86 } from "./resources/system_config/resource.js";
+import { createResource as resource88 } from "./resources/system_config/resource.js";
 import type { SystemConfigResource } from "./resources/system_config/resource.js";
-import { createResource as resource87 } from "./resources/transaction/resource.js";
+import { createResource as resource89 } from "./resources/transaction/resource.js";
 import type { TransactionResource } from "./resources/transaction/resource.js";
-import { createResource as resource88 } from "./resources/transaction_chain/resource.js";
+import { createResource as resource90 } from "./resources/transaction_chain/resource.js";
 import type { TransactionChainResource } from "./resources/transaction_chain/resource.js";
-import { createResource as resource89 } from "./resources/user/resource.js";
+import { createResource as resource91 } from "./resources/user/resource.js";
 import type { UserResource } from "./resources/user/resource.js";
-import { createResource as resource90 } from "./resources/user_account/resource.js";
+import { createResource as resource92 } from "./resources/user_account/resource.js";
 import type { UserAccountResource } from "./resources/user_account/resource.js";
-import { createResource as resource91 } from "./resources/user_cluster_resource_package/resource.js";
+import { createResource as resource93 } from "./resources/user_cluster_resource_package/resource.js";
 import type { UserClusterResourcePackageResource } from "./resources/user_cluster_resource_package/resource.js";
-import { createResource as resource92 } from "./resources/user_namespace/resource.js";
+import { createResource as resource94 } from "./resources/user_namespace/resource.js";
 import type { UserNamespaceResource } from "./resources/user_namespace/resource.js";
-import { createResource as resource93 } from "./resources/user_namespace_map/resource.js";
+import { createResource as resource95 } from "./resources/user_namespace_map/resource.js";
 import type { UserNamespaceMapResource } from "./resources/user_namespace_map/resource.js";
-import { createResource as resource94 } from "./resources/user_outage/resource.js";
+import { createResource as resource96 } from "./resources/user_outage/resource.js";
 import type { UserOutageResource } from "./resources/user_outage/resource.js";
-import { createResource as resource95 } from "./resources/user_payment/resource.js";
+import { createResource as resource97 } from "./resources/user_payment/resource.js";
 import type { UserPaymentResource } from "./resources/user_payment/resource.js";
-import { createResource as resource96 } from "./resources/user_request/resource.js";
+import { createResource as resource98 } from "./resources/user_request/resource.js";
 import type { UserRequestResource } from "./resources/user_request/resource.js";
-import { createResource as resource97 } from "./resources/user_security_advisory/resource.js";
+import { createResource as resource99 } from "./resources/user_security_advisory/resource.js";
 import type { UserSecurityAdvisoryResource } from "./resources/user_security_advisory/resource.js";
-import { createResource as resource98 } from "./resources/user_session/resource.js";
+import { createResource as resource100 } from "./resources/user_session/resource.js";
 import type { UserSessionResource } from "./resources/user_session/resource.js";
-import { createResource as resource99 } from "./resources/vps/resource.js";
+import { createResource as resource101 } from "./resources/vps/resource.js";
 import type { VpsResource } from "./resources/vps/resource.js";
-import { createResource as resource100 } from "./resources/vps_outage/resource.js";
+import { createResource as resource102 } from "./resources/vps_outage/resource.js";
 import type { VpsOutageResource } from "./resources/vps_outage/resource.js";
-import { createResource as resource101 } from "./resources/vps_security_advisory/resource.js";
+import { createResource as resource103 } from "./resources/vps_security_advisory/resource.js";
 import type { VpsSecurityAdvisoryResource } from "./resources/vps_security_advisory/resource.js";
-import { createResource as resource102 } from "./resources/vps_user_data/resource.js";
+import { createResource as resource104 } from "./resources/vps_user_data/resource.js";
 import type { VpsUserDataResource } from "./resources/vps_user_data/resource.js";
-import { createResource as resource103 } from "./resources/webauthn/resource.js";
+import { createResource as resource105 } from "./resources/webauthn/resource.js";
 import type { WebauthnResource } from "./resources/webauthn/resource.js";
-import { createResource as resource104 } from "./resources/webui_user_setting/resource.js";
+import { createResource as resource106 } from "./resources/webui_user_setting/resource.js";
 import type { WebuiUserSettingResource } from "./resources/webui_user_setting/resource.js";
 export type * from "./types.js";
 
 export const API_VERSION = "7.0";
 export const SCHEMA_SHA256 =
-  "7cb28ebd8e0957d9a8ba2c359c8658040ed1cd195f0dd14327c03b595012fc85";
+  "7e2a529787c06944f1ad0cdf3369edd8b4650d79826f3bbda9101af2dfb67628";
 
 /**
  * Bind to an executor already targeting the selected API version, for example
@@ -259,6 +263,8 @@ export function createClient({ execute, metaNamespace }: ClientOptions): {
   readonly help_box: HelpBoxResource;
   readonly host_ip_address: HostIpAddressResource;
   readonly incident_policy: IncidentPolicyResource;
+  readonly incident_policy_evaluation: IncidentPolicyEvaluationResource;
+  readonly incident_policy_exposure: IncidentPolicyExposureResource;
   readonly incident_report: IncidentReportResource;
   readonly incoming_payment: IncomingPaymentResource;
   readonly ip_address: IpAddressResource;
@@ -369,83 +375,85 @@ export function createClient({ execute, metaNamespace }: ClientOptions): {
     help_box: resource24(execute, namespace),
     host_ip_address: resource25(execute, namespace),
     incident_policy: resource26(execute, namespace),
-    incident_report: resource27(execute, namespace),
-    incoming_payment: resource28(execute, namespace),
-    ip_address: resource29(execute, namespace),
-    ip_address_assignment: resource30(execute, namespace),
-    ip_release_campaign: resource31(execute, namespace),
-    ip_release_request: resource32(execute, namespace),
-    language: resource33(execute, namespace),
-    location: resource34(execute, namespace),
-    location_network: resource35(execute, namespace),
-    mail_log: resource36(execute, namespace),
-    mail_recipient: resource37(execute, namespace),
-    mail_template: resource38(execute, namespace),
-    mailbox: resource39(execute, namespace),
-    metrics_access_token: resource40(execute, namespace),
-    migration_plan: resource41(execute, namespace),
-    monitored_event: resource42(execute, namespace),
-    network: resource43(execute, namespace),
-    network_interface: resource44(execute, namespace),
-    network_interface_accounting: resource45(execute, namespace),
-    network_interface_monitor: resource46(execute, namespace),
-    news_log: resource47(execute, namespace),
-    node: resource48(execute, namespace),
-    node_cgroup_state: resource49(execute, namespace),
-    node_ebpf_program: resource50(execute, namespace),
-    node_ebpf_program_link: resource51(execute, namespace),
-    node_ebpf_program_object: resource52(execute, namespace),
-    node_kernel_configuration_option: resource53(execute, namespace),
-    node_kernel_event: resource54(execute, namespace),
-    node_kernel_evidence: resource55(execute, namespace),
-    node_kernel_evidence_error: resource56(execute, namespace),
-    node_kernel_history_gap: resource57(execute, namespace),
-    node_kernel_history_state: resource58(execute, namespace),
-    node_kernel_livepatch: resource59(execute, namespace),
-    node_kernel_livepatch_patch: resource60(execute, namespace),
-    node_kernel_module: resource61(execute, namespace),
-    node_kernel_parameter: resource62(execute, namespace),
-    node_software_change: resource63(execute, namespace),
-    node_software_deployment: resource64(execute, namespace),
-    node_software_version: resource65(execute, namespace),
-    node_sysctl: resource66(execute, namespace),
-    node_sysctl_change: resource67(execute, namespace),
-    node_system_state: resource68(execute, namespace),
-    node_transfer_connection: resource69(execute, namespace),
-    oauth2_client: resource70(execute, namespace),
-    object_history: resource71(execute, namespace),
-    oom_report: resource72(execute, namespace),
-    oom_report_rule: resource73(execute, namespace),
-    os_family: resource74(execute, namespace),
-    os_template: resource75(execute, namespace),
-    outage: resource76(execute, namespace),
-    outage_security_advisory: resource77(execute, namespace),
-    outage_update: resource78(execute, namespace),
-    password_change_log: resource79(execute, namespace),
-    payment_stats: resource80(execute, namespace),
-    pool: resource81(execute, namespace),
-    security_advisory: resource82(execute, namespace),
-    security_advisory_cve: resource83(execute, namespace),
-    security_advisory_update: resource84(execute, namespace),
-    snapshot_download: resource85(execute, namespace),
-    system_config: resource86(execute, namespace),
-    transaction: resource87(execute, namespace),
-    transaction_chain: resource88(execute, namespace),
-    user: resource89(execute, namespace),
-    user_account: resource90(execute, namespace),
-    user_cluster_resource_package: resource91(execute, namespace),
-    user_namespace: resource92(execute, namespace),
-    user_namespace_map: resource93(execute, namespace),
-    user_outage: resource94(execute, namespace),
-    user_payment: resource95(execute, namespace),
-    user_request: resource96(execute, namespace),
-    user_security_advisory: resource97(execute, namespace),
-    user_session: resource98(execute, namespace),
-    vps: resource99(execute, namespace),
-    vps_outage: resource100(execute, namespace),
-    vps_security_advisory: resource101(execute, namespace),
-    vps_user_data: resource102(execute, namespace),
-    webauthn: resource103(execute, namespace),
-    webui_user_setting: resource104(execute, namespace),
+    incident_policy_evaluation: resource27(execute, namespace),
+    incident_policy_exposure: resource28(execute, namespace),
+    incident_report: resource29(execute, namespace),
+    incoming_payment: resource30(execute, namespace),
+    ip_address: resource31(execute, namespace),
+    ip_address_assignment: resource32(execute, namespace),
+    ip_release_campaign: resource33(execute, namespace),
+    ip_release_request: resource34(execute, namespace),
+    language: resource35(execute, namespace),
+    location: resource36(execute, namespace),
+    location_network: resource37(execute, namespace),
+    mail_log: resource38(execute, namespace),
+    mail_recipient: resource39(execute, namespace),
+    mail_template: resource40(execute, namespace),
+    mailbox: resource41(execute, namespace),
+    metrics_access_token: resource42(execute, namespace),
+    migration_plan: resource43(execute, namespace),
+    monitored_event: resource44(execute, namespace),
+    network: resource45(execute, namespace),
+    network_interface: resource46(execute, namespace),
+    network_interface_accounting: resource47(execute, namespace),
+    network_interface_monitor: resource48(execute, namespace),
+    news_log: resource49(execute, namespace),
+    node: resource50(execute, namespace),
+    node_cgroup_state: resource51(execute, namespace),
+    node_ebpf_program: resource52(execute, namespace),
+    node_ebpf_program_link: resource53(execute, namespace),
+    node_ebpf_program_object: resource54(execute, namespace),
+    node_kernel_configuration_option: resource55(execute, namespace),
+    node_kernel_event: resource56(execute, namespace),
+    node_kernel_evidence: resource57(execute, namespace),
+    node_kernel_evidence_error: resource58(execute, namespace),
+    node_kernel_history_gap: resource59(execute, namespace),
+    node_kernel_history_state: resource60(execute, namespace),
+    node_kernel_livepatch: resource61(execute, namespace),
+    node_kernel_livepatch_patch: resource62(execute, namespace),
+    node_kernel_module: resource63(execute, namespace),
+    node_kernel_parameter: resource64(execute, namespace),
+    node_software_change: resource65(execute, namespace),
+    node_software_deployment: resource66(execute, namespace),
+    node_software_version: resource67(execute, namespace),
+    node_sysctl: resource68(execute, namespace),
+    node_sysctl_change: resource69(execute, namespace),
+    node_system_state: resource70(execute, namespace),
+    node_transfer_connection: resource71(execute, namespace),
+    oauth2_client: resource72(execute, namespace),
+    object_history: resource73(execute, namespace),
+    oom_report: resource74(execute, namespace),
+    oom_report_rule: resource75(execute, namespace),
+    os_family: resource76(execute, namespace),
+    os_template: resource77(execute, namespace),
+    outage: resource78(execute, namespace),
+    outage_security_advisory: resource79(execute, namespace),
+    outage_update: resource80(execute, namespace),
+    password_change_log: resource81(execute, namespace),
+    payment_stats: resource82(execute, namespace),
+    pool: resource83(execute, namespace),
+    security_advisory: resource84(execute, namespace),
+    security_advisory_cve: resource85(execute, namespace),
+    security_advisory_update: resource86(execute, namespace),
+    snapshot_download: resource87(execute, namespace),
+    system_config: resource88(execute, namespace),
+    transaction: resource89(execute, namespace),
+    transaction_chain: resource90(execute, namespace),
+    user: resource91(execute, namespace),
+    user_account: resource92(execute, namespace),
+    user_cluster_resource_package: resource93(execute, namespace),
+    user_namespace: resource94(execute, namespace),
+    user_namespace_map: resource95(execute, namespace),
+    user_outage: resource96(execute, namespace),
+    user_payment: resource97(execute, namespace),
+    user_request: resource98(execute, namespace),
+    user_security_advisory: resource99(execute, namespace),
+    user_session: resource100(execute, namespace),
+    vps: resource101(execute, namespace),
+    vps_outage: resource102(execute, namespace),
+    vps_security_advisory: resource103(execute, namespace),
+    vps_user_data: resource104(execute, namespace),
+    webauthn: resource105(execute, namespace),
+    webui_user_setting: resource106(execute, namespace),
   };
 }

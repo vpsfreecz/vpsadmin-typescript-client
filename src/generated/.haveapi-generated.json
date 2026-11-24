@@ -4,14 +4,14 @@
     "runtime_import": "haveapi-client"
   },
   "coverage": {
-    "application_action_count": 527,
-    "application_resource_count": 154,
+    "application_action_count": 529,
+    "application_resource_count": 156,
     "authentication_action_count": 5,
     "authentication_exclusion": "Authentication resources are retained and validated; the existing runtime owns their API-root routes.",
     "authentication_resource_count": 1
   },
   "files": {
-    "api.ts": "081a3dd4a2ff4fb2dbe98292ed40b48b157583a985aeed0874ccc235869e4cc1",
+    "api.ts": "11f6e00f03ac2ad5161f028e5bf05c091f760e41903c330e30cd1b69b763eda8",
     "descriptions.ts": "36f2c93d11f195b17d8d7217fff230b6a5b054d0aaec62f29bc3e7bbe231decc",
     "index.ts": "2a879cfd5f39c537a88eed0d8c071625a1bb6191d35c69e5a6134073cf79324b",
     "resources/action_state/actions/cancel.ts": "7f0215c6499e612a7899c5d242ee37fa2f196d4f43e1ae0fb777436674cc87cd",
@@ -184,6 +184,10 @@
     "resources/incident_policy/actions/index.ts": "e5a51d31b7e71756d0d142993a20a3767c9fff4a11660047efda75dd6688d3f6",
     "resources/incident_policy/actions/show.ts": "c50ee84f5d2ad1fa70e357497c9fe356f027efb44e2c0f3b170cac1a771837a2",
     "resources/incident_policy/resource.ts": "61e7e75d6c51a8d74529b288d6648b9e8918d30fcd3b3df21d8046dea56af0ac",
+    "resources/incident_policy_evaluation/actions/index.ts": "d5e2a75f8ce8cdd3682998cc1ed4374ddd18dbbdd2e421ffe867058e8218b8c9",
+    "resources/incident_policy_evaluation/resource.ts": "f9cd52828dd61f9b2e8192133d1a99306575393c2f8d6ba8c3f6b0cb57890e88",
+    "resources/incident_policy_exposure/actions/index.ts": "ff7dc54ef14cb873c38fbdd984939dfb826968f065cb7387dbb1a71f2ef36fea",
+    "resources/incident_policy_exposure/resource.ts": "cc2ef95660adc6936240aeb4d0e94b8d24105a58c4ccbe396a0ac79190349cd7",
     "resources/incident_report/actions/create.ts": "d20d87c5bedf668416f9f28549a2701ae23a86769fd705c11890ad2de16ef50b",
     "resources/incident_report/actions/index.ts": "31c9e7070632e36a74315a6346b7f2af711562d2020ddba9b23f175d1aa794c0",
     "resources/incident_report/actions/show.ts": "c60eb49d2cc8d2288089064cf0dfd5245ff360acea8fac7a7f15742d90b1b3da",
@@ -696,7 +700,7 @@
     "resources/webui_user_setting/actions/show.ts": "5c3633e5f05a72c0af5b4470fd45161ae777ed7e3872aaadb31cf49a2e8ad66b",
     "resources/webui_user_setting/resource.ts": "da734dec0115cd461b21f5e685d9ecdbb76d183f9424932adffef1307f8b069d",
     "runtime.ts": "8ec81accc1c29a4effe8576dd41a776bd4cd4270986d956fa837f41fe49b1649",
-    "types.ts": "eb5ccb5fd37acc5fe27349b8d6dd4a9fbc4ab8ebc0502194a591b643575c4d04"
+    "types.ts": "64038882ee12f43e3022a735b7264a056b1c74e7a955851ca675a31ee41ab6c9"
   },
   "format": 1,
   "formatter": {
@@ -709,5 +713,5 @@
   "owner": "haveapi-typescript-client",
   "profile": "vpsadmin-full-fixture",
   "protocol_version": "2.0",
-  "schema_sha256": "7cb28ebd8e0957d9a8ba2c359c8658040ed1cd195f0dd14327c03b595012fc85"
+  "schema_sha256": "7e2a529787c06944f1ad0cdf3369edd8b4650d79826f3bbda9101af2dfb67628"
 }

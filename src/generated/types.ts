@@ -1666,6 +1666,32 @@ export type {
 } from "./resources/incident_policy/actions/show.js";
 export type { IncidentPolicyResource } from "./resources/incident_policy/resource.js";
 export type {
+  IncidentPolicyEvaluation__IndexInput,
+  IncidentPolicyEvaluation__IndexOutput,
+  IncidentPolicyEvaluation__IndexGlobalInput,
+  IncidentPolicyEvaluation__IndexGlobalOutput,
+  IncidentPolicyEvaluation__IndexObjectInput,
+  IncidentPolicyEvaluation__IndexObjectOutput,
+  IncidentPolicyEvaluation__IndexPath,
+  IncidentPolicyEvaluation__IndexOptions,
+  IncidentPolicyEvaluation__IndexDescribeOptions,
+  IncidentPolicyEvaluation__IndexAction,
+} from "./resources/incident_policy_evaluation/actions/index.js";
+export type { IncidentPolicyEvaluationResource } from "./resources/incident_policy_evaluation/resource.js";
+export type {
+  IncidentPolicyExposure__IndexInput,
+  IncidentPolicyExposure__IndexOutput,
+  IncidentPolicyExposure__IndexGlobalInput,
+  IncidentPolicyExposure__IndexGlobalOutput,
+  IncidentPolicyExposure__IndexObjectInput,
+  IncidentPolicyExposure__IndexObjectOutput,
+  IncidentPolicyExposure__IndexPath,
+  IncidentPolicyExposure__IndexOptions,
+  IncidentPolicyExposure__IndexDescribeOptions,
+  IncidentPolicyExposure__IndexAction,
+} from "./resources/incident_policy_exposure/actions/index.js";
+export type { IncidentPolicyExposureResource } from "./resources/incident_policy_exposure/resource.js";
+export type {
   IncidentReport__CreateInput,
   IncidentReport__CreateOutput,
   IncidentReport__CreateGlobalInput,
