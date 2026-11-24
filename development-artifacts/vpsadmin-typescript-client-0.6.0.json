@@ -1,0 +1,31 @@
+{
+  "purpose": "Development dependency for reusable incident policy presentation using ordinary immutable HTTPS; not a registry release.",
+  "packed_source": {
+    "repository": "git@github.com:vpsfreecz/vpsadmin-typescript-client.git",
+    "revision": "aed11d01c0d1436293f45a1a4e83d88421375bc1",
+    "tree": "2b1fa2c5093d3c6cdbe36b71e499f2bb6f67831f"
+  },
+  "api_source": "74c0af3aef3ec9124ca89ce7669ccd9b99633495",
+  "schema_sha256": "7e2a529787c06944f1ad0cdf3369edd8b4650d79826f3bbda9101af2dfb67628",
+  "source_provenance_sha256": "429fd99e3dee126e2306fad1fb4c5bc6f8442a7fcb7abdab8f8fae34b121418e",
+  "exporter_lock_sha256": "2e9a124eff7b80d6fd57cd0f03cb2809847c67cc7f1af6364911c3622d7242a0",
+  "generator": {
+    "revision": "1ef9b204ba45bb261d3334be5c555cc1856b713b",
+    "pin_sha256": "3492fa66831175260b63cb8580a9c124a93d7bdb4448de301b4912a17549e7ed",
+    "generated_file_count": 690
+  },
+  "runtime": "haveapi-client@0.32.0",
+  "package": {
+    "name": "vpsadmin-typescript-client",
+    "version": "0.6.0",
+    "published": false
+  },
+  "archive": {
+    "file": "vpsadmin-typescript-client-0.6.0.tgz",
+    "sha256": "9cba02754bec157616c66207312f44312e9af36fe5deb05e8e68585615e17ca9",
+    "size": 348079,
+    "npm_integrity": "sha512-XEZ9FeH18wsg4RzAamouPP/o7RhL1BA6C8OscVRZKfnMVVZjrTZmrtIfKql9c/achRz6g9VOzhNPH8vunHy7Hw==",
+    "npm_shasum": "3bfdd123951e70145d1de1f620bf521d316ab781"
+  },
+  "delivery": "This support commit delivers unchanged archive bytes packed from packed_source.revision; it is not the packed source revision."
+}
