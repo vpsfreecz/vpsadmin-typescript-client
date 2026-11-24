@@ -1,3 +1,9 @@
+# 0.6.0
+
+- Add generated read operations and types for the administrator incident-policy
+  overview and evaluation history, including offset pagination and response
+  metadata.
+
 # 0.5.0
 
 - Add generated operations and types for incident policies, per-VPS policy settings
