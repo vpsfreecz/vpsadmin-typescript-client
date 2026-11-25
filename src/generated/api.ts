@@ -210,21 +210,25 @@ import { createResource as resource100 } from "./resources/user_session/resource
 import type { UserSessionResource } from "./resources/user_session/resource.js";
 import { createResource as resource101 } from "./resources/vps/resource.js";
 import type { VpsResource } from "./resources/vps/resource.js";
-import { createResource as resource102 } from "./resources/vps_outage/resource.js";
+import { createResource as resource102 } from "./resources/vps_evidence/resource.js";
+import type { VpsEvidenceResource } from "./resources/vps_evidence/resource.js";
+import { createResource as resource103 } from "./resources/vps_outage/resource.js";
 import type { VpsOutageResource } from "./resources/vps_outage/resource.js";
-import { createResource as resource103 } from "./resources/vps_security_advisory/resource.js";
+import { createResource as resource104 } from "./resources/vps_pressure_history/resource.js";
+import type { VpsPressureHistoryResource } from "./resources/vps_pressure_history/resource.js";
+import { createResource as resource105 } from "./resources/vps_security_advisory/resource.js";
 import type { VpsSecurityAdvisoryResource } from "./resources/vps_security_advisory/resource.js";
-import { createResource as resource104 } from "./resources/vps_user_data/resource.js";
+import { createResource as resource106 } from "./resources/vps_user_data/resource.js";
 import type { VpsUserDataResource } from "./resources/vps_user_data/resource.js";
-import { createResource as resource105 } from "./resources/webauthn/resource.js";
+import { createResource as resource107 } from "./resources/webauthn/resource.js";
 import type { WebauthnResource } from "./resources/webauthn/resource.js";
-import { createResource as resource106 } from "./resources/webui_user_setting/resource.js";
+import { createResource as resource108 } from "./resources/webui_user_setting/resource.js";
 import type { WebuiUserSettingResource } from "./resources/webui_user_setting/resource.js";
 export type * from "./types.js";
 
 export const API_VERSION = "7.0";
 export const SCHEMA_SHA256 =
-  "7088ef00b82964437746ad3e46b3ca78da515b8fde18cae46f1c275ef68f9bf9";
+  "a4c81b6df4e0e167ddc3c888c66be173282061fcb0f80fe19205f4a372d64326";
 
 /**
  * Bind to an executor already targeting the selected API version, for example
@@ -338,7 +342,9 @@ export function createClient({ execute, metaNamespace }: ClientOptions): {
   readonly user_security_advisory: UserSecurityAdvisoryResource;
   readonly user_session: UserSessionResource;
   readonly vps: VpsResource;
+  readonly vps_evidence: VpsEvidenceResource;
   readonly vps_outage: VpsOutageResource;
+  readonly vps_pressure_history: VpsPressureHistoryResource;
   readonly vps_security_advisory: VpsSecurityAdvisoryResource;
   readonly vps_user_data: VpsUserDataResource;
   readonly webauthn: WebauthnResource;
@@ -450,10 +456,12 @@ export function createClient({ execute, metaNamespace }: ClientOptions): {
     user_security_advisory: resource99(execute, namespace),
     user_session: resource100(execute, namespace),
     vps: resource101(execute, namespace),
-    vps_outage: resource102(execute, namespace),
-    vps_security_advisory: resource103(execute, namespace),
-    vps_user_data: resource104(execute, namespace),
-    webauthn: resource105(execute, namespace),
-    webui_user_setting: resource106(execute, namespace),
+    vps_evidence: resource102(execute, namespace),
+    vps_outage: resource103(execute, namespace),
+    vps_pressure_history: resource104(execute, namespace),
+    vps_security_advisory: resource105(execute, namespace),
+    vps_user_data: resource106(execute, namespace),
+    webauthn: resource107(execute, namespace),
+    webui_user_setting: resource108(execute, namespace),
   };
 }

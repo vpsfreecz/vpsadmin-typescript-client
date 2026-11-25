@@ -4,14 +4,14 @@
   "haveapi_version_sha256": "76c46a6bd29921677707362fa740e3f171f82a3091d69cc97cd8c7dccdcc1d10",
   "api_version": "7.0",
   "schema_file": "schema/schema.json",
-  "schema_sha256": "7088ef00b82964437746ad3e46b3ca78da515b8fde18cae46f1c275ef68f9bf9",
+  "schema_sha256": "a4c81b6df4e0e167ddc3c888c66be173282061fcb0f80fe19205f4a372d64326",
   "provenance_file": "schema/provenance.json",
-  "provenance_sha256": "2dc3ebd685f416b8099cd23fe4c9f14ea6c0342a2eed117323988f34268a1e76",
+  "provenance_sha256": "221c9d234920c85b87515643c598a92fc83a879779885c21065edf1fd260afe4",
   "tooling_sha256": {
     "package-lock.json": "14bf40cee33a6eed2570a8e406bed73e24ff9a0cda538ad228104b20446b210b",
     "flake.lock": "187d63f65b46f5cfa3ac830a5d0c182693cd0ca7ab8e486c3876fcf4b4f6d4f4",
     "tools/toolchain.json": "dc28c254a633e5d19fc079b573082507f104089a8c826075d50a850688310d93",
-    "schema/tooling.Gemfile.lock": "dd5db5ca44bb69ca2ae0244515103146f17b7621f12ca34c3dec6950f4455aaf",
+    "schema/tooling.Gemfile.lock": "ca7865c3a0b3c96e63791996a0cf786dba1c90b145830099073fbfd579360397",
     "tools/regenerate": "87f89189684004ca04a07997b6022385f09e812365522592984d3a6f01446513",
     "tools/generator-source.rb": "737f261eb3818e82bda62c654bfb8b365168131679a0d9abfe378d6b854d3925"
   },

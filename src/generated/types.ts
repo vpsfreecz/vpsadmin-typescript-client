@@ -1741,6 +1741,19 @@ export type {
 } from "./resources/incident_report/actions/show.js";
 export type { IncidentReportResource } from "./resources/incident_report/resource.js";
 export type {
+  IncidentReport__EvidenceInterval__IndexInput,
+  IncidentReport__EvidenceInterval__IndexOutput,
+  IncidentReport__EvidenceInterval__IndexGlobalInput,
+  IncidentReport__EvidenceInterval__IndexGlobalOutput,
+  IncidentReport__EvidenceInterval__IndexObjectInput,
+  IncidentReport__EvidenceInterval__IndexObjectOutput,
+  IncidentReport__EvidenceInterval__IndexPath,
+  IncidentReport__EvidenceInterval__IndexOptions,
+  IncidentReport__EvidenceInterval__IndexDescribeOptions,
+  IncidentReport__EvidenceInterval__IndexAction,
+} from "./resources/incident_report/resources/evidence_interval/actions/index.js";
+export type { IncidentReport__EvidenceIntervalResource } from "./resources/incident_report/resources/evidence_interval/resource.js";
+export type {
   IncidentReport__PolicyEvaluation__IndexInput,
   IncidentReport__PolicyEvaluation__IndexOutput,
   IncidentReport__PolicyEvaluation__IndexGlobalInput,
@@ -6034,6 +6047,19 @@ export type {
 } from "./resources/vps/resources/console_token/actions/show.js";
 export type { Vps__ConsoleTokenResource } from "./resources/vps/resources/console_token/resource.js";
 export type {
+  Vps__Evidence__IndexInput,
+  Vps__Evidence__IndexOutput,
+  Vps__Evidence__IndexGlobalInput,
+  Vps__Evidence__IndexGlobalOutput,
+  Vps__Evidence__IndexObjectInput,
+  Vps__Evidence__IndexObjectOutput,
+  Vps__Evidence__IndexPath,
+  Vps__Evidence__IndexOptions,
+  Vps__Evidence__IndexDescribeOptions,
+  Vps__Evidence__IndexAction,
+} from "./resources/vps/resources/evidence/actions/index.js";
+export type { Vps__EvidenceResource } from "./resources/vps/resources/evidence/resource.js";
+export type {
   Vps__Feature__IndexInput,
   Vps__Feature__IndexOutput,
   Vps__Feature__IndexGlobalInput,
@@ -6305,6 +6331,19 @@ export type {
 } from "./resources/vps/resources/status/actions/show.js";
 export type { Vps__StatusResource } from "./resources/vps/resources/status/resource.js";
 export type {
+  VpsEvidence__IndexInput,
+  VpsEvidence__IndexOutput,
+  VpsEvidence__IndexGlobalInput,
+  VpsEvidence__IndexGlobalOutput,
+  VpsEvidence__IndexObjectInput,
+  VpsEvidence__IndexObjectOutput,
+  VpsEvidence__IndexPath,
+  VpsEvidence__IndexOptions,
+  VpsEvidence__IndexDescribeOptions,
+  VpsEvidence__IndexAction,
+} from "./resources/vps_evidence/actions/index.js";
+export type { VpsEvidenceResource } from "./resources/vps_evidence/resource.js";
+export type {
   VpsOutage__IndexInput,
   VpsOutage__IndexOutput,
   VpsOutage__IndexGlobalInput,
@@ -6329,6 +6368,19 @@ export type {
   VpsOutage__ShowAction,
 } from "./resources/vps_outage/actions/show.js";
 export type { VpsOutageResource } from "./resources/vps_outage/resource.js";
+export type {
+  VpsPressureHistory__IndexInput,
+  VpsPressureHistory__IndexOutput,
+  VpsPressureHistory__IndexGlobalInput,
+  VpsPressureHistory__IndexGlobalOutput,
+  VpsPressureHistory__IndexObjectInput,
+  VpsPressureHistory__IndexObjectOutput,
+  VpsPressureHistory__IndexPath,
+  VpsPressureHistory__IndexOptions,
+  VpsPressureHistory__IndexDescribeOptions,
+  VpsPressureHistory__IndexAction,
+} from "./resources/vps_pressure_history/actions/index.js";
+export type { VpsPressureHistoryResource } from "./resources/vps_pressure_history/resource.js";
 export type {
   VpsSecurityAdvisory__IndexInput,
   VpsSecurityAdvisory__IndexOutput,

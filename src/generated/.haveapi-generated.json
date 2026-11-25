@@ -4,14 +4,14 @@
     "runtime_import": "haveapi-client"
   },
   "coverage": {
-    "application_action_count": 530,
-    "application_resource_count": 156,
+    "application_action_count": 534,
+    "application_resource_count": 160,
     "authentication_action_count": 5,
     "authentication_exclusion": "Authentication resources are retained and validated; the existing runtime owns their API-root routes.",
     "authentication_resource_count": 1
   },
   "files": {
-    "api.ts": "81dd2442eb97ac5697daabda7f61915fb951cd6a98918d6ef5897a7a2bfe10c4",
+    "api.ts": "502158fdb77e08429129dc4ec05a4f829f4e34aa2062972c20d0d26840cc122e",
     "descriptions.ts": "36f2c93d11f195b17d8d7217fff230b6a5b054d0aaec62f29bc3e7bbe231decc",
     "index.ts": "2a879cfd5f39c537a88eed0d8c071625a1bb6191d35c69e5a6134073cf79324b",
     "resources/action_state/actions/cancel.ts": "7f0215c6499e612a7899c5d242ee37fa2f196d4f43e1ae0fb777436674cc87cd",
@@ -192,7 +192,9 @@
     "resources/incident_report/actions/create.ts": "d20d87c5bedf668416f9f28549a2701ae23a86769fd705c11890ad2de16ef50b",
     "resources/incident_report/actions/index.ts": "31c9e7070632e36a74315a6346b7f2af711562d2020ddba9b23f175d1aa794c0",
     "resources/incident_report/actions/show.ts": "c60eb49d2cc8d2288089064cf0dfd5245ff360acea8fac7a7f15742d90b1b3da",
-    "resources/incident_report/resource.ts": "47b9e4d2578f776a702a5ea33e723ce1077a2152551ff5c2b0821e4a6d2da841",
+    "resources/incident_report/resource.ts": "4780d491829e830422915e65d6f2bfa233b5f210dd382f45f407ef179399ac2b",
+    "resources/incident_report/resources/evidence_interval/actions/index.ts": "2aa9e58168bc287b1a5b47215026a4b3785dba565a41e726715d2f01837368f8",
+    "resources/incident_report/resources/evidence_interval/resource.ts": "3baf214f28dc57e39c2eb9d5b0fe82db35e917dd5872d4b3087d7b15ac11c7e8",
     "resources/incident_report/resources/policy_evaluation/actions/index.ts": "e1021a827aa3e5089451284de8ff8bc9fdc9ceec51faa9536a3611d9090b5167",
     "resources/incident_report/resources/policy_evaluation/resource.ts": "2147fae276ba6253ab76d6475a7636d98d647f2875e00a80d25ecd780d3bfa90",
     "resources/incoming_payment/actions/index.ts": "8bbd3a2d37c8a1edbd1e5f532f772e1d323c65bf76130f6dcb2767ffefd5b339",
@@ -642,11 +644,13 @@
     "resources/vps/actions/stop.ts": "d72430483d345464e761c963de921738ac11d3e1bc6836f270a10043670ea3d0",
     "resources/vps/actions/swap_with.ts": "de1e84ab5b41197968ee3d9b050549f5add97e985860ebda81cae01f9d348910",
     "resources/vps/actions/update.ts": "d90522499d13aab719de636c107c06d7cf03fe6939c77a053e04e6de22b48d3d",
-    "resources/vps/resource.ts": "30b726004fb07a0c82372784a6154adcf19ebd117b22e4fd187b2b4011825f39",
+    "resources/vps/resource.ts": "cfb7fb2b0ff527727a811c1daf1c115e5d9bf6a0e552d304794234449a2a09ca",
     "resources/vps/resources/console_token/actions/create.ts": "cbb3351c7b3d3ba2bc74926b35b1781bb17eab6dc6ed798c0ae573fc82de13a6",
     "resources/vps/resources/console_token/actions/delete.ts": "729712b5d4879d126b5c62b6e4a70e56edd00d4098b8b689e92dc96a11343a56",
     "resources/vps/resources/console_token/actions/show.ts": "f60ed48a4373e29b9451d1bb7e535c3895df24e0763d2c173fb2df0cd58232fb",
     "resources/vps/resources/console_token/resource.ts": "213ecbacdab7f729fd7c4ca75ffaad9270ceea2254d3bdc883b937eb731c26ae",
+    "resources/vps/resources/evidence/actions/index.ts": "766f09a5fbce233ef86f4f08fd742d5d91069b13ab76f0ef1337a6ab2e113348",
+    "resources/vps/resources/evidence/resource.ts": "fefe92fd269c9737cbcc8d32502edcaf02f5b97bdccbbc4bc56c9d8946f7fff3",
     "resources/vps/resources/feature/actions/index.ts": "7457bbefcaf036bd9b987460c828a644469aa2516fa8e90e5d5cb4db8f0a45ca",
     "resources/vps/resources/feature/actions/show.ts": "f32115bae0b584ad043ffc4c04ff0087d091798c807f7ffa257b48dec1117321",
     "resources/vps/resources/feature/actions/update.ts": "cba4ded63c2204a04f8ced9dbb98ce5c8cd1c85340f5ffda3e044f68fb78db15",
@@ -676,9 +680,13 @@
     "resources/vps/resources/status/actions/index.ts": "99da68f46385358a660daee254720d50a22239cf7487fed41a5e355088d197f3",
     "resources/vps/resources/status/actions/show.ts": "2dcdd65d0a50e562d761e74efa003ac896f14d1752f0d0f41e0b8dc620a29219",
     "resources/vps/resources/status/resource.ts": "c350617da013464310ac71720dfb9c414ee1e40cdc727109271387e3308dc61f",
+    "resources/vps_evidence/actions/index.ts": "3616f6a0217b6f6d031a99bbbb860a9051f2d457a21a54b5066286eccc6f4345",
+    "resources/vps_evidence/resource.ts": "3715eaffcf9244b7b33b77abe3916a2c731afd4ee4237e2caa93caade42853a9",
     "resources/vps_outage/actions/index.ts": "156340c00921c18def832d03f3d1cfc17d9d0eec8cd36e0d1cf77f624683131c",
     "resources/vps_outage/actions/show.ts": "53c03c63a9d897bcff265918a19790cedf86876930a935696abfb01dd767a82d",
     "resources/vps_outage/resource.ts": "b76526d0bc19b2befe6fbd7eb31207c56e0b62ace9fcf5b15cec8aee1d513fa5",
+    "resources/vps_pressure_history/actions/index.ts": "26e74ffdd290feb20444d256fb2e87da93c66a0cda309ba2d9c444a5b321377d",
+    "resources/vps_pressure_history/resource.ts": "1166d8278259c9e1256676507c891867a24dedf28eb98af21bd70d0f899f324c",
     "resources/vps_security_advisory/actions/index.ts": "b0a51e2ba286a39595697fc75e9eee198bed4b18160f8cee033f1ece19728bb5",
     "resources/vps_security_advisory/resource.ts": "177accf439f6e798d7ade9ae63a33602f18bb4a5bb9d466e9f65a4e043d5c87b",
     "resources/vps_user_data/actions/create.ts": "b356925f8a49e357cbbd7e839f54d0635f12821bce2f0e9a618f49f5a0fc42b1",
@@ -701,7 +709,7 @@
     "resources/webui_user_setting/actions/show.ts": "5c3633e5f05a72c0af5b4470fd45161ae777ed7e3872aaadb31cf49a2e8ad66b",
     "resources/webui_user_setting/resource.ts": "da734dec0115cd461b21f5e685d9ecdbb76d183f9424932adffef1307f8b069d",
     "runtime.ts": "8ec81accc1c29a4effe8576dd41a776bd4cd4270986d956fa837f41fe49b1649",
-    "types.ts": "001fbb9aa2fbe537f4b0bc4203a2b83052577450cc180a6cb3591b8a509830fc"
+    "types.ts": "0707a615d5d7365880e24ca2dedc528c1e3d6d65f0de122eba54fa80ba3b8cf5"
   },
   "format": 1,
   "formatter": {
@@ -714,5 +722,5 @@
   "owner": "haveapi-typescript-client",
   "profile": "vpsadmin-full-fixture",
   "protocol_version": "2.0",
-  "schema_sha256": "7088ef00b82964437746ad3e46b3ca78da515b8fde18cae46f1c275ef68f9bf9"
+  "schema_sha256": "a4c81b6df4e0e167ddc3c888c66be173282061fcb0f80fe19205f4a372d64326"
 }

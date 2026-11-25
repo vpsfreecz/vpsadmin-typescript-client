@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import {
   cpSync, existsSync, mkdirSync, mkdtempSync, readFileSync, renameSync,
@@ -82,6 +83,20 @@ try {
   const modules = join(consumer, 'node_modules');
   mkdirSync(modules, { recursive: true });
   renameSync(join(temporary, 'package'), join(modules, 'vpsadmin-typescript-client'));
+  const installed = join(modules, 'vpsadmin-typescript-client');
+  const readJson = (path) => JSON.parse(readFileSync(join(installed, path), 'utf8'));
+  const digest = (path) => createHash('sha256').update(readFileSync(join(installed, path))).digest('hex');
+  const input = readJson('tools/generator.json');
+  const provenance = readJson('schema/provenance.json');
+  const generated = readJson('src/generated/.haveapi-generated.json');
+  assert.equal(input.schema_file, 'schema/schema.json');
+  assert.equal(input.provenance_file, 'schema/provenance.json');
+  assert.equal(digest(input.schema_file), input.schema_sha256);
+  assert.equal(digest(input.provenance_file), input.provenance_sha256);
+  assert.equal(provenance.schema_sha256, input.schema_sha256);
+  assert.equal(generated.schema_sha256, input.schema_sha256);
+  assert.equal(digest('schema/tooling.Gemfile.lock'), provenance.tooling.lock_sha256);
+  assert.equal(provenance.tooling.lock_sha256, input.tooling_sha256['schema/tooling.Gemfile.lock']);
   symlinkSync(join(root, 'node_modules/haveapi-client'), join(modules, 'haveapi-client'), 'dir');
   cpSync(fixtures, consumer, { recursive: true });
   writeFileSync(join(consumer, 'package.json'), '{"type":"module","private":true}\n');
