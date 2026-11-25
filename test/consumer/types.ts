@@ -162,3 +162,68 @@ void wrongTrigger;
 
 // Nullable global overrides use the described Custom value input.
 client.system_config.update({ path: { category: 'test', name: 'limit' }, params: { value: null } });
+
+
+const intervals = await client.incident_report.evidence_interval.index({
+  path: { incident_report_id: 3 }, params: { offset: 0, limit: 100 },
+});
+const intervalFrom: string | null | undefined = intervals.data[0]?.from_at;
+const intervalCredit: number | null | undefined = intervals.data[0]?.credit_us;
+const lowerBound: boolean | null | undefined = intervals.data[0]?.peak_is_lower_bound;
+const condition: number | null | undefined = intervals.meta.condition_value;
+const complete: boolean | null | undefined = intervals.meta.window_complete;
+const live = await client.vps.evidence.index({ path: { vps_id: 12 } });
+const fleet = await client.vps_evidence.index({ params: { offset: 0, limit: 100, signal: 'rtnl_latency', vps: 12 } });
+const currentCredit: number | null | undefined = live.data[0]?.credit_us;
+const peak: number | null | undefined = fleet.data[0]?.peak_value;
+const nextOffset: number | null | undefined = fleet.meta.next_offset;
+const unavailable: unknown = fleet.meta.unavailable_signals;
+if (Array.isArray(unavailable) && unavailable.every((signal) => typeof signal === 'string')) {
+  const signals: string[] = unavailable;
+  void signals;
+}
+// @ts-expect-error Custom output has no declared array element subtype
+const uncheckedSignals: string[] = fleet.meta.unavailable_signals;
+// @ts-expect-error unavailable ownership credit cannot be treated as recorded zero
+const knownCredit: number = live.data[0]?.credit_us;
+// @ts-expect-error optional measurements retain nullable types
+const knownPeak: number = fleet.data[0]?.peak_value;
+// @ts-expect-error required parent report path
+client.incident_report.evidence_interval.index();
+// @ts-expect-error required parent VPS path
+client.vps.evidence.index();
+// @ts-expect-error obsolete draft child is absent
+client.incident_report.rtnl_interval.index({ path: { incident_report_id: 3 } });
+// @ts-expect-error pagination inputs remain integers
+client.vps_evidence.index({ params: { offset: '0' } });
+// @ts-expect-error unknown completeness differs from false
+const knownComplete: boolean = intervals.meta.window_complete;
+void [intervalFrom, intervalCredit, lowerBound, condition, complete, currentCredit, peak, nextOffset, uncheckedSignals, knownCredit, knownPeak, knownComplete];
+
+// Additive SystemConfig fields retain nullable booleans and unknown Custom data.
+const setting = await client.system_config.show({ path: { category: 'test', name: 'limit' } });
+const settingNullable: boolean | null | undefined = setting.data.value_nullable;
+const settingChoices: unknown = setting.data.choices;
+// @ts-expect-error optional and nullable configuration state is not a known boolean
+const knownNullable: boolean = setting.data.value_nullable;
+// @ts-expect-error Custom choices do not declare a string-array subtype
+const knownChoices: string[] = setting.data.choices;
+void [settingNullable, settingChoices, knownNullable, knownChoices];
+
+
+const pressure = await client.vps_pressure_history.index({ params: { vps: 12, days: 30 } });
+client.vps_pressure_history.index({ params: { vps: 12 } });
+client.vps_evidence.index({ params: { user: 1, node: 2, location: 3, environment: 4 } });
+const dailyRecorded: number | null | undefined = pressure.data[0]?.recorded_us;
+const historyTotal: number | null | undefined = pressure.meta.total_recorded_us;
+const currentEpoch: string | null | undefined = pressure.meta.accounting_since;
+const firstAcceptance: string | null | undefined = pressure.meta.first_recorded_at;
+// @ts-expect-error unknown daily duration cannot be treated as measured zero
+const knownDaily: number = pressure.data[0]?.recorded_us;
+// @ts-expect-error history requires a VPS input
+client.vps_pressure_history.index({ params: { days: 7 } });
+// @ts-expect-error periods are integer inputs, not strings
+client.vps_pressure_history.index({ params: { vps: 12, days: '30' } });
+// @ts-expect-error resource filters use numeric identities
+client.vps_evidence.index({ params: { node: '2' } });
+void [dailyRecorded, historyTotal, currentEpoch, firstAcceptance, knownDaily];

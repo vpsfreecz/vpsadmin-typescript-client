@@ -276,6 +276,11 @@ filter fields and actions by permission. Descriptions can contain extension
 fields. The generated client does not validate descriptions or infer
 authorization from them.
 
+Before offering `dataset.disable_backups`, use a known compatible server or
+check its current description. Never call the action to probe for support.
+See the [saved input files](docs/development.md#saved-input-files) for schema
+provenance and regeneration rules.
+
 Action results include types for their declared global metadata fields and
 permit unknown extension fields. These types do not validate server responses.
 

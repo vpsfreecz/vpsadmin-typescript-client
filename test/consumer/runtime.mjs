@@ -27,7 +27,7 @@ test('generated modules compose behind the unchanged public package surface', as
 
 test('versioned Network read preserves namespaces, options and partial response receipts', async () => {
   assert.equal(API_VERSION, '7.0');
-  assert.equal(SCHEMA_SHA256, '7088ef00b82964437746ad3e46b3ca78da515b8fde18cae46f1c275ef68f9bf9');
+  assert.equal(SCHEMA_SHA256, 'a4c81b6df4e0e167ddc3c888c66be173282061fcb0f80fe19205f4a372d64326');
   const signal = new AbortController().signal;
   const headers = { 'X-Request-Id': 'consumer' };
   const receipt = {
@@ -386,6 +386,160 @@ test('system configuration choices retain scalar identity, null and absent outpu
       assert.deepEqual(result.data, output);
     }
     assert.equal(calls, outputs.length);
+  } finally {
+    server.closeAllConnections();
+    await new Promise((resolve) => server.close(resolve));
+  }
+});
+
+test('generic evidence reads preserve routes, null credit, measurements and Custom arrays', async () => {
+  const calls = [];
+  const stamp = '2026-11-25T12:00:00.123456Z';
+  let credit = null;
+  let unavailable = [];
+  const server = createServer((request, response) => {
+    const url = new URL(request.url, 'http://fixture.invalid');
+    calls.push({ method: request.method, url });
+    response.setHeader('Content-Type', 'application/json');
+    const meta = { configuration_valid: unavailable.length === 0, unavailable_signals: unavailable, read_at: stamp };
+    const row = { configuration_valid: unavailable.length === 0, credit_us: credit, peak_value: credit === null ? null : 0, peak_is_lower_bound: credit === null ? null : false, condition_value: null };
+    let output;
+    if (url.pathname.endsWith('/evidence_intervals')) output = {
+      evidence_intervals: [{ id: 3, from_at: stamp, to_at: '2026-11-25T12:00:01.654321Z', credit_us: 1530865, measurement: null, peak_unit: null, peak_value: null, peak_is_lower_bound: null }],
+      _meta: { available: true, total_count: 2, next_offset: 1, condition_measurement: 'rtnl_latency', condition_operator: 'gt', condition_value: 1000000, condition_unit: 'microseconds', window_complete: false },
+    };
+    else if (url.pathname.endsWith('/vps_evidence')) output = { vps_evidence: [{ ...row, credit_us: 125 }], _meta: { ...meta, total_count: 2, next_offset: 1 } };
+    else output = { evidence: [row], _meta: meta };
+    response.end(JSON.stringify({ status: true, response: output }));
+  });
+  await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
+  try {
+    const client = createVpsAdminClient({ execute: createHaveApiExecutor(new AsyncClient(`http://127.0.0.1:${server.address().port}/mount/v7.0`)) });
+    for (const value of [null, 0, 125]) {
+      credit = value;
+      const page = await client.vps.evidence.index({ path: { vps_id: 12 }, timeoutMs: 5000 });
+      assert.equal(page.data[0].credit_us, value);
+      assert.equal(page.data[0].configuration_valid, true);
+      assert.equal(page.data[0].peak_value, value === null ? null : 0);
+      assert.equal(page.data[0].peak_is_lower_bound, value === null ? null : false);
+      assert.equal(page.data[0].condition_value, null);
+      const signals = page.meta.unavailable_signals;
+      assert.ok(Array.isArray(signals) && signals.every((signal) => typeof signal === 'string'));
+      assert.deepEqual(signals, []);
+      assert.equal(calls.at(-1).method, 'GET');
+      assert.equal(calls.at(-1).url.pathname, '/mount/v7.0/vpses/12/evidence');
+      assert.equal(calls.at(-1).url.search, '');
+    }
+    unavailable = ['rtnl_latency'];
+    credit = null;
+    const invalid = await client.vps.evidence.index({ path: { vps_id: 12 }, timeoutMs: 5000 });
+    assert.deepEqual(invalid.meta.unavailable_signals, ['rtnl_latency']);
+    assert.equal(invalid.meta.configuration_valid, false);
+    assert.equal(invalid.data[0].credit_us, null);
+    unavailable = [];
+    const fleet = await client.vps_evidence.index({ params: { offset: 0, limit: 100, signal: 'rtnl_latency', vps: 12 }, timeoutMs: 5000 });
+    assert.equal(fleet.data[0].credit_us, 125);
+    assert.equal(fleet.meta.total_count, 2);
+    assert.equal(fleet.meta.next_offset, 1);
+    assert.equal(calls.at(-1).url.pathname, '/mount/v7.0/vps_evidence');
+    assert.deepEqual([...calls.at(-1).url.searchParams].sort(), [['vps_evidence[limit]', '100'], ['vps_evidence[offset]', '0'], ['vps_evidence[signal]', 'rtnl_latency'], ['vps_evidence[vps]', '12']]);
+    const saved = await client.incident_report.evidence_interval.index({ path: { incident_report_id: 12 }, params: { offset: 0, limit: 100 }, timeoutMs: 5000 });
+    assert.equal(saved.data[0].from_at, stamp);
+    assert.equal(saved.data[0].to_at, '2026-11-25T12:00:01.654321Z');
+    assert.equal(saved.data[0].credit_us, 1530865);
+    assert.equal(saved.data[0].peak_value, null);
+    assert.equal(saved.meta.condition_value, 1000000);
+    assert.equal(saved.meta.condition_operator, 'gt');
+    assert.equal(saved.meta.window_complete, false);
+    assert.equal(calls.at(-1).url.pathname, '/mount/v7.0/incident_reports/12/evidence_intervals');
+    assert.deepEqual([...calls.at(-1).url.searchParams].sort(), [['evidence_interval[limit]', '100'], ['evidence_interval[offset]', '0']]);
+    const before = calls.length;
+    await assert.rejects(client.vps.evidence.index(), ClientInputError);
+    await assert.rejects(client.vps_evidence.index({ params: { offset: '0' } }), ClientInputError);
+    assert.equal(calls.length, before, 'invalid local input never dispatches');
+  } finally {
+    server.closeAllConnections();
+    await new Promise((resolve) => server.close(resolve));
+  }
+});
+
+
+test('pressure history preserves calendar rows, nullable totals and filter requests', async () => {
+  const calls = [];
+  const server = createServer((request, response) => {
+    const url = new URL(request.url, 'http://fixture.test');
+    calls.push({ method: request.method, url });
+    response.setHeader('Content-Type', 'application/json');
+    if (url.pathname.endsWith('/vps_evidence')) {
+      response.end(JSON.stringify({ status: true, response: { vps_evidence: [], _meta: { total_count: 0, next_offset: null } } }));
+      return;
+    }
+    const vps = url.searchParams.get('vps_pressure_history[vps]');
+    if (vps === '99') {
+      response.statusCode = 403;
+      response.end(JSON.stringify({ status: false, message: 'denied', errors: { vps: ['unavailable'] } }));
+      return;
+    }
+    const days = Number(url.searchParams.get('vps_pressure_history[days]') ?? 7);
+    const unavailable = vps === '13';
+    const end = Date.parse('2026-11-29T00:00:00Z');
+    const rows = Array.from({ length: days }, (_, index) => ({
+      id: new Date(end - (days - index) * 86400000).toISOString().slice(0, 10),
+      from_at: new Date(end - (days - index) * 86400000).toISOString(),
+      to_at: new Date(end - (days - index - 1) * 86400000).toISOString(),
+      recorded_us: !unavailable && index === days - 1 ? 125 : null,
+      partial_day: index === days - 1,
+    }));
+    response.end(JSON.stringify({ status: true, response: {
+      vps_pressure_history: rows,
+      _meta: { available: !unavailable, timezone: 'UTC', read_at: '2026-11-28T12:00:00.123456Z',
+        range_from: rows[0].from_at, range_to: rows.at(-1).to_at,
+        total_recorded_us: unavailable ? null : 125,
+        first_recorded_at: unavailable ? null : '2026-11-28T11:59:00.123456Z',
+        accounting_since: unavailable ? '2026-11-27T15:00:00.123456Z' : null,
+        ownership_limited: unavailable },
+    } }));
+  });
+  await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
+  try {
+    const runtime = new AsyncClient(`http://127.0.0.1:${server.address().port}/mount/v7.0`);
+    const api = createVpsAdminClient({ execute: createHaveApiExecutor(runtime) });
+    for (const days of [undefined, 30]) {
+      const result = await api.vps_pressure_history.index({ params: { vps: 12, days } });
+      assert.equal(calls.at(-1).method, 'GET');
+      assert.equal(calls.at(-1).url.pathname, '/mount/v7.0/vps_pressure_history');
+      assert.deepEqual([...calls.at(-1).url.searchParams].sort(), days === undefined
+        ? [['vps_pressure_history[vps]', '12']]
+        : [['vps_pressure_history[days]', '30'], ['vps_pressure_history[vps]', '12']]);
+      assert.equal(result.data.length, days ?? 7);
+      assert.equal(result.data[0].recorded_us, null);
+      assert.equal(result.data[0].partial_day, false);
+      assert.equal(result.data.at(-1).recorded_us, 125);
+      assert.equal(result.data.at(-1).partial_day, true);
+      assert.equal(result.data.at(-1).to_at, '2026-11-29T00:00:00.000Z');
+      assert.equal(result.meta.total_recorded_us, 125);
+      assert.equal(result.meta.accounting_since, null);
+      assert.equal(result.meta.first_recorded_at, '2026-11-28T11:59:00.123456Z');
+      assert.equal(result.meta.read_at, '2026-11-28T12:00:00.123456Z');
+    }
+    const unavailable = await api.vps_pressure_history.index({ params: { vps: 13 } });
+    assert.equal(unavailable.meta.available, false);
+    assert.ok(unavailable.data.every((row) => row.recorded_us === null));
+    assert.equal(unavailable.meta.total_recorded_us, null);
+    assert.equal(unavailable.meta.first_recorded_at, null);
+    assert.equal(unavailable.meta.accounting_since, '2026-11-27T15:00:00.123456Z');
+    assert.equal(unavailable.meta.ownership_limited, true);
+    await api.vps_evidence.index({ params: { user: 1, node: 2, location: 3, environment: 4, offset: 0, limit: 25 } });
+    assert.deepEqual([...calls.at(-1).url.searchParams].sort(), [
+      ['vps_evidence[environment]', '4'], ['vps_evidence[limit]', '25'],
+      ['vps_evidence[location]', '3'], ['vps_evidence[node]', '2'],
+      ['vps_evidence[offset]', '0'], ['vps_evidence[user]', '1'],
+    ]);
+    await assert.rejects(api.vps_pressure_history.index({ params: { vps: 99 } }));
+    const before = calls.length;
+    await assert.rejects(api.vps_pressure_history.index({ params: {} }), ClientInputError);
+    await assert.rejects(api.vps_pressure_history.index({ params: { vps: 12, days: '30' } }), ClientInputError);
+    assert.equal(calls.length, before);
   } finally {
     server.closeAllConnections();
     await new Promise((resolve) => server.close(resolve));

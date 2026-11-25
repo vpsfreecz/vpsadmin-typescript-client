@@ -47,12 +47,17 @@ operation's implementation and declarations.
 Applications import from `vpsadmin-typescript-client`. Individual generated
 module paths are internal and are not package subpath exports.
 
-The saved schema covers 156 application resources and 530 actions. One
-authentication resource and five authentication actions are retained and validated
-in the snapshot, counted separately, and excluded from generation. This is the
-complete declared fixture capture, including all six configured plugins; a
-permission-filtered live description is not a replacement. Check compatibility
-before using the generated package with another API release.
+The saved API export covers 160 application resources, 534 actions and 9,176
+parameters, including `dataset.disable_backups`. Generation reads this raw
+export directly. Its exact vpsAdmin revision is recorded in
+[schema/provenance.json](../schema/provenance.json).
+
+One authentication resource and five authentication actions remain unchanged,
+counted separately and excluded from generation. The saved export is a complete
+declared fixture capture, including all six configured plugins. A
+permission-filtered live description cannot replace this input. Check server
+compatibility before using an operation; method presence does not establish
+support or authorization.
 
 Follow vpsAdmin's [generated-client synchronization procedure](https://github.com/vpsfreecz/vpsadmin/blob/master/docs/api-schema-export.md#generated-client-synchronization)
 when API contracts or generator output change. It covers the Go, Rust and
@@ -109,14 +114,140 @@ primitive types before displaying them or building links. Preserve absent and
 null values, including `matched` and `next_offset`, instead of replacing them
 with false or zero.
 
+### VPS evidence
+
+Read the intervals saved with an incident using its report ID:
+
+```ts
+const saved = await api.incident_report.evidence_interval.index({
+  path: { incident_report_id: reportId },
+  params: { offset: 0, limit: 100 },
+});
+```
+
+Pagination starts at offset 0, defaults to 25 rows and allows at most 100 rows.
+Rows in `saved.data` retain timestamp strings with microsecond precision,
+credited duration in integer microseconds and optional typed peak measurements.
+Read `measurement` and `peak_unit` with `peak_value`; `peak_is_lower_bound`
+identifies an unfinished contributing observation. Preserve absent and null
+values when a measurement is unavailable.
+
+`saved.meta` contains availability, pagination, saved window settings, score,
+evaluation time and the typed condition. Check `available` before interpreting
+the saved facts, and use `next_offset` for another page. The condition fields
+`condition_measurement`, `condition_operator`, `condition_value` and
+`condition_unit` describe the signal predicate saved with the incident. These
+facts remain unchanged when current settings change. Keep false, null and
+missing values distinct.
+
+Read current credit for one VPS or list visible VPSes with positive credit:
+
+```ts
+const current = await api.vps.evidence.index({
+  path: { vps_id: vpsId },
+});
+const page = await api.vps_evidence.index({
+  params: { offset: 0, limit: 100 },
+});
+```
+
+The overview also accepts optional `vps`, `user`, `node`, `location` and
+`environment` resource IDs and a `signal` filter in `params`. The `user` filter
+is administrator-only. The server applies filters within the caller's
+permissions before counting and paging; send only supported filters.
+
+The per-VPS response includes every supported signal, including no-data rows.
+The overview includes only positive credit, including subsecond values. Both
+use the current rolling window. Members see their own VPSes; administrators
+can see all VPSes permitted by the server. Generated methods do not establish
+that a server supports these endpoints or that the caller has access.
+
+Null or missing `credit_us` is unavailable, even when `configuration_valid`
+is true, such as during an ownership change. Zero means no recorded credit;
+it does not establish VPS health or collection coverage. Positive credit may
+remain visible while observations are stale or reporting is disabled.
+Observation freshness, source qualification, reporting eligibility and whether
+a report is due are separate facts.
+
+Current response metadata includes `read_at`, `configuration_valid` and
+`unavailable_signals`; the overview also provides counts and pagination.
+`unavailable_signals` has generated type `unknown`. Check its array and element
+types before using it:
+
+```ts
+const unavailable = page.meta.unavailable_signals;
+if (!Array.isArray(unavailable)
+    || !unavailable.every((signal): signal is string => typeof signal === 'string')) {
+  throw new TypeError('Expected unavailable_signals to be an array of strings');
+}
+```
+
+The server returns selected signals with invalid configuration, sorted without
+duplicates; an empty array means none. Missing or stale observations alone do
+not make the configuration invalid. Generated types do not validate the server
+response or provide a static `string[]` guarantee for Custom metadata.
+
+The generic `evidence_interval` resource replaces the draft `rtnl_interval`
+resource. There is no compatibility alias. Use the matching backend API before
+calling the new methods.
+
+### Memory pressure history
+
+Read daily recorded time for one VPS through the root history resource:
+
+```ts
+const history = await api.vps_pressure_history.index({
+  params: { vps: 12, days: 30 },
+});
+```
+
+Read rows from `history.data` and the range, availability and totals from
+`history.meta`. Preserve absent and null output values. The generated input
+requires `vps`; `days` is an optional number, with its allowed values checked
+by the server. Generated declarations do not validate response data at runtime.
+
+The server requires a VPS ID and accepts `days` as 7 or 30, defaulting to 7.
+The response contains that many ascending UTC calendar days, including today.
+Each row spans `from_at` to `to_at`; today's end is next UTC midnight and
+`partial_day` is true. `read_at` records when the response was read. Accepted
+contributions within the server's clock tolerance are not clipped to that time.
+
+`recorded_us` contains positive integer microseconds or null for a day without
+recorded data. `total_recorded_us` sums the returned positive values and is null
+when none are available. Preserve these unknown values instead of displaying
+zero. History uses daily totals retained for 32 UTC calendar days; it is not
+backfilled from incident reports or old observations and has no historical
+reporting threshold.
+
+History is scoped to the VPS's current owner and exact accounting epoch.
+`accounting_since` is nullable; `ownership_limited` says whether that epoch
+starts inside the requested range. `available` can be true without any recorded
+days. A pending transfer or known ownership-state mismatch makes history
+unavailable; a foreign VPS remains an authorization error. Current observation
+freshness and reporting settings do not decide history availability.
+`first_recorded_at` is the earliest retained acceptance timestamp for this owner
+and epoch across the full 32-day retention period, independent of `days`.
+It does not establish the first occurrence or the start of collection coverage.
+Check the server's capabilities and authorization before offering this read.
+
+### Saved input files
+
 The committed inputs are:
 
-- `schema/schema.json`: canonical API 7.0/protocol 2.0 mounted-source snapshot,
+- `schema/schema.json`: raw API 7.0/protocol 2.0 mounted-source snapshot,
   profile `vpsadmin-full-fixture`, with the declared six plugins.
 - `schema/provenance.json`: source, fixture, plugin, schema and tooling identity.
 - `schema/tooling.Gemfile.lock`: the exporter dependency graph bound by provenance.
 - `tools/generator.json`: the exact HaveAPI generator revision, source digest,
-  schema and provenance hashes, and package tooling hashes.
+  raw schema and provenance hashes, and package tooling hashes.
+
+The schema, provenance and exporter lock retain their original bytes. Generated
+`SCHEMA_SHA256` and ownership metadata identify `schema/schema.json`.
+
+Backup-disable availability depends on the server. Use a known compatible
+server or inspect its current description before offering the operation, and
+keep authorization checks in the application. Never invoke the mutating action
+as a support probe.
 
 The snapshot's `https://schema.invalid/v7.0/` URL identifies its source context.
 Regeneration does not contact that URL or a running API. To regenerate, supply a
@@ -129,7 +260,8 @@ nix develop
 ```
 
 The command verifies the source revision, generator source digest, root `VERSION`,
-saved inputs and tooling hashes. It refuses dirty or untracked generator source.
+saved inputs and tooling hashes, then generates directly from `schema/schema.json`.
+It refuses dirty or untracked generator source.
 Offline regeneration explicitly loads both `clients/ruby/lib` and
 `clients/typescript/lib` from that checkout. It verifies the shared schema library
 and Ruby-client version came from that checkout and match the recorded source
@@ -170,11 +302,14 @@ before updating this repository's saved inputs and generator pins and regenerati
 The exporter writes review candidates to the chosen directory. See vpsAdmin's
 `docs/api-schema-export.md` for its environment and cleanup requirements.
 
-The npm archive includes built output, schema, provenance, exporter lock, and
-generator identity and coverage records. Regeneration commands and the pinned
-development environment remain in this source repository. Publication requires
-a separately authorized release. The package uses the MIT license and retains
-the exact `haveapi-client` 0.32.0 peer dependency.
+The npm archive includes built output, the raw schema, its original provenance
+and exporter lock, and generator identity and coverage records. The package check
+verifies the extracted schema, provenance and lock hashes against the generator
+record and matches the schema digest to the generated manifest before checking
+the packed consumer. Regeneration commands and the pinned development environment
+remain in this source repository.
+Publication requires a separately authorized release. The package uses the MIT
+license and retains the exact `haveapi-client` 0.32.0 peer dependency.
 
 See [release preparation](releasing.md) for build-only workflow checks,
 trusted-publisher setup prerequisites and the retained-archive publication path.
