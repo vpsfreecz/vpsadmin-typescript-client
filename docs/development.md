@@ -47,7 +47,7 @@ operation's implementation and declarations.
 Applications import from `vpsadmin-typescript-client`. Individual generated
 module paths are internal and are not package subpath exports.
 
-The saved schema covers 156 application resources and 529 actions. One
+The saved schema covers 156 application resources and 530 actions. One
 authentication resource and five authentication actions are retained and validated
 in the snapshot, counted separately, and excluded from generation. This is the
 complete declared fixture capture, including all six configured plugins; a

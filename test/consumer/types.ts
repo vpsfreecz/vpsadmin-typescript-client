@@ -1,12 +1,20 @@
 import { AsyncClient } from 'haveapi-client';
 import {
   createHaveApiExecutor, createVpsAdminClient,
-  type RequestExecutor,
+  type RequestExecutor, type Dataset__DisableBackupsInput,
 } from 'vpsadmin-typescript-client';
 
 const runtime = new AsyncClient('https://api.example.test/v7.0');
 const execute: RequestExecutor = createHaveApiExecutor(runtime);
 const client = createVpsAdminClient({ execute });
+const disableInput: Dataset__DisableBackupsInput = { backup_first: false, recursive: true };
+const disableResult = await client.dataset.disable_backups({ path: { dataset_id: 7 }, params: disableInput });
+const cleanupReceipt: number | null | undefined = disableResult.meta.action_state_id;
+// @ts-expect-error explicit backup opt-out must be a boolean
+client.dataset.disable_backups({ path: { dataset_id: 7 }, params: { backup_first: 'false' } });
+// @ts-expect-error there is no caller continuation parameter
+client.dataset.disable_backups({ path: { dataset_id: 7 }, params: { preservation_chain: 41 } });
+void cleanupReceipt;
 const result = await client.network.index({
   params: { limit: 10, enabled: false, location: 1 },
   meta: { count: true, includes: 'primary_location' },
