@@ -355,6 +355,18 @@ export type {
   Dataset__DeleteAction,
 } from "./resources/dataset/actions/delete.js";
 export type {
+  Dataset__DisableBackupsInput,
+  Dataset__DisableBackupsOutput,
+  Dataset__DisableBackupsGlobalInput,
+  Dataset__DisableBackupsGlobalOutput,
+  Dataset__DisableBackupsObjectInput,
+  Dataset__DisableBackupsObjectOutput,
+  Dataset__DisableBackupsPath,
+  Dataset__DisableBackupsOptions,
+  Dataset__DisableBackupsDescribeOptions,
+  Dataset__DisableBackupsAction,
+} from "./resources/dataset/actions/disable_backups.js";
+export type {
   Dataset__FindByNameInput,
   Dataset__FindByNameOutput,
   Dataset__FindByNameGlobalInput,

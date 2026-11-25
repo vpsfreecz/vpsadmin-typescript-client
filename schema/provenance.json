@@ -15,10 +15,10 @@
     "tools/test_db.rb": "b9faee4880ac40526808eae5aa408e3160adff5f4efe92eddfdaee115eb29e5c"
   },
   "inventory": {
-    "actions": 529,
-    "parameters": 9031,
+    "actions": 530,
+    "parameters": 9038,
     "resources": 156,
-    "scopes_sha256": "984fe8b3ba672e6c4950ffcc1ac7b79c7ef4b0b4e67990fd091b4071bff53727"
+    "scopes_sha256": "77818ef2f8c3dc9e8a33161fc2a1c7a73866674ee3ce87396f3dafd54dcf9c3f"
   },
   "locale": "en",
   "plugins": {
@@ -82,13 +82,13 @@
   },
   "profile": "vpsadmin-full-fixture",
   "protocol_version": "2.0",
-  "schema_sha256": "7e2a529787c06944f1ad0cdf3369edd8b4650d79826f3bbda9101af2dfb67628",
+  "schema_sha256": "cbe3a7ca90d7f1c94e2b769058b1c32a570e36fd92f55cf48a4302d4e50dc05d",
   "source": {
     "repository": "git@github.com:vpsfreecz/vpsadmin.git",
-    "revision": "74c0af3aef3ec9124ca89ce7669ccd9b99633495"
+    "revision": "50aa37aede8926965598f4f8fb0782dce377afb6"
   },
   "tooling": {
-    "bundler": "4.0.24",
+    "bundler": "4.1.1",
     "gemfile_sha256": "87df3509b79a68dcf55f4f344017c619a8fcf0dbb9e70e576a2d2d39891a8ef2",
     "gems": {
       "activemodel": {
@@ -144,8 +144,8 @@
         "version": "2.5.1"
       },
       "bundler": {
-        "gem_sha256": "16ca64e20816a0cf151a948fb141d788602996d2b4d73577b74388fe84fa98bc",
-        "version": "4.0.24"
+        "gem_sha256": "7a76aebebc2e476cbc1e11314200d7fe83c7398d6930f1d048e4d3dd2d0e93e3",
+        "version": "4.1.1"
       },
       "bunny": {
         "gem_sha256": "072fe4ae98eaa9c95a17e4d166204f710bba8a9a7070b73a8c3b023f439d1682",
@@ -557,7 +557,7 @@
       },
       "syntax_suggest": {
         "gem_sha256": null,
-        "version": "2.0.2"
+        "version": "2.0.3"
       },
       "tilt": {
         "gem_sha256": "da5735d0280bba96e9a91041bb14aee435ccad5c17b0fa519249ae543d9aa3a5",
@@ -608,7 +608,7 @@
         "version": "0.9.45"
       }
     },
-    "lock_sha256": "2e9a124eff7b80d6fd57cd0f03cb2809847c67cc7f1af6364911c3622d7242a0",
-    "ruby": "3.4.9"
+    "lock_sha256": "dd5db5ca44bb69ca2ae0244515103146f17b7621f12ca34c3dec6950f4455aaf",
+    "ruby": "3.4.12"
   }
 }

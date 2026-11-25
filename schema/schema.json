@@ -4422,6 +4422,107 @@
             "path": "/v7.0/datasets/{dataset_id}",
             "scope": "dataset#delete"
           },
+          "disable_backups": {
+            "aliases": [],
+            "auth": true,
+            "blocking": true,
+            "help": "/v7.0/datasets/{dataset_id}/disable_backups?method=POST",
+            "input": {
+              "layout": "object",
+              "namespace": "dataset",
+              "parameters": {
+                "backup_first": {
+                  "default": true,
+                  "nullable": false,
+                  "protected": false,
+                  "required": false,
+                  "type": "Boolean",
+                  "validators": {}
+                },
+                "recursive": {
+                  "default": false,
+                  "nullable": false,
+                  "protected": false,
+                  "required": false,
+                  "type": "Boolean",
+                  "validators": {}
+                }
+              }
+            },
+            "meta": {
+              "global": {
+                "input": {
+                  "layout": "hash",
+                  "namespace": false,
+                  "parameters": {
+                    "includes": {
+                      "default": null,
+                      "nullable": false,
+                      "protected": false,
+                      "required": false,
+                      "type": "Custom",
+                      "validators": {}
+                    },
+                    "no": {
+                      "default": null,
+                      "nullable": false,
+                      "protected": false,
+                      "required": false,
+                      "type": "Boolean",
+                      "validators": {}
+                    }
+                  }
+                },
+                "output": {
+                  "layout": "hash",
+                  "namespace": false,
+                  "parameters": {
+                    "action_state_id": {
+                      "default": null,
+                      "nullable": false,
+                      "protected": false,
+                      "required": false,
+                      "type": "Integer",
+                      "validators": {}
+                    }
+                  }
+                }
+              },
+              "object": {
+                "input": null,
+                "output": {
+                  "layout": "hash",
+                  "namespace": false,
+                  "parameters": {
+                    "path_params": {
+                      "default": null,
+                      "nullable": false,
+                      "protected": false,
+                      "required": false,
+                      "type": "Custom",
+                      "validators": {}
+                    },
+                    "resolved": {
+                      "default": null,
+                      "nullable": false,
+                      "protected": false,
+                      "required": false,
+                      "type": "Boolean",
+                      "validators": {}
+                    }
+                  }
+                }
+              }
+            },
+            "method": "POST",
+            "output": {
+              "layout": "object",
+              "namespace": "dataset",
+              "parameters": {}
+            },
+            "path": "/v7.0/datasets/{dataset_id}/disable_backups",
+            "scope": "dataset#disable_backups"
+          },
           "find_by_name": {
             "aliases": [],
             "auth": true,

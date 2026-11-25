@@ -10,17 +10,19 @@ import { createAction as bind0 } from "./actions/create.js";
 import type { Dataset__CreateAction } from "./actions/create.js";
 import { createAction as bind1 } from "./actions/delete.js";
 import type { Dataset__DeleteAction } from "./actions/delete.js";
-import { createAction as bind2 } from "./actions/find_by_name.js";
+import { createAction as bind2 } from "./actions/disable_backups.js";
+import type { Dataset__DisableBackupsAction } from "./actions/disable_backups.js";
+import { createAction as bind3 } from "./actions/find_by_name.js";
 import type { Dataset__FindByNameAction } from "./actions/find_by_name.js";
-import { createAction as bind3 } from "./actions/index.js";
+import { createAction as bind4 } from "./actions/index.js";
 import type { Dataset__IndexAction } from "./actions/index.js";
-import { createAction as bind4 } from "./actions/inherit.js";
+import { createAction as bind5 } from "./actions/inherit.js";
 import type { Dataset__InheritAction } from "./actions/inherit.js";
-import { createAction as bind5 } from "./actions/migrate.js";
+import { createAction as bind6 } from "./actions/migrate.js";
 import type { Dataset__MigrateAction } from "./actions/migrate.js";
-import { createAction as bind6 } from "./actions/show.js";
+import { createAction as bind7 } from "./actions/show.js";
 import type { Dataset__ShowAction } from "./actions/show.js";
-import { createAction as bind7 } from "./actions/update.js";
+import { createAction as bind8 } from "./actions/update.js";
 import type { Dataset__UpdateAction } from "./actions/update.js";
 
 export interface DatasetResource {
@@ -31,6 +33,7 @@ export interface DatasetResource {
   readonly new: Dataset__CreateAction;
   readonly delete: Dataset__DeleteAction;
   readonly destroy: Dataset__DeleteAction;
+  readonly disable_backups: Dataset__DisableBackupsAction;
   readonly find_by_name: Dataset__FindByNameAction;
   readonly index: Dataset__IndexAction;
   readonly list: Dataset__IndexAction;
@@ -54,6 +57,7 @@ export function createResource(
   const action5 = bind5(execute, metaNamespace);
   const action6 = bind6(execute, metaNamespace);
   const action7 = bind7(execute, metaNamespace);
+  const action8 = bind8(execute, metaNamespace);
   return {
     plan: child0(execute, metaNamespace),
     property_history: child1(execute, metaNamespace),
@@ -62,13 +66,14 @@ export function createResource(
     new: action0,
     delete: action1,
     destroy: action1,
-    find_by_name: action2,
-    index: action3,
-    list: action3,
-    inherit: action4,
-    migrate: action5,
-    show: action6,
-    find: action6,
-    update: action7,
+    disable_backups: action2,
+    find_by_name: action3,
+    index: action4,
+    list: action4,
+    inherit: action5,
+    migrate: action6,
+    show: action7,
+    find: action7,
+    update: action8,
   };
 }

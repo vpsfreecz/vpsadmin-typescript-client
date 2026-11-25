@@ -224,7 +224,7 @@ export type * from "./types.js";
 
 export const API_VERSION = "7.0";
 export const SCHEMA_SHA256 =
-  "7e2a529787c06944f1ad0cdf3369edd8b4650d79826f3bbda9101af2dfb67628";
+  "cbe3a7ca90d7f1c94e2b769058b1c32a570e36fd92f55cf48a4302d4e50dc05d";
 
 /**
  * Bind to an executor already targeting the selected API version, for example

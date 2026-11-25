@@ -4,14 +4,14 @@
     "runtime_import": "haveapi-client"
   },
   "coverage": {
-    "application_action_count": 529,
+    "application_action_count": 530,
     "application_resource_count": 156,
     "authentication_action_count": 5,
     "authentication_exclusion": "Authentication resources are retained and validated; the existing runtime owns their API-root routes.",
     "authentication_resource_count": 1
   },
   "files": {
-    "api.ts": "11f6e00f03ac2ad5161f028e5bf05c091f760e41903c330e30cd1b69b763eda8",
+    "api.ts": "d3653904439eaa903769969b3f060f46f466093ad6fba1ac442883ba3ed90463",
     "descriptions.ts": "36f2c93d11f195b17d8d7217fff230b6a5b054d0aaec62f29bc3e7bbe231decc",
     "index.ts": "2a879cfd5f39c537a88eed0d8c071625a1bb6191d35c69e5a6134073cf79324b",
     "resources/action_state/actions/cancel.ts": "7f0215c6499e612a7899c5d242ee37fa2f196d4f43e1ae0fb777436674cc87cd",
@@ -50,13 +50,14 @@
     "resources/component/resource.ts": "71947f6684e9a40d3bd94295ab1950a10ca55ca7394e9bfdff963cdb3031721b",
     "resources/dataset/actions/create.ts": "aa75a6314e78e912d639bb3ab62bc231a2ec16afa1277c4c5171178d7463ced8",
     "resources/dataset/actions/delete.ts": "9920547d8ee836621c92fdc6e77a42cc4b96bbbeb8e9410b54a9b70c1950bd37",
+    "resources/dataset/actions/disable_backups.ts": "fb2790985a34b25ade56fb33fe2d83f623b2fbb238c04775976cc9c1e6ccde5a",
     "resources/dataset/actions/find_by_name.ts": "1cb6f848497a636196953e4b03b0a8af981d37736e42be575162d377cf5d6c18",
     "resources/dataset/actions/index.ts": "1b693aed6292677047d00df5491c86f17d209d5d7a86ff90cea0096946138413",
     "resources/dataset/actions/inherit.ts": "609c0ed7b46c46ab1e374acf119a61c2732b1c545b28db91bfc93e91f4c60ab4",
     "resources/dataset/actions/migrate.ts": "d478175fecbc5e0b054c8b2bfb1bf65d574de05cb46afab071e04d12a9ad3f65",
     "resources/dataset/actions/show.ts": "f102a6517e6a9fe1d6c8d21ed1321825a96f4db27a165cd8dd785c63916bb333",
     "resources/dataset/actions/update.ts": "84a87b8984bc07ff008341c819f36cecb67dfc1c1f0413c373a17c8a535100a3",
-    "resources/dataset/resource.ts": "d3e62491dce26b8fd0639ba5fdda5988e354f7283a32f3e9b696fdddce70570a",
+    "resources/dataset/resource.ts": "ff03789c8ee219ea847a4fb4f41f94008f489614c5dcf805000dec067ff42cf2",
     "resources/dataset/resources/plan/actions/create.ts": "8bb434cc9ed7b897f983a4923a6efd1f48a59c78cff274848a5d9bf815cb5c44",
     "resources/dataset/resources/plan/actions/delete.ts": "6f9db88b66720eb6ea128008379bca9d57658f62fff39a5aeeda5e35fd5ed6cb",
     "resources/dataset/resources/plan/actions/index.ts": "67cf66e6a1fb6cd66f7b9b1da9518f204cb3db60f8d36bc399c44f2d4b0fe00f",
@@ -700,7 +701,7 @@
     "resources/webui_user_setting/actions/show.ts": "5c3633e5f05a72c0af5b4470fd45161ae777ed7e3872aaadb31cf49a2e8ad66b",
     "resources/webui_user_setting/resource.ts": "da734dec0115cd461b21f5e685d9ecdbb76d183f9424932adffef1307f8b069d",
     "runtime.ts": "8ec81accc1c29a4effe8576dd41a776bd4cd4270986d956fa837f41fe49b1649",
-    "types.ts": "64038882ee12f43e3022a735b7264a056b1c74e7a955851ca675a31ee41ab6c9"
+    "types.ts": "001fbb9aa2fbe537f4b0bc4203a2b83052577450cc180a6cb3591b8a509830fc"
   },
   "format": 1,
   "formatter": {
@@ -713,5 +714,5 @@
   "owner": "haveapi-typescript-client",
   "profile": "vpsadmin-full-fixture",
   "protocol_version": "2.0",
-  "schema_sha256": "7e2a529787c06944f1ad0cdf3369edd8b4650d79826f3bbda9101af2dfb67628"
+  "schema_sha256": "cbe3a7ca90d7f1c94e2b769058b1c32a570e36fd92f55cf48a4302d4e50dc05d"
 }
