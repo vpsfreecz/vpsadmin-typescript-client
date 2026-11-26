@@ -1,7 +1,7 @@
 import { AsyncClient } from 'haveapi-client';
 import {
   createHaveApiExecutor, createVpsAdminClient,
-  type RequestExecutor, type Dataset__DisableBackupsInput,
+  type RequestExecutor, type Dataset__DisableBackupsInput, type SystemConfig__ShowOutput,
 } from 'vpsadmin-typescript-client';
 
 const runtime = new AsyncClient('https://api.example.test/v7.0');
@@ -15,6 +15,12 @@ client.dataset.disable_backups({ path: { dataset_id: 7 }, params: { backup_first
 // @ts-expect-error there is no caller continuation parameter
 client.dataset.disable_backups({ path: { dataset_id: 7 }, params: { preservation_chain: 41 } });
 void cleanupReceipt;
+const olderSystemConfig: SystemConfig__ShowOutput = { category: 'synthetic', name: 'older', value: 'legacy' };
+const nullableSystemConfig: SystemConfig__ShowOutput = { choices: null, value_nullable: null };
+const choiceSystemConfig: SystemConfig__ShowOutput = { choices: [{ value: 0, label: 'Zero' }], value_nullable: false };
+// @ts-expect-error nullability metadata must remain boolean when supplied
+const invalidSystemConfig: SystemConfig__ShowOutput = { value_nullable: 1 };
+void [olderSystemConfig, nullableSystemConfig, choiceSystemConfig, invalidSystemConfig];
 const result = await client.network.index({
   params: { limit: 10, enabled: false, location: 1 },
   meta: { count: true, includes: 'primary_location' },

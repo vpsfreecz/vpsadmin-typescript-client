@@ -1,3 +1,11 @@
+# Unreleased
+
+- Add optional system configuration choice metadata and nullability to Index,
+  Show and Update outputs. Choice labels come from the API in the selected
+  request language; values retain their scalar types.
+- Keep SystemConfig outputs readable through the published HaveAPI runtime
+  when choice metadata is omitted or null.
+
 # 0.6.0
 
 - Add generated read operations and types for the administrator incident-policy

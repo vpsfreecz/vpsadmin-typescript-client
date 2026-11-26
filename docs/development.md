@@ -37,6 +37,13 @@ type checking. These checks use local executors and do not call a running API.
 
 ## Schema and regeneration
 
+SystemConfig outputs can include `choices` and `value_nullable`. Both remain
+optional so older servers can omit them; null means there is no choice contract.
+The Custom `choices` payload is unknown to the generated types. Consumers validate
+its ordered scalar values and labels before offering a select. Labels are already
+localized by the API request language. Update values remain Custom JSON, including
+explicit null; the API validates membership and setting-specific nullability.
+
 Generated source has separate modules for resources and actions. For example,
 `src/generated/resources/vps/resource.ts` composes the VPS resource, and
 `src/generated/resources/vps/actions/index.ts` contains its Index action.
