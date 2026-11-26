@@ -21,6 +21,7 @@ export type SystemConfig__IndexInput = {
 
 export type SystemConfig__IndexOutput = Array<{
   category?: string | null;
+  choices?: unknown;
   description?: string | null;
   label?: string | null;
   localized?: boolean | null;
@@ -29,6 +30,7 @@ export type SystemConfig__IndexOutput = Array<{
   name?: string | null;
   type?: string | null;
   value?: unknown;
+  value_nullable?: boolean | null;
   _meta?: SystemConfig__IndexObjectOutput | null;
 }>;
 
@@ -132,6 +134,7 @@ const descriptor = {
   objectInput: null,
   outputNames: [
     "category",
+    "choices",
     "description",
     "label",
     "localized",
@@ -140,6 +143,7 @@ const descriptor = {
     "name",
     "type",
     "value",
+    "value_nullable",
   ],
   objectOutput: true,
 } as const;

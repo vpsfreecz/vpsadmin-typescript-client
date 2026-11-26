@@ -15,6 +15,12 @@ client.dataset.disable_backups({ path: { dataset_id: 7 }, params: { backup_first
 // @ts-expect-error there is no caller continuation parameter
 client.dataset.disable_backups({ path: { dataset_id: 7 }, params: { preservation_chain: 41 } });
 void cleanupReceipt;
+const config = await client.system_config.show({ path: { category: 'core', name: 'mode' } });
+const valueNullable: boolean | null | undefined = config.data.value_nullable;
+const choices: unknown = config.data.choices;
+// @ts-expect-error nullable Boolean output must retain its Boolean type
+const invalidNullable: string = config.data.value_nullable;
+void [valueNullable, choices, invalidNullable];
 const result = await client.network.index({
   params: { limit: 10, enabled: false, location: 1 },
   meta: { count: true, includes: 'primary_location' },

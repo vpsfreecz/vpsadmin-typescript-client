@@ -17,6 +17,7 @@ export type SystemConfig__ShowInput = Record<string, never>;
 
 export type SystemConfig__ShowOutput = {
   category?: string | null;
+  choices?: unknown;
   description?: string | null;
   label?: string | null;
   localized?: boolean | null;
@@ -25,6 +26,7 @@ export type SystemConfig__ShowOutput = {
   name?: string | null;
   type?: string | null;
   value?: unknown;
+  value_nullable?: boolean | null;
 };
 
 export type SystemConfig__ShowGlobalInput = {

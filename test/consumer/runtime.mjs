@@ -27,7 +27,7 @@ test('generated modules compose behind the unchanged public package surface', as
 
 test('versioned Network read preserves namespaces, options and partial response receipts', async () => {
   assert.equal(API_VERSION, '7.0');
-  assert.equal(SCHEMA_SHA256, 'cbe3a7ca90d7f1c94e2b769058b1c32a570e36fd92f55cf48a4302d4e50dc05d');
+  assert.equal(SCHEMA_SHA256, '7088ef00b82964437746ad3e46b3ca78da515b8fde18cae46f1c275ef68f9bf9');
   const signal = new AbortController().signal;
   const headers = { 'X-Request-Id': 'consumer' };
   const receipt = {
@@ -357,6 +357,35 @@ test('nullable Custom global setting values preserve explicit reset on the wire'
     const result = await client.system_config.update({ path: { category: 'test', name: 'limit' }, params: { value: null }, timeoutMs: 5000 });
     assert.deepEqual(body, { system_config: { value: null } });
     assert.equal(result.data.value, null);
+  } finally {
+    server.closeAllConnections();
+    await new Promise((resolve) => server.close(resolve));
+  }
+});
+
+test('system configuration choices retain scalar identity, null and absent outputs', async () => {
+  const outputs = [
+    { choices: [{ value: false }, { value: 0 }, { value: '' }], value_nullable: false },
+    { choices: [], value_nullable: true },
+    { choices: null, value_nullable: null },
+    {},
+  ];
+  let calls = 0;
+  const server = createServer((request, response) => {
+    assert.equal(request.method, 'GET');
+    assert.equal(request.url, '/v7.0/system_configs/core/mode');
+    response.setHeader('Content-Type', 'application/json');
+    response.end(JSON.stringify({ status: true, response: { system_config: outputs[calls++] } }));
+  });
+  await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
+  try {
+    const runtime = new AsyncClient(`http://127.0.0.1:${server.address().port}/v7.0`);
+    const api = createVpsAdminClient({ execute: createHaveApiExecutor(runtime) });
+    for (const output of outputs) {
+      const result = await api.system_config.show({ path: { category: 'core', name: 'mode' } });
+      assert.deepEqual(result.data, output);
+    }
+    assert.equal(calls, outputs.length);
   } finally {
     server.closeAllConnections();
     await new Promise((resolve) => server.close(resolve));

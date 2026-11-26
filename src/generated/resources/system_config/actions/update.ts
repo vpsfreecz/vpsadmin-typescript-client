@@ -19,6 +19,7 @@ export type SystemConfig__UpdateInput = {
 
 export type SystemConfig__UpdateOutput = {
   category?: string | null;
+  choices?: unknown;
   description?: string | null;
   label?: string | null;
   localized?: boolean | null;
@@ -27,6 +28,7 @@ export type SystemConfig__UpdateOutput = {
   name?: string | null;
   type?: string | null;
   value?: unknown;
+  value_nullable?: boolean | null;
 };
 
 export type SystemConfig__UpdateGlobalInput = {

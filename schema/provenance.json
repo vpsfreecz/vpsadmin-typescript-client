@@ -16,7 +16,7 @@
   },
   "inventory": {
     "actions": 530,
-    "parameters": 9038,
+    "parameters": 9044,
     "resources": 156,
     "scopes_sha256": "77818ef2f8c3dc9e8a33161fc2a1c7a73866674ee3ce87396f3dafd54dcf9c3f"
   },
@@ -48,7 +48,7 @@
         20240124185400,
         20260601121000
       ],
-      "source_sha256": "23fd593c5b6c5dcf32a146a5f61635dbbfb5921257a6388de1df73964cc022f4",
+      "source_sha256": "423e8c2050b875bc4095b9a40caec766905e4a22932fe5c3ce032ac1f84b1542",
       "version": "4.2.1"
     },
     "payments": {
@@ -57,7 +57,7 @@
         20260706212000,
         20260905180000
       ],
-      "source_sha256": "a842dd5796fc05305a5e0ebac2694a145a86965ebf657e6599b1f12f0fff6a86",
+      "source_sha256": "7ab1cc35192f6fe54182980256b9bcb2bc68c7227128b06da179a78fa9a0b2cc",
       "version": "4.2.1"
     },
     "requests": {
@@ -67,7 +67,7 @@
         20201126142500,
         20260606223100
       ],
-      "source_sha256": "daca23ec4afeedd258e3a71ffba57d8c76b238b904bc0af256080f3d35df26c7",
+      "source_sha256": "930855654849a6e19b1648ed1e7272a0726a3c72aa3f508fe13e57bf83e9482f",
       "version": "4.2.1"
     },
     "webui": {
@@ -76,16 +76,16 @@
         20260607190000,
         20260706211000
       ],
-      "source_sha256": "8b3faedb05e40874cfb80f56e697e4972fc77b357cc44f401d70f5d4ea168c62",
+      "source_sha256": "3c3e3c58217c2fd709e63fad5b634fd65789df20b6581c0afe9d7a19f987a9ad",
       "version": "4.2.1"
     }
   },
   "profile": "vpsadmin-full-fixture",
   "protocol_version": "2.0",
-  "schema_sha256": "cbe3a7ca90d7f1c94e2b769058b1c32a570e36fd92f55cf48a4302d4e50dc05d",
+  "schema_sha256": "7088ef00b82964437746ad3e46b3ca78da515b8fde18cae46f1c275ef68f9bf9",
   "source": {
     "repository": "git@github.com:vpsfreecz/vpsadmin.git",
-    "revision": "50aa37aede8926965598f4f8fb0782dce377afb6"
+    "revision": "5725a0996fb60767511bfc86482acefdec9eb9d9"
   },
   "tooling": {
     "bundler": "4.1.1",

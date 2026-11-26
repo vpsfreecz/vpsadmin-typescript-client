@@ -79491,6 +79491,14 @@
                   "type": "String",
                   "validators": {}
                 },
+                "choices": {
+                  "default": null,
+                  "nullable": true,
+                  "protected": false,
+                  "required": false,
+                  "type": "Custom",
+                  "validators": {}
+                },
                 "description": {
                   "default": null,
                   "nullable": false,
@@ -79553,6 +79561,14 @@
                   "protected": false,
                   "required": false,
                   "type": "Custom",
+                  "validators": {}
+                },
+                "value_nullable": {
+                  "default": null,
+                  "nullable": true,
+                  "protected": false,
+                  "required": false,
+                  "type": "Boolean",
                   "validators": {}
                 }
               }
@@ -79635,6 +79651,14 @@
                   "type": "String",
                   "validators": {}
                 },
+                "choices": {
+                  "default": null,
+                  "nullable": true,
+                  "protected": false,
+                  "required": false,
+                  "type": "Custom",
+                  "validators": {}
+                },
                 "description": {
                   "default": null,
                   "nullable": false,
@@ -79697,6 +79721,14 @@
                   "protected": false,
                   "required": false,
                   "type": "Custom",
+                  "validators": {}
+                },
+                "value_nullable": {
+                  "default": null,
+                  "nullable": true,
+                  "protected": false,
+                  "required": false,
+                  "type": "Boolean",
                   "validators": {}
                 }
               }
@@ -79788,6 +79820,14 @@
                   "type": "String",
                   "validators": {}
                 },
+                "choices": {
+                  "default": null,
+                  "nullable": true,
+                  "protected": false,
+                  "required": false,
+                  "type": "Custom",
+                  "validators": {}
+                },
                 "description": {
                   "default": null,
                   "nullable": false,
@@ -79850,6 +79890,14 @@
                   "protected": false,
                   "required": false,
                   "type": "Custom",
+                  "validators": {}
+                },
+                "value_nullable": {
+                  "default": null,
+                  "nullable": true,
+                  "protected": false,
+                  "required": false,
+                  "type": "Boolean",
                   "validators": {}
                 }
               }
