@@ -11,7 +11,7 @@
     "authentication_resource_count": 1
   },
   "files": {
-    "api.ts": "d3653904439eaa903769969b3f060f46f466093ad6fba1ac442883ba3ed90463",
+    "api.ts": "81dd2442eb97ac5697daabda7f61915fb951cd6a98918d6ef5897a7a2bfe10c4",
     "descriptions.ts": "36f2c93d11f195b17d8d7217fff230b6a5b054d0aaec62f29bc3e7bbe231decc",
     "index.ts": "2a879cfd5f39c537a88eed0d8c071625a1bb6191d35c69e5a6134073cf79324b",
     "resources/action_state/actions/cancel.ts": "7f0215c6499e612a7899c5d242ee37fa2f196d4f43e1ae0fb777436674cc87cd",
@@ -508,9 +508,9 @@
     "resources/snapshot_download/actions/index.ts": "cc7f4712d1a96b5be4d0b8c2c98d5d71de6e648850fac0c4fac68329ffb4462c",
     "resources/snapshot_download/actions/show.ts": "e3bf2118f3b009ca1832978c078843a8592dd0e1153163a1ee936690657a9725",
     "resources/snapshot_download/resource.ts": "9cbdc0a7cdffe9659f2954d2962c9fb5e07c9c116ebec1051771aa537596a340",
-    "resources/system_config/actions/index.ts": "9fb7858862c19bbcec1c711c2eef3235ef2c3877497b4ee620a97ecd604c6ce5",
-    "resources/system_config/actions/show.ts": "3952c86e9373ae3521e766a3508188fad73a587891eeb3bf9f6beff638450e57",
-    "resources/system_config/actions/update.ts": "1a64925962eecbff62a68a436f6f848fd7812e02932568964095201a082cd79f",
+    "resources/system_config/actions/index.ts": "3ea7ac64dbcca4d67a3e30f094c0b093fb13dad230ca6a5564cfbe4ae29e61eb",
+    "resources/system_config/actions/show.ts": "a72ff6089a9159b065d000d268836e1bdc3f42e9d88300b290f7d08cd775e51e",
+    "resources/system_config/actions/update.ts": "c6ca1b5ac4279e323007de95f28a259acb0a380780b08dd97122716e3794175a",
     "resources/system_config/resource.ts": "424581a062f464059cfe18187ec14f99d2420b19b5437a08d64839850656ec71",
     "resources/transaction/actions/index.ts": "7eb2cda0e81921b9192ccfc561e9b152887dfe1d794a519656c106f59b25f69c",
     "resources/transaction/actions/show.ts": "1a2961eddd004553eaee62448e1ce1ba52c9c565743d5e1538f0e123ae22fccc",
@@ -714,5 +714,5 @@
   "owner": "haveapi-typescript-client",
   "profile": "vpsadmin-full-fixture",
   "protocol_version": "2.0",
-  "schema_sha256": "cbe3a7ca90d7f1c94e2b769058b1c32a570e36fd92f55cf48a4302d4e50dc05d"
+  "schema_sha256": "7088ef00b82964437746ad3e46b3ca78da515b8fde18cae46f1c275ef68f9bf9"
 }
