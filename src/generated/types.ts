@@ -415,6 +415,30 @@ export type {
   Dataset__MigrateAction,
 } from "./resources/dataset/actions/migrate.js";
 export type {
+  Dataset__PreviewSnapshotRemovalInput,
+  Dataset__PreviewSnapshotRemovalOutput,
+  Dataset__PreviewSnapshotRemovalGlobalInput,
+  Dataset__PreviewSnapshotRemovalGlobalOutput,
+  Dataset__PreviewSnapshotRemovalObjectInput,
+  Dataset__PreviewSnapshotRemovalObjectOutput,
+  Dataset__PreviewSnapshotRemovalPath,
+  Dataset__PreviewSnapshotRemovalOptions,
+  Dataset__PreviewSnapshotRemovalDescribeOptions,
+  Dataset__PreviewSnapshotRemovalAction,
+} from "./resources/dataset/actions/preview_snapshot_removal.js";
+export type {
+  Dataset__RemoveSnapshotsInput,
+  Dataset__RemoveSnapshotsOutput,
+  Dataset__RemoveSnapshotsGlobalInput,
+  Dataset__RemoveSnapshotsGlobalOutput,
+  Dataset__RemoveSnapshotsObjectInput,
+  Dataset__RemoveSnapshotsObjectOutput,
+  Dataset__RemoveSnapshotsPath,
+  Dataset__RemoveSnapshotsOptions,
+  Dataset__RemoveSnapshotsDescribeOptions,
+  Dataset__RemoveSnapshotsAction,
+} from "./resources/dataset/actions/remove_snapshots.js";
+export type {
   Dataset__ShowInput,
   Dataset__ShowOutput,
   Dataset__ShowGlobalInput,

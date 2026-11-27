@@ -20,9 +20,13 @@ import { createAction as bind5 } from "./actions/inherit.js";
 import type { Dataset__InheritAction } from "./actions/inherit.js";
 import { createAction as bind6 } from "./actions/migrate.js";
 import type { Dataset__MigrateAction } from "./actions/migrate.js";
-import { createAction as bind7 } from "./actions/show.js";
+import { createAction as bind7 } from "./actions/preview_snapshot_removal.js";
+import type { Dataset__PreviewSnapshotRemovalAction } from "./actions/preview_snapshot_removal.js";
+import { createAction as bind8 } from "./actions/remove_snapshots.js";
+import type { Dataset__RemoveSnapshotsAction } from "./actions/remove_snapshots.js";
+import { createAction as bind9 } from "./actions/show.js";
 import type { Dataset__ShowAction } from "./actions/show.js";
-import { createAction as bind8 } from "./actions/update.js";
+import { createAction as bind10 } from "./actions/update.js";
 import type { Dataset__UpdateAction } from "./actions/update.js";
 
 export interface DatasetResource {
@@ -39,6 +43,8 @@ export interface DatasetResource {
   readonly list: Dataset__IndexAction;
   readonly inherit: Dataset__InheritAction;
   readonly migrate: Dataset__MigrateAction;
+  readonly preview_snapshot_removal: Dataset__PreviewSnapshotRemovalAction;
+  readonly remove_snapshots: Dataset__RemoveSnapshotsAction;
   readonly show: Dataset__ShowAction;
   readonly find: Dataset__ShowAction;
   readonly update: Dataset__UpdateAction;
@@ -58,6 +64,8 @@ export function createResource(
   const action6 = bind6(execute, metaNamespace);
   const action7 = bind7(execute, metaNamespace);
   const action8 = bind8(execute, metaNamespace);
+  const action9 = bind9(execute, metaNamespace);
+  const action10 = bind10(execute, metaNamespace);
   return {
     plan: child0(execute, metaNamespace),
     property_history: child1(execute, metaNamespace),
@@ -72,8 +80,10 @@ export function createResource(
     list: action4,
     inherit: action5,
     migrate: action6,
-    show: action7,
-    find: action7,
-    update: action8,
+    preview_snapshot_removal: action7,
+    remove_snapshots: action8,
+    show: action9,
+    find: action9,
+    update: action10,
   };
 }

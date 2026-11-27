@@ -27,7 +27,7 @@ test('generated modules compose behind the unchanged public package surface', as
 
 test('versioned Network read preserves namespaces, options and partial response receipts', async () => {
   assert.equal(API_VERSION, '7.0');
-  assert.equal(SCHEMA_SHA256, '7088ef00b82964437746ad3e46b3ca78da515b8fde18cae46f1c275ef68f9bf9');
+  assert.equal(SCHEMA_SHA256, '41a951f1a5509fd9105eb2cf27dbd14f0e0d3b15842615ec66d4774f089ba11c');
   const signal = new AbortController().signal;
   const headers = { 'X-Request-Id': 'consumer' };
   const receipt = {
